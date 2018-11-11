@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Formulário segundo o Eurocódigo para vigas em betão armado - l moura</title>
+    <meta property="og:title" content="Formulário segundo o Eurocódigo para vigas em betão armado - l moura">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Fórmulas, segundo o Euro-Código(Comité Europeu de Normalização 2004), a serem utilizadas na análise e dimensionamento de vigas em betão armado.
+Estas fórmulas faziam parte dos meus apontamentos de &amp;hellip;">
+      <meta property="og:description" content="Fórmulas, segundo o Euro-Código(Comité Europeu de Normalização 2004), a serem utilizadas na análise e dimensionamento de vigas em betão armado.
+Estas fórmulas faziam parte dos meus apontamentos de &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+<link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      
+<h1><a href="/"><img src="/author.png" alt="t" /></a></h1>
+
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" />
+  <label id="menu-label" for="menu-check" class="unselectable">
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about_me/">Autor</a></li>
+  
+  <li><a href="/files/cv.pdf">CV</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Formulário segundo o Eurocódigo para vigas em betão armado</h1>
+
+<h3>Luis Moura
+  /  2018-01-06</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+
+<p>Fórmulas, segundo o Euro-Código<span class="citation">(Comité Europeu de Normalização 2004)</span>, a serem utilizadas na análise e dimensionamento de vigas em betão armado.</p>
+<p>Estas fórmulas faziam parte dos meus apontamentos de betão armado. Algumas fórmulas estão referênciadas à página do Eurocódigo respectiva. É possível que existam erros no formulário, e o seu uso, não dispensa a consulta do Eurocódigo.</p>
+<ul>
+<li><a href="#org5678445">Flexão</a>
+<ul>
+<li><a href="#org4490d8f">Momento Flector Reduzido</a></li>
+<li><a href="#orgd0c3ced">Percentagem Mecânica de Armadura</a></li>
+<li><a href="#orgae165d9">Área de Armadura</a></li>
+<li><a href="#orgd9a6118">Posição da Linha Neutra</a></li>
+<li><a href="#org0f947ce">Área Mínima de Armadura</a></li>
+<li><a href="#org042fabe">Área Máxima de Armadura</a></li>
+<li><a href="#orgd84ff2d">Armadura Longitudinal Superior nos apoios de Extremidade</a></li>
+<li><a href="#orgd1e1596">Transverso</a></li>
+<li><a href="#org313ea79">Verificação de Esmagamento das Bielas</a></li>
+<li><a href="#orgd13e655">Coeficiente de Redução da Resistência do Betão Fendilhado por esforço transverso</a></li>
+<li><a href="#org628c7e4">Verificação de Compressão na Alma</a></li>
+<li><a href="#org2f99ceb">Armadura Mínima</a></li>
+<li><a href="#org728c248">Esforço Transverso Resistente para Armadura mínima</a></li>
+<li><a href="#org28fe3c2">Tensão Máxima na Biela de Compressão</a></li>
+<li><a href="#orgb2c2e8a">Máxima Compressão Apoio</a></li>
+<li><a href="#orgd7fcebf">Armadura Transversal nos Apoios}</a></li>
+<li><a href="#org69adce5">Espaçamento de Armadura Esforço Transverso</a>
+<ul>
+<li><a href="#orgc3d4f10">Espaçamento Longitudinal Máximo entre estribos</a></li>
+<li><a href="#org6f5001b">Espaçamento Transversal entre ramos</a></li>
+</ul></li>
+<li><a href="#org3b9529d">Armadura de suspensão</a></li>
+<li><a href="#orgaad535c">Armadura Ligação Banzo Alma</a></li>
+<li><a href="#org73dc957">Translação do Diagrama</a></li>
+<li><a href="#orgf9a8178">Translação do diagrama- Dispensa da Armadura Longitudinal de Tração</a></li>
+<li><a href="#orgc2ea80c">Comprimento de amarração de cálculo</a></li>
+<li><a href="#orgea462e2">Comprimento de amarração de referência</a></li>
+<li><a href="#org869b8b6">Tensão de rotura da aderência</a>
+<ul>
+<li><a href="#org6c7d1a5">Valor de cálculo da resistência do betão à tração</a></li>
+<li><a href="#org9767e69">Valor de cálculo da tensão na secção do varão a partir da qual é medido o comprimento de amarração</a></li>
+<li><a href="#org4804ab2">Comprimento mínimo de amarração</a></li>
+<li><a href="#org284aef6">Comprimento de Sobreposição</a></li>
+</ul></li>
+<li><a href="#org10745f6">Torção</a></li>
+<li><a href="#orgc15ff20">Tensão em secções de paredes finas - Não Fendilhada</a></li>
+<li><a href="#orgb85d95b">Tensões em secções fendilhadas segundo EC2</a>
+<ul>
+<li><a href="#org513db4c">Tensão tangencial numa parede de uma secção}</a></li>
+<li><a href="#orgff2ece7">Esforço tangencial numa parede de uma secção <span class="math inline">\(V_{Ed,i}\)</span></a></li>
+<li><a href="#orgd258a3a">Coeficiente de Redução da Resistência do betão fendilhado por esforço transverso <span class="math inline">\(\nu\)</span></a></li>
+<li><a href="#org8ccf4e4">Verificação da resistência máxima de um elemento sujeito aos esforços de torção e transverso</a></li>
+<li><a href="#org7e725c6">Área da secção transversal de armadura longitudinal de torção</a></li>
+<li><a href="#org6c20dd5">Armadura Transversal de Torção <span class="math inline">\(\frac{A_{st}}{S}\)</span></a></li>
+<li><a href="#orgfd4bfcd">Máximo Espaçamento Longitudinal das Cintas de Torção<span class="math inline">\(S_{e,max}\)</span></a></li>
+</ul></li>
+<li><a href="#orge94820c">Fendilhação</a></li>
+<li><a href="#org5f4b9b4">Controlo da Fendilhação sem cálculo Diret</a></li>
+<li><a href="#org76799e3">Pré-Dimensionamento</a></li>
+<li><a href="#orgd8ab2ad">Momento de Fendilhação - Momento Critico <span class="math inline">\(M_{cr}\)</span></a></li>
+<li><a href="#orge78e3d6">Cálculo da Largura das Fendas <span class="math inline">\(w_{k}\)</span></a>
+<ul>
+<li><a href="#org47b0848">Cálculo de <span class="math inline">\(\varepsilon_{sm}\)</span> e de <span class="math inline">\(\varepsilon_{cm}\)</span> (extensão média relativa entre o aço e o betão):</a></li>
+<li><a href="#org788d4ed">Cálculo da Armadura mínima para controlo da Fendilhação <span class="math inline">\(A_{S,min}\)</span></a></li>
+<li><a href="#org175dafa">Verificação do E.Limite da Largura da Fenda</a></li>
+</ul></li>
+<li><a href="#orgee76658">Deformação</a></li>
+<li><a href="#org8e26093">Pré-Dimensionamento da Flecha a Longo Prazo</a></li>
+<li><a href="#org2421b66">Controlo de Deformação limitando a relação vão/altura</a></li>
+<li><a href="#org242e3ff">Verificação das flechas por meio de Cálculo Direto</a></li>
+<li><a href="#orgb2756d2">Cálculo da Flecha Instântanea para (<span class="math inline">\(t=0\)</span>) e (<span class="math inline">\(\rho=0\)</span>):</a>
+<ul>
+<li><a href="#org9fe101a">Cálculo da Flecha a Longo Prazo (<span class="math inline">\(t=\infty\)</span>); (<span class="math inline">\(\varphi_{t=\infty}=2,4\)</span>)</a></li>
+</ul></li>
+<li><a href="#orgd0c21e7">Fluência e Retração</a></li>
+<li><a href="#orgfa98263">Fluência</a></li>
+<li><a href="#org16e73ee">Deformação por fluência para <span class="math inline">\(t=0\)</span></a>
+<ul>
+<li><a href="#orgb53b745">Determinação da Deformação a Longo Prazo</a></li>
+</ul></li>
+<li><a href="#org6110ad9">Retracção</a></li>
+<li><a href="#org95ea900">Flexão Composta e Desviada</a></li>
+<li><a href="#org41f8ab9">Flexão Desviada</a>
+<ul>
+<li><a href="#org018d60d">Esforço Normal Reduzido</a></li>
+<li><a href="#org2c51be7">Momentos Flectores Reduzidos</a></li>
+<li><a href="#org2101098">Percentagem Mecânica de Armadura <span class="math inline">\(\omega_{total}\)</span></a></li>
+<li><a href="#org242b604">Tabelas</a></li>
+<li><a href="#orgbc18d6e">Verificação da condição de segurança</a></li>
+</ul></li>
+<li><a href="#org066fcfe">Pilares</a></li>
+<li><a href="#org111307d">Cálculo de Esbelteza</a>
+<ul>
+<li><a href="#org0a44064">Raio de Giração da Secção de Betão não fendilhada</a></li>
+<li><a href="#orgfe8335c">Esbelteza de um Pilar</a></li>
+<li><a href="#orgd76f520">Comprimento efetivo de elementos comprimidos de pórticos regulares</a></li>
+<li><a href="#org86f6378">Flexibilidade Relativa dos Encastramentos parciais das extremidades:</a></li>
+<li><a href="#org5097d83">Critério de Esbelteza para elementos (pilares) isolados</a></li>
+</ul></li>
+<li><a href="#org94c5b26">Momento Flector de Cálculo <span class="math inline">\(M_{Ed}\)</span></a>
+<ul>
+<li><a href="#org8dfa2e7">Momento tendo em conta os efeitos de 1º Ordem e as Imperfeições geométricas</a></li>
+<li><a href="#orga5cbcb1">Imperfeições geométricas</a></li>
+</ul></li>
+<li><a href="#org964f595">Excentricidade de 1ª Ordem <span class="math inline">\(e_{i}\)</span></a></li>
+<li><a href="#org74f1324">Excentricidade de 2ª Ordem, <span class="math inline">\(e_{2}\)</span></a></li>
+</ul></li>
+</ul>
+<p>Fórmulas, segundo o Euro-Código, para a serem utilizadas na análise e dimensionamento de vigas em betão armado.</p>
+<p><a id="org5678445"></a></p>
+<div id="flexao" class="section level1">
+<h1>Flexão</h1>
+<p><a id="org4490d8f"></a></p>
+<div id="momento-flector-reduzido" class="section level2">
+<h2>Momento Flector Reduzido</h2>
+<span class="math display">\[\begin{equation}
+{ \mu  }=\frac { { M }_{ rd } }{ b\times { d }^{ 2 }\times { f }_{ cd } }  
+\end{equation}\]</span>
+<p><a id="orgd0c3ced"></a></p>
+</div>
+<div id="percentagem-mecanica-de-armadura" class="section level2">
+<h2>Percentagem Mecânica de Armadura</h2>
+<span class="math display">\[\begin{equation} 
+\varpi =\frac { { A }_{ S } }{ b\times d } \times \frac { { f }_{ yd } }{ { f }_{ cd } }  
+  \end{equation}\]</span>
+<p><a id="orgae165d9"></a></p>
+</div>
+<div id="area-de-armadura" class="section level2">
+<h2>Área de Armadura</h2>
+<span class="math display">\[\begin{equation} { A }_{ s }=\varpi \times b\times d\times \frac { { f }_{ cd } }{ { f }_{ yd } }  
+\end{equation}\]</span>
+<p>Sendo <span class="math inline">\({f}_{yd}\)</span> o valor de cálculo da tensão de cedência à tração do aço; <span class="math inline">\({f}_{cd}\)</span> o valor de cálculo da tensão de rotura do betão à compressão.</p>
+<p><a id="orgd9a6118"></a></p>
+</div>
+<div id="posicao-da-linha-neutra" class="section level2">
+<h2>Posição da Linha Neutra</h2>
+<span class="math display">\[\begin{equation}   
+\alpha=\frac{x}{d} 
+\end{equation}\]</span>
+<p><a id="org0f947ce"></a></p>
+</div>
+<div id="area-minima-de-armadura" class="section level2">
+<h2>Área Mínima de Armadura</h2>
+<span class="math display">\[\begin{equation} 
+{ A }_{ s,min }=0.26\times { b }_{ t }\times d\times \frac { { f }_{ ctm } }{ { f }_{ yk } }  
+\end{equation}\]</span>
+<p>Sendo <span class="math inline">\({b}_{t}\)</span> a largura  da zona tracionada em flexão.</p>
+<p><a id="org042fabe"></a></p>
+</div>
+<div id="area-maxima-de-armadura" class="section level2">
+<h2>Área Máxima de Armadura</h2>
+<span class="math display">\[\begin{equation} 
+{ A }_{ s,max }=0.04\times { A }_{ C } 
+\end{equation}\]</span>
+<p><a id="orgd84ff2d"></a></p>
+</div>
+<div id="armadura-longitudinal-superior-nos-apoios-de-extremidade" class="section level2">
+<h2>Armadura Longitudinal Superior nos apoios de Extremidade</h2>
+<span class="math display">\[\begin{equation}
+{ A }_{ s,apoio }^{ - }= max\left\{ { A }_{ s,min };\quad 0.15\times { A }_{ s,vao }^{ + } \right\} 
+\end{equation}\]</span>
+<p><a id="orgd1e1596"></a></p>
+</div>
+</div>
+<div id="transverso" class="section level1">
+<h1>Transverso</h1>
+<p><a id="org313ea79"></a></p>
+<div id="verificacao-de-esmagamento-das-bielas" class="section level2">
+<h2>Verificação de Esmagamento das Bielas</h2>
+<span class="math display">\[\begin{equation} 
+  { V }_{ rd,max }=\frac { z\times { b }_{ w }\times { D }_{ 1 }\times f_{ cd } }{ \cos { \theta  } +\tan { \theta  }  }  \end{equation}\]</span>
+<p><a id="orgd13e655"></a></p>
+</div>
+<div id="coeficiente-de-reducao-da-resistencia-do-betao-fendilhado-por-esforco-transverso" class="section level2">
+<h2>Coeficiente de Redução da Resistência do Betão Fendilhado por esforço transverso</h2>
+<p>EC2, página 98</p>
+<span class="math display">\[\begin{equation} 
+{ D }_{ 1 }=\upsilon =0.6\times \left\lfloor 1-\frac { { f }_{ ck } }{ 250 }  \right\rfloor  
+\end{equation}\]</span>
+<p><a id="org628c7e4"></a></p>
+</div>
+<div id="verificacao-de-compressao-na-alma" class="section level2">
+<h2>Verificação de Compressão na Alma</h2>
+<p>Nota: Forma alternativa a equação 8 EC2 página 98</p>
+<span class="math display">\[\begin{equation} 
+{\sigma  }_{ c }^{ max }={ \alpha  }_{ cw }\times \upsilon \times { f }_{ cd} 
+\end{equation}\]</span>
+<p><span class="math inline">\({ \alpha }_{ cw }\)</span> toma o valor de 1</p>
+<p><a id="org2f99ceb"></a></p>
+</div>
+<div id="armadura-minima" class="section level2">
+<h2>Armadura Mínima</h2>
+<p>Área miníma de armadura transversal, pelo EC2:</p>
+<span class="math display">\[\begin{equation} 
+{ \rho  }_{ w,min }=\frac { 0.08\times \sqrt { { f }_{ ck } }  }{ { f }_{ yk } }  
+\end{equation}\]</span>
+<p>sendo a área de armadura miníma:</p>
+<span class="math display">\[\begin{equation} 
+{ (\frac { { A }_{ sw } }{ S } ) }_{ min }={ \rho  }_{ w,min }\times { b }_{ w }\times \sin { \alpha  }  
+\end{equation}\]</span>
+<p><a id="org728c248"></a></p>
+</div>
+<div id="esforco-transverso-resistente-para-armadura-minima" class="section level2">
+<h2>Esforço Transverso Resistente para Armadura mínima</h2>
+<span class="math display">\[\begin{equation} 
+{ V }_{ rd,s }={ (\frac { { A }_{ sw } }{ S } ) }_{ min }\times Z\times { f }_{ ywd }\times \cot { \theta  }  
+\end{equation}\]</span>
+<p><a id="org28fe3c2"></a></p>
+</div>
+<div id="tensao-maxima-na-biela-de-compressao" class="section level2">
+<h2>Tensão Máxima na Biela de Compressão</h2>
+<span class="math display">\[\begin{equation} 
+{ \sigma  }_{ c,max }=\frac { { V }_{ sd } }{ z\times { b }_{ w } } \times (\cot { \theta  } +\tan { \theta ) }  
+\end{equation}\]</span>
+<p>Também é necessário considerar que a máxima tensão permitida no betão tem que ser inferior a 60 persento de <span class="math inline">\(f_cd\)</span></p>
+<span class="math display">\[\begin{equation} 
+{ \sigma  }_{ c,max }\quad \le \quad 0.6\times { f }_{ cd } 
+\end{equation}\]</span>
+<p><a id="orgb2c2e8a"></a></p>
+</div>
+<div id="maxima-compressao-apoio" class="section level2">
+<h2>Máxima Compressão Apoio</h2>
+<p>Partindo das equações 11 e 12</p>
+<span class="math display">\[\begin{equation} { \sigma  }_{ c,apoio }=\frac { R }{ { A }_{ apoio } } \le 0.6{ \times f }_{ cd } 
+\end{equation}\]</span>
+<p>em que <span class="math inline">\(R\)</span> é a resultante da combinação de esforços actuantes no apoio</p>
+<p><a id="orgd7fcebf"></a></p>
+</div>
+<div id="armadura-transversal-nos-apoios" class="section level2">
+<h2>Armadura Transversal nos Apoios}</h2>
+<span class="math display">\[\begin{equation} 
+{ V }_{ rd,s }={ (\frac { { A }_{ sw } }{ S } ) }\times Z\times { f }_{ ywd }\times \cot { \theta  }  
+\end{equation}\]</span>
+<p>Alterando a equação anterior, metendo em evidência <span class="math inline">\({ A }_{ sw }\)</span></p>
+<span class="math display">\[\begin{equation} 
+{ (\frac { { A }_{ sw } }{ S } ) }=\frac { { V }_{ sd }\times (z\times \cot { \theta  } ) }{ z\times \cot { \theta  } \times { f }_{ ywd } }  
+\end{equation}\]</span>
+<p>sendo <span class="math inline">\({f}_{ywd}\)</span> o valor de cálculo da tensão de cedência das armaduras de esforço transverso. EC2, pag100</p>
+<p><a id="org69adce5"></a></p>
+</div>
+<div id="espacamento-de-armadura-esforco-transverso" class="section level2">
+<h2>Espaçamento de Armadura Esforço Transverso</h2>
+<p><a id="orgc3d4f10"></a></p>
+<div id="espacamento-longitudinal-maximo-entre-estribos" class="section level3">
+<h3>Espaçamento Longitudinal Máximo entre estribos</h3>
+<span class="math display">\[\begin{equation} 
+{S}_{t,max}= 0.75d \times(1+\cot{\alpha})&gt;0.3m 
+\end{equation}\]</span>
+<p><a id="org6f5001b"></a></p>
+</div>
+<div id="espacamento-transversal-entre-ramos" class="section level3">
+<h3>Espaçamento Transversal entre ramos</h3>
+<p>Existem duas condições para o espaçamento transversal entre ramos. A primeira:</p>
+<span class="math display">\[\begin{equation} 
+{ S }_{ t,max }\quad \le \quad 0.75\times d 
+\end{equation}\]</span>
+<p>e a segunda condição:</p>
+<span class="math display">\[\begin{equation} 
+{ S }_{ t,max }\quad \le \quad 600\quad mm 
+\end{equation}\]</span>
+<p><a id="org3b9529d"></a></p>
+</div>
+</div>
+<div id="armadura-de-suspensao" class="section level2">
+<h2>Armadura de suspensão</h2>
+<span class="math display">\[\begin{equation} 
+{ (\frac { A }{ S } ) }_{ suspensao }=\frac { F }{ { f }_{ yd } }  
+\end{equation}\]</span>
+<p>Sendo <span class="math inline">\(F\)</span> o somatório das cargas permanentes e das cargas temporárias</p>
+<p>Não esquecendo que:</p>
+<span class="math display">\[\begin{equation} 
+{ (\frac { { A }_{ sw } }{ S } ) }_{ transverso }+{ (\frac { { A }_{ sw } }{ S } ) }_{ suspensao }={ (\frac { { A }_{ sw } }{ S } ) }_{ Total } 
+\end{equation}\]</span>
+<p><a id="orgaad535c"></a></p>
+</div>
+<div id="armadura-ligacao-banzo-alma" class="section level2">
+<h2>Armadura Ligação Banzo Alma</h2>
+<p>pag173, EC2</p>
+<span class="math display">\[\begin{equation} 
+{ (\frac { { A }_{ sf } }{ { S }_{ s } } ) }=\frac { { V }_{ ed } }{ 2\times z\times \cot { { \theta  }_{ f }\times { f }_{ yd } }  }  
+\end{equation}\]</span>
+<p>se ${α}<sub>f</sub> $ (banzo) for igual a <span class="math inline">\(\alpha\)</span> da alma, então:</p>
+<span class="math display">\[\begin{equation} 
+{ (\frac { { A }_{ sf } }{ { S }_{ f } } ) }=\frac { 1 }{ 2 } \times { (\frac { { A }_{ sw } }{ S } ) } 
+\end{equation}\]</span>
+<p><a id="org73dc957"></a></p>
+</div>
+<div id="translacao-do-diagrama" class="section level2">
+<h2>Translação do Diagrama</h2>
+<p>Comprimento para Dispensa de Armadura Longitudinal de tração} Referir à página 173 do EC2 para mais informações</p>
+<span class="math display">\[\begin{equation} 
+  { X }_{ 1 }^{ &#39; }={ X }_{ 1 }-al-{ l }_{ bd } 
+  \end{equation}\]</span>
+<p><a id="orgf9a8178"></a></p>
+</div>
+<div id="translacao-do-diagrama--dispensa-da-armadura-longitudinal-de-tracao" class="section level2">
+<h2>Translação do diagrama- Dispensa da Armadura Longitudinal de Tração</h2>
+<p>Referir à página 173 do EC2 para mais informações</p>
+<span class="math display">\[\begin{equation} 
+al=\frac { z\times (\cot { \theta  } -\cot { \alpha  } ) }{ 2 } 
+\end{equation}\]</span>
+<p><a id="orgc2ea80c"></a></p>
+</div>
+<div id="comprimento-de-amarracao-de-calculo" class="section level2">
+<h2>Comprimento de amarração de cálculo</h2>
+<span class="math display">\[\begin{equation} 
+l_{ b,req }={ l }_{ bd }={ \alpha  }_{ 1 }\times { \alpha  }_{ 2 }\times { \alpha  }_{ 3 }\times { \alpha  }_{ 4 }\times { \alpha  }_{ 5 }\times { l }_{ b,req }\ge { l }_{ b,min } 
+\end{equation}\]</span>
+<p><a id="orgea462e2"></a></p>
+</div>
+<div id="comprimento-de-amarracao-de-referencia" class="section level2">
+<h2>Comprimento de amarração de referência</h2>
+<span class="math display">\[\begin{equation} 
+l_{ bd,req }=\frac { \theta  }{ 4 } \times \frac { { \sigma  }_{ sd } }{ { f }_{ bd } }  
+\end{equation}\]</span>
+<p><a id="org869b8b6"></a></p>
+</div>
+<div id="tensao-de-rotura-da-aderencia" class="section level2">
+<h2>Tensão de rotura da aderência</h2>
+<span class="math display">\[\begin{equation} 
+{ f }_{ bd }=2.25\times { \eta  }_{ 1 }\times { \eta  }_{ 2 }\times { f }_{ ctd } 
+\end{equation}\]</span>
+<p>em que <span class="math inline">\(\eta_{ 1 }\)</span> e <span class="math inline">\(\eta_{2}\)</span> são o coeficiente que relaciona com as condições de aderência e com a posição do varão durante a betonagem.</p>
+<p>Ver 8.4.2,EC2, pag 151, para obter os valores que <span class="math inline">\(\eta\)</span> pode ter.</p>
+<p><a id="org6c7d1a5"></a></p>
+<div id="valor-de-calculo-da-resistencia-do-betao-a-tracao" class="section level3">
+<h3>Valor de cálculo da resistência do betão à tração</h3>
+<p>EC2, 3.1.6(2), página 42</p>
+<span class="math display">\[\begin{equation} 
+{ f }_{ cd }=\frac { { \alpha  }_{ cc }\times { f }_{ ck } }{ { \gamma  }_{ c } } \Longrightarrow \frac { { f }_{ ck } }{ { \gamma  }_{ c } }  
+\end{equation}\]</span>
+<p>Simplificando, o valor de <span class="math inline">\(f_{cd}\)</span> pode ser considerado o valor de <span class="math inline">\(f_{ck}\)</span> a dividir pelo coeficiente parcial de segurança relativo ao betão</p>
+<p><a id="org9767e69"></a></p>
+</div>
+<div id="valor-de-calculo-da-tensao-na-seccao-do-varao-a-partir-da-qual-e-medido-o-comprimento-de-amarracao" class="section level3">
+<h3>Valor de cálculo da tensão na secção do varão a partir da qual é medido o comprimento de amarração</h3>
+<p>EC2, 8.4.3.(2), pag 152</p>
+<span class="math display">\[\begin{equation} 
+{ \sigma  }_{ sd }=\frac { { A }_{ s,req } }{ { A }_{ s,prov } } \times { f }_{ yd } 
+\end{equation}\]</span>
+<p><a id="org4804ab2"></a></p>
+</div>
+<div id="comprimento-minimo-de-amarracao" class="section level3">
+<h3>Comprimento mínimo de amarração</h3>
+<p>EC2, 8.4.4, pag 152</p>
+<span class="math display">\[\begin{equation} 
+{ l }_{ b,min }\le  (0,3\times { l }_{ b,req } \\ ;\quad  10\phi  \\ ;\quad  100 mm ) 
+\end{equation}\]</span>
+<ol style="list-style-type: decimal">
+<li><p>Amarração de armaduras inferiores em apoios extremos}</p>
+<p>EC2, 9.2.1.4, pag 173</p></li>
+<li><p>Valor mínimo da área de armadura}</p>
+<span class="math display">\[\begin{equation} 
+{ A }_{ s,apoio }^{ + }\ge { \beta  }_{ 2 }\times { A }_{ s,prov } 
+\end{equation}\]</span>
+<p>Tomando $ β<sub>2</sub> $ o valor de 0,25</p></li>
+<li><p>Força de tracção a amarração</p>
+<p>EC2, 9.2.1.4.(2), pag173</p>
+<span class="math display">\[\begin{equation} 
+{ F }_{ ed }=\left\lceil { V }_{ ed } \right\rceil \times \frac { al }{ z } \times { N }_{ ed } 
+\end{equation}\]</span></li>
+<li><p>Área efectiva de amarração</p>
+<span class="math display">\[\begin{equation} 
+{ A }_{ s,apoio }^{ effect }=\frac { { F }_{ ed } }{ { f }_{ yd } }  
+\end{equation}\]</span></li>
+</ol>
+<p><a id="org284aef6"></a></p>
+</div>
+<div id="comprimento-de-sobreposicao" class="section level3">
+<h3>Comprimento de Sobreposição</h3>
+<p>EC2, 8.7.3.(1), pag 158</p>
+<span class="math display">\[\begin{equation} 
+{ l }_{ 0 }={ \alpha  }_{ 6 }\times { l }_{ b,req }\ge { l }_{ 0,mim } 
+\end{equation}\]</span>
+<ol style="list-style-type: decimal">
+<li><p>Valor do coeficiente <span class="math inline">\(\alpha_{6}\)</span></p>
+<p>O valor do coeficiente <span class="math inline">\(\alpha\)</span> é obtido do Quadro 8.3, da página 158, do EC2.</p></li>
+<li><p>Comprimento de sobreposição mínimo</p>
+<p>EC2, 8.7.3.(1), pag 158</p>
+<span class="math display">\[\begin{equation} 
+{ l }_{ 0,mim }\ge ( 0.3\times { \alpha  }_{ 6 }\times { l }_{ b,req };\quad  15\phi ;\quad 200\quad mm ) 
+\end{equation}\]</span></li>
+</ol>
+<p><a id="org10745f6"></a></p>
+</div>
+</div>
+</div>
+<div id="torcao" class="section level1">
+<h1>Torção</h1>
+<p><a id="orgc15ff20"></a></p>
+<div id="tensao-em-seccoes-de-paredes-finas---nao-fendilhada" class="section level2">
+<h2>Tensão em secções de paredes finas - Não Fendilhada</h2>
+<p>Fórmula geral - <span class="math inline">\(\tau_{medio}\)</span></p>
+<span class="math display">\[\begin{equation}
+\tau_{medio}=\frac{T}{2\times e\times A_{media}}
+\end{equation}\]</span>
+<p>em que:</p>
+<p><span class="math inline">\(\tau_{medio}=\)</span> torção média que atua sobre a espessura <span class="math inline">\(e\)</span></p>
+<p><span class="math inline">\(T=\)</span> Torção interna resultante que atua na secção transversal. Seu valor é determinado pelo método das secções e pelas equações de equilíbrio</p>
+<p><span class="math inline">\(e=\)</span> espessura da parede da secção oca eficaz, fictícia, contida na secção real, aonde <span class="math inline">\(\tau_{medio}\)</span> é determinado</p>
+<p><span class="math inline">\(A_{m}\)</span> = Área média</p>
+<p><a id="orgb85d95b"></a></p>
+</div>
+<div id="tensoes-em-seccoes-fendilhadas-segundo-ec2" class="section level2">
+<h2>Tensões em secções fendilhadas segundo EC2</h2>
+<p><a id="org513db4c"></a></p>
+<div id="tensao-tangencial-numa-parede-de-uma-seccao" class="section level3">
+<h3>Tensão tangencial numa parede de uma secção}</h3>
+<p>EC2 6.3.2 pág 107</p>
+<span class="math display">\[\begin{equation}
+\tau_{t,i}\times t_{ef,i}=\frac{T_{Ed}}{2\times A_{k}}
+\end{equation}\]</span>
+<p>em que:</p>
+<p><span class="math inline">\(A_{k}=\)</span> área limitada pelas linhas médias da parede, incluindo áreas ocas interiores <span class="math inline">\(\tau_{t,i}=\)</span> tensão tangencial de torção na parede <span class="math inline">\(i\)</span></p>
+<p><span class="math inline">\(t_{ef,i}=\)</span> espessura eficaz da parede <span class="math inline">\(T_{Ed}=\)</span> valor de cálculo do momento torsor</p>
+<p><a id="orgff2ece7"></a></p>
+</div>
+<div id="esforco-tangencial-numa-parede-de-uma-seccao-v_edi" class="section level3">
+<h3>Esforço tangencial numa parede de uma secção <span class="math inline">\(V_{Ed,i}\)</span></h3>
+<p>EC2 6.3.2 pág 107</p>
+<span class="math display">\[\begin{equation}
+V_{Ed,i}=\tau_{t,i}\times t_{ef,i}\times z_{i}
+\end{equation}\]</span>
+<p>em que:</p>
+<p><span class="math inline">\(z_{i}=\)</span> comprimento da parede <span class="math inline">\(i\)</span> , definido pela distância entre os pontos de interceção de paredes adjacentes</p>
+<ol style="list-style-type: decimal">
+<li><p>Valor de Cálculo do Momento Torsor Resistente <span class="math inline">\(T_{Rd,max}\)</span>}</p>
+<p>Verificação de Máximo Momento Torsor que pode ser aplicado sem que exista esmagamento do betão.</p>
+<p>EC2 6.3.2(4) pág 108</p>
+<span class="math display">\[\begin{equation}
+T_{Rd,max}=2\times\alpha_{cw}\times\nu\times f_{cd}\times A_{media}\times t_{ef,i}\times\sin\theta\times\cos\theta
+\end{equation}\]</span>
+<p><span class="math inline">\(\alpha_{cw}=\)</span> coeficiente que tem em conta o estado de tensão do banzo comprimido - EC2, pág 100 - normalmente tomando o valor de 1 nos cálculos.</p></li>
+</ol>
+<p><a id="orgd258a3a"></a></p>
+</div>
+<div id="coeficiente-de-reducao-da-resistencia-do-betao-fendilhado-por-esforco-transverso-nu" class="section level3">
+<h3>Coeficiente de Redução da Resistência do betão fendilhado por esforço transverso <span class="math inline">\(\nu\)</span></h3>
+<p>EC2 6.2.2 (5) pág 98</p>
+<span class="math display">\[\begin{equation}
+\nu=0,6\times\left[1-\frac{f_{ck}}{250}\right]
+\end{equation}\]</span>
+<p><a id="org8ccf4e4"></a></p>
+</div>
+<div id="verificacao-da-resistencia-maxima-de-um-elemento-sujeito-aos-esforcos-de-torcao-e-transverso" class="section level3">
+<h3>Verificação da resistência máxima de um elemento sujeito aos esforços de torção e transverso</h3>
+<p>EC2 6.3.2.(3), pág 108</p>
+<span class="math display">\[\begin{equation}
+\frac{T_{Ed}}{T_{Rd,max}}+\frac{V_{Ed}}{V_{Rd,max}}\leq1,0
+\end{equation}\]</span>
+<p><a id="org7e725c6"></a></p>
+</div>
+<div id="area-da-seccao-transversal-de-armadura-longitudinal-de-torcao" class="section level3">
+<h3>Área da secção transversal de armadura longitudinal de torção</h3>
+<p>EC2 6.3.2.(3), pág 108</p>
+<span class="math display">\[\begin{equation}
+A_{S,longitudinal}=\frac{T_{Ed}\times\coth\theta\times u_{ef}}{2\times A_{ef}\times f_{yd}}
+\end{equation}\]</span>
+<p>em que:</p>
+<p><span class="math inline">\(u&lt;sub&gt;ef&lt;/sub&gt;=\)</span>perímetro da Área Efetiva <span class="math inline">\(A_{ef}\)</span></p>
+<p><span class="math inline">\(\theta=\)</span> ângulo das escoras comprimidas (inclinação das bielas)</p>
+<p><a id="org6c20dd5"></a></p>
+</div>
+<div id="armadura-transversal-de-torcao-fraca_sts" class="section level3">
+<h3>Armadura Transversal de Torção <span class="math inline">\(\frac{A_{st}}{S}\)</span></h3>
+<span class="math display">\[\begin{equation}
+\frac{A_{st}}{S}=\frac{T_{sd}}{2\times A_{ef}\times\coth\theta\times f_{yd}}
+\end{equation}\]</span>
+<span class="math display">\[\begin{equation}
+\frac{A_{sw}}{S}=\frac{V_{Ed,i}}{z\times f_{ywd}\times\cot\theta}
+\end{equation}\]</span>
+<p><a id="orgfd4bfcd"></a></p>
+</div>
+<div id="maximo-espacamento-longitudinal-das-cintas-de-torcaos_emax" class="section level3">
+<h3>Máximo Espaçamento Longitudinal das Cintas de Torção<span class="math inline">\(S_{e,max}\)</span></h3>
+<span class="math display">\[\begin{equation}
+S_{e,max}\leq\begin{cases}
+\frac{u}{2}\\
+b=30cm\\
+0.75\times d\times(1+cotg\alpha)
+\end{cases}
+\end{equation}\]</span>
+<p><a id="orge94820c"></a></p>
+</div>
+</div>
+</div>
+<div id="fendilhacao" class="section level1">
+<h1>Fendilhação</h1>
+<p><a id="org5f4b9b4"></a></p>
+<div id="controlo-da-fendilhacao-sem-calculo-diret" class="section level2">
+<h2>Controlo da Fendilhação sem cálculo Diret</h2>
+<p>EC2 7.3.3.(1) (2) pág138,pág139</p>
+<blockquote>
+<p>«No caso de lajes de betão armado ou pré-esforçado de edifícios, &gt; solicitados à flexão sem tracção axial significativa, não são &gt; necessários medidas específicas para controlar a fendilhação quando a &gt; espessura total da laje não é superior a 200mm…»</p>
+</blockquote>
+<p>As regras dispostas ao longo deste capitulo, encontram-se sumarizadas no Quadro 7.2N (pág 139) que pode ser utilizado para substituir o cálculo.</p>
+<p><a id="org76799e3"></a></p>
+</div>
+<div id="pre-dimensionamento" class="section level2">
+<h2>Pré-Dimensionamento</h2>
+<p>Processo rápido de fazer o pré-dimensionamento:</p>
+<p><span class="math display">\[ W=S_{R}\times\varepsilon_{sm} \]</span></p>
+<p><span class="math display">\[ \varepsilon_{sm}=\frac{\sigma_{S}}{E_{s}} \]</span></p>
+<p><span class="math display">\[ M=F_{s}\times z=A_{s}\times\sigma_{S}\times z \]</span></p>
+<p><span class="math display">\[ z=0,9\times h \]</span></p>
+<p><a id="orgd8ab2ad"></a></p>
+</div>
+<div id="momento-de-fendilhacao---momento-critico-m_cr" class="section level2">
+<h2>Momento de Fendilhação - Momento Critico <span class="math inline">\(M_{cr}\)</span></h2>
+<span class="math display">\[\begin{equation}
+M_{cr}=f_{ct}\times\frac{I}{z}
+\end{equation}\]</span>
+<p><a id="orge78e3d6"></a></p>
+</div>
+<div id="calculo-da-largura-das-fendas-w_k" class="section level2">
+<h2>Cálculo da Largura das Fendas <span class="math inline">\(w_{k}\)</span></h2>
+<p>EC2 7.3.4 pág140</p>
+<span class="math display">\[\begin{equation}
+w_{k}=S_{t,max}\times(\varepsilon_{sm}-\varepsilon_{cm})
+\end{equation}\]</span>
+<p>em que:</p>
+<p><span class="math inline">\(S_{t,max}\)</span> = distância máxima entre fendas</p>
+<p><span class="math inline">\(&amp;epsilon;&lt;sub&gt;sm&lt;/sub&gt;\)</span>= extensão média da armadura para a combinação das acções considerada, incluindo o efeito das deformações impostas e considerando a contribuição do betão traccionado. Considera-se apenas a extensão de tracção que ocorre para além do estado de extensão nula do betão no mesmo nível.</p>
+<p><span class="math inline">\(&amp;epsilon;&lt;sub&gt;cm&lt;/sub&gt;\)</span>= extensão média no betão entre fendas</p>
+<p><a id="org47b0848"></a></p>
+<div id="calculo-de-varepsilon_sm-e-de-varepsilon_cm-extensao-media-relativa-entre-o-aco-e-o-betao" class="section level3">
+<h3>Cálculo de <span class="math inline">\(\varepsilon_{sm}\)</span> e de <span class="math inline">\(\varepsilon_{cm}\)</span> (extensão média relativa entre o aço e o betão):</h3>
+<p>EC2 7.3.4 pág141</p>
+<span class="math display">\[\begin{equation}
+\varepsilon_{sm}-\varepsilon_{cm}=\frac{\sigma_{s}-K_{t}\times\frac{f_{ct,eff}}{\rho_{p,eff}}\times(1+\alpha_{e}\times\rho_{p,eff})}{E_{s}}\geq0,6\times\frac{\sigma_{s}}{E_{s}}
+\end{equation}\]</span>
+<p>em que:</p>
+<p><span class="math inline">\(\sigma_{s}\)</span> = tensão na armadura de tracção, admitindo a secção fendilhada</p>
+<p><span class="math inline">\(\alpha_{e}\)</span> = relação <span class="math inline">\(E_{s}/E_{cm}\)</span></p>
+<p><span class="math inline">\(K_{t}\)</span> = 0,6 (acção de curta duração) ou 0,4 (acção de longa duração)</p>
+<ol style="list-style-type: decimal">
+<li><p>Cálculo de <span class="math inline">\(\rho_{p,eff}\)</span></p>
+<p>NOTA: Como alternativa a 5.21.1 e a 5.2.1.2, pode-se recorrer a tabelas e obter o resultado por interpolação</p>
+<span class="math display">\[\begin{equation}
+\rho_{p,eff}=\frac{(A_{s}+\xi_{1}^{2}\times A&#39;_{p})}{A_{e,eff}}
+\end{equation}\]</span>
+<p>em que:</p>
+<p><span class="math inline">\(A&#39;_{p}\)</span> = Área da Secção das Armaduras Pré ou Pós Tensionadas <span class="math inline">\(A&#39;_{p}\)</span> existentes em <span class="math inline">\(A_{e,eff}\)</span></p>
+<p><span class="math inline">\(A_{e,eff}\)</span> = Área de secção efetiva de betão tracionado que envolve as armaduras para betão armado ou de pré-esforço com uma altura <span class="math inline">\(h_{c,eff}\)</span></p>
+<p><span class="math inline">\(h&lt;sub&gt;e,eff&lt;/sub&gt;\)</span>= é o menor dos valores:</p>
+<span class="math display">\[\begin{equation}
+h_{e,eff}=_{min}\begin{cases}
+2,5\times(h-d)\\
+\frac{(h-x)}{3}\\
+\frac{h}{2}
+\end{cases}
+\end{equation}\]</span></li>
+<li><p>Coeficiente Corrigido da Resistência de aderência <span class="math inline">\(\xi_{1}\)</span></p>
+<p>EC2 7.3.2.(3) pág 137</p>
+<span class="math display">\[\begin{equation}
+\xi_{1}=\sqrt{\xi\times\frac{\phi_{s}}{\phi_{p}}}
+\end{equation}\]</span>
+<p>em que:</p>
+<p><span class="math inline">\(\xi\)</span> = relação de resistência de aderência das armaduras de pré-esforço e para betão armado, sendo necessário recorrer ao Quadro 6.2 (pág128) do EC2 6.8.2.</p>
+<p><span class="math inline">\(&amp;phi;&lt;sub&gt;s&lt;/sub&gt;\)</span>= maior diâmetro dos varões das armaduras de betão armado</p>
+<p><span class="math inline">\(&amp;phi;&lt;sub&gt;p&lt;/sub&gt;\)</span>= diâmetro equivalente das armaduras de pré-esforço (ver pag127 e 128 do EC2 6.8.2.(2))</p></li>
+</ol>
+<p><a id="org788d4ed"></a></p>
+</div>
+<div id="calculo-da-armadura-minima-para-controlo-da-fendilhacao-a_smin" class="section level3">
+<h3>Cálculo da Armadura mínima para controlo da Fendilhação <span class="math inline">\(A_{S,min}\)</span></h3>
+<p>EC2 7.3.2.(2) pág 136</p>
+<span class="math display">\[\begin{equation}
+A_{s,min}=K_{c}\times K\times f_{ct,eff}\times\frac{A_{ct}}{\sigma_{s}}
+\end{equation}\]</span>
+<p>em que:</p>
+<p><span class="math inline">\(A_{s,min}\)</span> = área de armadura mínima para betão armado na zona tracionada</p>
+<p><span class="math inline">\(A_{ct}\)</span> = área de betão tracionado</p>
+<p><span class="math inline">\(\sigma_{s}\)</span> = valor absoluto da tensão máxima admissível nas armaduras imediatamente depois da formação da fenda</p>
+<p><span class="math inline">\(f_{ct,eff}\)</span> = valor médio da resistência do betão à tracção. Em geral, considerar <span class="math inline">\(f_{ct,eff}=f_{ctm}\)</span></p>
+<p><span class="math inline">\(K\)</span> = coeficiente que considera o efeito das tensões não uniformes auto-equilibradas alma:</p>
+<p><span class="math inline">\(k=1,0\)</span> para almas com <span class="math inline">\(h\leq300mm\)</span> ou para banzos com larguras inferiores a <span class="math inline">\(300mm\)</span></p>
+<p><span class="math inline">\(k=0,65\)</span> para almas com <span class="math inline">\(h\geq800mm\)</span> ou para banzos com larguras superiores a <span class="math inline">\(800mm\)</span></p>
+<p>Interpolação para valores intermédios</p>
+<ol style="list-style-type: decimal">
+<li><p>Coeficiente que relaciona a distribuição de tensões na secção <span class="math inline">\(K_{c}\)</span></p>
+<p>EC2 7.3.2.(2) pág 136</p>
+<p>Para Tracção simples:</p>
+<p><span class="math display">\[ K_{c}=1,0 \]</span></p>
+<p>Para flexão ou flexão composta com esforços normais, em secção rectangular:</p>
+<span class="math display">\[\begin{equation}
+K_{c}=0.4\times\left[1-\frac{\sigma_{c}}{K_{1}\times(\frac{h}{h^{*}})\times f_{ct,eff}}\right]\leq1,0
+\end{equation}\]</span>
+<p>Para banzos de secções em caixão e de secções em T:</p>
+<span class="math display">\[\begin{equation}
+K_{c}=0,9\times\frac{F_{cr}}{A_{ct}\times f_{ct,eff}}\geq0,5
+\end{equation}\]</span>
+<p>em que:</p>
+<p><span class="math inline">\(h^{*}=h\)</span> para <span class="math inline">\(h&lt;1,0m\)</span></p>
+<p><span class="math inline">\(h^{*}=1,0m\)</span> para <span class="math inline">\(h\geq1,0m\)</span></p>
+<p><span class="math inline">\(K_{1}\)</span> = efeitos dos esforços normais na distribuição da tensão:</p>
+<p><span class="math inline">\(K_{1}=1,5\)</span> se <span class="math inline">\(N_{Ed}\)</span> for um esforço de compressão</p>
+<p><span class="math inline">\(K_{1}=\frac{2\times k^{*}}{3\times h}\)</span> se <span class="math inline">\(N_{Ed}\)</span> for um esforço de tracção</p>
+<p>Tensão média do betão <span class="math inline">\(\sigma_{c}\)</span>:</p>
+<span class="math display">\[\begin{equation}
+\sigma_{c}=\frac{N_{Ed}}{b\times h}
+\end{equation}\]</span></li>
+</ol>
+<p><a id="org175dafa"></a></p>
+</div>
+<div id="verificacao-do-e.limite-da-largura-da-fenda" class="section level3">
+<h3>Verificação do E.Limite da Largura da Fenda</h3>
+<span class="math display">\[\begin{equation}
+W_{k}\leq W_{max}
+\end{equation}\]</span>
+<p><a id="orgee76658"></a></p>
+</div>
+</div>
+</div>
+<div id="deformacao" class="section level1">
+<h1>Deformação</h1>
+<p><a id="org8e26093"></a></p>
+<div id="pre-dimensionamento-da-flecha-a-longo-prazo" class="section level2">
+<h2>Pré-Dimensionamento da Flecha a Longo Prazo</h2>
+<span class="math display">\[\begin{equation}
+\alpha_{\infty}\simeq(3....5)\times\alpha_{c}
+\end{equation}\]</span>
+<p><a id="org2421b66"></a></p>
+</div>
+<div id="controlo-de-deformacao-limitando-a-relacao-vaoaltura" class="section level2">
+<h2>Controlo de Deformação limitando a relação vão/altura</h2>
+<p>EC2 7.4.2.(2) pág 144</p>
+<span class="math display">\[\begin{equation}
+\rho\leq\rho_{0}\Rightarrow\frac{l}{d}=K\times\left[11+1,5\times\sqrt{f_{ck}}\times\frac{\rho_{0}}{\rho}+3,2\times\sqrt{f_{ck}}\times(\frac{\rho_{0}}{\rho}-1)^{\frac{3}{2}}\right]
+\end{equation}\]</span>
+<span class="math display">\[\begin{equation}
+\rho&gt;\rho_{0}\Rightarrow\frac{l}{d}=K\times\left[11+1,5\times\sqrt{f_{ck}}\times\frac{\rho_{0}}{\rho-\rho&#39;}+\frac{1}{12}\times\sqrt{f_{ck}}\times\sqrt{\frac{\rho&#39;}{\rho_{0}}}\right]
+\end{equation}\]</span>
+<p>em que:</p>
+<ul>
+<li><span class="math inline">\(\frac{l}{d}\)</span> é o valor limite da relação vão/altura</li>
+<li><span class="math inline">\(k\)</span> é o coeficiente que tem em conta os diferentes sistemas estruturais</li>
+</ul>
+<p>Obtido do Quadro 7.4N, EC2 7.4.2 (pág 145)</p>
+<p><span class="math inline">\(\rho_{0}\)</span> é a taxa de armadura de referência <span class="math display">\[ \rho_{0}=10^{-3} \times \sqrt {f_{ck}} \]</span></p>
+<p><span class="math inline">\(\rho\)</span> é a taxa de armadura de tracção necessária a meio vão (ou no apoio no caso de consolas) para equilibrar o momento devido às acções de cálculo <span class="math display">\[ \rho=\frac{A_{S,calculo}}{b\times d} \]</span></p>
+<p><span class="math inline">\(\rho&#39;\)</span> é a taxa de armadura necessária a meio vão (ou no apoio no caso de consolas) para equilibrar o momento devido às acções de cálculo</p>
+<ul>
+<li><span class="math inline">\(\rho&#39;=0\)</span> , para vigas simplesmente armadas</li>
+</ul>
+<p><a id="org242e3ff"></a></p>
+</div>
+<div id="verificacao-das-flechas-por-meio-de-calculo-direto" class="section level2">
+<h2>Verificação das flechas por meio de Cálculo Direto</h2>
+<p>EC2 7.4.3 (pág 146)</p>
+<span class="math display">\[\begin{equation}
+a_{\infty}\leq a_{max}
+\end{equation}\]</span>
+<p>em que,</p>
+<ul>
+<li><span class="math inline">\(a_{\infty}\)</span> é a flecha a longo prazo</li>
+<li><span class="math inline">\(a_{max}\)</span> é a flecha máxima</li>
+</ul>
+<p><a id="orgb2756d2"></a></p>
+</div>
+<div id="calculo-da-flecha-instantanea-para-t0-e-rho0" class="section level2">
+<h2>Cálculo da Flecha Instântanea para (<span class="math inline">\(t=0\)</span>) e (<span class="math inline">\(\rho=0\)</span>):</h2>
+<span class="math display">\[\begin{equation}
+\alpha_{0}=\xi\times\alpha_{II}+(1-\xi)\times\alpha_{I}
+\end{equation}\]</span>
+<p>em que,</p>
+<ul>
+<li><span class="math inline">\(\alpha\)</span> é o parâmetro de deformação considerado que poderá ser,</li>
+</ul>
+<p>por exemplo, uma extensão, uma curvatura ou uma rotação. <span class="math inline">\(\alpha\)</span> é uma flecha.</p>
+<ul>
+<li><span class="math inline">\(\alpha_{I}\)</span> e <span class="math inline">\(\alpha_{II}\)</span> são valores do parâmetro calculado,</li>
+</ul>
+<p>respetivamente, para os estados não fendilhado e totalmente fendilhado</p>
+<ul>
+<li>Flecha Instantânea na Secção de Fendilhação</li>
+</ul>
+<span class="math display">\[\begin{equation}
+\alpha_{I,0}=\frac{\alpha_{c}}{\frac{I_{X}}{I_{c}}}
+\end{equation}\]</span>
+<ul>
+<li>Flecha Instantânea na Secção Determinante Fendilhada</li>
+</ul>
+<span class="math display">\[\begin{equation}
+\alpha_{II,0}=\frac{\alpha_{c}}{\frac{I_{II}}{I_{c}}}
+\end{equation}\]</span>
+<ul>
+<li><span class="math inline">\(I_{I};I_{II}\)</span> determinados com <span class="math inline">\(&amp;rho;\)</span>=0</li>
+<li><p><span class="math inline">\(\alpha_{c}\)</span> (flecha eslástica) é obtido de tabela</p></li>
+<li><p><span class="math inline">\(\xi\)</span> é o coeficiente de distribuição (que tem em conta a distribuição</p></li>
+</ul>
+<p>do betão traccionado entre fendas), obtido por: <span class="math display">\[ \xi=1-\beta\times(\frac{\sigma_{sr}}{\sigma_{s}})^{2} \]</span></p>
+<ul>
+<li><span class="math inline">\(\xi=0\)</span> para secções não fendilhadas</li>
+<li>Necessário definir o Coeficiente de Distribuição -&gt; <span class="math inline">\(\xi_{medio}\)</span></li>
+<li><span class="math inline">\(\beta\)</span> é o coeficiente que tem em conta a influência na extensão</li>
+</ul>
+<p>média da duração do carregamento ou da repetição do carregamento: <span class="math display">\[ \beta=\begin{cases} 1 &amp; long.duracao\\ 0.5 &amp; curta.duracao \end{cases} \]</span></p>
+<ul>
+<li><span class="math inline">\(\sigma_{sr}\)</span> é a Tensão no Aço antes de Fendilhar</li>
+<li><span class="math inline">\(\sigma_{s}\)</span> é a tensão no aço após fendilhação</li>
+</ul>
+<p><a id="org9fe101a"></a></p>
+<div id="calculo-da-flecha-a-longo-prazo-tinfty-varphi_tinfty24" class="section level3">
+<h3>Cálculo da Flecha a Longo Prazo (<span class="math inline">\(t=\infty\)</span>); (<span class="math inline">\(\varphi_{t=\infty}=2,4\)</span>)</h3>
+<p>Referir a 6.2.1 para descrição completa das variáveis da equação</p>
+<span class="math display">\[\begin{equation}
+\alpha_{\infty}=\xi\times\alpha_{II,\infty}+(1-\xi)\times\alpha_{I,\infty}
+\end{equation}\]</span>
+<span class="math display">\[\begin{equation}
+\alpha_{I,\infty}=\frac{\alpha_{c}\times(1+\varphi)}{\frac{I_{I}}{I_{c}}}
+\end{equation}\]</span>
+<span class="math display">\[\begin{equation}
+\alpha_{II,\infty}=\frac{\alpha_{c}\times(1+\varphi)}{\frac{I_{II}}{I_{c}}}
+\end{equation}\]</span>
+<p>aonde;</p>
+<ul>
+<li><span class="math inline">\(I_{I}\)</span> e <span class="math inline">\(I_{II}\)</span> são determinados com <span class="math inline">\(\varphi=2,4\)</span></li>
+<li><span class="math inline">\(\beta=0,5\)</span> (acções de longo prazo)</li>
+</ul>
+<p><a id="orgd0c21e7"></a></p>
+</div>
+</div>
+</div>
+<div id="fluencia-e-retracao" class="section level1">
+<h1>Fluência e Retração</h1>
+<p><a id="orgfa98263"></a></p>
+<div id="fluencia" class="section level2">
+<h2>Fluência</h2>
+<blockquote>
+<p>`` A fluência pode ser definida como sendo o aumento da deformação no &gt; tempo, sob a acção de um estado de tensão constante (resultado, &gt; essencialmente, da variação de volume da pasta de cimento que envolve &gt; os agregados’</p>
+</blockquote>
+<p><a id="org16e73ee"></a></p>
+</div>
+<div id="deformacao-por-fluencia-para-t0" class="section level2">
+<h2>Deformação por fluência para <span class="math inline">\(t=0\)</span></h2>
+<span class="math display">\[\begin{equation}
+\varepsilon_{c,t=0}=\frac{\sigma_{c,t=0}}{E_{c,t=0}}
+\end{equation}\]</span>
+<p>em que</p>
+<ul>
+<li><span class="math inline">\(\varepsilon_{c,t=0}\)</span> é a extensão inicial</li>
+</ul>
+<p>#### Deformação por fluência para <span class="math inline">\(t=\infty\)</span></p>
+<span class="math display">\[\begin{equation}
+\varepsilon_{cc(t_{\infty,}t_{0})}=\varphi_{(t_{\infty},t_{0})}\times\varepsilon_{c(t_{0})}
+\end{equation}\]</span>
+<p>em que,</p>
+<ul>
+<li><span class="math inline">\(\varphi_{(t_{\infty},t_{0})}\)</span> representa o coeficiente de fluência</li>
+<li><span class="math inline">\(\varepsilon_{cc}\)</span> é o incremento de extensão</li>
+<li><span class="math inline">\([t_{\infty},t_{0}]\)</span> é o intervalo de tempo</li>
+<li><span class="math inline">\(\varphi_{(t_{\infty},t_{0})}\cong2...4\)</span> . No caso de avaliações detalhadas, pode usar-se para referência <span class="math inline">\(\varphi\cong2,5\)</span></li>
+</ul>
+<p><a id="orgb53b745"></a></p>
+<div id="determinacao-da-deformacao-a-longo-prazo" class="section level3">
+<h3>Determinação da Deformação a Longo Prazo</h3>
+<span class="math display">\[\begin{equation}
+\varepsilon_{c(t_{\infty,}t_{0})}=\varepsilon_{c(t_{0})}+\varepsilon_{cc(t_{\infty,}t_{0})}
+\end{equation}\]</span>
+<span class="math display">\[\begin{equation}
+\varepsilon_{c(t_{\infty,}t_{0})}=\frac{\sigma_{c}}{E_{c}^{*}}
+\end{equation}\]</span>
+<span class="math display">\[\begin{equation}
+E_{c}^{*}=\frac{E_{c}}{1+\varphi}
+\end{equation}\]</span>
+<p><a id="org6110ad9"></a></p>
+</div>
+</div>
+<div id="retraccao" class="section level2">
+<h2>Retracção</h2>
+<p>A retralção no betão pode ser tratada como o efeito de uma alteração na temperatura:</p>
+<span class="math display">\[\begin{equation}
+\varepsilon_{cc(t_{\infty,}t_{0})}\cong-2,0\times10^{-4}....-4,0\times10^{-4}
+\end{equation}\]</span>
+<p><span class="math display">\[ \varepsilon_{\triangle T}=\alpha\times\triangle T \]</span></p>
+<p><a id="org95ea900"></a></p>
+</div>
+</div>
+<div id="flexao-composta-e-desviada" class="section level1">
+<h1>Flexão Composta e Desviada</h1>
+<p><a id="org41f8ab9"></a></p>
+<div id="flexao-desviada" class="section level2">
+<h2>Flexão Desviada</h2>
+<blockquote>
+<p>A flexão desviada corresponde à atuação simultânea de um esforço axial &gt; e de flexão segundo os dois eixos principais. </p>
+</blockquote>
+<p><a id="org018d60d"></a></p>
+<div id="esforco-normal-reduzido" class="section level3">
+<h3>Esforço Normal Reduzido</h3>
+<p><span class="math display">\[ \nu=\frac{N_{Rd}}{b\times h\times f_{cd}} \]</span></p>
+<p><a id="org2c51be7"></a></p>
+</div>
+<div id="momentos-flectores-reduzidos" class="section level3">
+<h3>Momentos Flectores Reduzidos</h3>
+<p><span class="math display">\[ \mu_{y}=\frac{M_{Rd,y}}{b\times h^{2}\times f_{cd}} \]</span></p>
+<p><span class="math display">\[ \mu_{z}=\frac{M_{Rd,z}}{b^{2}\times h\times f_{cd}} \]</span></p>
+<p><a id="org2101098"></a></p>
+</div>
+<div id="percentagem-mecanica-de-armadura-omega_total" class="section level3">
+<h3>Percentagem Mecânica de Armadura <span class="math inline">\(\omega_{total}\)</span></h3>
+<p><span class="math display">\[ \omega_{tot}=\frac{A_{s,tot}}{b\times h}\times\frac{f_{syd}}{f_{cd}} \]</span></p>
+<p><a id="org242b604"></a></p>
+</div>
+<div id="tabelas" class="section level3">
+<h3>Tabelas</h3>
+<p>Depois de determinado os esforços actuantes, determinar através de recurso a tabelas, a quantidade de armadura necessária.</p>
+<p><a id="orgbc18d6e"></a></p>
+</div>
+<div id="verificacao-da-condicao-de-seguranca" class="section level3">
+<h3>Verificação da condição de segurança</h3>
+<span class="math display">\[\begin{equation}
+\left(\frac{M_{sd,y}}{M_{Rd,y}}\right)^{\alpha}+\left(\frac{M_{sd,z}}{M_{Rd,z}}\right)^{\alpha}\leq1,0
+\end{equation}\]</span>
+<p><a id="org066fcfe"></a></p>
+</div>
+</div>
+</div>
+<div id="pilares" class="section level1">
+<h1>Pilares</h1>
+<p><a id="org111307d"></a></p>
+<div id="calculo-de-esbelteza" class="section level2">
+<h2>Cálculo de Esbelteza</h2>
+<p><a id="org0a44064"></a></p>
+<div id="raio-de-giracao-da-seccao-de-betao-nao-fendilhada" class="section level3">
+<h3>Raio de Giração da Secção de Betão não fendilhada</h3>
+<p>Sendo <span class="math inline">\(i_{x}\)</span> e <span class="math inline">\(i_{y}\)</span> o raio de giração em <span class="math inline">\(x\)</span> e em <span class="math inline">\(y\)</span> respetivamente:</p>
+<span class="math display">\[\begin{equation}
+i_{x}=\sqrt{\frac{I_{x}}{A}}
+\end{equation}\]</span>
+<span class="math display">\[\begin{equation}
+i_{y}=\sqrt{\frac{I_{y}}{A}}
+\end{equation}\]</span>
+<p><a id="orgfe8335c"></a></p>
+</div>
+<div id="esbelteza-de-um-pilar" class="section level3">
+<h3>Esbelteza de um Pilar</h3>
+<p>EC2, 5.8.3.2, pág 77</p>
+<span class="math display">\[\begin{equation}
+i_{x}=\frac{l_{x,0}}{i_{y}}
+\end{equation}\]</span>
+<span class="math display">\[\begin{equation}
+\lambda_{y}=\frac{l_{y,0}}{i_{x}}
+\end{equation}\]</span>
+<p>em que <span class="math inline">\(l_{o}\)</span> representa o comprimento efetivo da encurvatura (distância entre dois pontos de momento nulo ou pontos de inflexão da configuração da deformada)</p>
+<p><a id="orgd76f520"></a></p>
+</div>
+<div id="comprimento-efetivo-de-elementos-comprimidos-de-porticos-regulares" class="section level3">
+<h3>Comprimento efetivo de elementos comprimidos de pórticos regulares</h3>
+<p>EC2 5.8.3.2.(3), pag78</p>
+<p>Para elementos comprimidos de pórticos regulares, o critério de esbelteza deverá ser verificado com um comprimento efetivo <span class="math inline">\(l_{0}\)</span> determinado das seguintes formas:</p>
+<ol style="list-style-type: decimal">
+<li><p>Elementos Contraventados</p>
+<p>EC2 5.8.3.2.(3), pág 78</p>
+<span class="math display">\[\begin{equation}
+l_{0}=0.5l\times\sqrt{(1+\frac{K_{1}}{0.45+K_{1}})\times(1+\frac{K_{2}}{0.45+K_{2}})}
+\end{equation}\]</span></li>
+<li><p>Elementos Não Contraventados</p>
+<p>EC2 5.8.3.2.(3), pág 78</p>
+<span class="math display">\[\begin{equation}
+l_{0}=l\times m\acute{a}x\left\{ \sqrt{1+10\times\frac{K_{1}\times K_{2}}{K_{1}+K_{2}}};(1+\frac{K_{1}}{1+K_{1}})\times(1+\frac{K_{2}}{1+K_{2}})\right\} 
+\end{equation}\]</span></li>
+</ol>
+<p><a id="org86f6378"></a></p>
+</div>
+<div id="flexibilidade-relativa-dos-encastramentos-parciais-das-extremidades" class="section level3">
+<h3>Flexibilidade Relativa dos Encastramentos parciais das extremidades:</h3>
+<span class="math display">\[\begin{equation}
+K=\frac{(\theta/M)}{(EI/l)}
+\end{equation}\]</span>
+<p>sendo <span class="math inline">\(\theta\)</span> a rotação dos elementos que se opõem à rotação para o momento flector M; e <span class="math inline">\(l\)</span> a altura livre do elemento comprimido entre ligações de extremidade.</p>
+<p><span class="math inline">\(K_{1}\)</span> e <span class="math inline">\(K_{2}\)</span> são parâmetros relativos às extremidades do pilar que traduzem a rigidez relativa à rotação do nós</p>
+<span class="math display">\[\begin{equation}
+K_{i}=\frac{\sum(EI/L)_{pilares}}{\sum(\alpha\times EI/L)_{vigas}}
+\end{equation}\]</span>
+<p>em que <span class="math inline">\(\alpha\)</span> toma o valor de 3 ou 4.</p>
+<p><a id="org5097d83"></a></p>
+</div>
+<div id="criterio-de-esbelteza-para-elementos-pilares-isolados" class="section level3">
+<h3>Critério de Esbelteza para elementos (pilares) isolados</h3>
+<p>EC2, 5.8.3.1 pág 76</p>
+<p>Os efeitos de segunda ordem podem ser ignorados se a esbelteza definida nas equações (3) e (4) forem inferiores a <span class="math inline">\(\lambda_{lim}\)</span></p>
+<span class="math display">\[\begin{equation}
+\lambda_{lim}=20\times A\times B\times C/\sqrt{n}
+\end{equation}\]</span>
+<p>em que,</p>
+<span class="math display">\[\begin{equation}
+A=1/(1+0.2\times\varphi_{et})
+\end{equation}\]</span>
+<p>se <span class="math inline">\(&amp;varphi;&lt;sub&gt;et&lt;/sub&gt;\)</span>não for conhecido, pode utilizar-se </p>
+<span class="math display">\[\begin{equation}
+B=\sqrt{1+2\times\omega}
+\end{equation}\]</span>
+<p>se <span class="math inline">\(\omega\)</span> não for conhecido pode utilizar-se ****B=1,1****</p>
+<span class="math display">\[\begin{equation}
+C=1,7-r_{m}
+\end{equation}\]</span>
+<p>se <span class="math inline">\(r_{m}\)</span> não for conhecido pode utilizar-se ****C=0,7****</p>
+<ol style="list-style-type: decimal">
+<li><p>Coeficiente de Fluência Efetivo</p>
+<p>EC2, 5.8.4, pág 79</p>
+<span class="math display">\[\begin{equation}
+\varphi_{ef}=\varphi_{(\infty,t_{0})}\times M_{0Eqp}/M_{0Ed}
+\end{equation}\]</span>
+<p>em que:</p>
+<span class="math display">\[\begin{equation}
+\varphi_{(\infty,t_{0})}=\frac{\varepsilon_{cc}(\infty,t_{0})}{(\sigma_{c}/E_{c})}
+\end{equation}\]</span>
+<p>Se <span class="math inline">\(\varphi_{(\infty,t_{0})}\)</span> não for conhecido pode utilizar-se <span class="math inline">\(\mathbf{\mathbf{\varphi}_{(\infty,t_{0})}=2,5}\)</span></p>
+<p>Nota: <span class="math inline">\(q_{qp}=C_{p}+\psi_{2}\times S_{c}\)</span></p></li>
+<li><p>Taxa mecânica de Armadura <span class="math inline">\(\omega\)</span></p>
+<span class="math display">\[\begin{equation}
+\omega=\frac{A_{s}\times f_{yd}}{A_{c}\times f_{cd}}
+\end{equation}\]</span></li>
+<li><p>Esforço Normal Reduzido</p>
+<span class="math display">\[\begin{equation}
+n=\frac{N_{ed}}{A_{c}\times f_{cd}}
+\end{equation}\]</span></li>
+<li><p>Razão de Momentos</p>
+<span class="math display">\[\begin{equation}
+r_{m}=\frac{M_{01}}{M_{02}}
+\end{equation}\]</span></li>
+<li><p>Momentos de Primeira Ordem nas Extremidades</p>
+<span class="math display">\[\begin{equation}
+|M_{02}|\geq|M_{01}|
+\end{equation}\]</span></li>
+</ol>
+<p><a id="org94c5b26"></a></p>
+</div>
+</div>
+<div id="momento-flector-de-calculo-m_ed" class="section level2">
+<h2>Momento Flector de Cálculo <span class="math inline">\(M_{Ed}\)</span></h2>
+<p>Método baseado na curvatura nominal.</p>
+<p>EC2, 5.8.8.2, pág 83</p>
+<span class="math display">\[\begin{equation}
+M_{Ed}=M_{0Ed}+M_{2}
+\end{equation}\]</span>
+<p><a id="org8dfa2e7"></a></p>
+<div id="momento-tendo-em-conta-os-efeitos-de-1-ordem-e-as-imperfeicoes-geometricas" class="section level3">
+<h3>Momento tendo em conta os efeitos de 1º Ordem e as Imperfeições geométricas</h3>
+<span class="math display">\[\begin{equation}
+M_{02,Ed}=M_{02}+N_{Ed}\times e_{i}
+\end{equation}\]</span>
+<p><a id="orga5cbcb1"></a></p>
+</div>
+<div id="imperfeicoes-geometricas" class="section level3">
+<h3>Imperfeições geométricas</h3>
+<p>EC2 5.2.(5) pág 65</p>
+<p>As imperfeições são representadas por uma inclinação <span class="math inline">\(\theta_{i}\)</span> obtida por:</p>
+<span class="math display">\[\begin{equation}
+\sigma_{i}=\sigma_{0}\times\alpha_{h}\times\alpha_{m}
+\end{equation}\]</span>
+<p><span class="math inline">\(\sigma_{0}\)</span> é o valor básico, normalmente <span class="math inline">\(\frac{1}{200}\)</span></p>
+<ol style="list-style-type: decimal">
+<li><p>Coeficiente de redução relativo ao comprimento ou altura <span class="math inline">\(\alpha_{h}\)</span></p>
+<span class="math display">\[\begin{equation}
+\alpha_{h}=\frac{2}{\sqrt{l}};\frac{2}{3}\leq\alpha_{h}\leq1
+\end{equation}\]</span></li>
+<li><p>Coeficiente de Redução relativo ao número de elementos <span class="math inline">\(\alpha_{m}\)</span></p>
+<span class="math display">\[\begin{equation}
+\alpha_{m}=\sqrt{0.5\times(1+\frac{1}{m})}
+\end{equation}\]</span>
+<p>Ver EC2 5.2.6, pág 65, para os diferentes valores que <span class="math inline">\(m\)</span> pode assumir</p></li>
+</ol>
+<p><a id="org964f595"></a></p>
+</div>
+</div>
+<div id="excentricidade-de-1-ordem-e_i" class="section level2">
+<h2>Excentricidade de 1ª Ordem <span class="math inline">\(e_{i}\)</span></h2>
+<p>EC 6.1.(4) pág 94</p>
+<span class="math display">\[\begin{equation}
+e_{i}=\sigma_{i}\times\frac{l_{0}}{2}
+\end{equation}\]</span>
+<span class="math display">\[\begin{equation}
+e_{1}=\frac{M_{02,Ed}}{N_{Ed}}\geq max\begin{cases}
+\frac{h}{30}\\
+0.02
+\end{cases}
+\end{equation}\]</span>
+<p>sendo h a altura da secção</p>
+<p><a id="org74f1324"></a></p>
+</div>
+<div id="excentricidade-de-2-ordem-e_2" class="section level2">
+<h2>Excentricidade de 2ª Ordem, <span class="math inline">\(e_{2}\)</span></h2>
+<p>EC2 5.8.8.1.(3) pág 84</p>
+<span class="math display">\[\begin{equation}
+e_{2}=\frac{1}{R}\times\frac{l_{0}}{c}
+\end{equation}\]</span>
+<p>em que <span class="math inline">\(\frac{1}{R}\)</span> é a curvatura (EC2 5.8.8.3, pág 84)</p>
+<p>e <span class="math inline">\(c\)</span> é o coeficiente dependente da distribuição da curvatura. No caso de uma secção transversal constante, utiliza-se normalmente <span class="math inline">\(c=10(\simeq\pi^{2})\)</span>. Se o momento de primeira ordem for constante, deverá-se considerar 8.</p>
+<ol style="list-style-type: decimal">
+<li><p>Curvatura <span class="math inline">\(\frac{1}{R}\)</span></p>
+<span class="math display">\[\begin{equation}
+\frac{1}{R}=K_{r}\times K_{\varphi}\times\frac{1}{R_{0}}
+\end{equation}\]</span>
+<p>em que:</p>
+<span class="math display">\[\begin{equation}
+\frac{1}{R_{0}}=\frac{\varepsilon_{yd}}{(0,45\times d)}
+\end{equation}\]</span>
+<p><span class="math display">\[ \varepsilon_{yd}=\frac{f_{yd}}{E_{s}} \]</span></p>
+<p><span class="math inline">\(K_{r}\)</span> factor de correção dependente do esforço normal:</p>
+<span class="math display">\[\begin{equation}
+K_{r}=\frac{(n_{u}-n)}{(n_{u}-n_{bal})}\leq1
+\end{equation}\]</span>
+<p><span class="math inline">\(n\)</span> é o esforço normal reduzido</p>
+<p><span class="math inline">\(n_{bal}\)</span> é o valor de <span class="math inline">\(n\)</span> correspondente ao momento resistente máximo. </p>
+<span class="math display">\[\begin{equation}
+n_{u}=1+\omega
+\end{equation}\]</span></li>
+<li><p>Efeito da fluência <span class="math inline">\(K_{\varphi}\)</span></p>
+<p>C2, 5.8.8.3.(4) pág 85</p>
+<span class="math display">\[\begin{equation}
+K_{\varphi}=1+\beta\times\varphi_{ef}\geq1
+\end{equation}\]</span>
+<p>em que:</p>
+<span class="math display">\[\begin{equation}
+\beta=0.35+\frac{f_{ck}}{200}-\frac{\lambda}{150}
+\end{equation}\]</span>
+<p><span class="math display">\[ \varphi_{ef}=\varphi_{(\infty,t_{0})}\times M_{0Eqp}/M_{0Ed} \]</span></p>
+<p><span class="math display">\[ \lambda_{lim}=20\times A\times B\times C/\sqrt{n} \]</span></p></li>
+</ol>
+<div id="bibliografia" class="section level3 unnumbered">
+<h3>Bibliografia</h3>
+<div id="refs" class="references">
+<div id="ref-EC">
+<p>Comité Europeu de Normalização. 2004. <em>Eurocódigo 2 - Projeto de Estruturas de Betão</em>. Caparica, Portugal: Instituto Português de Qualidade.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2017/04/18/or%C3%A7amento/">Orçamentos: Classificação por Classe</a></span>
+  <span class="nav-next"><a href="/post/2018/06/18/jupyter-google/">Google sheets e Jupyter Notebook</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+
+  
+  <hr>
+  <div class="copyright">&copy; <a href="/">Luis Moura</a> 20016 - 2018</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

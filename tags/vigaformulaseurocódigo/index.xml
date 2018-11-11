@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>viga,formulas,eurocódigo on l moura</title>
+    <link>/tags/vigaformulaseuroc%C3%B3digo/</link>
+    <description>Recent content in viga,formulas,eurocódigo on l moura</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Sat, 06 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/vigaformulaseuroc%C3%B3digo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Formulário segundo o Eurocódigo para vigas em betão armado</title>
+      <link>/post/2018/01/06/formulas-viga-betao/</link>
+      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018/01/06/formulas-viga-betao/</guid>
+      <description>Fórmulas, segundo o Euro-Código(Comité Europeu de Normalização 2004), a serem utilizadas na análise e dimensionamento de vigas em betão armado.
+Estas fórmulas faziam parte dos meus apontamentos de betão armado. Algumas fórmulas estão referênciadas à página do Eurocódigo respectiva. É possível que existam erros no formulário, e o seu uso, não dispensa a consulta do Eurocódigo.
+ Flexão  Momento Flector Reduzido Percentagem Mecânica de Armadura Área de Armadura Posição da Linha Neutra Área Mínima de Armadura Área Máxima de Armadura Armadura Longitudinal Superior nos apoios de Extremidade Transverso Verificação de Esmagamento das Bielas Coeficiente de Redução da Resistência do Betão Fendilhado por esforço transverso Verificação de Compressão na Alma Armadura Mínima Esforço Transverso Resistente para Armadura mínima Tensão Máxima na Biela de Compressão Máxima Compressão Apoio Armadura Transversal nos Apoios} Espaçamento de Armadura Esforço Transverso  Espaçamento Longitudinal Máximo entre estribos Espaçamento Transversal entre ramos  Armadura de suspensão Armadura Ligação Banzo Alma Translação do Diagrama Translação do diagrama- Dispensa da Armadura Longitudinal de Tração Comprimento de amarração de cálculo Comprimento de amarração de referência Tensão de rotura da aderência  Valor de cálculo da resistência do betão à tração Valor de cálculo da tensão na secção do varão a partir da qual é medido o comprimento de amarração Comprimento mínimo de amarração Comprimento de Sobreposição  Torção Tensão em secções de paredes finas - Não Fendilhada Tensões em secções fendilhadas segundo EC2  Tensão tangencial numa parede de uma secção} Esforço tangencial numa parede de uma secção \(V_{Ed,i}\) Coeficiente de Redução da Resistência do betão fendilhado por esforço transverso \(\nu\) Verificação da resistência máxima de um elemento sujeito aos esforços de torção e transverso Área da secção transversal de armadura longitudinal de torção Armadura Transversal de Torção \(\frac{A_{st}}{S}\) Máximo Espaçamento Longitudinal das Cintas de Torção\(S_{e,max}\)  Fendilhação Controlo da Fendilhação sem cálculo Diret Pré-Dimensionamento Momento de Fendilhação - Momento Critico \(M_{cr}\) Cálculo da Largura das Fendas \(w_{k}\)  Cálculo de \(\varepsilon_{sm}\) e de \(\varepsilon_{cm}\) (extensão média relativa entre o aço e o betão): Cálculo da Armadura mínima para controlo da Fendilhação \(A_{S,min}\) Verificação do E.</description>
+    </item>
+    
+  </channel>
+</rss>
