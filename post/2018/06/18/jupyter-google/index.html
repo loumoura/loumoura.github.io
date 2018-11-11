@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Google sheets e Jupyter Notebook - l moura</title>
+    <meta property="og:title" content="Google sheets e Jupyter Notebook - l moura">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Um dos problemas que encontro quando trabalho em equipa, é a incerteza de saber se todos os seus elementos conseguem aceder a uma base de dados comum. O nível de conhecimentos informáticos varia &amp;hellip;">
+      <meta property="og:description" content="Um dos problemas que encontro quando trabalho em equipa, é a incerteza de saber se todos os seus elementos conseguem aceder a uma base de dados comum. O nível de conhecimentos informáticos varia &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+<link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      
+<h1><a href="/"><img src="/author.png" alt="t" /></a></h1>
+
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" />
+  <label id="menu-label" for="menu-check" class="unselectable">
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about_me/">Autor</a></li>
+  
+  <li><a href="/files/cv.pdf">CV</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Google sheets e Jupyter Notebook</h1>
+
+<h3>Luis Moura
+  /  2018-06-18</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+<p>Um dos problemas que encontro quando trabalho em equipa, é a incerteza de saber se todos os seus elementos conseguem aceder a uma base de dados comum. O nível de conhecimentos informáticos varia consideravelmente entre os elementos que se encontram a trabalhar em obra e os que estão no escritório. Entre os sub-empreeiteiros, essa variação também se faz sentir. Já tive sub-empreiteiros que tinham uma equipa técnica de suporte, e já tive outros, que tive que os ajudar a criar uma conta de email. Os donos de obra (e falando das obras em que estive envolvido), normalmente têm conhecimentos informáticos razoavelmente bons, ou então têm alguém a trabalhar para eles que os tenha. O mesmo se aplica às equipas de Engenharia e Arquitetura.</p>
+
+<p>Existem várias soluções informáticas para este problema, entre elas, e mais famosa em Portugal, são os programas da <a href="http://www.autodesk.com">Autodesk</a>, que visam a implementação do <strong>BIM</strong>. Mas estes programas normalmente são bastantes caros e por vezes existe uma enorme incompatibilidade entre as diversas versões, o que exige a presença de apoio técnico  constante, o que faz com que na maioria das vezes, estes programas só sejam usados em obras de grande dimensões, em que a despesa com o software e a sua manutenção, o justifiquem.</p>
+
+<h3 id="google-sheets">Google Sheets</h3>
+
+<p>Um bom sistema deve ser simples, de fácil implementação e que facilmente possa ser modificado para ser adaptado às circunstâncias. Também deve ter em conta o nível de conhecimentos informáticos das equipas do projeto. De pouca importa ter um sistema informático de ponta, quando não existe ninguém que o consiga utilizar.</p>
+
+<p>O <a href="https://www.google.com/sheets/about/">Google Sheets</a> é uma das alternativas que pode ser usado como base de dados para projetos de pequena dimensão (menos de 1 milhão de euros). Primeiro, o <a href="https://www.google.com/sheets/about/">Google Sheets</a> faz parte da conta da <a href="https://www.google.pt">Google</a>, e hoje em dia, quase toda a gente tem conta com este serviço. Segundo, o sistema é bastante amigo do utilizador. Terceiro, é grátis. Não ter que pagar vários milhares de euros por uma solução informática da <a href="http://www.autodesk.com">Autodesk</a>, parece uma muito boa ideia. O Google Sheets também permite que seja aplicado três níveis de privacidade aos documentos nele criado: <em>Público</em>, que pode ser acedido e alterado por qualquer pessoa; <em>Limitado</em>, em que pode ser restrito o nível de acesso a único grupo de pessoas; e <em>Privado</em>, em que se encontra escondido dos motores de busca.</p>
+
+<h1 id="caso-estudo">Caso Estudo</h1>
+
+<p>Vamos imaginar um projeto de pequena dimensão, em que 3 sub-empreiteiros estão a dar o orçamento para a construção de muro de suporte. A construção do muro está dividida em 5 fases, e cada uma delas, deverá estar separada no orçamento dos sub-empreiteiros:</p>
+
+<ul>
+<li>Três Sub-Empreiteiros</li>
+<li>Construção de muro de suporte dividida em 5 fases</li>
+</ul>
+
+<h2 id="primeira-etapa-preparação-base-de-dados">Primeira Etapa - Preparação base de dados</h2>
+
+<p>Construção de uma folha no Google Sheets com a informação pretendida:</p>
+
+<ul>
+<li><a href="https://docs.google.com/spreadsheets/d/1YNj_Ys5_NBudyS0rxk0Xd84EVcecsGy4zDYRUCJtnag/edit?usp=sharing">Orçamento Muro de Suporte: Sub-Empreiteiros</a></li>
+</ul>
+
+<h2 id="segunda-etapa-obtenção-dos-dados">Segunda Etapa - Obtenção dos dados</h2>
+
+<p>Não basta simplesmente ter uma boa base de dados, é preciso que ela seja analisada e as soluções partilhadas em forma de documentação pelos diversos elementos da equipa.</p>
+
+<p>Neste caso imaginário, será utilizado <a href="https://www.python.org">Python</a> para fazer essa análise. E para isso, começo por baixar as livrarias de <code>python</code> que vou utilizar:</p>
+
+<pre><code class="language-python"># Pandas para a extração e análise de dados da tabela
+import pandas as pd
+# matplotlib e seaborn para a construção de gráfico
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set(style=&quot;whitegrid&quot;, color_codes=True)
+</code></pre>
+
+<pre><code class="language-python">%matplotlib inline
+</code></pre>
+
+<p><strong>Nota:</strong> Eu estou a escrever este post no sistema <a href="http://jupyter.org">Jupyter</a></p>
+
+<p>Agora que já temos as livrarias de <a href="https://www.python.org">Python</a> necessárias, podemos avançar para nossa tabela e começar por visualizar os dados que lá estão guardados.</p>
+
+<pre><code class="language-python">#leitura de dados da folha do Google Sheets
+tabela=pd.read_csv(&quot;https://docs.google.com/spreadsheets/d/1YNj_Ys5_NBudyS0rxk0Xd84EVcecsGy4zDYRUCJtnag/export?format=csv&amp;id&quot;)
+</code></pre>
+
+<p>Em cima, foi designado por &ldquo;tabela&rdquo;, a leitura dos dados da folha do Google. Agora basta escrever &ldquo;tabela&rdquo;, para aceder aos dados em ela guardados:</p>
+
+<pre><code class="language-python">tabela
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>Sub_Empreiteiro_A</th>
+      <th>Sub_Empreiteiro_B</th>
+      <th>Sub_Empreiteiro_C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Fase 1</td>
+      <td>32000</td>
+      <td>29000</td>
+      <td>37500</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Fase 2</td>
+      <td>25000</td>
+      <td>27500</td>
+      <td>22000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Fase 3</td>
+      <td>7400</td>
+      <td>6800</td>
+      <td>6600</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Fase 4</td>
+      <td>2700</td>
+      <td>1800</td>
+      <td>2300</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Fase 5</td>
+      <td>12000</td>
+      <td>13780</td>
+      <td>9900</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="terceira-etapa-análise-dos-dados">Terceira Etapa - Análise dos Dados</h2>
+
+<p>Com os dados da tabela em cima, podemos começar a fazer a análise. Primeiro, encontrar o preço total para cada um dos Sub-Empreiteiros.</p>
+
+<pre><code class="language-python"># Soma das colunas com o total para cada Sub-Empreiteiro
+A=tabela[&quot;Sub_Empreiteiro_A&quot;].sum()
+B=tabela[&quot;Sub_Empreiteiro_B&quot;].sum()
+C=tabela[&quot;Sub_Empreiteiro_C&quot;].sum()
+</code></pre>
+
+<p>Com a designação de &ldquo;A&rdquo;, ficou o Orçamento total do Sub-Empreiteiro A, com a designação de &ldquo;B&rdquo;, ficou o Orçamento total do Sub-Empreiteiro B e com a designação de &ldquo;C&rdquo;, ficou o Orçamento total do Sub-Empreiteiro C.</p>
+
+<p>Agora basta escrever A, B e C para saber os totais:</p>
+
+<pre><code class="language-python"># Orçamentos
+A,B,C
+</code></pre>
+
+<pre><code>(79100, 78880, 78300)
+</code></pre>
+
+<p>O orçamento mais elevado foi o do Sub-Empreiteiro A, com 79,100 euros e o mais baixo foi o do Sub-Empreiteiro C, com 78,300 euros.</p>
+
+<p>Mas é importante visualizar os dados, e comparar os orçamentos para as diversas fases. Para a visualização desse tipo de informação, os gráficos são exelentes ferramentas de trabalho. No caso em análise, a tabela tem 6 linhas, tornando-se fácil a comparação entre as diversas variáveis. No entanto, quando as tabelas chegam às centenas e por vezes milhares de linhas, torna-se impossível a comparação de dados sem  a ajuda de sistemas auxiliares.</p>
+
+<pre><code class="language-python"># comando para a criação de um gráfico para todos os dados da tabela
+tabela.plot(kind=&quot;bar&quot;, figsize=(14,8))
+</code></pre>
+
+<p><img src="/img/output_16_1.png" alt="python" /></p>
+
+<p>Visualmente, podemos agora fazer comparações. O Sub-Empreiteiro C, que foi o que teve o Orçamento do trabalho mais baixo, é também o que está a cobrar substancialmente mais na primeira fase. Normalmente isto deve-se a dois motivos:</p>
+
+<ol>
+<li>Erro nos cálculos</li>
+<li>O Sub-Empreiteiro C considerou algumas das tarefas da segunda fase como parte da primeira</li>
+</ol>
+
+<p>Existe também a possibilidade de o Sub-Empreiteiro C estar certo, e o outros terem dado um preço demasiado baixo para a primeira fase.</p>
+
+<p>No entanto, seja qual for o caso, esta análise simplista, é possível pela integração de gráficos.</p>
+
+<h1 id="conclusão">Conclusão</h1>
+
+<p>Esta meia dúzia de linhas de código, podem ser facilmente integrados em relatórios de modo a que qualquer alteração na base dados, neste caso do Google Sheet, seja facilmente atualizados no relatório. O custo de usar este sistema é zero, tanto para o software (<code>Python</code> e <code>Jupyter Notebook</code>) como para a base de dados no Google Sheets.</p>
+
+<p>Esta análise foi feita de um modo simplista de forma a apresentar o processo, sendo gerada a partir também de um projeto de construção simples. Mas o mesmo mantém-se verdade para projetos mais complexos, com maior base de dados, em que facilmente podem ser analisados por <code>Python</code>, e as análises exportadas para relatórios a serem distribuídos pela equipa. O nível de qualidade de tais relatórios e muito superior ao de soluções comuns como as do Microsoft Excel.
+A base de dados é facilmente acedida através de um weblink e os níveis de privacidade podem ser formatados de acordo com a equipa que lhe foi dado acesso.</p>
+
+<p>Para o relatório final, a utilização de um editor de texto que consiga aceder a <code>Python</code> e converter a informação em pdf, é tudo o que basta. No meu caso em particular, eu uso <a href="https://www.gnu.org/software/emacs/">Emacs</a> - <a href="http://orgmode.org">Org mode</a>. Mas existem outros textos editores que servem perfeitamente. Seja qual for o método, o importante é que trabalhe, seja simples e consiga os resultados pretendidos.</p>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2018/06/12/formul%C3%A1rio/">Formulário </a></span>
+  <span class="nav-next"><a href="/post/2018/06/18/custo-do-risco/">Custo do Risco</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">&copy; <a href="/">Luis Moura</a> 20016 - 2018</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

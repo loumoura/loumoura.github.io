@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jupyter Notebook on l moura</title>
+    <link>/tags/jupyter-notebook/</link>
+    <description>Recent content in Jupyter Notebook on l moura</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Mon, 18 Jun 2018 13:47:32 +0100</lastBuildDate>
+    
+	<atom:link href="/tags/jupyter-notebook/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google sheets e Jupyter Notebook</title>
+      <link>/post/2018/06/18/jupyter-google/</link>
+      <pubDate>Mon, 18 Jun 2018 13:47:32 +0100</pubDate>
+      
+      <guid>/post/2018/06/18/jupyter-google/</guid>
+      <description>Um dos problemas que encontro quando trabalho em equipa, é a incerteza de saber se todos os seus elementos conseguem aceder a uma base de dados comum. O nível de conhecimentos informáticos varia consideravelmente entre os elementos que se encontram a trabalhar em obra e os que estão no escritório. Entre os sub-empreeiteiros, essa variação também se faz sentir. Já tive sub-empreiteiros que tinham uma equipa técnica de suporte, e já tive outros, que tive que os ajudar a criar uma conta de email.</description>
+    </item>
+    
+  </channel>
+</rss>

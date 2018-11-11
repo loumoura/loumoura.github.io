@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Plano de Obra on l moura</title>
+    <link>/tags/plano-de-obra/</link>
+    <description>Recent content in Plano de Obra on l moura</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Sun, 22 Jan 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/plano-de-obra/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Contrato e Plano de Obra</title>
+      <link>/post/2017/01/22/contrato-e-plano-de-obra/</link>
+      <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017/01/22/contrato-e-plano-de-obra/</guid>
+      <description>Qualquer projeto em construção civil, independentemente do tamanho, deve ter alguma forma de contrato. Um Contrato, é a formalização legal de um acordo entre duas ou mais partes, mas o mais importante para mim, é a garantia que existe um acordo sobre como lidar com os problemas com surjam em uma obra.
+O Plano de Obra, é o agregar de vários planos da responsabilidade do Diretor de Obra, que vão ditar os procedimentos a serem utilizados em uma construção.</description>
+    </item>
+    
+  </channel>
+</rss>

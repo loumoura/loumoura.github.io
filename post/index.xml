@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on l moura</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on l moura</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Mon, 18 Jun 2018 13:47:32 +0100</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Custo do Risco</title>
+      <link>/post/2018/06/18/custo-do-risco/</link>
+      <pubDate>Mon, 18 Jun 2018 13:47:32 +0100</pubDate>
+      
+      <guid>/post/2018/06/18/custo-do-risco/</guid>
+      <description>Quando um orçamentista está a completar a folha de cálculo para o preço de um projeto de construção civil, existe uma parcela para o custo associado com os riscos que o projeo enfrenta. Este número, é o mais abstrato do Orçamento, pois contrariamente aos outros, tem em conta eventos que podem ou não acontecer.
+O Risco Quando aqui escrevo sobre o risco, não estou exclusivamente a falar do risco de acidente de trabalho, que possa meter em causa a segurança dos trabalhadores.</description>
+    </item>
+    
+    <item>
+      <title>Google sheets e Jupyter Notebook</title>
+      <link>/post/2018/06/18/jupyter-google/</link>
+      <pubDate>Mon, 18 Jun 2018 13:47:32 +0100</pubDate>
+      
+      <guid>/post/2018/06/18/jupyter-google/</guid>
+      <description>Um dos problemas que encontro quando trabalho em equipa, é a incerteza de saber se todos os seus elementos conseguem aceder a uma base de dados comum. O nível de conhecimentos informáticos varia consideravelmente entre os elementos que se encontram a trabalhar em obra e os que estão no escritório. Entre os sub-empreeiteiros, essa variação também se faz sentir. Já tive sub-empreiteiros que tinham uma equipa técnica de suporte, e já tive outros, que tive que os ajudar a criar uma conta de email.</description>
+    </item>
+    
+    <item>
+      <title>Formulário </title>
+      <link>/post/2018/06/12/formul%C3%A1rio/</link>
+      <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018/06/12/formul%C3%A1rio/</guid>
+      <description>Fórmulas, segundo o Euro-Código, para a serem utilizadas na análise e dimensionamento de vigas em betão armado.</description>
+    </item>
+    
+    <item>
+      <title>Orçamentos: Classificação por Classe</title>
+      <link>/post/2017/04/18/or%C3%A7amento/</link>
+      <pubDate>Tue, 18 Apr 2017 13:47:32 +0100</pubDate>
+      
+      <guid>/post/2017/04/18/or%C3%A7amento/</guid>
+      <description>A tipologia de um orçamentos e a forma como está estruturada, depende da fase do projeto e dos objetivos pretendidos pelo dono-de-obra. Apresentação dos conceitos e classes é feita em acordo com a AACE International (Association for the advancement of Cost Engineering).
+Introdução O Custo representa normalmente o fator mais importante em uma construção. Em um projeto de uma obra de engenharia civil, é mais provável este ser rejeitado por causa do custo monetário ou de questões financeiras, que por causa de dificuldades no designe estrutural, condições de instabilidade do solo ou algum outro fator que normalmente é tomado em consideração na preparação da documentação do projeto.</description>
+    </item>
+    
+    <item>
+      <title>Contrato e Plano de Obra</title>
+      <link>/post/2017/01/22/contrato-e-plano-de-obra/</link>
+      <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017/01/22/contrato-e-plano-de-obra/</guid>
+      <description>Qualquer projeto em construção civil, independentemente do tamanho, deve ter alguma forma de contrato. Um Contrato, é a formalização legal de um acordo entre duas ou mais partes, mas o mais importante para mim, é a garantia que existe um acordo sobre como lidar com os problemas com surjam em uma obra.
+O Plano de Obra, é o agregar de vários planos da responsabilidade do Diretor de Obra, que vão ditar os procedimentos a serem utilizados em uma construção.</description>
+    </item>
+    
+    <item>
+      <title>Fases de um Empreendimento</title>
+      <link>/post/2016/06/03/fases-de-um-empreendimento/</link>
+      <pubDate>Fri, 03 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2016/06/03/fases-de-um-empreendimento/</guid>
+      <description>Este trabalho é uma cópia parcial dos apontamentos do professor António Duarte 1, da classe de Gestão de Empreendimentos, do curso de Engenharia Civil da ESTG. É apresentado de uma forma sumária, as sete etapas decorrentes da elaboração e execução de um Empreendimento, com especial focus, na área da Engenharia Civil. O conceito aqui apresentado, é o que mais se aproxima do que se poderá considerar as melhores práticas portuguesas.</description>
+    </item>
+    
+    <item>
+      <title>Coordenaçao de um projeto de renovação residencial</title>
+      <link>/post/2016/04/18/coordena%C3%A7ao-de-um-projeto-de-renova%C3%A7%C3%A3o-residencial/</link>
+      <pubDate>Mon, 18 Apr 2016 00:00:00 +0100</pubDate>
+      
+      <guid>/post/2016/04/18/coordena%C3%A7ao-de-um-projeto-de-renova%C3%A7%C3%A3o-residencial/</guid>
+      <description>Convém definir bem o meu papel ao iniciar este artigo. Durante mais de uma década, estive à frente de uma empresa norte-americana, e é na condição de antigo Diretor dessa empresa, que eu escrevo este documento. Existem mais um conjunto de aspetos que devem ficar claros logo na introdução deste documento, de forma a ficar claro a posição e a forma de como eu o escrevo:
+ Outro aspecto que convém referir, é o método contratual usado, o Design-Bid-Build, em que por norma, o cliente contratava um arquiteto para o fornecimento das peças desenhadas e escritas, sendo depois essas peças entregues a um grupo de empreiteiros para orçamentação.</description>
+    </item>
+    
+    <item>
+      <title>TOPSIS - Technique for Order of Preference by Similarity to Ideal Solution</title>
+      <link>/post/2016/04/18/topsis-technique-for-order-of-preference-by-similarity-to-ideal-solution/</link>
+      <pubDate>Mon, 18 Apr 2016 00:00:00 +0100</pubDate>
+      
+      <guid>/post/2016/04/18/topsis-technique-for-order-of-preference-by-similarity-to-ideal-solution/</guid>
+      <description>1.0 Lista de Candidatos Vamos imaginar que existe na nossa empresa uma vaga para a Equipa de Gestão de um Projeto de construção civil. O anúncio da vaga foi colocado em vários websites, e houve uma resposta de 30 pessoas interessadas na oportunidade. Dos 30 candidatos, só 14 foram considerados, tendo sido os outros imediatamente eliminados.
+A análise do grupo de candidatos, será feita por um conjunto de cinco critérios, sendo eles:</description>
+    </item>
+    
+  </channel>
+</rss>

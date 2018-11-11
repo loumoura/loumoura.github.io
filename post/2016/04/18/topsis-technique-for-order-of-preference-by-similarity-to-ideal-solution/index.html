@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>TOPSIS - Technique for Order of Preference by Similarity to Ideal Solution - l moura</title>
+    <meta property="og:title" content="TOPSIS - Technique for Order of Preference by Similarity to Ideal Solution - l moura">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Explicação do método TOPSIS através de exemplo">
+      <meta property="og:description" content="Explicação do método TOPSIS através de exemplo">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+<link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      
+<h1><a href="/"><img src="/author.png" alt="t" /></a></h1>
+
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" />
+  <label id="menu-label" for="menu-check" class="unselectable">
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about_me/">Autor</a></li>
+  
+  <li><a href="/files/cv.pdf">CV</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>TOPSIS - Technique for Order of Preference by Similarity to Ideal Solution</h1>
+
+<h3>Luis Moura
+  /  2016-04-18</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+<h1 id="1-0-lista-de-candidatos">1.0 Lista de Candidatos</h1>
+
+<p>Vamos imaginar que existe na nossa empresa uma vaga para a <strong>Equipa de Gestão de um Projeto de construção civil</strong>. O anúncio da vaga foi colocado em vários websites, e houve uma resposta de 30 pessoas interessadas na oportunidade. Dos 30 candidatos, só 14 foram considerados, tendo sido os outros imediatamente eliminados.</p>
+
+<p>A análise do grupo de candidatos, será feita por um conjunto de cinco critérios, sendo eles:</p>
+
+<ul>
+<li><strong>Salário Mensal</strong> - Quanto é que o candidato espera vir a ganhar mensalmente</li>
+<li><strong>Número de Anos de experiência em Gestão de Obras</strong> - Quantos anos o candidato tem a trabalhar em equipas de Gestão de Obras, independentemente de ser equipa de projeto ou de construção.</li>
+<li><strong>Licenciatura em Engenharia Civil</strong></li>
+<li><strong>Distância em kms</strong> - A que distância o candidato se encontra do estaleiro-de-obra</li>
+
+<li><p><strong>Número de Anos de Experiência Gestor de Obras</strong> - Quantos anos o candidato tem a gerir projetos de construção civil, podendo estes anos serem como Diretor de Obra ou Encarregado Geral.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Candidato</th>
+<th align="center">Salario_M</th>
+<th align="center">Experiencia_anos</th>
+<th align="center">Licenciatura</th>
+<th align="center">Distancia_kms</th>
+<th align="center">GO_anos</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">A</td>
+<td align="center">2000</td>
+<td align="center">8</td>
+<td align="center">não</td>
+<td align="center">3</td>
+<td align="center">3</td>
+</tr>
+
+<tr>
+<td align="center">B</td>
+<td align="center">2500</td>
+<td align="center">14</td>
+<td align="center">sim</td>
+<td align="center">15</td>
+<td align="center">0</td>
+</tr>
+
+<tr>
+<td align="center">C</td>
+<td align="center">2300</td>
+<td align="center">13</td>
+<td align="center">sim</td>
+<td align="center">25</td>
+<td align="center">5</td>
+</tr>
+
+<tr>
+<td align="center">D</td>
+<td align="center">1890</td>
+<td align="center">7</td>
+<td align="center">não</td>
+<td align="center">12</td>
+<td align="center">1</td>
+</tr>
+
+<tr>
+<td align="center">E</td>
+<td align="center">1850</td>
+<td align="center">9</td>
+<td align="center">não</td>
+<td align="center">56</td>
+<td align="center">2</td>
+</tr>
+
+<tr>
+<td align="center">F</td>
+<td align="center">1950</td>
+<td align="center">5</td>
+<td align="center">não</td>
+<td align="center">22</td>
+<td align="center">4</td>
+</tr>
+
+<tr>
+<td align="center">G</td>
+<td align="center">2100</td>
+<td align="center">18</td>
+<td align="center">não</td>
+<td align="center">17</td>
+<td align="center">8</td>
+</tr>
+
+<tr>
+<td align="center">H</td>
+<td align="center">2450</td>
+<td align="center">22</td>
+<td align="center">sim</td>
+<td align="center">11</td>
+<td align="center">2</td>
+</tr>
+
+<tr>
+<td align="center">I</td>
+<td align="center">1600</td>
+<td align="center">2</td>
+<td align="center">sim</td>
+<td align="center">22</td>
+<td align="center">0</td>
+</tr>
+
+<tr>
+<td align="center">J</td>
+<td align="center">1750</td>
+<td align="center">6</td>
+<td align="center">não</td>
+<td align="center">62</td>
+<td align="center">1</td>
+</tr>
+
+<tr>
+<td align="center">K</td>
+<td align="center">1690</td>
+<td align="center">4</td>
+<td align="center">não</td>
+<td align="center">32</td>
+<td align="center">0</td>
+</tr>
+
+<tr>
+<td align="center">L</td>
+<td align="center">1970</td>
+<td align="center">8</td>
+<td align="center">não</td>
+<td align="center">5</td>
+<td align="center">3</td>
+</tr>
+
+<tr>
+<td align="center">M</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">sim</td>
+<td align="center">2</td>
+<td align="center">0</td>
+</tr>
+
+<tr>
+<td align="center">N</td>
+<td align="center">2650</td>
+<td align="center">15</td>
+<td align="center">não</td>
+<td align="center">4</td>
+<td align="center">11</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+
+<h3 id="1-1-análise-da-base-de-dados">1.1 Análise da Base de Dados</h3>
+
+<p>Com a informação da tabela, vamos tentar encontrar o melhor candidato para a posição na nossa empresa. Para isso, vamos começar por uma simples análise, recorrendo a gráficos.</p>
+
+<h3 id="1-2-salário-mensal-licenciatura">1.2 Salário mensal/Licenciatura</h3>
+
+<p><center>
+ <figure >
+            <img src="/img/output_4_0.png" alt="Projects" width="100%" >
+      <figcaption>
+      <small>
+      </small>
+      </figcaption>
+</figure>
+</center></p>
+
+<p>Do gráfico, podemos ver que o Candidato M é o que está disposto a aceitar um salário mensal mais baixo, no entanto, não possuí uma licenciatura em Engenharia Civil. Por outro lado, o Candidato N, é o que espera um salário mensal mais elevado e  é licenciado em engenharia civil.</p>
+
+<h3 id="1-3-número-de-anos-de-experiência-licenciatura-em-engenharia-civil">1.3 Número de anos de experiência / Licenciatura em Engenharia Civil</h3>
+
+<p><center>
+ <figure >
+            <img src="/img/output_6_0.png" alt="Projects" width="100%" >
+      <figcaption>
+      <small>
+      </small>
+      </figcaption>
+</figure>
+</center></p>
+
+<p>O candidato M, que é o que aceita um salário mais baixo do grupo de candidatos, mas também ;e o que tem menos experiência. Por outro lado, o Candidato H é o que mais anos de experiência tem em equipas de gestão de projetos de construção civil.</p>
+
+<h3 id="1-4-anos-de-experiência-como-gestor-de-obra-distância-até-ao-estaleiro-de-obra">1.4 Anos de Experiência como Gestor de Obra / Distância até ao estaleiro-de-obra</h3>
+
+<p><center>
+ <figure >
+            <img src="/img/output_8_0.png" alt="Projects" width="100%" >
+      <figcaption>
+      <small>
+      </small>
+      </figcaption>
+</figure>
+</center></p>
+
+<p>Deste gráfico, podemos tirar as seguintes conclusões: O Candidato N, para além de ser o candidato com mais anos de experiência também mora a uma curta distância do estaleiro de obra, embora seja difícil dizer o posicionamento dele quando comparado com os restantes candidatos (devido à dificuldade na interpretação das cores que representam a distância).</p>
+
+<h3 id="1-5-juntando-a-informação-obtida">1.5 Juntando a informação obtida</h3>
+
+<p>Até ao momento, foram apresentados três gráficos de três possíveis combinações para as variáveis em análise. Embora os gráficos nos possam dar uma ajuda na confirmação de certas possibilidades, torna-se difícil a tomada de decisão baseada somente em eles. No exemplo deste post, a base de dados é pequena, mas em uma situação real, a base de dados pode atingir as centenas de candidatos e os condicionantes, as dezenas.</p>
+
+<p>Um outro problema em análise por gráfico, é a importância que uma variável tem. Como será visto mais à frente, existem variáveis que têm mais importância que outras. Essa importância é difícil de ser passada para o gráfico. Ainda mais difícil, é a criação de um gráfico com todas as variáveis e de acordo com o nível de importância de cada uma.</p>
+
+<p>Para essas situações, em que as variáveis têm um diferente peso na análise, uma técnica possível para análise será através do TOPSIS.</p>
+
+<h1 id="2-0-topsis-technique-for-order-of-preference-by-similarity-to-ideal-solution">2.0 TOPSIS - Technique for Order of Preference by Similarity to Ideal Solution</h1>
+
+<p>Para uma análise com TOPSIS, existem uma série de passos até chegarmos à resposta que pretendemos. O primeiro passo, é a preparação dos dados para análise pelo TOPSIS.</p>
+
+<h2 id="2-1-preparar-os-dados-da-tabela">2.1 Preparar os dados da tabela.</h2>
+
+<p>No método TOPSIS, não podemos ter texto na tabela, mas somente números. Como a coluna 4, referente à licenciatura, tem duas opções - <em>sim</em> e <em>não</em> - estas opções têm que ser substituídas por números.</p>
+
+<p>O texto da tabela será substituído por &ldquo;0&rdquo; quando a resposta é <em>não</em> e &ldquo;1&rdquo; quando a resposta é <em>sim</em> à pergunta se o candidato tem uma licenciatura em Engenharia Civil.</p>
+
+<pre><code>| Candidato | Salario_M | Experiencia_anos | Licenciatura | Distancia_kms | GO_anos |
+|:---------:|:---------:|:----------------:|:------------:|:-------------:|:-------:|
+|     A     |   2000    |        8         |      0       |       3       |    3    |
+|     B     |   2500    |        14        |      1       |      15       |    0    |
+|     C     |   2300    |        13        |      1       |      25       |    5    |
+|     D     |   1890    |        7         |      0       |      12       |    1    |
+|     E     |   1850    |        9         |      0       |      56       |    2    |
+|     F     |   1950    |        5         |      0       |      22       |    4    |
+|     G     |   2100    |        18        |      0       |      17       |    8    |
+|     H     |   2450    |        22        |      1       |      11       |    2    |
+|     I     |   1600    |        2         |      1       |      22       |    0    |
+|     J     |   1750    |        6         |      0       |      62       |    1    |
+|     K     |   1690    |        4         |      0       |      32       |    0    |
+|     L     |   1970    |        8         |      0       |       5       |    3    |
+|     M     |   1500    |        1         |      1       |       2       |    0    |
+|     N     |   2650    |        15        |      0       |       4       |   11    |
+</code></pre>
+
+<p><strong>Exemplo</strong>: Segue um exemplo para a conversão de texto para valor numérico. O modelo para a conversão depende inteiramente do utilizador, desde que seja consistente e com lógica.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Condições de acesso ao estaleiro de Obra</th>
+<th align="center">é alterado para&hellip;</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">Muito boas</td>
+<td align="center">5</td>
+</tr>
+
+<tr>
+<td align="center">Boas</td>
+<td align="center">4</td>
+</tr>
+
+<tr>
+<td align="center">Médias</td>
+<td align="center">3</td>
+</tr>
+
+<tr>
+<td align="center">Más</td>
+<td align="center">2</td>
+</tr>
+
+<tr>
+<td align="center">Muito más</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+
+<p>Tabela: Exemplo</p>
+
+<h1 id="passos">Passos</h1>
+
+<p>No método TOPSIS, existem um série de passos até à obtenção do resultado final. Esses passos são descritos de seguida. Para mais informação sobre o método, é aconselhável ler o trabalho de Hwang, Lai and Liu - <a href="http://www.sciencedirect.com/science/article/pii/030505489390109V?via%3Dihub">ScienceDirect</a></p>
+
+<h2 id="1º-passo-normalização">1º Passo  - Normalização</h2>
+
+<pre><code>|Candidato   | Salario_M | Experiencia_anos | Licenciatura | Distancia_kms | GO_anos |
+|:----------:|:---------:|:----------------:|:------------:|:-------------:|:-------:|
+|     A      |   2000    |        8         |      0       |       3       |    3    |
+|     B      |   2500    |        14        |      1       |      15       |    0    |
+|     C      |   2300    |        13        |      1       |      25       |    5    |
+|     D      |   1890    |        7         |      0       |      12       |    1    |
+|     E      |   1850    |        9         |      0       |      56       |    2    |
+|     F      |   1950    |        5         |      0       |      22       |    4    |
+|     G      |   2100    |        18        |      0       |      17       |    8    |
+|     H      |   2450    |        22        |      1       |      11       |    2    |
+|     I      |   1600    |        2         |      1       |      22       |    0    |
+|     J      |   1750    |        6         |      0       |      62       |    1    |
+|     K      |   1690    |        4         |      0       |      32       |    0    |
+|     L      |   1970    |        8         |      0       |       5       |    3    |
+|     M      |   1500    |        1         |      1       |       2       |    0    |
+|     N      |   2650    |        15        |      0       |       4       |   11    |
+| Normalizar |   7641    |        42        |      2       |      102      |   16    |
+</code></pre>
+
+<p><strong>1º Etapa Normalização</strong></p>
+
+<p>É adicionado uma nova linha ao final da tabela, a que eu chamei de &ldquo;Normalizar&rdquo;. Em esta linha, serão colocados os resultados da raiz da soma dos valores das colunas ao quadrado:
+$$ \sqrt{\sum<em>{i=1}^{m} x</em>{ij}^2 } $$</p>
+
+<p><strong>Exemplo do 1º passo para a Normalização da coluna &ldquo;Salario_M&rdquo;:</strong></p>
+
+<p>$$ \sqrt{\sum<em>{i=1}^{m} x</em>{ij}^2 } = \sqrt{2000^{2}+2500^{2}+2300^{2}+&hellip;2650^{2}}=7641 $$</p>
+
+<p><strong>2º Etapa Normalização</strong></p>
+
+<p>Os resultados desta segunda parte da Normalização, fazem parte da tabela de &ldquo;2º Passo - Fator de Importância&rdquo;.</p>
+
+<p>Neste segunda etapa, é necessário dividir cada uma das células da tabela, pelo valor correspondente da linha &ldquo;Normalizar&rdquo;.</p>
+
+<p><strong>Exemplo do 2º passo para a Normalização da coluna &ldquo;Salario_M&rdquo;:</strong></p>
+
+<p>Todas as células da segunda coluna, serão divididas pelo correspondente valor na linha &ldquo;Normalizar&rdquo;que neste caso é 7641. A tabela que se segue, já reflete esta segunda e parte final da Normalização.</p>
+
+<p>$$ r<em>{ij} = \frac  {x</em>{ij}} {\sqrt{\sum<em>{i=1}^{m} x</em>{ij}^2 }};  \frac{2000}{7641}=0.262; \frac{2500}{7641}=0.327; &hellip;\frac{2650}{7641}=0.347 $$</p>
+
+<p><em>NOTA</em>: Uma maneira de controlar se até agora não existem erros é com a introdução de uma linha &ldquo;check&rdquo; na tabela, em que os resultado, após a aplicação da fórmula que se segue, deve ser sempre 1.
+Exemplo para a segunda coluna (Salario_M) da tabela:</p>
+
+<p>$$ \sqrt{\sum<em>{i=1}^{m} r</em>{ij}^2 } = \sqrt{0.262^{2}+0.327^{2}+0.301^{2}+&hellip;0.347^{2}}=1 $$</p>
+
+<h2 id="2º-passo-fator-de-importância">2º Passo - Fator de Importância</h2>
+
+<pre><code>|    Candidato    | Salario_M | Experiencia_anos | Licenciatura | Distancia_kms | GO_anos |
+|:---------------:|:---------:|:----------------:|:------------:|:-------------:|:-------:|
+|        A        |   0.262   |      0.192       |    0.000     |     0.029     |  0.188  |
+|        B        |   0.327   |      0.336       |    0.447     |     0.147     |  0.000  |
+|        C        |   0.301   |      0.312       |    0.447     |     0.245     |  0.314  |
+|        D        |   0.247   |      0.168       |    0.000     |     0.118     |  0.063  |
+|        E        |   0.242   |      0.216       |    0.000     |     0.548     |  0.125  |
+|        F        |   0.255   |      0.120       |    0.000     |     0.215     |  0.251  |
+|        G        |   0.275   |      0.432       |    0.000     |     0.166     |  0.502  |
+|        H        |   0.321   |      0.528       |    0.447     |     0.108     |  0.125  |
+|        I        |   0.209   |      0.048       |    0.447     |     0.215     |  0.000  |
+|        J        |   0.229   |      0.144       |    0.000     |     0.607     |  0.063  |
+|        K        |   0.221   |      0.096       |    0.000     |     0.313     |  0.000  |
+|        L        |   0.258   |      0.192       |    0.000     |     0.049     |  0.188  |
+|        M        |   0.196   |      0.024       |    0.447     |     0.020     |  0.000  |
+|        N        |   0.347   |      0.360       |    0.000     |     0.039     |  0.690  |
+|      check      |   1.000   |      1.000       |    1.000     |     1.000     |  1.000  |
+| Importância (%) |   0.250   |      0.200       |    0.150     |     0.050     |  0.350  |
+</code></pre>
+
+<p><strong>Importância (%)</strong></p>
+
+<p>Para cada uma das variantes, é atribuído um fator de importância. No caso das variáveis em análise, é considerado que o &ldquo;GO_anos&rdquo; é a variável mais importante, sendo por isso atribuído 35%. Por outro lado, a &ldquo;Distancia_kms&rdquo; foi considerado como sendo o menos importante, com um fator de importância de 5%.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Variável</th>
+<th align="center">Importância (%)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">Salario_M</td>
+<td align="center">0.25</td>
+</tr>
+
+<tr>
+<td align="center">Experiencia_anos</td>
+<td align="center">0.20</td>
+</tr>
+
+<tr>
+<td align="center">Licenciatura</td>
+<td align="center">0.15</td>
+</tr>
+
+<tr>
+<td align="center">Distancia_kms</td>
+<td align="center">0.05</td>
+</tr>
+
+<tr>
+<td align="center">GO_anos</td>
+<td align="center">0.35</td>
+</tr>
+
+<tr>
+<td align="center">Total</td>
+<td align="center">1.00</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="3º-passo">3º Passo</h2>
+
+<p><strong>Peso Normalizado do fator de importância</strong></p>
+
+<p>Multiplicar cada célula da tabela, pelo correspondente fator de importância.</p>
+
+<p><strong>Exemplo para a Coluna &ldquo;Salario_M&rdquo;</strong></p>
+
+<p>Em que $r_{ij}$ são os valores das células da tabela do 2ºPasso.</p>
+
+<p>$$ r_{ij}\times f.importância=0.262 \times 0.25= 0.065; 0.327 \times 0.25=0.082&hellip;0.347 \times 0.25 =0.087 $$</p>
+
+<p><strong>Verificação - opcional</strong>
+De modo a verificar se não existe nenhum erro de cálculo, adicionar no final da tabela uma linha - <em>check</em> - aonde o resultado, deve ser igual ao fator de importância atribuído à variável da coluna.</p>
+
+<p>$$ \sqrt{0.065^{2}+0.082^{2}+0.075^{2}+&hellip;0.087^{2}}=0.250 $$</p>
+
+<pre><code>| Candidato | Salario_M | Experiencia_anos | Licenciatura | Distancia_kms | GO_anos |
+|:---------:|:---------:|:----------------:|:------------:|:-------------:|:-------:|
+|     A     |   0.065   |      0.038       |    0.000     |     0.001     |  0.066  |
+|     B     |   0.082   |      0.067       |    0.067     |     0.007     |  0.000  |
+|     C     |   0.075   |      0.062       |    0.067     |     0.012     |  0.110  |
+|     D     |   0.062   |      0.034       |    0.000     |     0.006     |  0.022  |
+|     E     |   0.061   |      0.043       |    0.000     |     0.027     |  0.044  |
+|     F     |   0.064   |      0.024       |    0.000     |     0.011     |  0.088  |
+|     G     |   0.069   |      0.086       |    0.000     |     0.008     |  0.176  |
+|     H     |   0.080   |      0.106       |    0.067     |     0.005     |  0.044  |
+|     I     |   0.052   |      0.010       |    0.067     |     0.011     |  0.000  |
+|     J     |   0.057   |      0.029       |    0.000     |     0.030     |  0.022  |
+|     K     |   0.055   |      0.019       |    0.000     |     0.016     |  0.000  |
+|     L     |   0.064   |      0.038       |    0.000     |     0.002     |  0.066  |
+|     M     |   0.049   |      0.005       |    0.067     |     0.001     |  0.000  |
+|     N     |   0.087   |      0.072       |    0.000     |     0.002     |  0.242  |
+|   Check   |   0.250   |      0.200       |    0.150     |     0.050     |  0.350  |
+</code></pre>
+
+<h2 id="4º-passo-escolha-dos-melhores-e-piores-valores">4º Passo - Escolha dos melhores e piores valores</h2>
+
+<p><strong>Piores valores</strong></p>
+
+<p>Da tabela do 3ºPasso, escolher os piores valores, ou seja, o mínimo de cada coluna, no entanto, para a Coluna &ldquo;Salario_M&rdquo;, o pior valor será o mais alto (0.087), visto esta coluna lidar com ordenados. Ou seja, quanto mais alto for o valor das células na Coluna &ldquo;Salario_M&rdquo;, mais a empresa terá que gastar em ordenado e portanto será considerado um aspeto negativo.</p>
+
+<p>UPDATE: Na coluna &ldquo;Distancia_kms&rdquo; também devia ter sido feito a mesma consideração que para a coluna &ldquo;Salario_M&rdquo;, visto que pode-se considerar como negativo o quanto maior for a distância desde a residência do candidato até ao estaleiro-de-obra.</p>
+
+<p><strong>Melhores valores</strong></p>
+
+<p>Tal como para os piores valores, mas desta vez escolher o máximo de cada coluna, representativo da melhor solução do grupo para uma dada variável. Mais uma vez a exceção é a coluna &ldquo;Salario_M&rdquo;, em que o melhor valor é o mais baixo (0.049), representativo do salário mais baixo do grupo.</p>
+
+<h3 id="tabela-com-os-resultados-dos-melhores-e-piores-valores">Tabela com os resultados dos melhores e piores valores:</h3>
+
+<pre><code>| Atributo | Salario_M | Experiencia_anos | Licenciatura | Distancia_kms | GO_anos |
+|:--------:|:---------:|:----------------:|:------------:|:-------------:|:-------:|
+|    +     |   0.049   |      0.106       |    0.067     |     0.030     |  0.242  |
+|    -     |   0.087   |      0.005       |    0.000     |     0.001     |  0.000  |
+</code></pre>
+
+<h2 id="5º-passo-normalização-do-4ºpasso">5º Passo - Normalização do 4ºPasso</h2>
+
+<p>Até agora a análise tem sido feito por colunas, ou de acordo com as variáveis em análise. A partir de agora a análise será feita por linhas, ou para cada Candidato.</p>
+
+<h4 id="valores-negativos-por-candidato">Valores Negativos por Candidato</h4>
+
+<p>Para o cálculo que se segue, é necessários os dados das Tabelas do 3º e 4º Passo.</p>
+
+<p><strong>Exemplo para Candidato A:</strong> Para o valor de cada célula das colunas do Candidato A* na Tabela do 3º Passo, é subtraído o valor negativo do 4ºPasso, sendo o resultado elevado ao quadrado. O resultados é depois somado aos valores também obtidos para cada uma das células da linha do Candidato A:</p>
+
+<p>$$ A^{-}_{candidato A}= (0.0065-0.087)^{2}+(0.038-0.005)^{2}+0+&hellip;(0.066-0)^{2}=0.006 $$</p>
+
+<pre><code>| Candidato | Negativo |
+|:---------:|:--------:|
+|    A-     |  0.006   |
+|    B-     |  0.008   |
+|    C-     |  0.020   |
+|    D-     |  0.002   |
+|    E-     |  0.005   |
+|    F-     |  0.009   |
+|    G-     |  0.038   |
+|    H-     |  0.017   |
+|    I-     |  0.006   |
+|    J-     |  0.003   |
+|    K-     |  0.001   |
+|    L-     |  0.006   |
+|    M-     |  0.006   |
+|    N-     |  0.063   |
+</code></pre>
+
+<h4 id="valores-positivos-por-candidato">Valores Positivos por Candidato</h4>
+
+<p>Para o cálculo que se segue, é necessários os dados das Tabelas do 3º e 4º Passo.</p>
+
+<p><strong>Exemplo para Candidato A:</strong> Para o valor de cada célula das colunas do <em>Candidato A</em> na Tabela do 3º Passo, é subtraído o valor positivo do 4ºPasso, sendo o resultado elevado ao quadrado. O resultados é depois somado aos valores também obtidos para cada uma das células da linha do Candidato A:</p>
+
+<p>$$ A^{+}_{candidato A}= (0.0065-0.049)^{2}+(0.038-0.106^{2}+(0-0.067)^{2}+&hellip;(0.066-0.242)^{2}=0.041 $$</p>
+
+<pre><code>| Candidato | Positivo |
+|:---------:|:--------:|
+|    A+     |  0.041   |
+|    B+     |  0.061   |
+|    C+     |  0.020   |
+|    D+     |  0.059   |
+|    E+     |  0.048   |
+|    F+     |  0.035   |
+|    G+     |  0.010   |
+|    H+     |  0.041   |
+|    I+     |  0.068   |
+|    J+     |  0.059   |
+|    K+     |  0.071   |
+|    L+     |  0.041   |
+|    M+     |  0.069   |
+|    N+     |  0.008   |
+</code></pre>
+
+<h2 id="6ºpasso-último-passo-antes-da-tomada-de-decisão">6ºPasso - Último passo antes da tomada de decisão</h2>
+
+<p>Para este necessário, são necessários os dados das tabelas do 5º Passo.</p>
+
+<p><strong>Exemplo Candidato A: Proximidade à pior solução possível</strong></p>
+
+<p>$$A= \frac{A^{-}}{A^{+}+A^{-}}=\frac{0.006}{0.041+0.006}=0.126$$</p>
+
+<p><strong>Exemplo Candidato B: Proximidade à pior solução possível</strong>
+$$B= \frac{B^{-}}{B^{+}+B^{-}}=\frac{0.008}{0.061+0.008}=0.121$$</p>
+
+<pre><code>| Candidato |  Ta   |
+|:---------:|:-----:|
+|     A     | 0.126 |
+|     B     | 0.121 |
+|     C     | 0.499 |
+|     D     | 0.032 |
+|     E     | 0.091 |
+|     F     | 0.197 |
+|     G     | 0.790 |
+|     H     | 0.290 |
+|     I     | 0.079 |
+|     J     | 0.045 |
+|     K     | 0.020 |
+|     L     | 0.127 |
+|     M     | 0.079 |
+|     N     | 0.889 |
+|   Max=    | 0.889 |
+</code></pre>
+
+<h1 id="conclusão">Conclusão</h1>
+
+<p>Com os resultados obtidos da tabela do 6º Passo, procuramos o máximo valor na coluna $T_{a}$. O máximo valor, <strong>0.889</strong>, correspondente ao <strong>Candidato N</strong>, é melhor opção de acordo com as condições definidas ao longo do método.</p>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev"></span>
+  <span class="nav-next"><a href="/post/2016/04/18/coordena%C3%A7ao-de-um-projeto-de-renova%C3%A7%C3%A3o-residencial/">Coordenaçao de um projeto de renovação residencial</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">&copy; <a href="/">Luis Moura</a> 20016 - 2018</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

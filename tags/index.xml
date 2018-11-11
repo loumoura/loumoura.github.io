@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on l moura</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on l moura</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Mon, 18 Jun 2018 13:47:32 +0100</lastBuildDate>
+    
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BIM</title>
+      <link>/tags/bim/</link>
+      <pubDate>Mon, 18 Jun 2018 13:47:32 +0100</pubDate>
+      
+      <guid>/tags/bim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Construção</title>
+      <link>/tags/constru%C3%A7%C3%A3o/</link>
+      <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/constru%C3%A7%C3%A3o/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contrato</title>
+      <link>/tags/contrato/</link>
+      <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/contrato/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Diretor de Obra</title>
+      <link>/tags/diretor-de-obra/</link>
+      <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/diretor-de-obra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google Sheets</title>
+      <link>/tags/google-sheets/</link>
+      <pubDate>Mon, 18 Jun 2018 13:47:32 +0100</pubDate>
+      
+      <guid>/tags/google-sheets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jupyter Notebook</title>
+      <link>/tags/jupyter-notebook/</link>
+      <pubDate>Mon, 18 Jun 2018 13:47:32 +0100</pubDate>
+      
+      <guid>/tags/jupyter-notebook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Plano de Obra</title>
+      <link>/tags/plano-de-obra/</link>
+      <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/plano-de-obra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projeto de Execução</title>
+      <link>/tags/projeto-de-execu%C3%A7%C3%A3o/</link>
+      <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/projeto-de-execu%C3%A7%C3%A3o/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>armado,</title>
+      <link>/tags/armado/</link>
+      <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/armado/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>betão</title>
+      <link>/tags/bet%C3%A3o/</link>
+      <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/bet%C3%A3o/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>eurocódigo,</title>
+      <link>/tags/euroc%C3%B3digo/</link>
+      <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/euroc%C3%B3digo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>org-mode,</title>
+      <link>/tags/org-mode/</link>
+      <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/org-mode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>viga</title>
+      <link>/tags/viga/</link>
+      <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/viga/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
