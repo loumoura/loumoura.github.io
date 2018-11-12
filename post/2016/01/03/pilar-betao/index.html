@@ -94,8 +94,8 @@ Cálculo estrutural de um pilar &amp;hellip;">
 <p>Análise introdutória sobre o comportamento estrutural de pilares de betão armado perante as directrizes do Eurocódigo 2 <span class="citation">(Comité Europeu de Normalização 2004)</span>.</p>
 <p>Cálculo estrutural de um pilar em betão armado, que de forma exemplificava, servirá para demonstrar o processo de cálculo perante as normas do Eurocódigo. Todo o cálculo é feito recorrendo a linguagem informática, sendo utilizado <code>Python</code> <span class="citation">(Rossum and Drake 2001)</span> e <code>R</code> <span class="citation">(R Core Team 2015)</span>. Este trabalho é baseado nas notas do Professor Veludo <span class="citation">(J.Veludo 2014)</span>.</p>
 <p>Neste exemplo, será analisado um pilar de secção rectangular. No entanto, é preciso não esquecer que existem outros tipos de secções como a “quadrada”, “circular”, “L”, “T”, etc.</p>
-<div id="problema-nr.1" class="section level1">
-<h1>Problema Nr.1</h1>
+<div id="condicoes-iniciais" class="section level2">
+<h2>Condições Iniciais</h2>
 <p>Pilar em betão armado, com flexão composta com compressão<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
 <ul>
 <li>Esforço Axial: <span class="math inline">\(N_{Ed}=1100kN\)</span> (compressão)</li>
@@ -108,6 +108,7 @@ Cálculo estrutural de um pilar &amp;hellip;">
 <div class="figure">
 <img src="/post/A_betão_files/Pilar.png" alt="Pilar em Betão Armado, de largura b=40cm e de altura h=60cm. No pilar, atua um Momento de 440 kN.m e um esforço axial de compressão de 1100kN." />
 <p class="caption">Pilar em Betão Armado, de largura b=40cm e de altura h=60cm. No pilar, atua um Momento de 440 kN.m e um esforço axial de compressão de 1100kN.</p>
+</div>
 </div>
 <div id="introducao-de-dados" class="section level2">
 <h2>Introdução de dados</h2>
@@ -193,7 +194,6 @@ As=w*b*h*(fcd/fyd)*10**4  # Area de Aço convertida para cm2</code></pre>
 </div>
 <div id="ref-Python">
 <p>Rossum, G. Van, and F.L. Drake. 2001. “Python Reference Manual.” Virginia, USA: PythonLabs. <a href="http://www.python.org" class="uri">http://www.python.org</a>.</p>
-</div>
 </div>
 </div>
 </div>
