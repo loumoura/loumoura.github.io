@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Dimensionamento de Pilar de Betão Armado - Cálculo segundo o Eurocódigo 2  - l moura</title>
+    <meta property="og:title" content="Dimensionamento de Pilar de Betão Armado - l moura">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Introdução
+Dimensionamento de pilares em betão armado, de acordo com o Eurocódigo 2 (Comité Europeu de Normalização 2004).
+Cálculo estrutural de um pilar em betão armado, que de forma exemplificava, &amp;hellip;">
+      <meta property="og:description" content="Introdução
+Dimensionamento de pilares em betão armado, de acordo com o Eurocódigo 2 (Comité Europeu de Normalização 2004).
+Cálculo estrutural de um pilar em betão armado, que de forma exemplificava, &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+<link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      
+<h1><a href="/"><img src="/author.png" alt="t" /></a></h1>
+
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" />
+  <label id="menu-label" for="menu-check" class="unselectable">
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about_me/">Autor</a></li>
+  
+  <li><a href="/files/cv.pdf">CV</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Dimensionamento de Pilar de Betão Armado</h1>
+<h1><span class="subtitle">Cálculo segundo o Eurocódigo 2</span></h1>
+<h3>Luis Moura 
+  /  2016-01-06</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+
+<p><strong>Introdução</strong></p>
+<p>Dimensionamento de pilares em betão armado, de acordo com o Eurocódigo 2 <span class="citation">(Comité Europeu de Normalização 2004)</span>.</p>
+<p>Cálculo estrutural de um pilar em betão armado, que de forma exemplificava, servirá para demonstrar o processo de cálculo perante as normas do Eurocódigo. Todo o cálculo é feito recorrendo a linguagem informática, sendo utilizado <code>Python</code> <span class="citation">(Rossum and Drake 2001)</span> e <code>R</code> <span class="citation">(R Core Team 2015)</span>. Este trabalho é baseado nas notas do Professor Veludo <span class="citation">(J.Veludo 2014)</span>.</p>
+<div id="problema-nr.2" class="section level1">
+<h1>Problema Nr.2</h1>
+<p>Dimensionar a armadura longitudinal de um pilar com uma secção rectangular de dimensões 80×60 <span class="math inline">\(cm^{2}\)</span>, sujeita aos esforços indicados na figura.</p>
+<div class="figure">
+<img src="/post/B_betão_files/B_pilar.png" alt="Secção do Pilar" style="width:60.0%" />
+<p class="caption">Secção do Pilar</p>
+</div>
+<div id="dados-para-a-analise" class="section level2">
+<h2>Dados para a análise:</h2>
+<ul>
+<li>Esforço Axial: <span class="math inline">\(N_{Ed}=3000kN\)</span> (compressão)</li>
+<li>Momento: <span class="math inline">\(M_{Ed,x}=525 kN.m\)</span></li>
+<li>Momento: <span class="math inline">\(M_{Ed,y}=1516 kN.m\)</span></li>
+<li>Aço: S500NR</li>
+<li>Betão: C30/37</li>
+<li>Dimensões do Pilar: <span class="math inline">\(0.8m \times 0.6m\)</span></li>
+</ul>
+</div>
+<div id="introducao-dos-dados-no-sistema" class="section level2">
+<h2>Introdução dos dados no sistema</h2>
+<pre class="r"><code>Mrdx=525         #Momento fletor resistente em x (kN.m)
+Mrdy=1516        #Momento fletor resistente em y (kN.m)
+N=3000           #Esforço Axial (kN)
+bx=0.8           #Largura (m), em x
+hx=0.6           #Altura (m), em x
+by=0.6           #Largura (m), em y
+hy=0.8           #Altura (m), em y
+fcd=20*10**3     #tensão rotura betão à compressão (mPa)
+fyd=435*10**3    #tensão de cedência à tração no aço (mPa)</code></pre>
+</div>
+<div id="introducao-das-formulas" class="section level2">
+<h2>Introdução das fórmulas</h2>
+<p>Neste momento podemos introduzir algumas das fórmulas que vamos usar no dimensionamento:</p>
+<ol style="list-style-type: decimal">
+<li>Momento Reduzido</li>
+<li>Esforço Axial Reduzido</li>
+</ol>
+<p>Momento Reduzido, <span class="math inline">\(\mu\)</span>:</p>
+<p><span class="math display">\[\mu=\frac{M_{Ed}}{b \times h^{2} \times f_{cd}}\]</span></p>
+<p>Esforço axial reduzido:</p>
+<p><span class="math display">\[n=\frac{N_{ed}}{A_{c}\times f_{cd}}\]</span></p>
+<p>Introdução das fórmulas para o Momento Reduzido e Esforço axial reduzido no sistema.</p>
+<pre class="r"><code>ux=Mrdx/(bx*hx**2*fcd)  #Momento reduzido (kN.m)
+uy=Mrdy/(by*hy**2*fcd)  #Momento reduzido (kN.m)
+v=N/(bx*hx*fcd)         #Esforço axial reduzido (kN)</code></pre>
+</div>
+<div id="resultados-para-mu_x-mu_y-e-v" class="section level2">
+<h2>Resultados para <span class="math inline">\(\mu_{x}\)</span>, <span class="math inline">\(\mu_{y}\)</span> e <span class="math inline">\(v\)</span></h2>
+<p>Para o Momento Reduzido em X, o resultado é de <strong>0.0911458</strong>, para o Momento Reduzido em y, o resultado é de <strong>0.1973958</strong>, e para o Esforço Axial Reduzido, o resultado é <strong>0.3125</strong>.</p>
+</div>
+<div id="obter-area-de-armadura-das-tabelas" class="section level2">
+<h2>Obter área de armadura das tabelas</h2>
+<p>Com recurso ao ábaco da flexão desviada <span class="citation">(H.Barros and J.Figueiras 2012)</span> , é possível obter o valor da taxa mecânica de armadura, <span class="math inline">\(\omega\)</span>. Na obtenção dos resultados, foram admitidas as seguintes hipóteses:</p>
+<div class="figure">
+<img src="/post/B_betão_files/B_tabela.png" alt="Ábaco para Secções Retangulares com flexão desviada e armadura igualmente distribuida" />
+<p class="caption">Ábaco para Secções Retangulares com flexão desviada e armadura igualmente distribuida</p>
+</div>
+<ol style="list-style-type: decimal">
+<li>Armadura igual nas 4 faces</li>
+<li><span class="math inline">\(\mu_{1}\)</span> é o maior valor entre <span class="math inline">\(\mu_{x}\)</span> e <span class="math inline">\(\mu_{y}\)</span></li>
+<li><span class="math inline">\(\mu_{2}\)</span> é o menor valor entre <span class="math inline">\(\mu_{x}\)</span> e <span class="math inline">\(\mu_{y}\)</span></li>
+<li>A relação recobrimento/comprimento é igual nas 4 faces e toma o valor de 0.10</li>
+</ol>
+<p>Taxa mecânica de Armadura <span class="math inline">\(\omega\)</span>:</p>
+<p><span class="math display">\[\omega=\frac{A_{s}\times f_{yd}}{A_{c}\times f_{cd}}\]</span></p>
+<p>Área de Armadura, <span class="math inline">\(A_{s}\)</span></p>
+<p><span class="math display">\[A_{s}=\omega \times b \times h  \times \frac{f_{cd}}{f_{yd}}\]</span></p>
+<p>O valor obtido do ábaco para a taxa mecânica de armadura, <span class="math inline">\(\omega\)</span> é de <strong>0.489</strong>.</p>
+<pre class="r"><code>w=0.489                     #Taxa Mecânica de Armadura
+As=w*bx*hx*(fcd/fyd)*10**4  # Area Aço convertida para cm2</code></pre>
+</div>
+<div id="area-de-armadura" class="section level2">
+<h2>Área de Armadura</h2>
+<pre><code>## [1] &quot;Área armadura total/secção = 107.92 cm2.&quot;</code></pre>
+<p>Escolha da armadura: <span class="math display">\[4\phi32+16\phi 25 = 110.7cm^{2}\]</span></p>
+</div>
+<div id="pormenorizacao" class="section level2">
+<h2>Pormenorização</h2>
+<div class="figure">
+<img src="/post/B_betão_files/B_pormenorização.png" alt="Pormenorização" style="width:80.0%" />
+<p class="caption">Pormenorização</p>
+</div>
+<div id="bibliografia" class="section level4 unnumbered">
+<h4>Bibliografia</h4>
+<div id="refs" class="references">
+<div id="ref-EC">
+<p>Comité Europeu de Normalização. 2004. <em>Eurocódigo 2 - Projeto de Estruturas de Betão</em>. Caparica, Portugal: Instituto Português de Qualidade.</p>
+</div>
+<div id="ref-Tabela">
+<p>H.Barros, and J.Figueiras. 2012. <em>Tabelas E ábacos de Dimensionamento de Secções de Betão Solicitadas à Flexão E a Esforços Axiais Segundo O Eurocódigo 2</em>. Porto, Portugal: Faculdade de Engenharia da Universidade do Porto.</p>
+</div>
+<div id="ref-Veludo">
+<p>J.Veludo. 2014. “Apontamentos Teóricos.” Leiria, Portugal: Escola Superior de Tecnologia e Gestão. <a href="http://www.ipleiria.pt/estg/" class="uri">http://www.ipleiria.pt/estg/</a>.</p>
+</div>
+<div id="ref-R-base">
+<p>R Core Team. 2015. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="http://www.R-project.org/" class="uri">http://www.R-project.org/</a>.</p>
+</div>
+<div id="ref-Python">
+<p>Rossum, G. Van, and F.L. Drake. 2001. “Python Reference Manual.” Virginia, USA: PythonLabs. <a href="http://www.python.org" class="uri">http://www.python.org</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2016/01/03/pilar-betao/">Pilar de Betão - Dimensionamento</a></span>
+  <span class="nav-next"><a href="/post/2016/04/18/topsis-technique-for-order-of-preference-by-similarity-to-ideal-solution/">TOPSIS - Technique for Order of Preference by Similarity to Ideal Solution</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">&copy; <a href="/">Luis Moura</a> 20016 - 2018</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

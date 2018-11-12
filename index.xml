@@ -91,6 +91,28 @@ A análise do grupo de candidatos, será feita por um conjunto de cinco critéri
     </item>
     
     <item>
+      <title>Dimensionamento de Pilar de Betão Armado</title>
+      <link>/post/2016/01/06/pilar-betao-2/</link>
+      <pubDate>Wed, 06 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2016/01/06/pilar-betao-2/</guid>
+      <description>Introdução
+Dimensionamento de pilares em betão armado, de acordo com o Eurocódigo 2 (Comité Europeu de Normalização 2004).
+Cálculo estrutural de um pilar em betão armado, que de forma exemplificava, servirá para demonstrar o processo de cálculo perante as normas do Eurocódigo. Todo o cálculo é feito recorrendo a linguagem informática, sendo utilizado Python (Rossum and Drake 2001) e R (R Core Team 2015). Este trabalho é baseado nas notas do Professor Veludo (J.</description>
+    </item>
+    
+    <item>
+      <title>Pilar de Betão - Dimensionamento</title>
+      <link>/post/2016/01/03/pilar-betao/</link>
+      <pubDate>Sun, 03 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2016/01/03/pilar-betao/</guid>
+      <description>Introdução
+Análise introdutória sobre o comportamento estrutural de pilares de betão armado perante as directrizes do Eurocódigo 2 (Comité Europeu de Normalização 2004).
+Cálculo estrutural de um pilar em betão armado, que de forma exemplificava, servirá para demonstrar o processo de cálculo perante as normas do Eurocódigo. Todo o cálculo é feito recorrendo a linguagem informática, sendo utilizado Python (Rossum and Drake 2001) e R (R Core Team 2015). Este trabalho é baseado nas notas do Professor Veludo (J.</description>
+    </item>
+    
+    <item>
       <title>Luis Moura</title>
       <link>/about_me/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

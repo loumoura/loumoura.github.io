@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pilar,formulas,eurocódigo on l moura</title>
+    <link>/tags/pilarformulaseuroc%C3%B3digo/</link>
+    <description>Recent content in pilar,formulas,eurocódigo on l moura</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Wed, 06 Jan 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/pilarformulaseuroc%C3%B3digo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dimensionamento de Pilar de Betão Armado</title>
+      <link>/post/2016/01/06/pilar-betao-2/</link>
+      <pubDate>Wed, 06 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2016/01/06/pilar-betao-2/</guid>
+      <description>Introdução
+Dimensionamento de pilares em betão armado, de acordo com o Eurocódigo 2 (Comité Europeu de Normalização 2004).
+Cálculo estrutural de um pilar em betão armado, que de forma exemplificava, servirá para demonstrar o processo de cálculo perante as normas do Eurocódigo. Todo o cálculo é feito recorrendo a linguagem informática, sendo utilizado Python (Rossum and Drake 2001) e R (R Core Team 2015). Este trabalho é baseado nas notas do Professor Veludo (J.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -43,6 +43,16 @@
   </url>
   
   <url>
+    <loc>/post/2016/01/06/pilar-betao-2/</loc>
+    <lastmod>2016-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2016/01/03/pilar-betao/</loc>
+    <lastmod>2016-01-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/bim/</loc>
     <lastmod>2018-06-18T13:47:32+01:00</lastmod>
     <priority>0</priority>
@@ -113,6 +123,12 @@
   <url>
     <loc>/tags/</loc>
     <lastmod>2018-06-18T13:47:32+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/pilarformulaseuroc%C3%B3digo/</loc>
+    <lastmod>2016-01-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

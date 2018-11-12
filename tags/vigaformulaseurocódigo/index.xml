@@ -22,5 +22,16 @@ Estas fórmulas faziam parte dos meus apontamentos de betão armado. Algumas fó
  Flexão  Momento Flector Reduzido Percentagem Mecânica de Armadura Área de Armadura Posição da Linha Neutra Área Mínima de Armadura Área Máxima de Armadura Armadura Longitudinal Superior nos apoios de Extremidade Transverso Verificação de Esmagamento das Bielas Coeficiente de Redução da Resistência do Betão Fendilhado por esforço transverso Verificação de Compressão na Alma Armadura Mínima Esforço Transverso Resistente para Armadura mínima Tensão Máxima na Biela de Compressão Máxima Compressão Apoio Armadura Transversal nos Apoios} Espaçamento de Armadura Esforço Transverso  Espaçamento Longitudinal Máximo entre estribos Espaçamento Transversal entre ramos  Armadura de suspensão Armadura Ligação Banzo Alma Translação do Diagrama Translação do diagrama- Dispensa da Armadura Longitudinal de Tração Comprimento de amarração de cálculo Comprimento de amarração de referência Tensão de rotura da aderência  Valor de cálculo da resistência do betão à tração Valor de cálculo da tensão na secção do varão a partir da qual é medido o comprimento de amarração Comprimento mínimo de amarração Comprimento de Sobreposição  Torção Tensão em secções de paredes finas - Não Fendilhada Tensões em secções fendilhadas segundo EC2  Tensão tangencial numa parede de uma secção} Esforço tangencial numa parede de uma secção \(V_{Ed,i}\) Coeficiente de Redução da Resistência do betão fendilhado por esforço transverso \(\nu\) Verificação da resistência máxima de um elemento sujeito aos esforços de torção e transverso Área da secção transversal de armadura longitudinal de torção Armadura Transversal de Torção \(\frac{A_{st}}{S}\) Máximo Espaçamento Longitudinal das Cintas de Torção\(S_{e,max}\)  Fendilhação Controlo da Fendilhação sem cálculo Diret Pré-Dimensionamento Momento de Fendilhação - Momento Critico \(M_{cr}\) Cálculo da Largura das Fendas \(w_{k}\)  Cálculo de \(\varepsilon_{sm}\) e de \(\varepsilon_{cm}\) (extensão média relativa entre o aço e o betão): Cálculo da Armadura mínima para controlo da Fendilhação \(A_{S,min}\) Verificação do E.</description>
     </item>
     
+    <item>
+      <title>Pilar de Betão - Dimensionamento</title>
+      <link>/post/2016/01/03/pilar-betao/</link>
+      <pubDate>Sun, 03 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2016/01/03/pilar-betao/</guid>
+      <description>Introdução
+Análise introdutória sobre o comportamento estrutural de pilares de betão armado perante as directrizes do Eurocódigo 2 (Comité Europeu de Normalização 2004).
+Cálculo estrutural de um pilar em betão armado, que de forma exemplificava, servirá para demonstrar o processo de cálculo perante as normas do Eurocódigo. Todo o cálculo é feito recorrendo a linguagem informática, sendo utilizado Python (Rossum and Drake 2001) e R (R Core Team 2015). Este trabalho é baseado nas notas do Professor Veludo (J.</description>
+    </item>
+    
   </channel>
 </rss>
