@@ -6,10 +6,20 @@
     <description>Recent content in Posts on l moura</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
-    <lastBuildDate>Mon, 18 Jun 2018 13:47:32 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 13 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Laje Vigada -Dimensionamento de armadura com Python</title>
+      <link>/post/2018/11/13/laje-vigada-python/</link>
+      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018/11/13/laje-vigada-python/</guid>
+      <description>Introdução: Este texto, foi originalmente composto composto no Jupyter Notebook (Pérez and Granger 2007), usando a linguagem informática Python (Rossum and Drake 2001), sendo depois convertido para Rmarkdown (Allaire et al. 2016). Deixei visível todo o código informático que utilizei, de modo a que os resultados possam ser repetidos por outra pessoa ou simplesmente como referência para mim próprio.
+Neste texto, pretendo com a ajuda da linguagem informática,1 obter o dimensionamento da armadura para uma laje.</description>
+    </item>
     
     <item>
       <title>Custo do Risco</title>

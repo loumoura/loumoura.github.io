@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Laje Vigada -Dimensionamento de armadura com Python - Exemplo de cálculo  - l moura</title>
+    <meta property="og:title" content="Laje Vigada -Dimensionamento de armadura com Python - l moura">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Introdução: Este texto, foi originalmente composto composto no Jupyter Notebook (Pérez and Granger 2007), usando a linguagem informática Python (Rossum and Drake 2001), sendo depois convertido para &amp;hellip;">
+      <meta property="og:description" content="Introdução: Este texto, foi originalmente composto composto no Jupyter Notebook (Pérez and Granger 2007), usando a linguagem informática Python (Rossum and Drake 2001), sendo depois convertido para &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+<link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      
+<h1><a href="/"><img src="/author.png" alt="t" /></a></h1>
+
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" />
+  <label id="menu-label" for="menu-check" class="unselectable">
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about_me/">Autor</a></li>
+  
+  <li><a href="/files/cv.pdf">CV</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Laje Vigada -Dimensionamento de armadura com Python</h1>
+<h1><span class="subtitle">Exemplo de cálculo</span></h1>
+<h3>Luis Moura
+  /  2018-11-13</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+
+<p><strong>Introdução:</strong> Este texto, foi originalmente composto composto no Jupyter Notebook <span class="citation">(Pérez and Granger 2007)</span>, usando a linguagem informática Python <span class="citation">(Rossum and Drake 2001)</span>, sendo depois convertido para Rmarkdown <span class="citation">(Allaire et al. 2016)</span>. Deixei visível todo o código informático que utilizei, de modo a que os resultados possam ser repetidos por outra pessoa ou simplesmente como referência para mim próprio.</p>
+<p>Neste texto, pretendo com a ajuda da linguagem informática,<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> obter o dimensionamento da armadura para uma laje.</p>
+<p><strong>Condições existentes:</strong> O painel de lajes vigadas, representado na figura em baixo, apresenta uma espessura igual a 0.15 m e encontra-se submetido às seguintes acções:</p>
+<ul>
+<li>peso próprio;</li>
+<li>revestimento: <span class="math inline">\(1.5 kN/m^{2}\)</span>;</li>
+<li>sobrecarga de utilização: <span class="math inline">\(4.0 kN/m^{2}\)</span>;</li>
+</ul>
+<p><strong>Objectivo:</strong> Dimensionar e pormenorize as armaduras das lajes do piso recorrendo ao método das bandas. Adoptar para materiais o betão C25/30 e aço A400NR.</p>
+<div id="condicoes-iniciais" class="section level3">
+<h3>Condições Iniciais</h3>
+<div id="livrarias-necessarias" class="section level4">
+<h4>Livrarias necessárias</h4>
+<p>Introduzir as livrarias de Python <span class="citation">(Rossum and Drake 2001)</span>, necessárias para este trabalho, que são Sympy <span class="citation">(Meurer et al. 2017)</span>, <a href="https://anastruct.readthedocs.io/en/latest/#">AnaStruct</a> <span class="citation">(Vink, n.d.)</span> e Numpy <span class="citation">(Travis E 2006)</span>.</p>
+<pre class="python"><code>%matplotlib inline
+from anastruct.fem.system import SystemElements
+import matplotlib.pyplot as plt
+from sympy import*
+init_printing(use_latex=&quot;mathjax&quot;)
+x,y=var(&quot;x y&quot;,real=True)
+import numpy as np
+%load_ext tikzmagic</code></pre>
+</div>
+<div id="gerar-imagem-da-laje-com-latex" class="section level4">
+<h4>Gerar imagem da laje com LaTex</h4>
+<p>A imagem é criada usando os programas Tikz <span class="citation">(Tantau 2013)</span> e Stanli <span class="citation">(Hackl 2016)</span> para Latex.</p>
+<pre class="python"><code>%%tikz --scale 1 --size 1000,500 -f png -p stanli --save=images/estrutura_2.png
+\begin{tikzpicture}
+\begin{scope}[shift={(1.5,3)}]
+\scaling{1};%
+\draw [help lines,step =.5] ( 0 , 0) grid (12 ,10);
+\node[align=left] at (0,12.5) {Laje Vigada\\ Painel de Lajes Vigadas};
+%draw the slab  
+\point{a}{0}{0};
+\point{b}{0}{5};
+\point{c}{0}{10};
+\point{d}{6}{10};
+\point{e}{12}{10};
+\point{f}{12}{5};
+\point{g}{12}{0}
+\point{h}{6}{0}
+\point{i}{6}{5}
+%Slab beams:    
+\beam{1}{a}{b}[0][1];
+\beam{1}{b}{c}[1][1];
+\beam{1}{c}{d}[2][3];
+\beam{1}{d}{e}[][];
+\beam{1}{e}{f};
+\beam{1}{f}{g};
+\beam{1}{g}{h};
+\beam{1}{h}{a}
+\beam{1}{h}{i};
+\beam{1}{i}{h};     
+\beam{1}{i}{d};
+\beam{1}{d}{i};
+\beam{1}{b}{i}
+\beam{1}{i}{b}
+\beam{1}{i}{f}
+\beam{1}{f}{i}
+% Numbering beams   
+\notation{1}{a}{A}[below left];
+\notation{1}{b}{B}[below left];
+\notation{1}{c}{C}[above left];
+\notation{1}{d}{D}[above];
+\notation{1}{e}{E}[above right];
+\notation{1}{f}{F}[right];
+\notation{1}{g}{G}[below right];
+\notation{1}{h}{H}[below];
+\notation{1}{i}{I};
+%slab dimensions    
+\dimensioning{2}{a}{b}{-1}[$5,0$];
+\dimensioning{2}{b}{c}{-1}[$5,0$];
+\dimensioning{1}{c}{d}{11}[$6,0$];
+\dimensioning{1}{d}{e}{11}[$6,0$]
+%points for the diagram
+\point{A}{0}{-2};
+\point{B}{6}{-2};
+\point{C}{12}{-2};
+\point{D}{14}{0};
+\point{E}{14}{5};
+\point{F}{14}{10}
+\point{G}{14}{2.5}; %middle beam point
+\point{H}{14}{7.5}; %middle beam point
+%Diagram - Beams
+\beam{2}{A}{B};
+\beam{2}{B}{C};
+\beam{2}{D}{E};
+\beam{2}{E}{F}
+%Supports for the diagram:
+\support{1}{A};
+\support{1}{B};
+\support{1}{C};
+\support{2}{D}[90];
+\support{1}{E}[90];
+\support{1}{F}[90];
+%loads
+\lineload{1}{A}{C}[0.5][0.5][.05];
+\lineload{1}{D}{F}[0.5][0.5][.1];
+%Moment Diagram 
+\internalforces {A}{B}{0}{-.5}[-.5][ blue!40 ];
+\internalforces {B}{C}{-.5}{0}[-.5][ blue!40 ];
+\internalforces {D}{G}{0}{.5}[-.5][ blue!40 ];
+\internalforces {G}{E}{.5}{-.5}[.5][ blue!40 ];
+\internalforces {E}{H}{-0.5}{.5}[-.5][ blue!40 ];
+\internalforces {H}{F}{.5}{0}[.5][ blue!40 ];
+\end{scope}    
+\end{tikzpicture}</code></pre>
+<div class="figure">
+<img src="/post/structural_python_2_files/structural_2_3_0.png" alt="Condições Iniciais - Imagem gerada a partir de Tikz" />
+<p class="caption">Condições Iniciais - Imagem gerada a partir de Tikz</p>
+</div>
+</div>
+</div>
+<div id="calculo-das-acoes" class="section level3">
+<h3>Cálculo das Ações</h3>
+<ul>
+<li>Peso Próprio: pp <span class="math inline">\(= \gamma _ { \text { betao } } \times h = 25 \times 0.15 = 3.8 \mathrm { kN } / \mathrm { m } ^ { 2 }\)</span></li>
+<li>Revestimentos: <span class="math inline">\(r e v = 1.5 \mathrm { kN } / \mathrm { m } ^ { 2 }\)</span></li>
+<li>Sobrecarga: <span class="math inline">\(\mathrm { SC } = 4.0 \mathrm { kN } / \mathrm { m } ^ { 2 }\)</span></li>
+</ul>
+<p><span class="math display">\[p _ { \mathrm { sd } } = 1.5 \mathrm { cp } + 1.5 \mathrm { sc } = 1.5 \times ( 3.8 + 1.5 + 4.0 ) = 13.9 \mathrm { kN } \mathrm { m } ^ { 2 }\]</span></p>
+</div>
+<div id="modelo-de-calculo" class="section level3">
+<h3>Modelo de Cálculo</h3>
+<ul>
+<li><span class="math inline">\(\frac { L _ { \text { maior } } } { L _ { \text { menor } } } = \frac { 6 } { 5 } = 1.2 &lt; 2 \Rightarrow \text { Laje armada nas duas direcções }\)</span></li>
+</ul>
+<pre class="python"><code>%%tikz --scale 1 --size 750,600 -f png -p stanli --save=images/panel.png
+\begin{tikzpicture}
+\begin{scope}[shift={(1.5,9)}]
+\scaling{1};%
+\node[align=left] at (2,7) {Painel - Laje Vigada};
+
+%Grid
+\draw [help lines,step =.5] ( 0 , 0) grid (6 ,5);
+%draw the slab  
+\point{a}{0}{0};
+\point{b}{0}{5};
+\point{c}{6}{5};
+\point{d}{6}{0};
+%Slab beams:    
+\beam{1}{a}{b};
+\beam{2}{b}{c};
+\beam{2}{c}{d};
+\beam{1}{d}{a};
+% Numbering beams   
+\notation{1}{a}{A}[below left];
+\notation{1}{b}{B}[above left];
+\notation{1}{c}{I}[above right];
+\notation{1}{d}{H}[below right];
+%slab dimensions    
+\dimensioning{2}{a}{b}{-1}[$5,0$];
+\dimensioning{1}{b}{c}{6}[$6,0$];
+%Draw the beam
+\point{e}{0}{-3}
+\point{f}{6}{-3};
+\point{g}{0}{-4.5}
+\point{h}{6}{-4.5}
+% Draw Beam
+\beam{2}{e}{f};
+%Supports for the beam:
+\support{1}{e};
+\support{3}{f}[90];
+%loads
+\lineload{1}{e}{f}[0.5][0.5][.05];
+\load{1}{e}[270][1][1];
+\load{1}{f}[270][1][1];
+%notations:
+\notation{1}{g}{$ 3  \frac{pL}{8} $}[right];  
+\notation{1}{h}{$ 5  \frac{pL}{8} $}[right]; 
+%Draw the V points 
+\point{i}{0}{-6}
+\point{j}{6}{-6};
+% Draw Beam V
+\beam{2}{i}{j};
+%Draw the V points 
+\point{i}{0}{-6}
+\point{j}{6}{-6};
+% Draw Beam V
+\beam{2}{i}{j};
+% V Diagram 
+\internalforces {i}{j}{-0.5}{0.8}[0][ black!90 ];
+% Note  
+\notation{1}{i}{DEV}[above left=3mm];
+\notation{1}{i}{+}[above right];
+\notation{1}{j}{--}[below left=3mm];
+%Draw the M points 
+\point{k}{0}{-8};
+\point{l}{6}{-8};
+\point{m}{2.5}{-8};
+% Draw Beam V
+\beam{2}{k}{l};
+% V Diagram 
+\internalforces {k}{l}{0}{-.5}[-.9][ black!90];
+% Note  
+\notation{1}{k}{DMF}[above left=3mm];
+\notation{1}{m}{+}[below=1.5mm];
+\notation{1}{l}{--}[above left];
+\end{scope}   
+\end{tikzpicture}</code></pre>
+<div class="figure">
+<img src="/post/structural_python_2_files/structural_2_6_0.png" />
+
+</div>
+</div>
+<div id="calculo-dos-esforcos---direccao-x" class="section level3">
+<h3>Cálculo dos Esforços - Direcção X</h3>
+<pre class="python"><code># Esforços na Direcção X
+ss = SystemElements(load_factor=1 )
+ss.add_truss_element(location=[[0, 0], [6, 0]])
+ss.add_support_hinged(node_id=1)
+ss.add_support_fixed(node_id=2)
+Q=0.3*13.9 
+ss.q_load(element_id=1, q=-Q)
+ss.solve()
+# get a visual of the element ID&#39;s and the node ID&#39;s
+ss.show_structure(scale=0.6, figsize=(12,4))</code></pre>
+<div class="figure">
+<img src="/post/structural_python_2_files/structural_2_8_0.png" />
+
+</div>
+<div id="diagrama-do-esforco-transverso-para-a-direccao-x" class="section level4">
+<h4>Diagrama do Esforço Transverso para a direcção x</h4>
+<p><span class="math display">\[V_{x=0-5.99}=9.38-4.2x\]</span> <span class="math display">\[V_{x=6}=9.38-4.2x+15.04\]</span></p>
+<pre class="python"><code>ss.show_shear_force(scale=0.6, figsize=(12,4))</code></pre>
+<div class="figure">
+<img src="/post/structural_python_2_files/structural_2_10_0.png" />
+
+</div>
+</div>
+<div id="diagrama-de-momento-flector-para-a-direccao-x" class="section level4">
+<h4>Diagrama de Momento Flector para a direcção X</h4>
+<pre class="python"><code>Vx=-9.45+4.2*x
+zero_a=solve(Eq(Vx,0),x)
+zero=np.max(zero_a)
+Mx=integrate(Vx)
+print(f&quot;Momento positivo máximo ocorre a {zero:.3} metros e é de {-Mx.subs(x,zero):.3} kNm/m.&quot;),
+print(f&quot;Momento negativo máximo ocorre aos 6 metros e é de {Mx.subs(x,6):.3} kNm/m.&quot;)
+plot(Mx,(x,0,6), title=(&quot;DMF - Direcção X&quot;));
+</code></pre>
+<pre><code>Momento positivo máximo ocorre a 2.25 metros e é de 10.6 kNm/m.
+Momento negativo máximo ocorre aos 6 metros e é de 18.9 kNm/m.</code></pre>
+<div class="figure">
+<img src="/post/structural_python_2_files/structural_2_12_1.png" />
+
+</div>
+<pre class="python"><code>ss.show_bending_moment(scale=0.6, figsize=(12,4))</code></pre>
+<div class="figure">
+<img src="/post/structural_python_2_files/structural_2_13_0.png" />
+
+</div>
+</div>
+</div>
+<div id="calculo-dos-esforcos---direccao-y" class="section level3">
+<h3>Cálculo dos Esforços - Direcção Y</h3>
+<pre class="python"><code># Esforços na Direcção Y
+ss = SystemElements(load_factor=1 )
+ss.add_truss_element(location=[[0, 0], [5, 0]])
+ss.add_support_hinged(node_id=1)
+ss.add_support_fixed(node_id=2)
+Q=0.7*13.9 
+ss.q_load(element_id=1, q=-Q)
+ss.solve()
+# get a visual of the element ID&#39;s and the node ID&#39;s
+ss.show_structure(scale=0.6, figsize=(12,4))</code></pre>
+<div class="figure">
+<img src="/post/structural_python_2_files/structural_2_15_0.png" />
+
+</div>
+<div id="diagrama-do-esforco-transverso-para-a-direccao-y" class="section level4">
+<h4>Diagrama do Esforço Transverso para a direcção Y</h4>
+<p><span class="math display">\[V_{x=0-5.99}=18.24-9.73x\]</span> <span class="math display">\[V_{x=6}=18.24-9.73.2x+30.41\]</span></p>
+<pre class="python"><code>ss.show_shear_force(scale=0.6, figsize=(12,4))</code></pre>
+<div class="figure">
+<img src="/post/structural_python_2_files/structural_2_17_0.png" />
+
+</div>
+</div>
+<div id="diagrama-de-momento-flector-para-a-direccao-y" class="section level4">
+<h4>Diagrama de Momento Flector para a direcção Y</h4>
+<pre class="python"><code>Vy=-18.24+9.73*x
+zero_b=solve(Eq(Vy,0),x)
+zero=np.max(zero_b)
+My=integrate(Vy)
+print(f&quot;Momento positivo máximo ocorre a {zero:.3} metros e é de {-My.subs(x,zero):.3} kNm/m.&quot;),
+print(f&quot;Momento negativo máximo ocorre aos 6 metros e é de {My.subs(x,5):.3} kNm/m.&quot;)
+c = Circle(Point(1.87,-17.1), 1)
+plot(My, (x,0,5), title=(&quot;DMF - Direcção Y&quot;), ylabel=(&quot;kNm/m&quot;))</code></pre>
+<pre><code>Momento positivo máximo ocorre a 1.87 metros e é de 17.1 kNm/m.
+Momento negativo máximo ocorre aos 6 metros e é de 30.4 kNm/m.</code></pre>
+<div class="figure">
+<img src="/post/structural_python_2_files/structural_2_19_1.png" />
+
+</div>
+<pre class="python"><code>ss.show_bending_moment(scale=0.6, figsize=(12,4))</code></pre>
+<div class="figure">
+<img src="/post/structural_python_2_files/structural_2_20_0.png" />
+
+</div>
+</div>
+</div>
+<div id="tabela-resultados-iniciais" class="section level3">
+<h3>Tabela Resultados iniciais</h3>
+<div id="m_sd-knmm---momento-maximo-positivo-e-negativo-em-ambas-as-direccoes" class="section level4">
+<h4><span class="math inline">\(M_{sd} ~ [kNm/m]\)</span> - Momento Máximo Positivo e negativo em ambas as direcções</h4>
+<pre class="python"><code>import pandas as pd
+MX=[-Mx.subs(x,zero), -Mx.subs(x,6)]
+MY=[-My.subs(x,zero), -My.subs(x,5)]
+data = {&#39;M (max) X-X&#39; : pd.Series(MX), 
+        &#39;M (max) Y-Y&#39; : pd.Series(MY)}
+tabela = pd.DataFrame(data)
+print(tabela)</code></pre>
+<pre><code>         M (max) X-X        M (max) Y-Y
+0   10.3353301736822   17.0964850976362
+1  -18.9000000000000  -30.4250000000000</code></pre>
+</div>
+<div id="mu-momento-reduzido" class="section level4">
+<h4><span class="math inline">\(\mu\)</span>, Momento Reduzido</h4>
+<pre class="python"><code>fcd=16.67
+d=0.12
+b=1
+uxp=[N(-Mx.subs(x,zero)/(fcd*1000*d**2*b),3)]
+uxn=[N(Mx.subs(x,6)/(fcd*1000*d**2*b),3)]
+uyp=[N(-My.subs(x,zero)/(fcd*1000*d**2*b),3)]
+uyn=[N(My.subs(x,5)/(fcd*1000*d**2*b),3)]
+resultados=[uxp, uxn, uyp, uyn]
+momentos=[&quot;Moment Max positivo,X-X&quot;,
+          &quot;Moment Max negativo,X-X&quot;,
+         &quot;Moment Max positivo,Y-Y&quot;,
+         &quot;Moment Max negativo,Y-Y&quot;]
+data_a = {&#39;Descricao&#39; : pd.Series(momentos), 
+        &#39;Momento Reduzido&#39; : pd.Series(resultados)}
+tabela_a = pd.DataFrame(data_a)
+tabela_momento_reduzido=pd.DataFrame(tabela_a)
+print(tabela_momento_reduzido)</code></pre>
+<pre><code>                 Descricao Momento Reduzido
+0  Moment Max positivo,X-X         [0.0431]
+1  Moment Max negativo,X-X         [0.0787]
+2  Moment Max positivo,Y-Y         [0.0712]
+3  Moment Max negativo,Y-Y          [0.127]</code></pre>
+</div>
+<div id="omega" class="section level4">
+<h4><span class="math inline">\(\omega\)</span></h4>
+<pre class="python"><code>wxp=[1-sqrt(1-2*N(-Mx.subs(x,zero)/(fcd*1000*d**2*b),3))]
+wxn=[1-sqrt(1-2*N(Mx.subs(x,6)/(fcd*1000*d**2*b),3))]
+wyp=[1-sqrt(1-2*N(-My.subs(x,zero)/(fcd*1000*d**2*b),3))]
+wyn=[1-sqrt(1-2*N(My.subs(x,5)/(fcd*1000*d**2*b),3))]
+resultados_omega=[wxp, wxn, wyp, wyn]
+omega=[&quot;Omega positivo,X-X&quot;,
+          &quot;Omega negativo,X-X&quot;,
+         &quot;Omega positivo,Y-Y&quot;,
+         &quot;Omega negativo,Y-Y&quot;]
+data_b = {&#39;Descricao&#39; : pd.Series(omega), 
+        &#39;Valor de Omega&#39; : pd.Series(resultados_omega)}
+tabela_b = pd.DataFrame(data_b)
+tabela_omega=pd.DataFrame(tabela_b)
+print(tabela_omega)</code></pre>
+<pre><code>            Descricao Valor de Omega
+0  Omega positivo,X-X       [0.0439]
+1  Omega negativo,X-X       [0.0822]
+2  Omega positivo,Y-Y       [0.0740]
+3  Omega negativo,Y-Y        [0.136]</code></pre>
+</div>
+<div id="area-de-armadura-a_s" class="section level4">
+<h4>Área de armadura, <span class="math inline">\(A_{s}\)</span></h4>
+<pre class="python"><code>
+fsyd=348
+Wxp=1-sqrt(1-2*N(-Mx.subs(x,zero)/(fcd*1000*d**2*b),3))
+Wxn=1-sqrt(1-2*N(Mx.subs(x,6)/(fcd*1000*d**2*b),3))
+Wyp=1-sqrt(1-2*N(-My.subs(x,zero)/(fcd*1000*d**2*b),3))
+Wyn=1-sqrt(1-2*N(My.subs(x,5)/(fcd*1000*d**2*b),3))
+As_x_p= [(Wxp*b*d*(fcd/fsyd)*10**4).n(3)]
+As_x_n= [(Wxn*b*d*(fcd/fsyd)*10**4).n(3)]
+As_y_p= [(Wyp*b*d*(fcd/fsyd)*10**4).n(3)]
+As_y_n= [(Wyn*b*d*(fcd/fsyd)*10**4).n(3)]
+resultados_As=[As_x_p, As_x_n, As_y_p, As_y_n]
+As=[&quot;As,x+&quot;,
+          &quot;As,x-&quot;,
+         &quot;As,y+&quot;,
+         &quot;As,y-&quot;]
+data_c = {&#39;Descricao&#39; : pd.Series(As), 
+        &#39;Área de Armadura (cm2/m)&#39; : pd.Series(resultados_As)}
+tabela_c = pd.DataFrame(data_c)
+tabela_As=pd.DataFrame(tabela_c)
+print(tabela_As)</code></pre>
+<pre><code>  Descricao Área de Armadura (cm2/m)
+0     As,x+                   [2.53]
+1     As,x-                   [4.72]
+2     As,y+                   [4.25]
+3     As,y-                   [7.82]</code></pre>
+</div>
+</div>
+<div id="armadura-minima" class="section level3">
+<h3>Armadura Miníma</h3>
+<p><span class="math display">\[A _ { s , m i n } = 0.26 \frac { f _ { c t m } } { f _ { y k } } b _ { t } \cdot d = 0.26 \frac { 2.6 } { 400 } \times 0.12 \times 10 ^ { 4 } = 2.03 cm  ^ { 2 } /m\]</span></p>
+<p>Esta armadura deve ser colocada em todas as zonas (e direcções) onde a laje possa estar traccionada.</p>
+</div>
+<div id="armaduras-de-distribuicao" class="section level3">
+<h3>Armaduras de distribuição</h3>
+<ul>
+<li>Armadura inferior: não é necessária</li>
+<li>Armadura Superior: <span class="math inline">\(\mathrm { A } _ { \mathrm { s } , \mathrm { d } } = 0.20 \times 7.96 = 1.59 \mathrm { cm } ^ { 2 } / \mathrm { m }\)</span> (direcção Y)</li>
+<li>Armadura Superior: <span class="math inline">\(A _ { s , d } ^ { - } = 0.20 \times 4.81 = 0.9 \mathrm { cm } ^ { 2 } / \mathrm { m }\)</span> (Direcção X)</li>
+</ul>
+<div id="bibliografia" class="section level4 unnumbered">
+<h4>Bibliografia</h4>
+<div id="refs" class="references">
+<div id="ref-R-rmarkdown">
+<p>Allaire, JJ, Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang, Jeff Allen, Hadley Wickham, Aron Atkins, and Rob Hyndman. 2016. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="http://CRAN.R-project.org/package=rmarkdown" class="uri">http://CRAN.R-project.org/package=rmarkdown</a>.</p>
+</div>
+<div id="ref-stanli">
+<p>Hackl, Jürgen. 2016. “CTAN: /Tex-Archive/Graphics/Pgf/Contrib/Stanli.” <a href="https://ctan.org/tex-archive/graphics/pgf/contrib/stanli?lang=en" class="uri">https://ctan.org/tex-archive/graphics/pgf/contrib/stanli?lang=en</a>.</p>
+</div>
+<div id="ref-sympy">
+<p>Meurer, Aaron, Christopher P. Smith, Mateusz Paprocki, Ondřej Čertík, Sergey B. Kirpichev, Matthew Rocklin, AMiT Kumar, et al. 2017. “SymPy: Symbolic Computing in Python.” <em>PeerJ Computer Science</em> 3 (January): e103. doi:<a href="https://doi.org/10.7717/peerj-cs.103">10.7717/peerj-cs.103</a>.</p>
+</div>
+<div id="ref-jupyter">
+<p>Pérez, Fernando, and Brian E. Granger. 2007. “IPython: A System for Interactive Scientific Computing.” <em>Computing in Science and Engineering</em> 9 (3). IEEE Computer Society: 21–29. doi:<a href="https://doi.org/10.1109/MCSE.2007.53">10.1109/MCSE.2007.53</a>.</p>
+</div>
+<div id="ref-Python">
+<p>Rossum, G. Van, and F.L. Drake. 2001. “Python Reference Manual.” Virginia, USA: PythonLabs. <a href="http://www.python.org" class="uri">http://www.python.org</a>.</p>
+</div>
+<div id="ref-tikz">
+<p>Tantau, Till. 2013. <em>The Tikz and Pgf Packages: Manual for Version 3.0.0</em>. <a href="http://sourceforge.net/projects/pgf/" class="uri">http://sourceforge.net/projects/pgf/</a>.</p>
+</div>
+<div id="ref-numpy">
+<p>Travis E, Oliphant. 2006. “A Guide to Numpy.” <a href="http://www.scipy.org/" class="uri">http://www.scipy.org/</a>.</p>
+</div>
+<div id="ref-anastruct">
+<p>Vink, Ritchie. n.d. “Welcome to anaStruct’s Documentation! — AnaStruct 1.b3 Documentation.” <a href="https://anastruct.readthedocs.io/en/latest/index.html" class="uri">https://anastruct.readthedocs.io/en/latest/index.html</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Fernando Pérez, Brian E. Granger, IPython: A System for Interactive Scientific Computing, Computing in Science and Engineering, vol. 9, no. 3, pp. 21-29, May/June 2007, <a href="doi:10.1109/MCSE.2007.53" class="uri">doi:10.1109/MCSE.2007.53</a>. URL: <a href="https://ipython.org" class="uri">https://ipython.org</a><a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2018/06/18/custo-do-risco/">Custo do Risco</a></span>
+  <span class="nav-next"></span>
+</nav>
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">&copy; <a href="/">Luis Moura</a> 20016 - 2018</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+
