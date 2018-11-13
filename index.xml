@@ -17,7 +17,7 @@
       <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/2018/11/13/laje-vigada-python/</guid>
-      <description>Introdução: Este texto, foi originalmente composto composto no Jupyter Notebook (Pérez and Granger 2007), usando a linguagem informática Python (Rossum and Drake 2001), sendo depois convertido para Rmarkdown (Allaire et al. 2016). Deixei visível todo o código informático que utilizei, de modo a que os resultados possam ser repetidos por outra pessoa ou simplesmente como referência para mim próprio.
+      <description>Introdução: Este texto, foi originalmente composto no Jupyter Notebook (Pérez and Granger 2007), usando a linguagem informática Python (Rossum and Drake 2001), sendo depois convertido para Rmarkdown (Allaire et al. 2016). Deixei visível todo o código informático que utilizei, de modo a que os resultados possam ser repetidos por outra pessoa ou simplesmente como referência para mim próprio.
 Neste texto, pretendo com a ajuda da linguagem informática,1 obter o dimensionamento da armadura para uma laje.</description>
     </item>
     
@@ -28,7 +28,7 @@ Neste texto, pretendo com a ajuda da linguagem informática,1 obter o dimensiona
       
       <guid>/post/2018/10/13/estrutura-python/</guid>
       <description>Criação dos diagramas dos esforços e deslocamento para um pórtico, usando Python.
-Introdução: Este texto, foi originalmente composto composto no Jupyter Notebook (Pérez and Granger 2007), usando a linguagem informática Python (Rossum and Drake 2001), sendo depois convertido para Rmarkdown (Allaire et al. 2016). Deixei visível todo o código informático que utilizei, de modo a que os resultados possam ser repetidos por outra pessoa ou simplesmente como referência para mim próprio.</description>
+Introdução: Este texto, foi originalmente composto no Jupyter Notebook (Pérez and Granger 2007), usando a linguagem informática Python (Rossum and Drake 2001), sendo depois convertido para Rmarkdown (Allaire et al. 2016). Deixei visível todo o código informático que utilizei, de modo a que os resultados possam ser repetidos por outra pessoa ou simplesmente como referência para mim próprio.</description>
     </item>
     
     <item>
