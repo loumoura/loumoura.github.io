@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Análise Estrutural de um Pórtico - Recurso a Python  - l moura</title>
+    <meta property="og:title" content="Análise Estrutural de um Pórtico - l moura">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Criação dos diagramas dos esforços e deslocamento para um pórtico, usando Python.
+Introdução: Este texto, foi originalmente composto composto no Jupyter Notebook (Pérez and Granger 2007), usando a &amp;hellip;">
+      <meta property="og:description" content="Criação dos diagramas dos esforços e deslocamento para um pórtico, usando Python.
+Introdução: Este texto, foi originalmente composto composto no Jupyter Notebook (Pérez and Granger 2007), usando a &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+<link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      
+<h1><a href="/"><img src="/author.png" alt="t" /></a></h1>
+
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" />
+  <label id="menu-label" for="menu-check" class="unselectable">
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about_me/">Autor</a></li>
+  
+  <li><a href="/files/cv.pdf">CV</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Análise Estrutural de um Pórtico</h1>
+<h1><span class="subtitle">Recurso a Python</span></h1>
+<h3>Luis Moura
+  /  2018-10-13</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+
+<p>Criação dos diagramas dos esforços e deslocamento para um pórtico, usando Python.</p>
+<p><strong>Introdução:</strong> Este texto, foi originalmente composto composto no <a href="http://jupyter.org/">Jupyter Notebook</a> <span class="citation">(Pérez and Granger 2007)</span>, usando a linguagem informática <a href="https://www.python.org/">Python</a> <span class="citation">(Rossum and Drake 2001)</span>, sendo depois convertido para <a href="https://rmarkdown.rstudio.com/">Rmarkdown</a> <span class="citation">(Allaire et al. 2016)</span>. Deixei visível todo o código informático que utilizei, de modo a que os resultados possam ser repetidos por outra pessoa ou simplesmente como referência para mim próprio.</p>
+<p>Neste texto, pretendo com a ajuda da linguagem informática,<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> obter o dimensionamento da armadura para uma laje.</p>
+<p><strong>Objectivo:</strong> Criação dos diagramas dos esforços e deslocamento para o Pórtico apresentado na figura que se segue, usando <a href="https://www.python.org/">Python</a> <span class="citation">(Rossum and Drake 2001)</span>.</p>
+<div id="python---livrarias-necessarias" class="section level3">
+<h3>Python - livrarias necessárias</h3>
+<p>Introduzir as livrarias de <a href="https://www.python.org/">Python</a> <span class="citation">(Rossum and Drake 2001)</span>, necessárias para este trabalho, que são <a href="https://www.sympy.org/">Sympy</a> <span class="citation">(Meurer et al. 2017)</span>, <a href="https://anastruct.readthedocs.io/en/latest/#">AnaStruct</a> <span class="citation">(Vink, n.d.)</span>, <a href="https://www.numpy.org/">Numpy</a> <span class="citation">(Travis E 2006)</span> e <a href="https://matplotlib.org/">Matplotlib</a>.</p>
+<pre class="python"><code># if using ipython notebook
+%matplotlib inline
+from anastruct.fem.system import SystemElements
+import matplotlib.pyplot as plt
+%load_ext tikzmagic</code></pre>
+</div>
+<div id="portico" class="section level3">
+<h3>Pórtico</h3>
+<p>A imagem do Pórtico é criada usando os programas Tikz <span class="citation">(Tantau 2013)</span> e Stanli <span class="citation">(Hackl 2016)</span> para Latex <span class="citation">(Donald E. Knuth, n.d.)</span>.</p>
+<pre class="python"><code>%%tikz --scale 1 --size 700,500 -f png -p stanli --save=images/estrutura_1.png
+\begin{tikzpicture}
+\begin{scope}[shift={(1.6,1.6)}]
+\point {a }{0}{0};
+\point {b }{0}{5};
+\point {c }{5}{5};
+\point {d }{5}{0};
+\beam {1}{ a }{ b };
+\beam {1}{ b }{ c };
+\beam {1}{ c }{ d };
+\beam {1}{ a }{ c };
+\support {1}{ a };
+\support {1}{ d };
+\hinge {1}{ b };
+\hinge {1}{ c };
+\hinge {1}{ a };
+\hinge {1}{ d };
+\dimensioning {1}{ a }{ d }{ -1.3}[ $5 ~ m$ ];
+\dimensioning {2}{ d }{ c }{ -1}[ $5 ~ m$ ];
+\load{1}{ b }[180][1.2];
+\dnotation {1}{ b }{ $10 ~ kN$ }[ above left =2 mm ];
+\dnotation {1}{ a }{ $EA=5000kN$ }[ right =3 mm ];
+\notation {4}{ a }{ b }[ $EA$ ];
+\notation {4}{ b }{ c }[ $EA$ ];
+\notation {4}{ d }{ c }[ $EA$ ];
+\notation {4}{ c }{ a }[ $EA \sqrt{2}$ ];
+\end{scope}
+\end{tikzpicture}</code></pre>
+<div class="figure">
+<img src="/post/structural_1_files/structural_1_3_0.png" alt="Pórtico" />
+<p class="caption">Pórtico</p>
+</div>
+<div id="criacao-do-portico-em-python" class="section level4">
+<h4>Criação do Pórtico em Python</h4>
+<pre class="python"><code>import math 
+ss = SystemElements(EA=5000)
+ss.add_truss_element(location=[[0, 0], [0, 5]])
+ss.add_truss_element(location=[[0, 5], [5, 5]])
+ss.add_truss_element(location=[[5, 5], [5, 0]])
+ss.add_truss_element(location=[[0, 0], [5, 5]], EA=5000 * math.sqrt(2))
+ss.add_support_hinged(node_id=1)
+ss.add_support_hinged(node_id=4)
+ss.point_load(Fx=10, node_id=2)
+ss.solve()
+# get a visual of the element ID&#39;s and the node ID&#39;s
+ss.show_structure(scale=1, figsize=(10,6))</code></pre>
+<div class="figure">
+<img src="/post/structural_1_files/structural_1_4_0.png" />
+
+</div>
+</div>
+<div id="reacoes-nos-apoios" class="section level4">
+<h4>Reações nos apoios</h4>
+<pre class="python"><code># show the reaction forces
+ss.show_reaction_force()</code></pre>
+<div class="figure">
+<img src="/post/structural_1_files/structural_1_5_0.png" />
+
+</div>
+</div>
+<div id="diagrama-das-forcas-normais" class="section level4">
+<h4>Diagrama das forças normais</h4>
+<pre class="python"><code># show the normal force
+ss.show_axial_force()</code></pre>
+<div class="figure">
+<img src="/post/structural_1_files/structural_1_6_0.png" />
+
+</div>
+</div>
+<div id="deslocamento" class="section level4">
+<h4>Deslocamento</h4>
+<pre class="python"><code>ss.show_displacement()</code></pre>
+<div class="figure">
+<img src="/post/structural_1_files/structural_1_7_0.png" />
+
+</div>
+</div>
+<div id="diagrama-do-momento-flector" class="section level4">
+<h4>Diagrama do Momento Flector</h4>
+<pre class="python"><code>ss.show_bending_moment()</code></pre>
+<div class="figure">
+<img src="/post/structural_1_files/structural_1_8_0.png" />
+
+</div>
+<div id="refs" class="references">
+<div id="ref-R-rmarkdown">
+<p>Allaire, JJ, Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang, Jeff Allen, Hadley Wickham, Aron Atkins, and Rob Hyndman. 2016. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="http://CRAN.R-project.org/package=rmarkdown" class="uri">http://CRAN.R-project.org/package=rmarkdown</a>.</p>
+</div>
+<div id="ref-latex">
+<p>Donald E. Knuth, Leslie Lamport. n.d. “LaTeX - a Document Preparation System.” LaTeX3 Project; <a href="https://www.latex-project.org/" class="uri">https://www.latex-project.org/</a>.</p>
+</div>
+<div id="ref-stanli">
+<p>Hackl, Jürgen. 2016. “CTAN: /Tex-Archive/Graphics/Pgf/Contrib/Stanli.” <a href="https://ctan.org/tex-archive/graphics/pgf/contrib/stanli?lang=en" class="uri">https://ctan.org/tex-archive/graphics/pgf/contrib/stanli?lang=en</a>.</p>
+</div>
+<div id="ref-sympy">
+<p>Meurer, Aaron, Christopher P. Smith, Mateusz Paprocki, Ondřej Čertík, Sergey B. Kirpichev, Matthew Rocklin, AMiT Kumar, et al. 2017. “SymPy: Symbolic Computing in Python.” <em>PeerJ Computer Science</em> 3 (January): e103. doi:<a href="https://doi.org/10.7717/peerj-cs.103">10.7717/peerj-cs.103</a>.</p>
+</div>
+<div id="ref-jupyter">
+<p>Pérez, Fernando, and Brian E. Granger. 2007. “IPython: A System for Interactive Scientific Computing.” <em>Computing in Science and Engineering</em> 9 (3). IEEE Computer Society: 21–29. doi:<a href="https://doi.org/10.1109/MCSE.2007.53">10.1109/MCSE.2007.53</a>.</p>
+</div>
+<div id="ref-Python">
+<p>Rossum, G. Van, and F.L. Drake. 2001. “Python Reference Manual.” Virginia, USA: PythonLabs. <a href="http://www.python.org" class="uri">http://www.python.org</a>.</p>
+</div>
+<div id="ref-tikz">
+<p>Tantau, Till. 2013. <em>The Tikz and Pgf Packages: Manual for Version 3.0.0</em>. <a href="http://sourceforge.net/projects/pgf/" class="uri">http://sourceforge.net/projects/pgf/</a>.</p>
+</div>
+<div id="ref-numpy">
+<p>Travis E, Oliphant. 2006. “A Guide to Numpy.” <a href="http://www.scipy.org/" class="uri">http://www.scipy.org/</a>.</p>
+</div>
+<div id="ref-anastruct">
+<p>Vink, Ritchie. n.d. “Welcome to anaStruct’s Documentation! — AnaStruct 1.b3 Documentation.” <a href="https://anastruct.readthedocs.io/en/latest/index.html" class="uri">https://anastruct.readthedocs.io/en/latest/index.html</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Fernando Pérez, Brian E. Granger, IPython: A System for Interactive Scientific Computing, Computing in Science and Engineering, vol. 9, no. 3, pp. 21-29, May/June 2007, <a href="doi:10.1109/MCSE.2007.53" class="uri">doi:10.1109/MCSE.2007.53</a>. URL: <a href="https://ipython.org" class="uri">https://ipython.org</a><a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2018/06/18/custo-do-risco/">Custo do Risco</a></span>
+  <span class="nav-next"><a href="/post/2018/11/13/laje-vigada-python/">Laje Vigada -Dimensionamento de armadura com Python</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">&copy; <a href="/">Luis Moura</a> 20016 - 2018</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

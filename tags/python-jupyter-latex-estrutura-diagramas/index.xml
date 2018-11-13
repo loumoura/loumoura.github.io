@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python, Jupyter, Latex, estrutura, diagramas on l moura</title>
+    <link>/tags/python-jupyter-latex-estrutura-diagramas/</link>
+    <description>Recent content in Python, Jupyter, Latex, estrutura, diagramas on l moura</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Sat, 13 Oct 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/python-jupyter-latex-estrutura-diagramas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Análise Estrutural de um Pórtico</title>
+      <link>/post/2018/10/13/estrutura-python/</link>
+      <pubDate>Sat, 13 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018/10/13/estrutura-python/</guid>
+      <description>Criação dos diagramas dos esforços e deslocamento para um pórtico, usando Python.
+Introdução: Este texto, foi originalmente composto composto no Jupyter Notebook (Pérez and Granger 2007), usando a linguagem informática Python (Rossum and Drake 2001), sendo depois convertido para Rmarkdown (Allaire et al. 2016). Deixei visível todo o código informático que utilizei, de modo a que os resultados possam ser repetidos por outra pessoa ou simplesmente como referência para mim próprio.</description>
+    </item>
+    
+  </channel>
+</rss>
