@@ -86,7 +86,7 @@
 
 
 
-<p><strong>Introdução:</strong> Este texto, foi originalmente composto composto no Jupyter Notebook <span class="citation">(Pérez and Granger 2007)</span>, usando a linguagem informática Python <span class="citation">(Rossum and Drake 2001)</span>, sendo depois convertido para Rmarkdown <span class="citation">(Allaire et al. 2016)</span>. Deixei visível todo o código informático que utilizei, de modo a que os resultados possam ser repetidos por outra pessoa ou simplesmente como referência para mim próprio.</p>
+<p><strong>Introdução:</strong> Este texto, foi originalmente composto composto no <a href="http://jupyter.org/">Jupyter Notebook</a> <span class="citation">(Pérez and Granger 2007)</span>, usando a linguagem informática <a href="https://www.python.org/">Python</a> <span class="citation">(Rossum and Drake 2001)</span>, sendo depois convertido para <a href="https://rmarkdown.rstudio.com/">Rmarkdown</a> <span class="citation">(Allaire et al. 2016)</span>. Deixei visível todo o código informático que utilizei, de modo a que os resultados possam ser repetidos por outra pessoa ou simplesmente como referência para mim próprio.</p>
 <p>Neste texto, pretendo com a ajuda da linguagem informática,<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> obter o dimensionamento da armadura para uma laje.</p>
 <p><strong>Condições existentes:</strong> O painel de lajes vigadas, representado na figura em baixo, apresenta uma espessura igual a 0.15 m e encontra-se submetido às seguintes acções:</p>
 <ul>
@@ -99,7 +99,7 @@
 <h3>Condições Iniciais</h3>
 <div id="livrarias-necessarias" class="section level4">
 <h4>Livrarias necessárias</h4>
-<p>Introduzir as livrarias de Python <span class="citation">(Rossum and Drake 2001)</span>, necessárias para este trabalho, que são Sympy <span class="citation">(Meurer et al. 2017)</span>, <a href="https://anastruct.readthedocs.io/en/latest/#">AnaStruct</a> <span class="citation">(Vink, n.d.)</span> e Numpy <span class="citation">(Travis E 2006)</span>.</p>
+<p>Introduzir as livrarias de <a href="https://www.python.org/">Python</a> <span class="citation">(Rossum and Drake 2001)</span>, necessárias para este trabalho, que são <a href="https://www.sympy.org/">Sympy</a> <span class="citation">(Meurer et al. 2017)</span>, <a href="https://anastruct.readthedocs.io/en/latest/#">AnaStruct</a> <span class="citation">(Vink, n.d.)</span> e <a href="https://www.numpy.org/">Numpy</a> <span class="citation">(Travis E 2006)</span>.</p>
 <pre class="python"><code>%matplotlib inline
 from anastruct.fem.system import SystemElements
 import matplotlib.pyplot as plt
@@ -111,7 +111,7 @@ import numpy as np
 </div>
 <div id="gerar-imagem-da-laje-com-latex" class="section level4">
 <h4>Gerar imagem da laje com LaTex</h4>
-<p>A imagem é criada usando os programas Tikz <span class="citation">(Tantau 2013)</span> e Stanli <span class="citation">(Hackl 2016)</span> para Latex.</p>
+<p>A imagem é criada usando os programas Tikz <span class="citation">(Tantau 2013)</span> e Stanli <span class="citation">(Hackl 2016)</span> para Latex <span class="citation">(Donald E. Knuth, n.d.)</span>.</p>
 <pre class="python"><code>%%tikz --scale 1 --size 1000,500 -f png -p stanli --save=images/estrutura_2.png
 \begin{tikzpicture}
 \begin{scope}[shift={(1.5,3)}]
@@ -495,6 +495,9 @@ print(tabela_As)</code></pre>
 <div id="refs" class="references">
 <div id="ref-R-rmarkdown">
 <p>Allaire, JJ, Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang, Jeff Allen, Hadley Wickham, Aron Atkins, and Rob Hyndman. 2016. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="http://CRAN.R-project.org/package=rmarkdown" class="uri">http://CRAN.R-project.org/package=rmarkdown</a>.</p>
+</div>
+<div id="ref-latex">
+<p>Donald E. Knuth, Leslie Lamport. n.d. “LaTeX - a Document Preparation System.” LaTeX3 Project; <a href="https://www.latex-project.org/" class="uri">https://www.latex-project.org/</a>.</p>
 </div>
 <div id="ref-stanli">
 <p>Hackl, Jürgen. 2016. “CTAN: /Tex-Archive/Graphics/Pgf/Contrib/Stanli.” <a href="https://ctan.org/tex-archive/graphics/pgf/contrib/stanli?lang=en" class="uri">https://ctan.org/tex-archive/graphics/pgf/contrib/stanli?lang=en</a>.</p>
