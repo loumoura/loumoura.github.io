@@ -115,7 +115,13 @@ Figure 1: This a caption
 <img src="/post/Rmarkdown_post_files/taylor_8_1.png" alt="a texto" style="width:80.0%" />
 <p class="caption">a texto</p>
 </div>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/MC_Drei-Finger-Faultier.jpg/330px-MC_Drei-Finger-Faultier.jpg" width="50%" style="display: block; margin: auto 0 auto auto;" /></p>
+<div class="figure"><span id="fig:Koala"></span>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/MC_Drei-Finger-Faultier.jpg/330px-MC_Drei-Finger-Faultier.jpg" alt="a koala in the woods" width="70%" class="left" />
+<p class="caption">
+Figure 2: a koala in the woods
+</p>
+</div>
+<p>If we assign a figure caption to a code chunk via the chunk option <code>fig.cap</code>, R plots will be put into figure environments, which will be automatically labeled and numbered, and can also be cross-referenced. The label of a figure environment is generated from the label of the code chunk, e.g., if the chunk label is <code>foo</code>, the figure label will be <code>fig:foo</code> (the prefix <code>fig:</code> is added before <code>foo</code>). To reference a figure, use the syntax <a href="#Koala"><strong>??</strong></a>,where <code>label</code> is the figure label, e.g., <code>fig:foo</code>.</p>
 <pre class="r"><code>include_graphics(&quot;/post/Rmarkdown_post_files/taylor_8_1.png&quot;)</code></pre>
 <p><img src="/post/Rmarkdown_post_files/taylor_8_1.png" width="50%" style="background-color: #9ecff7; padding:10px; display: inline-block;" /></p>
 </div>
@@ -130,7 +136,7 @@ Figure 1: This a caption
 <p>When you are using kable(), if you don’t specify format, by default it will generate a markdown table and let pandoc handle the conversion from markdown to HTML/PDF. This is the most favorable approach to render most simple tables as it is format independent. If you switch from HTML to pdf, you basically don’t need to change anything in your code. However, markdown doesn’t support complex table. For example, if you want to have a double-row header table, markdown just cannot provide you the functionality you need. As a result, when you have such a need, you should define format in kable() as either “html” or “latex”. You can also define a global option at the beginning using options(knitr.table.format = “html”) so you don’t repeat the step everytime.</p>
 <table class="table" style="width: auto !important; float: right; margin-left: 10px;">
 <caption>
-<span id="tab:unnamed-chunk-5">Table 1: </span>Demo Table
+<span id="tab:unnamed-chunk-4">Table 1: </span>Demo Table
 </caption>
 <thead>
 <tr>
@@ -281,7 +287,15 @@ Attaching package: &#39;dplyr&#39;</code></pre>
 <pre><code>The following objects are masked from &#39;package:base&#39;:
 
     intersect, setdiff, setequal, union</code></pre>
-<p><img src="/post/Rmarkdown_post_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="/post/Rmarkdown_post_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="reference-latex-math" class="section level2">
+<h2>Reference latex math</h2>
+<span class="math display" id="eq:binom">\[\begin{equation} 
+  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
+  \tag{1}
+\end{equation}\]</span>
+<p>You may refer to it using <a href="#eq:binom">(1)</a>,</p>
 <pre><code>        Designação dos Trabalhos Quantidade Custo Unitário (euros) Total
  1:         Aquisição de Terreno          1                  75000 75000
  2:        Preparação do Terreno          1                  10000 10000
