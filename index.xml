@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Espetro de Resposta para prédio localizado em Leiria</title>
+      <link>/post/2018/11/13/espetro-resposta/</link>
+      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018/11/13/espetro-resposta/</guid>
+      <description>Espetros de resposta de aceleração e deslocamentos, devidos à acção sísmica regulamentar, determinando os valores da aceleração e deslocamento espectral de um edifício em Leiria, com 1GL. O texto desta página, encontra-se em formato PDF, e pode ser acedido aqui.
+ “Se for conhecida a ação e as características dinâmicas do sistema [frequência (\(f\)) e amortecimento (\(\xi\))], é possível determinar a resposta máxima desse sistema durante um determinado intervalo de tempo e que representa uma envolvente da resposta.</description>
+    </item>
+    
+    <item>
       <title>Laje Vigada -Dimensionamento de armadura com Python</title>
       <link>/post/2018/11/13/laje-vigada-python/</link>
       <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>

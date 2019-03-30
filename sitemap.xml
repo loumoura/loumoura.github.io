@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/post/2018/11/13/espetro-resposta/</loc>
+    <lastmod>2018-11-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/2018/11/13/laje-vigada-python/</loc>
     <lastmod>2018-11-13T00:00:00+00:00</lastmod>
   </url>
@@ -138,6 +143,12 @@
   
   <url>
     <loc>/tags/python-jupyter-latex-laje-dimensionamento/</loc>
+    <lastmod>2018-11-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/sismo-euroc%C3%B3digo-leiria-espetro-resposta/</loc>
     <lastmod>2018-11-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

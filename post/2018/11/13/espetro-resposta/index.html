@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Espetro de Resposta para prédio localizado em Leiria - Segundo o Eurocódigo 8  - l moura</title>
+    <meta property="og:title" content="Espetro de Resposta para prédio localizado em Leiria - l moura">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Espetros de resposta de aceleração e deslocamentos, devidos à acção sísmica regulamentar, determinando os valores da aceleração e deslocamento espectral de um edifício em Leiria, com 1GL. O texto &amp;hellip;">
+      <meta property="og:description" content="Espetros de resposta de aceleração e deslocamentos, devidos à acção sísmica regulamentar, determinando os valores da aceleração e deslocamento espectral de um edifício em Leiria, com 1GL. O texto &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+<link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      
+<h1><a href="/"><img src="/author.png" alt="t" /></a></h1>
+
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" />
+  <label id="menu-label" for="menu-check" class="unselectable">
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about_me/">Autor</a></li>
+  
+  <li><a href="/files/cv.pdf">CV</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Espetro de Resposta para prédio localizado em Leiria</h1>
+<h1><span class="subtitle">Segundo o Eurocódigo 8</span></h1>
+<h3>Luis Moura
+  /  2018-11-13</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+
+<p>Espetros de resposta de aceleração e deslocamentos, devidos à acção sísmica regulamentar, determinando os valores da aceleração e deslocamento espectral de um edifício em Leiria, com 1GL. O texto desta página, encontra-se em formato <a href="files/Espectro_Resposta.pdf">PDF</a>, e pode ser acedido <a href="files/Espectro_Resposta.pdf">aqui</a>.</p>
+<blockquote>
+<p>“Se for conhecida a ação e as características dinâmicas do sistema [frequência (<span class="math inline">\(f\)</span>) e amortecimento (<span class="math inline">\(\xi\)</span>)], é possível determinar a resposta máxima desse sistema durante um determinado intervalo de tempo e que representa uma envolvente da resposta. Se aplicarmos a mesma ação a um sistema com diferentes características dinâmicas (diferente frequência e/ou diferente coeficiente de amortecimento) e determinarmos a resposta máxima obtemos mais um ponto da envolvente da resposta. Se este procedimento for repetido para uma gama de frequências e amortecimentos considerável, o conjunto dos valores máximos de resposta representam o que vulgarmente se designa por <strong>espetro de resposta</strong> (response spectra). Normalmente determinam-se vários espetros de resposta com um dado amortecimento fazendo o varrimento no domínio da frequência.”</p>
+<p>— João Veludo, “Resposta a Ações Sísmicas. Espectro de resposta”, 2019</p>
+</blockquote>
+<div id="identificacao-do-tipo-de-terreno" class="section level1">
+<h1>Identificação do Tipo de Terreno</h1>
+<p>Identificação do tipo de terreno de acordo com Tabela, do Eurocódigo 8 <span class="citation">(Instituto Português de Qualidade LNEC 2010)</span> e a classificação resumida na tabela “Tipo de Terreno”</p>
+<p><em>Descrição do Perfil Estratigráfico</em>: “Depósitos profundos de areia compacta ou mediamente compacta, de seixo (cascalho) ou de argila rija com uma espessura entre várias dezenas e muitas centenas de metros.”</p>
+<table>
+<caption>Tipo de Terreno </caption>
+<thead>
+<tr class="header">
+<th>Tipo de Terreno</th>
+<th><span class="math inline">\(\upsilon_{s,30} (m/s)\)</span></th>
+<th><span class="math inline">\(N_{spt}\)</span></th>
+<th><span class="math inline">\(C_{u} (kPa)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C</td>
+<td>180-360</td>
+<td>15-50</td>
+<td>70-250</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="classe-de-importancia-e-coeficiente-de-importancia" class="section level1">
+<h1>Classe de Importância e Coeficiente de Importância</h1>
+<p>Edifício classificado com <em>Classe de Importância II</em>, segundo o Quadro 4.3, do Eurocódigo 8. Para um edifício de Importância II, e de acordo com a mesma secção da norma, o <em>Coeficiente de Importância é 1</em>, <span class="math inline">\(\gamma_{1}=1,0\)</span>.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<table>
+<caption>Classe de Importância e Coeficiente de Importância</caption>
+<thead>
+<tr class="header">
+<th>Descrição</th>
+<th>Classe de Importância</th>
+<th>Coeficiente de Importância</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Prédio/Residencial</td>
+<td>II</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="definicao-do-zoneamento-sismico" class="section level1">
+<h1>Definição do Zoneamento Sísmico</h1>
+<p>Para o concelho de Leiria, o Anexo AN.I do EC8 define a zona sísmica e a aceleração para os dois tipos de sismo considerados para Portugal Continental:</p>
+<table>
+<caption>Leiria - Sismo Tipo I </caption>
+<thead>
+<tr class="header">
+<th>Concelho</th>
+<th>Aceleração <span class="math inline">\(a_{gR} (m/s^{2})\)</span></th>
+<th>Zona Sísmica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Leiria</td>
+<td>0.6</td>
+<td>1.5</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Leiria - Sismo Tipo II </caption>
+<thead>
+<tr class="header">
+<th>Concelho</th>
+<th>Zona Sísmica</th>
+<th>Aceleração <span class="math inline">\(a_{gR} (m/s^{2})\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Leiria</td>
+<td>2.4</td>
+<td>1.1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="aceleracao-de-calculo" class="section level1">
+<h1>Aceleração de Cálculo</h1>
+<blockquote>
+<p>“Na actual nova regulamentação portuguesa (NA, 2009), são previstos dois tipos de acção sísmica de dimensionamento, sendo um deles (Acção tipo 1) representativo de um sismo de grande magnitude com epicentro na região Atlântica (cenário sísmico designado por “afastado”), e o outro (Acção tipo 2) que representa uma acção com características de um sismo de magnitude moderada com epicentro no território Continental (ou no Arquipélago dos Açores) (cenário “próximo”).”</p>
+<p>— Luis Guerreiro <span class="citation">(Guerreiro 2010)</span></p>
+</blockquote>
+<p>O valor de cálculo da aceleração à superfície do terreno e feito de acordo com a secção 3 do Eurocódigo 8.</p>
+<span class="math display">\[\begin{equation}
+a_{g}=\gamma_{I} \times a_{gR}
+\label{eq:Aceleracao-Calculo}
+\end{equation}\]</span>
+<p>em que:</p>
+<ul>
+<li><span class="math inline">\(a_{g}\)</span> é o valor de cálculo da aceleração à superfície do terreno</li>
+<li><span class="math inline">\(\gamma_{I}\)</span> é o coeficiente de importância</li>
+<li><span class="math inline">\(a_{gR}\)</span> é a valor de referência da aceleração máxima à superfície do terreno.</li>
+</ul>
+<p>No caso do prédio em estudo, o valor de <span class="math inline">\(\gamma_{I}\)</span> é 1 para ambos os tipos de sismos. Assim, o valor da aceleração de cálculo, <span class="math inline">\(a_{g}\)</span>, é igual à aceleração máxima, <span class="math inline">\(a_{gR}\)</span>, determinada nas tabelas  e .</p>
+<table>
+<caption>Aceleração de Cálculo </caption>
+<thead>
+<tr class="header">
+<th><em>Tipo de Sismo</em></th>
+<th><span class="math inline">\(a_{g}(m/s^{2})\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>I</td>
+<td>0.6</td>
+</tr>
+<tr class="even">
+<td>II</td>
+<td>1.1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="espetro-de-resposta-elastica-horizontal" class="section level1">
+<h1>Espetro de Resposta Elástica Horizontal</h1>
+<blockquote>
+<p>“O movimento sísmico num dado ponto da superfície do terreno é representado por um espectro de resposta elástica da aceleração à superfície do terreno”</p>
+<p>— EC8 (3.2.2.1)</p>
+</blockquote>
+<p>Os cálculos e equações apresentadas, são em acordo com a Secção 3.2.2.2, “Espectro de Resposta elástica horizontal”, do Eurocódigo 8.</p>
+<span class="math display">\[\begin{equation}
+\label{Espectro Horizontal}
+0\le T\le { T }_{ B }\quad :\quad { S }_{ e }(T)={ a }_{ g }\times S\times \left[ 1+\frac { T }{ { T }_{ B } } \times (\eta \times 2,5-1) \right] 
+\end{equation}\]</span>
+<span class="math display">\[\begin{equation}
+\label{eq:2}
+T_{B} \le T \le T_{C} \quad : \quad S_{e}(T)=a_{g} \times S \times \eta \times 2,5
+\end{equation}\]</span>
+<span class="math display">\[\begin{equation}
+\label{eq:Espetro resposta Tc}
+{ T }_{ C }\le T\le { T }_{ D }\quad :\quad { S }_{ e }(T)={ a }_{ g }\times S\times \eta \times 2,5\times \left[ \frac { { T }_{ C } }{ T }  \right] 
+\end{equation}\]</span>
+<span class="math display">\[\begin{equation}
+\label{eq:espectro TD}
+T_{D} \le T \le 4s \quad : \quad S_{e}(T)=a_{g} \times S \times \eta \times 2,5 \left[ \frac{T_{C}T_{D}}{T^{2}} \right]
+\end{equation}\]</span>
+<p>em que:</p>
+<ul>
+<li><span class="math inline">\(S_{e}(T)\)</span> é o espectro de resposta elástica</li>
+<li><span class="math inline">\(T\)</span> período de vibração de um sistema linear com um grau de liberdade;</li>
+<li><span class="math inline">\(a_{g}\)</span> é o valor de cálculo da aceleração à superfície para um terreno do tipo A (<span class="math inline">\(a_{g}= \gamma_{1} \times a_{gR}\)</span>);</li>
+<li><span class="math inline">\(T_{B}\)</span> é o limite inferior do período no patamar de aceleração espectral constante;</li>
+<li><span class="math inline">\(T_{D}\)</span> é o valor que define no espectro o início do ramo de deslocamento constante;</li>
+<li><span class="math inline">\(S\)</span> é o coeficiente de solo;</li>
+<li><span class="math inline">\(\eta\)</span> é o coeficiente de correcção do amortecimento, com valor de referência <span class="math inline">\(\eta = 1\)</span> para 5% de amortecimento viscoso.</li>
+</ul>
+<p><em>No entanto</em>, para Portugal, o Anexo Nacional no artigo NA-3.2.2.2(2)P, diz que para “definição dos espectros de resposta elástica, o valor do parâmetro S deve ser determinado através de”:</p>
+<ul>
+<li>Para <span class="math inline">\(a_{g} \le 1 m/s^{2}\)</span>, <span class="math inline">\(S\)</span> toma o valor de <span class="math inline">\(S_{max}\)</span>.</li>
+<li>Para <span class="math inline">\(1m/s^{2} &lt; a_{g} &lt; 4m/s^{2}\)</span>, O valor de <span class="math inline">\(S\)</span> é determinado por <span class="math inline">\(S=S_{max}-\frac {S_{max}-1}{3} \times (a_{g}-1)\)</span></li>
+<li>Para <span class="math inline">\(a_{g} \ge 4m/s^{2}\)</span>, o valor de <span class="math inline">\(S=1,0\)</span></li>
+</ul>
+<p>Os valores da tabela de “Parâmetros dos espectros de resposta elástica” (tabela  ) foram obtidos do Quadro NA-3.2 e NA-3.3 do Anexo Nacional do Eurocódigo 8.</p>
+<table>
+<caption>Parâmetros dos espectros de resposta elástica </caption>
+<thead>
+<tr class="header">
+<th>Tipo Sismo</th>
+<th><span class="math inline">\(S_{max}\)</span></th>
+<th><span class="math inline">\(T_{B}(s)\)</span></th>
+<th><span class="math inline">\(T_{C}(s)\)</span></th>
+<th><span class="math inline">\(T_{D}(s)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>I</td>
+<td>1.6</td>
+<td>0.10</td>
+<td>0.6</td>
+<td>2.0</td>
+</tr>
+<tr class="even">
+<td>II</td>
+<td>1.6</td>
+<td>0.10</td>
+<td>0.25</td>
+<td>2.0</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>“A definição dos espectros de resposta de dimensionamento é obtida a partir de um espectro de resposta elástico afectado do valor do coeficiente de comportamento. O valor do coeficiente de comportamento depende essencialmente da ductilidade da estrutura. O espectro de resposta elástico é função da sismicidade do local, das características do terreno de fundação e do coeficiente de amortecimento a considerar na estrutura.”</p>
+<p>— Luis Guerreiro <span class="citation">(Guerreiro 2010)</span></p>
+</blockquote>
+<div id="calculo-parametro-s-para-sismo-tipo-1" class="section level2">
+<h2>Cálculo: Parâmetro S para sismo tipo 1</h2>
+<p>O Cálculo é realizado em <a href="https://www.python.org/">Python</a>,<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> sendo necessário a introdução dos parâmetros para o tipo de sismo 1.</p>
+<pre class="python"><code># Introdução dos parâmetros para tipo 1
+Smax_1=1.6   
+ag_1=0.6   
+Tb_1=0.1
+Tc_1=0.25
+Td_1=2
+eta_1=1
+S_1=N(Smax_1-((Smax_1-1)/3)*(ag_1-1),3)</code></pre>
+<p><span class="math display">\[S=S_{max}-\frac {S_{max}-1}{3} \times (a_{g}-1)=1,6-\frac {1,6-1}{3} \times (0,6-1)\]</span></p>
+<p>O valor do <em>Parâmetro <span class="math inline">\(S\)</span></em><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> para uma situação de um sismo de origem do tipo 1, é de <strong>1.68</strong></p>
+</div>
+<div id="calculo-parametro-s-para-sismo-tipo-2" class="section level2">
+<h2>Cálculo: Parâmetro S para sismo tipo 2</h2>
+<p>O Cálculo é realizado em <a href="https://www.python.org/">Python</a>, sendo necessário a introdução dos parâmetros para o tipo de sismo 2.<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></p>
+<pre class="python"><code># Introdução dos parâmetros para tipo 2
+Smax=1.6   
+ag=1.1   
+Tb=0.1
+Tc=0.25
+Td=2
+eta=1
+S=Smax-((Smax-1)/3)*(ag-1)</code></pre>
+<p><span class="math display">\[S=S_{max}-\frac {S_{max}-1}{3} \times (a_{g}-1)=1,6-\frac {1,6-1}{3} \times (1,1-1)\]</span></p>
+<p>O valor do <em>Parâmetro <span class="math inline">\(S\)</span></em><a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> para uma situação de um sismo de origem do tipo 2, é de <strong>1.58</strong></p>
+</div>
+<div id="espetro-de-resposta-elastica-tipo-1" class="section level2">
+<h2>Espetro de Resposta Elástica Tipo 1</h2>
+<div class="figure">
+<img src="/post/Espectro_Resposta/diagrama_1.png" alt="Espectro de Resposta Elástica de tipo 1, para terreno tipo C, no concelho de Leiria e com 5% de amortecimento" />
+<p class="caption">Espectro de Resposta Elástica de tipo 1, para terreno tipo C, no concelho de Leiria e com 5% de amortecimento</p>
+</div>
+<blockquote>
+<p>“Os valores dos períodos de referência limitam as zonas do espectro de resposta com determinadas características específicas. Assim, a zona do espectro entre o período TB e TC corresponde à zona com valor constante de aceleração espectral. A zona compreendida entre TC e TD por sua vez corresponde à zona de velocidade constante e, por fim, para períodos superiores a TD os deslocamentos espectrais são constantes. Estas características impostas ao espectro de resposta correspondem a um conjunto de propriedades que se verificam, de forma aproximada, na maioria dos espectros de resposta reais.”</p>
+<p>— Luis Guerreiro <span class="citation">(Guerreiro 2010)</span></p>
+</blockquote>
+</div>
+<div id="espetro-de-resposta-elastica-tipo-2" class="section level2">
+<h2>Espetro de Resposta Elástica Tipo 2</h2>
+<div class="figure">
+<img src="/post/Espectro_Resposta/diagrama_2.png" alt="Espetro de Resposta Elástica de tipo 2, para terreno tipo C, no concelho de Leiria e com 5% de amortecimento" />
+<p class="caption">Espetro de Resposta Elástica de tipo 2, para terreno tipo C, no concelho de Leiria e com 5% de amortecimento</p>
+</div>
+</div>
+<div id="espetro-de-resposta-elastica-de-acelaracao---sumario" class="section level2">
+<h2>Espetro de resposta elástica de acelaração - sumário</h2>
+<p>A tabela  apresenta o sumário dos parâmetros utilizados e seus respectivos valores.</p>
+<table>
+<caption>Tabela com os valores das referências para os dois tipos de sismos </caption>
+<thead>
+<tr class="header">
+<th><strong>Parâmetros</strong></th>
+<th><strong>Tipo 1</strong></th>
+<th><strong>Tipo 2</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Localização</td>
+<td>Leiria</td>
+<td>Leiria</td>
+</tr>
+<tr class="even">
+<td>Tipo de Terreno</td>
+<td>C</td>
+<td>C</td>
+</tr>
+<tr class="odd">
+<td>Coeficiente de Importância</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Coeficiente de correcção do amortecimento <span class="math inline">\(\eta\)</span></td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Aceleração à superfície,<span class="math inline">\(a_{g}\)</span></td>
+<td>0.6</td>
+<td>1.1</td>
+</tr>
+<tr class="even">
+<td>Parâmetro <span class="math inline">\(S_{max}\)</span></td>
+<td>1.6</td>
+<td>1.6</td>
+</tr>
+<tr class="odd">
+<td>Parâmetro <span class="math inline">\(T_{B}(s)\)</span></td>
+<td>0.1</td>
+<td>0.1</td>
+</tr>
+<tr class="even">
+<td>Parâmetro <span class="math inline">\(T_{C}(s)\)</span></td>
+<td>0.25</td>
+<td>0.25</td>
+</tr>
+<tr class="odd">
+<td>Parâmetro <span class="math inline">\(T_{D}(s)\)</span></td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>Parâmetro <span class="math inline">\(S\)</span></td>
+<td>1.68</td>
+<td>1.58</td>
+</tr>
+<tr class="odd">
+<td><strong>Espetro de Resposta:</strong></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(S_{e}(T=0)\)</span></td>
+<td>1.008</td>
+<td>1.738</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(S_{e}(T=T_{B})\)</span></td>
+<td>2.52</td>
+<td>4.345</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(S_{e}(T=0.15)\)</span></td>
+<td>2.52</td>
+<td>4.345</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(S_{e}(T=0.20)\)</span></td>
+<td>2.52</td>
+<td>4.345</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(S_{e}(T=T_{C})\)</span></td>
+<td>2.52</td>
+<td>4.345</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(S_{e}(T=0.5)\)</span></td>
+<td>1.26</td>
+<td>2.173</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(S_{e}(T=1)\)</span></td>
+<td>0.63</td>
+<td>1.086</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(S_{e}(T=1.5)\)</span></td>
+<td>0.42</td>
+<td>0.724</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(S_{e}(T=T_{D})\)</span></td>
+<td>0.315</td>
+<td>0.543</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(S_{e}(T=2.5)\)</span></td>
+<td>0.202</td>
+<td>0.348</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(S_{e}(T=3)\)</span></td>
+<td>0.14</td>
+<td>0.241</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="espetro-de-resposta-elastica-de-deslocamento" class="section level1">
+<h1>Espetro de Resposta Elástica de Deslocamento</h1>
+<p>O espetro de resposta elástica de deslocamento, <span class="math inline">\(S_{\mathrm{De}}(T)\)</span>, é obtido directamente da transformação do espetro de resposta elástica de acelaração, <span class="math inline">\(S_{\mathrm{e}}(T)\)</span> de acordo com o Eurocódigo 8. <span class="citation">(Instituto Português de Qualidade LNEC 2010)</span></p>
+<span class="math display">\[\begin{equation}
+S_{\mathrm{De}}(T)=S_{\mathrm{e}}(T)\left[\frac{T}{2 \pi}\right]^{2}
+\label{eq:desloca}
+\end{equation}\]</span>
+<p>Para a figura  e figura , o valor de <span class="math inline">\(T\)</span> é inferior a 4 segundos, sendo este o limite para a qual se pode usar a equação . Para <span class="math inline">\(T&gt;4s\)</span>, o Eurocódigo prevê o uso das equações  e </p>
+<span class="math display">\[\begin{equation}
+T_{\mathrm{E}} \leq T \leq T_{\mathrm{F}} : S_{\mathrm{De}}(T)=0,025 a_{\mathrm{g}} \cdot S \cdot T_{\mathrm{C}} \cdot T_{\mathrm{D}}\left[2,5 \eta+\left(\frac{T-T_{\mathrm{E}}}{T_{\mathrm{F}}-T_{\mathrm{E}}}\right)(1-2,5 \eta)\right]
+\label{eq:desloca_1}
+\end{equation}\]</span>
+<span class="math display">\[\begin{equation}
+T \geq T_{\mathrm{F}} : S_{\mathrm{De}}(T)=d_{\mathrm{g}}
+\label{eq:desloca_2}
+\end{equation}\]</span>
+<table>
+<caption>Períodos de controlo adicionais para o espetro do deslocamento tipo 1 (Eurocódigo 8: Anexo A - Quadro A-1)</caption>
+<thead>
+<tr class="header">
+<th>Tipo de Terreno</th>
+<th><span class="math inline">\(T_{e}(s)\)</span></th>
+<th><span class="math inline">\(T_{f}(s)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C</td>
+<td>6</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<div class="figure">
+<img src="/post/Espectro_Resposta/deslocamentos_1.png" alt="Espetro de resposta elástica de deslocamento para sismo tipo 1, para terreno tipo C, no concelho de Leiria e com 5% de amortecimento" />
+<p class="caption">Espetro de resposta elástica de deslocamento para sismo tipo 1, para terreno tipo C, no concelho de Leiria e com 5% de amortecimento</p>
+</div>
+<div class="figure">
+<img src="/post/Espectro_Resposta/deslocamentos.png" alt="Espetro de resposta elástica de deslocamento para sismo tipo 2, para terreno tipo C, no concelho de Leiria e com 5% de amortecimento" />
+<p class="caption">Espetro de resposta elástica de deslocamento para sismo tipo 2, para terreno tipo C, no concelho de Leiria e com 5% de amortecimento</p>
+</div>
+</div>
+<div id="referencias" class="section level1 unnumbered">
+<h1>Referências</h1>
+<div id="refs" class="references">
+<div id="ref-LGsismo">
+<p>Guerreiro, Luís. 2010. “Engenharia Sísmica de Pontes.” Edited by Instituto Superior Técnico. <a href="http://www.civil.ist.utl.pt/~luisg/textos/Ac%C3%A7%C3%A3o%20S%C3%ADsmica.pdf">http://www.civil.ist.utl.pt/~luisg/textos/Ac%C3%A7%C3%A3o%20S%C3%ADsmica.pdf</a>.</p>
+</div>
+<div id="ref-EC8">
+<p>Instituto Português de Qualidade LNEC. 2010. “Eurocódigo 8 – Projecto de Estruturas Para Resistência Aos Sismos Parte 1: Regras Gerais, Acções Sísmicas E Regras Para Edifícios.”</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>O Quadro NA.II do Anexo Nacional, mantém o valor do coeficiente de importância em 1.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Todos os cálculos deste trabalho, foram realizados em <a href="https://www.python.org/">Python</a>, usando <a href="https://jupyter.org/">Jupyter Notebook</a>. Faz parte complementar deste trabalho, um ficheiro em <code>python</code> (.py), com o todo o código informático utilizado nos cálculos.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p><span class="math inline">\(S\)</span> é o coeficiente de solo. <span class="math inline">\(S_{max}\)</span> é obtido da tabela <a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Todos os cálculos deste trabalho, foram realizados em <a href="https://www.python.org/">Python</a>, usando <a href="https://jupyter.org/">Jupyter Notebook</a>. Faz parte complementar deste trabalho, um ficheiro em <code>python</code> (.py), com o todo o código informático utilizado nos cálculos.<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p><span class="math inline">\(S\)</span> é o coeficiente de solo. <span class="math inline">\(S_{max}\)</span> é obtido da tabela <a href="#fnref5">↩</a></p></li>
+</ol>
+</div>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2018/11/13/laje-vigada-python/">Laje Vigada -Dimensionamento de armadura com Python</a></span>
+  <span class="nav-next"></span>
+</nav>
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">&copy; <a href="/">Luis Moura</a> 20016 - 2018</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+
