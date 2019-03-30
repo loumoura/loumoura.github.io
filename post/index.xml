@@ -6,17 +6,17 @@
     <description>Recent content in Posts on l moura</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
-    <lastBuildDate>Tue, 13 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Espetro de Resposta para prédio localizado em Leiria</title>
-      <link>/post/2018/11/13/espetro-resposta/</link>
-      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
+      <link>/post/2019/03/30/espetro-resposta/</link>
+      <pubDate>Sat, 30 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018/11/13/espetro-resposta/</guid>
+      <guid>/post/2019/03/30/espetro-resposta/</guid>
       <description>Espetros de resposta de aceleração e deslocamentos, devidos à acção sísmica regulamentar, determinando os valores da aceleração e deslocamento espectral de um edifício em Leiria, com 1GL. O texto desta página, encontra-se em formato PDF, e pode ser acedido aqui.
  “Se for conhecida a ação e as características dinâmicas do sistema [frequência (\(f\)) e amortecimento (\(\xi\))], é possível determinar a resposta máxima desse sistema durante um determinado intervalo de tempo e que representa uma envolvente da resposta.</description>
     </item>
