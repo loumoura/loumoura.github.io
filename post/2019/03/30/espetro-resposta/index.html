@@ -191,7 +191,7 @@ a_{g}=\gamma_{I} \times a_{gR}
 <li><span class="math inline">\(\gamma_{I}\)</span> é o coeficiente de importância</li>
 <li><span class="math inline">\(a_{gR}\)</span> é a valor de referência da aceleração máxima à superfície do terreno.</li>
 </ul>
-<p>No caso do prédio em estudo, o valor de <span class="math inline">\(\gamma_{I}\)</span> é 1 para ambos os tipos de sismos. Assim, o valor da aceleração de cálculo, <span class="math inline">\(a_{g}\)</span>, é igual à aceleração máxima, <span class="math inline">\(a_{gR}\)</span>, determinada nas tabelas  e .</p>
+<p>No caso do prédio em estudo, o valor de <span class="math inline">\(\gamma_{I}\)</span> é 1 para ambos os tipos de sismos. Assim, o valor da aceleração de cálculo, <span class="math inline">\(a_{g}\)</span>, é igual à aceleração máxima, <span class="math inline">\(a_{gR}\)</span>, determinada nas tabelas <code>Leiria - Sismo Tipo I</code> e <code>Leiria - Sismo Tipo II</code>.</p>
 <table>
 <caption>Aceleração de Cálculo </caption>
 <thead>
@@ -251,7 +251,7 @@ T_{D} \le T \le 4s \quad : \quad S_{e}(T)=a_{g} \times S \times \eta \times 2,5 
 <li>Para <span class="math inline">\(1m/s^{2} &lt; a_{g} &lt; 4m/s^{2}\)</span>, O valor de <span class="math inline">\(S\)</span> é determinado por <span class="math inline">\(S=S_{max}-\frac {S_{max}-1}{3} \times (a_{g}-1)\)</span></li>
 <li>Para <span class="math inline">\(a_{g} \ge 4m/s^{2}\)</span>, o valor de <span class="math inline">\(S=1,0\)</span></li>
 </ul>
-<p>Os valores da tabela de “Parâmetros dos espectros de resposta elástica” (tabela  ) foram obtidos do Quadro NA-3.2 e NA-3.3 do Anexo Nacional do Eurocódigo 8.</p>
+<p>Os valores da tabela de “Parâmetros dos espectros de resposta elástica” (tabela <code>Parâmetros dos espectros de resposta elástica</code>) foram obtidos do Quadro NA-3.2 e NA-3.3 do Anexo Nacional do Eurocódigo 8.</p>
 <table>
 <caption>Parâmetros dos espectros de resposta elástica </caption>
 <thead>
@@ -296,7 +296,7 @@ Td_1=2
 eta_1=1
 S_1=N(Smax_1-((Smax_1-1)/3)*(ag_1-1),3)</code></pre>
 <p><span class="math display">\[S=S_{max}-\frac {S_{max}-1}{3} \times (a_{g}-1)=1,6-\frac {1,6-1}{3} \times (0,6-1)\]</span></p>
-<p>O valor do <em>Parâmetro <span class="math inline">\(S\)</span></em><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> para uma situação de um sismo de origem do tipo 1, é de <strong>1.68</strong></p>
+<p>O valor do <em>Parâmetro <span class="math inline">\(S\)</span></em><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> para uma situação de um sismo de origem do tipo 1, é de <strong>1.68</strong>.</p>
 </div>
 <div id="calculo-parametro-s-para-sismo-tipo-2" class="section level2">
 <h2>Cálculo: Parâmetro S para sismo tipo 2</h2>
@@ -310,7 +310,7 @@ Td=2
 eta=1
 S=Smax-((Smax-1)/3)*(ag-1)</code></pre>
 <p><span class="math display">\[S=S_{max}-\frac {S_{max}-1}{3} \times (a_{g}-1)=1,6-\frac {1,6-1}{3} \times (1,1-1)\]</span></p>
-<p>O valor do <em>Parâmetro <span class="math inline">\(S\)</span></em><a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> para uma situação de um sismo de origem do tipo 2, é de <strong>1.58</strong></p>
+<p>O valor do <em>Parâmetro <span class="math inline">\(S\)</span></em><a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> para uma situação de um sismo de origem do tipo 2, é de <strong>1.58</strong>.</p>
 </div>
 <div id="espetro-de-resposta-elastica-tipo-1" class="section level2">
 <h2>Espetro de Resposta Elástica Tipo 1</h2>
@@ -515,9 +515,9 @@ T \geq T_{\mathrm{F}} : S_{\mathrm{De}}(T)=d_{\mathrm{g}}
 <ol>
 <li id="fn1"><p>O Quadro NA.II do Anexo Nacional, mantém o valor do coeficiente de importância em 1.<a href="#fnref1">↩</a></p></li>
 <li id="fn2"><p>Todos os cálculos deste trabalho, foram realizados em <a href="https://www.python.org/">Python</a>, usando <a href="https://jupyter.org/">Jupyter Notebook</a>. Faz parte complementar deste trabalho, um ficheiro em <code>python</code> (.py), com o todo o código informático utilizado nos cálculos.<a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p><span class="math inline">\(S\)</span> é o coeficiente de solo. <span class="math inline">\(S_{max}\)</span> é obtido da tabela <a href="#fnref3">↩</a></p></li>
+<li id="fn3"><p><span class="math inline">\(S\)</span> é o coeficiente de solo. <span class="math inline">\(S_{max}\)</span> é obtido da tabela <code>Parâmetros dos espectros de resposta elástica</code>.<a href="#fnref3">↩</a></p></li>
 <li id="fn4"><p>Todos os cálculos deste trabalho, foram realizados em <a href="https://www.python.org/">Python</a>, usando <a href="https://jupyter.org/">Jupyter Notebook</a>. Faz parte complementar deste trabalho, um ficheiro em <code>python</code> (.py), com o todo o código informático utilizado nos cálculos.<a href="#fnref4">↩</a></p></li>
-<li id="fn5"><p><span class="math inline">\(S\)</span> é o coeficiente de solo. <span class="math inline">\(S_{max}\)</span> é obtido da tabela <a href="#fnref5">↩</a></p></li>
+<li id="fn5"><p><span class="math inline">\(S\)</span> é o coeficiente de solo. <span class="math inline">\(S_{max}\)</span> é obtido da tabela <code>Parâmetros dos espectros de resposta elástica</code>.<a href="#fnref5">↩</a></p></li>
 </ol>
 </div>
 
