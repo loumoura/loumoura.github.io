@@ -6,10 +6,30 @@
     <description>Recent content in Home on l moura</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
-    <lastBuildDate>Sat, 30 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Análise dos deslocamentos devido a acção sísmica</title>
+      <link>/post/2019/04/07/sismo-deslocamento/</link>
+      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019/04/07/sismo-deslocamento/</guid>
+      <description>Exemplo do processo de cálculo através do espectro de resposta, e devido à acção sísmica regulamentar, dos valores de deslocamento de uma estrutura em Leiria. Serviu de base para este processo de cálculo, o trabalho do Professor João Veludo (Veludo 2019), da ESTG em Leiria.
+Este post, é criado na sequência de um outro - Espetro de Resposta para prédio localizado em Leiria - Segundo o Eurocódigo 8 - aonde é feito o cálculo dos Espetros de resposta de aceleração e deslocamentos, devidos à acção sísmica regulamentar e determinando os valores da aceleração e deslocamento espectral de um edifício em Leiria, com 1GL.</description>
+    </item>
+    
+    <item>
+      <title>Historial de documentação</title>
+      <link>/post/2019/04/03/informa%C3%A7%C3%A3o-perdida/</link>
+      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019/04/03/informa%C3%A7%C3%A3o-perdida/</guid>
+      <description>Quanta informação ficou perdida ao longo dos anos por causa das actualizações do software e hardware?
+No tempo do Floppy Disk Ainda me lembro de guardar documentos em Floppy disk. Mal finalizava um documento em Microsoft Word, guardava ele na disquete de modo a garantir que a informação ficava guardada para a eternidade. Mas a eternidade não foi mais que um punhado de anos. Entre mudanças de escritório e caixas perdidas, actualizações de software e hardware, passando pelos CDs, USB e Cloud Storage, os floppies simplesmente desapareceram da minha vida e com eles, inúmeros documentos.</description>
+    </item>
     
     <item>
       <title>Espetro de Resposta para prédio localizado em Leiria</title>
@@ -42,6 +62,16 @@ Introdução: Este texto, foi originalmente composto no Jupyter Notebook (Pérez
     </item>
     
     <item>
+      <title>rmarkdown post</title>
+      <link>/post/2018/08/06/a-quick-note/</link>
+      <pubDate>Mon, 06 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018/08/06/a-quick-note/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com. \(\alpha + \beta=\sum\phi\)
+When you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</description>
+    </item>
+    
+    <item>
       <title>Custo do Risco</title>
       <link>/post/2018/06/18/custo-do-risco/</link>
       <pubDate>Mon, 18 Jun 2018 13:47:32 +0100</pubDate>
@@ -58,6 +88,15 @@ O Risco Quando aqui escrevo sobre o risco, não estou exclusivamente a falar do 
       
       <guid>/post/2018/06/18/jupyter-google/</guid>
       <description>Um dos problemas que encontro quando trabalho em equipa, é a incerteza de saber se todos os seus elementos conseguem aceder a uma base de dados comum. O nível de conhecimentos informáticos varia consideravelmente entre os elementos que se encontram a trabalhar em obra e os que estão no escritório. Entre os sub-empreeiteiros, essa variação também se faz sentir. Já tive sub-empreiteiros que tinham uma equipa técnica de suporte, e já tive outros, que tive que os ajudar a criar uma conta de email.</description>
+    </item>
+    
+    <item>
+      <title>Formulário</title>
+      <link>/post/2018/06/12/formul%C3%A1rio/</link>
+      <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018/06/12/formul%C3%A1rio/</guid>
+      <description>Fórmulas, segundo o Euro-Código, para a serem utilizadas na análise e dimensionamento de vigas em betão armado.</description>
     </item>
     
     <item>
@@ -89,6 +128,16 @@ Introdução O Custo representa normalmente o fator mais importante em uma const
       <guid>/post/2017/01/22/contrato-e-plano-de-obra/</guid>
       <description>Qualquer projeto em construção civil, independentemente do tamanho, deve ter alguma forma de contrato. Um Contrato, é a formalização legal de um acordo entre duas ou mais partes, mas o mais importante para mim, é a garantia que existe um acordo sobre como lidar com os problemas com surjam em uma obra.
 O Plano de Obra, é o agregar de vários planos da responsabilidade do Diretor de Obra, que vão ditar os procedimentos a serem utilizados em uma construção.</description>
+    </item>
+    
+    <item>
+      <title>Plano de Obra</title>
+      <link>/post/2017/01/22/plano-de-obra/</link>
+      <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017/01/22/plano-de-obra/</guid>
+      <description>Introdução O Plano de Obra é um conjunto de documentos, com objetivos específicos, e que servem de apoio ao desenrolar das operações no terreno de acordo com objetivos estipulados em Contrato. Cabe ao Diretor de Obra, com a ajuda da restante equipa, a elaboração, implementação e monitorização do Plano de Obra que deve incluir:
+ Custo: Plano de controle e de monitorização de custos Qualidade: Plano com os objetivos do projetos e sistema de monitorização de qualidade Tempo: Plano de Programação de Obra, com representação gráfica e escrita das atividades.</description>
     </item>
     
     <item>

@@ -6,10 +6,20 @@
     <description>Recent content in Sismo, Eurocódigo, Leiria, Espetro Resposta on l moura</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
-    <lastBuildDate>Sat, 30 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/sismo-euroc%C3%B3digo-leiria-espetro-resposta/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Análise dos deslocamentos devido a acção sísmica</title>
+      <link>/post/2019/04/07/sismo-deslocamento/</link>
+      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019/04/07/sismo-deslocamento/</guid>
+      <description>Exemplo do processo de cálculo através do espectro de resposta, e devido à acção sísmica regulamentar, dos valores de deslocamento de uma estrutura em Leiria. Serviu de base para este processo de cálculo, o trabalho do Professor João Veludo (Veludo 2019), da ESTG em Leiria.
+Este post, é criado na sequência de um outro - Espetro de Resposta para prédio localizado em Leiria - Segundo o Eurocódigo 8 - aonde é feito o cálculo dos Espetros de resposta de aceleração e deslocamentos, devidos à acção sísmica regulamentar e determinando os valores da aceleração e deslocamento espectral de um edifício em Leiria, com 1GL.</description>
+    </item>
     
     <item>
       <title>Espetro de Resposta para prédio localizado em Leiria</title>

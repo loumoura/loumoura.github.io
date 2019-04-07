@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/post/2019/04/07/sismo-deslocamento/</loc>
+    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2019/04/03/informa%C3%A7%C3%A3o-perdida/</loc>
+    <lastmod>2019-04-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/2019/03/30/espetro-resposta/</loc>
     <lastmod>2019-03-30T00:00:00+00:00</lastmod>
   </url>
@@ -18,6 +28,11 @@
   </url>
   
   <url>
+    <loc>/post/2018/08/06/a-quick-note/</loc>
+    <lastmod>2018-08-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/2018/06/18/custo-do-risco/</loc>
     <lastmod>2018-06-18T13:47:32+01:00</lastmod>
   </url>
@@ -25,6 +40,11 @@
   <url>
     <loc>/post/2018/06/18/jupyter-google/</loc>
     <lastmod>2018-06-18T13:47:32+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2018/06/12/formul%C3%A1rio/</loc>
+    <lastmod>2018-06-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -39,6 +59,11 @@
   
   <url>
     <loc>/post/2017/01/22/contrato-e-plano-de-obra/</loc>
+    <lastmod>2017-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/01/22/plano-de-obra/</loc>
     <lastmod>2017-01-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -104,7 +129,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-03-30T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -114,7 +139,19 @@
   </url>
   
   <url>
+    <loc>/tags/latex-html-pdf-informa%C3%A7%C3%A3o/</loc>
+    <lastmod>2019-04-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/about_me/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/markdown/</loc>
+    <lastmod>2018-08-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -125,7 +162,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-03-30T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -149,7 +186,7 @@
   
   <url>
     <loc>/tags/sismo-euroc%C3%B3digo-leiria-espetro-resposta/</loc>
-    <lastmod>2019-03-30T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -160,8 +197,38 @@
   </url>
   
   <url>
+    <loc>/tags/armado/</loc>
+    <lastmod>2018-06-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/bet%C3%A3o/</loc>
+    <lastmod>2018-06-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/euroc%C3%B3digo/</loc>
+    <lastmod>2018-06-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/org-mode/</loc>
+    <lastmod>2018-06-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/pilarformulaseuroc%C3%B3digo/</loc>
     <lastmod>2016-01-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/viga/</loc>
+    <lastmod>2018-06-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

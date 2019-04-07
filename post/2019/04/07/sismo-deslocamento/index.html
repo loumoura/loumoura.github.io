@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Análise dos deslocamentos devido a acção sísmica - Segundo o Eurocódigo 8  - l moura</title>
+    <meta property="og:title" content="Análise dos deslocamentos devido a acção sísmica - l moura">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Exemplo do processo de cálculo através do espectro de resposta, e devido à acção sísmica regulamentar, dos valores de deslocamento de uma estrutura em Leiria. Serviu de base para este processo de &amp;hellip;">
+      <meta property="og:description" content="Exemplo do processo de cálculo através do espectro de resposta, e devido à acção sísmica regulamentar, dos valores de deslocamento de uma estrutura em Leiria. Serviu de base para este processo de &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+<link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      
+<h1><a href="/"><img src="/author.png" alt="t" /></a></h1>
+
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" />
+  <label id="menu-label" for="menu-check" class="unselectable">
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about_me/">Autor</a></li>
+  
+  <li><a href="/files/cv.pdf">CV</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Análise dos deslocamentos devido a acção sísmica</h1>
+<h1><span class="subtitle">Segundo o Eurocódigo 8</span></h1>
+<h3>Luis Moura
+  /  2019-04-07</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+
+<p>Exemplo do processo de cálculo através do espectro de resposta, e devido à acção sísmica regulamentar, dos valores de deslocamento de uma estrutura em Leiria. Serviu de base para este processo de cálculo, o trabalho do Professor João Veludo <span class="citation">(Veludo 2019)</span>, da ESTG em Leiria.</p>
+<p>Este post, é criado na sequência de um outro - <a href="https://loumoura.github.io/post/2019/03/30/espetro-resposta/">Espetro de Resposta para prédio localizado em Leiria - Segundo o Eurocódigo 8</a> - aonde é feito o cálculo dos Espetros de resposta de aceleração e deslocamentos, devidos à acção sísmica regulamentar e determinando os valores da aceleração e deslocamento espectral de um edifício em Leiria, com 1GL.</p>
+<p>A versão em <a href="/post/files/deslocamento.pdf">PDF</a> deste post, pode ser encontrada <a href="/post/files/deslocamento.pdf">aqui</a>.</p>
+<div id="estrutura" class="section level1">
+<h1>Estrutura</h1>
+<p>Estrutura simples<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>, em betão C30/37, e com 10 metros de altura, localizada no concelho de Leiria. A Classe de Importância é II e encontra-se localizada em um terreno tipo C. Tem um peso próprio de 90 kN e uma sobrecarga de 45 kN com um respectivo <span class="math inline">\(\psi_{2}=0.6\)</span>.<br />
+Na tabela <code>Condições iniciais em análise</code>, encontra-se sumariado as condições iniciais, assim como na seguinte figura:</p>
+<div class="figure"><span id="fig:deslocamento"></span>
+<img src="/post/deslocamento_files/espetro-resposta_exemplo_6_0.png" alt="Diagrama da estrutura em análise, na cidade de Leiria" width="90%" />
+<p class="caption">
+Figure 1: Diagrama da estrutura em análise, na cidade de Leiria
+</p>
+</div>
+<table>
+<caption>Condições iniciais em análise </caption>
+<thead>
+<tr class="header">
+<th><strong>Nome</strong></th>
+<th><strong>Descrição</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Localização</td>
+<td>Leiria</td>
+</tr>
+<tr class="even">
+<td>Tipo de Terreno</td>
+<td>C</td>
+</tr>
+<tr class="odd">
+<td>Classe de Importância</td>
+<td>II</td>
+</tr>
+<tr class="even">
+<td>Betão</td>
+<td>C30/37</td>
+</tr>
+<tr class="odd">
+<td>Carga Própria (CP)</td>
+<td>90 kN</td>
+</tr>
+<tr class="even">
+<td>Sobrecarga (SC)</td>
+<td>45 kN</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Terreno Tipo C : “Depósitos profundos de areia compacta ou mediamente compacta, de seixo (cascalho) ou de argila rija com uma espessura entre várias dezenas e muitas centenas de metros.”</p>
+<p>–Quadro 3.1 - Tipos de Terreno, Eurocódigo 8 <span class="citation">(Instituto Português de Qualidade LNEC 2010)</span></p>
+</blockquote>
+</div>
+<div id="frequencia-propria-e-periodo" class="section level1">
+<h1>Frequência Própria e Período</h1>
+<div id="massa" class="section level2">
+<h2>Massa</h2>
+<p><span class="math display">\[
+m=\frac{G+\psi_{2} Q}{g}=\frac{90+0,6 \cdot 45}{9,8}=11,94 t n
+\]</span></p>
+</div>
+<div id="rigidez" class="section level2">
+<h2>Rigidez</h2>
+<p><span class="math display">\[
+k_{X}=K_{Y}=\frac{3 E I}{L^{3}}=\frac{3 \cdot 33 E 6 \cdot\left[\pi \cdot\left(1,2^{4}-0,8^{4}\right) / 64\right]}{10^{3}}=8086,5 \mathrm{kN} / \mathrm{m}
+\]</span></p>
+</div>
+<div id="frequencia" class="section level2">
+<h2>Frequência</h2>
+<p><span class="math display">\[
+f_{X}=f_{Y}=\frac{1}{2 \pi} \cdot \sqrt{\frac{8086,5}{11,94}}=4,14 H z 
+\]</span></p>
+</div>
+<div id="periodo" class="section level2">
+<h2>Período</h2>
+<p><span class="math display">\[
+T=\frac{1}{f} \rightarrow T=\frac{1}{4,14}=0,242~ s
+\]</span></p>
+<table>
+<caption>Resultados da análise da estrutura </caption>
+<thead>
+<tr class="header">
+<th><strong>Parâmetro</strong></th>
+<th><strong>Valor</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Massa</td>
+<td><span class="math inline">\(11.94~Ton\)</span></td>
+</tr>
+<tr class="even">
+<td>Rigidez</td>
+<td><span class="math inline">\(8086.4~\frac{kN}{m}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Frequência</td>
+<td><span class="math inline">\(4.14~Hz\)</span></td>
+</tr>
+<tr class="even">
+<td>Período</td>
+<td><span class="math inline">\(0.241~s\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span id="fig:deslocamento-tempo"></span>
+<img src="/post/deslocamento_files/espetro-resposta_exemplo_16_0.png" alt="Gráfico para deslocamento no tempo, para o primeiro segundo, e com amortecimento nulo." width="90%" />
+<p class="caption">
+Figure 2: Gráfico para deslocamento no tempo, para o primeiro segundo, e com amortecimento nulo.
+</p>
+</div>
+</div>
+</div>
+<div id="parametros-pelo-eurocodigo-8" class="section level1">
+<h1>Parâmetros pelo Eurocódigo 8</h1>
+<table>
+<caption>Valores dos diversos parâmetros em análise </caption>
+<thead>
+<tr class="header">
+<th><strong>Parâmetros</strong></th>
+<th><strong>Tipo 1</strong></th>
+<th><strong>Tipo 2</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Localização</td>
+<td>Leiria</td>
+<td>Leiria</td>
+</tr>
+<tr class="even">
+<td>Tipo de Terreno</td>
+<td>C</td>
+<td>C</td>
+</tr>
+<tr class="odd">
+<td>Coeficiente de Importância</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Coeficiente de correcção do amortecimento <span class="math inline">\(\eta\)</span></td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Aceleração à superfície,<span class="math inline">\(a_{g}\)</span></td>
+<td>0.6</td>
+<td>1.1</td>
+</tr>
+<tr class="even">
+<td>Parâmetro <span class="math inline">\(S_{max}\)</span></td>
+<td>1.6</td>
+<td>1.6</td>
+</tr>
+<tr class="odd">
+<td>Parâmetro <span class="math inline">\(T_{B}(s)\)</span></td>
+<td>0.1</td>
+<td>0.1</td>
+</tr>
+<tr class="even">
+<td>Parâmetro <span class="math inline">\(T_{C}(s)\)</span></td>
+<td>0.25</td>
+<td>0.25</td>
+</tr>
+<tr class="odd">
+<td>Parâmetro <span class="math inline">\(T_{D}(s)\)</span></td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>Parâmetro <span class="math inline">\(S\)</span></td>
+<td>1.68</td>
+<td>1.58</td>
+</tr>
+</tbody>
+</table>
+<div id="espectro-de-calculo-para-a-analise-elastica-s_dt" class="section level2">
+<h2>Espectro de cálculo para a análise elástica, <span class="math inline">\(S_{d}(T)\)</span></h2>
+<p>O valor de espetro de cálculo<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> é feito de acordo com a secção 3.2.2.2 do Eurocódigo 8 <span class="citation">(Instituto Português de Qualidade LNEC 2010)</span>.</p>
+<blockquote>
+<p>Espectro de cálculo para a análise elástica: “A capacidade dos sistemas estruturais de resistir às acções sísmicas no domínio não linear permite, em geral, efectuar o seu cálculo para resistirem a forças sísmicas inferiores às que corresponderiam a uma resposta elástica linear.”</p>
+<p>– Secção 3.2.2.5.(a), Eurocódigo 8 <span class="citation">(Instituto Português de Qualidade LNEC 2010)</span></p>
+</blockquote>
+<blockquote>
+<p>“O <strong>coeficiente de comportamento, q,</strong> é uma aproximação da razão entre as forças sísmicas a que a estrutura ficaria sujeita se a sua resposta fosse completamente elástica, com 5 % de amortecimento viscoso, e as forças sísmicas que poderão ser adoptadas no projecto, com um modelo de análise elástica convencional, que continuem a assegurar uma resposta satisfatória da estrutura.”</p>
+<p>– Secção 3.2.2.5.(b), Eurocódigo 8 <span class="citation">(Instituto Português de Qualidade LNEC 2010)</span><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
+</blockquote>
+<p>Para <strong>Acção Sísmica Tipo 1</strong>: <span class="math display">\[
+T_{B} \leq T \leq T_{C} : S_{d}(T)=a_{g} \cdot S \cdot \frac{2,5}{q}=0,6 \times 1,6 \times \frac{2,5}{1}=2,4 \mathrm{m} / \mathrm{s}^{2}
+\]</span></p>
+<p>Para <strong>Acção Sísmica Tipo 2</strong>: <span class="math display">\[
+T_{B} \leq T \leq T_{C} : S_{d}(T)=a_{g} \cdot S \cdot \frac{2,5}{q}=1,1 \times 1,6 \times \frac{2,5}{1}=4,4 m / s^{2}
+\]</span></p>
+<table>
+<caption>Valor do espetro de cálculo, <span class="math inline">\(S_{d}(T)\)</span> para os dois tipos de Sismo </caption>
+<colgroup>
+<col width="25%" />
+<col width="38%" />
+<col width="36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Intervalo</strong></th>
+<th><strong>Sismo Tipo 1</strong></th>
+<th><strong>Sismo Tipo 2</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(T_{B}\leq T\leq T_{C}\)</span></td>
+<td><span class="math inline">\(2.40~\mathrm{m}/\mathrm{s}^{2}\)</span></td>
+<td><span class="math inline">\(4.40~\mathrm{m}/\mathrm{s}^{2}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="esforcos-e-deslocamentos" class="section level1">
+<h1>Esforços e Deslocamentos</h1>
+<div id="sismo-tipo-1" class="section level2">
+<h2>Sismo Tipo 1</h2>
+<p>Determinação<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> da força ao nível do grau de liberdade (massa) e do momento flector na base:</p>
+<p><span class="math display">\[
+F=m . S_{d}(T)=11,94 \times 2.4 =28.65~ \mathrm{kN}
+\]</span></p>
+<p><span class="math display">\[
+M=F . L=28.65 \times 10=286,5~ \mathrm{kNm}
+\]</span></p>
+<p><strong>Determinação do deslocamento horizontal: <span class="math inline">\(d_x\)</span></strong></p>
+<p><span class="math display">\[
+d_{X}=\frac{F}{K_{X}}=\frac{28,65}{8086,50}=3,54 \times 10^{-3} \mathrm{m}=3,54 \mathrm{mm}
+\]</span></p>
+<p><strong>Determinação do deslocamento horizontal: <span class="math inline">\(d_y\)</span></strong></p>
+<p><span class="math display">\[
+d_{Y}=\frac{F}{K_{Y}}=\frac{28,65}{8086,50}=3,54 \mathrm{mm}
+\]</span></p>
+<p><strong>Combinação:</strong></p>
+<p>Para análise tridimensional, um determinado efeito X (esforço, deslocamento ou tensão) obtém-se pela combinação das duas direcções em estudo:</p>
+<p><span class="math display">\[
+X=\pm E_{x} \pm 0,3 E_{y}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(d_{X}=3,54 \mathrm{mm}\)</span></li>
+<li><span class="math inline">\(d_{Y}=0,3 \times 3,54=1,062 m m\)</span></li>
+</ul>
+<p><span class="math display">\[
+d_{max}=\sqrt{3,54^{2}+1,06^{2}}=3,7 \mathrm{mm}
+\]</span></p>
+</div>
+<div id="sismo-tipo-2" class="section level2">
+<h2>Sismo Tipo 2</h2>
+<p>Determinação<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> da força ao nível do grau de liberdade (massa) e do momento flector na base:</p>
+<p><span class="math display">\[
+F=m . S_{d}(T)=11,94 \times 4.4 =52,54~ \mathrm{kN}
+\]</span></p>
+<p><span class="math display">\[
+M=F . L=52,54 \times 10=525,4~ \mathrm{kNm}
+\]</span></p>
+<p><strong>Determinação do deslocamento horizontal: <span class="math inline">\(d_x\)</span></strong></p>
+<p><span class="math display">\[
+d_{X}=\frac{F}{K_{X}}=\frac{52,54}{8086,50}=6,50 \times 10^{-3} \mathrm{m}=6,50~ \mathrm{mm}
+\]</span></p>
+<p><strong>Determinação do deslocamento horizontal: <span class="math inline">\(d_y\)</span></strong></p>
+<p><span class="math display">\[
+d_{Y}=\frac{F}{K_{Y}}=\frac{52,54}{8086,50}=6,50~ \mathrm{mm}
+\]</span></p>
+<p><strong>Combinação:</strong></p>
+<p>Para análise tridimensional, um determinado efeito X (esforço, deslocamento ou tensão) obtém-se pela combinação das duas direcções em estudo:</p>
+<p><span class="math display">\[
+X=\pm E_{x} \pm 0,3 E_{y}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(d_{X}=6,50 \mathrm{mm}\)</span></li>
+<li><span class="math inline">\(d_{Y}=0,3 \times 6,50=1,95 ~ mm\)</span></li>
+</ul>
+<p><span class="math display">\[
+d_{max}=\sqrt{6,5^{2}+1,95^{2}}=6,78 ~ \mathrm{mm}
+\]</span></p>
+</div>
+</div>
+<div id="resultados" class="section level1">
+<h1>Resultados</h1>
+<table>
+<caption>Resultados da análise pelo Espetro de Resposta e de acordo com o Eurocódigo 8, para uma estrutura localizada em Leiria, sujeita a uma acção sísmica </caption>
+<colgroup>
+<col width="38%" />
+<col width="31%" />
+<col width="29%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Parâmetro</strong></th>
+<th><strong>Sismo Tipo 1</strong></th>
+<th><strong>Sismo Tipo 2</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(S_{d}(T)~\)</span>intervalo<span class="math inline">\(~T_{B}\leq T\leq T_{C}\)</span></td>
+<td><span class="math inline">\(2.40~\mathrm{m}/\mathrm{s}^{2}\)</span></td>
+<td><span class="math inline">\(4.40~\mathrm{m}/\mathrm{s}^{2}\)</span></td>
+</tr>
+<tr class="even">
+<td>Força, <span class="math inline">\(F\)</span></td>
+<td><span class="math inline">\(28.65~kN\)</span></td>
+<td><span class="math inline">\(52.54~kN\)</span></td>
+</tr>
+<tr class="odd">
+<td>Momento, <span class="math inline">\(M\)</span></td>
+<td><span class="math inline">\(286.5~kNm\)</span></td>
+<td><span class="math inline">\(525.4~kNm\)</span></td>
+</tr>
+<tr class="even">
+<td>Deslocamento no eixo <span class="math inline">\(x\)</span>, <span class="math inline">\(d_{x}\)</span></td>
+<td><span class="math inline">\(3.543~mm\)</span></td>
+<td><span class="math inline">\(6.50~mm\)</span></td>
+</tr>
+<tr class="odd">
+<td>Deslocamento no eixo <span class="math inline">\(y\)</span>, <span class="math inline">\(d_{y}\)</span></td>
+<td><span class="math inline">\(3.543~mm\)</span></td>
+<td><span class="math inline">\(6.50~mm\)</span></td>
+</tr>
+<tr class="even">
+<td>Combinação <span class="math inline">\(X=\pm E_{x} \pm 0,3 E_{y}\)</span></td>
+<td><span class="math inline">\(3.70~mm\)</span></td>
+<td><span class="math inline">\(6.78~mm\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="referencias" class="section level1 unnumbered">
+<h1>Referências</h1>
+<div id="refs" class="references">
+<div id="ref-EC8">
+<p>Instituto Português de Qualidade LNEC. 2010. “Eurocódigo 8 – Projecto de Estruturas Para Resistência Aos Sismos Parte 1: Regras Gerais, Acções Sísmicas E Regras Para Edifícios.”</p>
+</div>
+<div id="ref-veludo2019">
+<p>Veludo, João. 2019. “Resposta a Ações Sísmicas. Espectro de Resposta.” Edited by Escola Superior de Tecnologia e Gestão.</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>A análise dos parâmetros do espetro de resposta para uma estrutura em Leiria, foi previamente feita no trabalho “Espetro de Resposta para prédio localizado em Leiria”.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p><span class="math inline">\(a_{\mathrm{g}},~ S,~T_{\mathrm{B}}, ~ T_{\mathrm{C}}, ~\mathrm{e}~ T_{\mathrm{D}}\)</span> são calculados de acordo com a secção 3.2 do Eurocódigo 8.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Por se tratar de uma estrutura isostática, o coef. de comportamento é q=1.<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Não foram considerados os Efeitos acidentais de torção: “Para ter em conta a incerteza na localização das massas e na variação espacial do movimento sísmico, o centro de massa calculado em cada piso i deve ser deslocado, em cada direcção, em relação à sua posição nominal de uma excentricidade acidental: <span class="math inline">\(e_{\mathrm{ai}}=\pm 0,05 \cdot L_{\mathrm{i}}\)</span>” –Secção 4.3.2, EC8<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>Não foram considerados os Efeitos acidentais de torção: “Para ter em conta a incerteza na localização das massas e na variação espacial do movimento sísmico, o centro de massa calculado em cada piso i deve ser deslocado, em cada direcção, em relação à sua posição nominal de uma excentricidade acidental: <span class="math inline">\(e_{\mathrm{ai}}=\pm 0,05 \cdot L_{\mathrm{i}}\)</span>” –Secção 4.3.2, EC8<a href="#fnref5">↩</a></p></li>
+</ol>
+</div>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2019/04/03/informa%C3%A7%C3%A3o-perdida/">Historial de documentação</a></span>
+  <span class="nav-next"></span>
+</nav>
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+
+  
+  <hr>
+  <div class="copyright">&copy; <a href="/">Luis Moura</a> 20016 - 2019</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

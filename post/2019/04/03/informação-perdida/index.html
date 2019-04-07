@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Historial de documentação - Quando a informação desaparece  - l moura</title>
+    <meta property="og:title" content="Historial de documentação - l moura">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Quanta informação ficou perdida ao longo dos anos por causa das actualizações do software e hardware?
+[&amp;hellip;] Ainda me lembro de guardar documentos em Floppy disk. Mal finalizava um documento em &amp;hellip;">
+      <meta property="og:description" content="Quanta informação ficou perdida ao longo dos anos por causa das actualizações do software e hardware?
+[&amp;hellip;] Ainda me lembro de guardar documentos em Floppy disk. Mal finalizava um documento em &amp;hellip;">
+      
+    
+
+    
+    
+    <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/a/aa/Floppy_disk_2009_G1.jpg">
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+<link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      
+<h1><a href="/"><img src="/author.png" alt="t" /></a></h1>
+
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" />
+  <label id="menu-label" for="menu-check" class="unselectable">
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about_me/">Autor</a></li>
+  
+  <li><a href="/files/cv.pdf">CV</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Historial de documentação</h1>
+<h1><span class="subtitle">Quando a informação desaparece</span></h1>
+<h3>Luis Moura
+  /  2019-04-03</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+
+<p>Quanta informação ficou perdida ao longo dos anos por causa das actualizações do software e hardware?</p>
+<div id="no-tempo-do-floppy-disk" class="section level2">
+<h2>No tempo do Floppy Disk</h2>
+<p>Ainda me lembro de guardar documentos em <a href="https://en.wikipedia.org/wiki/Floppy_disk">Floppy disk</a>. Mal finalizava um documento em <a href="https://products.office.com/en/word">Microsoft Word</a>, guardava ele na disquete de modo a garantir que a informação ficava guardada para a eternidade. Mas a eternidade não foi mais que um punhado de anos. Entre mudanças de escritório e caixas perdidas, actualizações de software e hardware, passando pelos CDs, USB e Cloud Storage, os floppies simplesmente desapareceram da minha vida e com eles, inúmeros documentos.</p>
+<div class="figure"><span id="fig:floppy"></span>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Floppy_disk_2009_G1.jpg" alt="A 8-inch, 5.25-inch, e 3.5-inch floppy disks. Imagem:: [Wikipedia](https://en.wikipedia.org/wiki/File:Floppy_disk_2009_G1.jpg)" width="100%" />
+<p class="caption">
+Figure 1: A 8-inch, 5.25-inch, e 3.5-inch floppy disks. Imagem:: <a href="https://en.wikipedia.org/wiki/File:Floppy_disk_2009_G1.jpg">Wikipedia</a>
+</p>
+</div>
+</div>
+<div id="era-da-internet" class="section level2">
+<h2>Era da Internet</h2>
+<p>Atualmente, e veja-se o caso deste Website, os documentos são criados para serem vistos na Internet. Os documentos (ou posts) são criados em <a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a>, ou na versão <a href="https://rmarkdown.rstudio.com/">R Markdown</a> <span class="citation">(Allaire et al. 2016)</span>, utilizando <a href="https://en.wikipedia.org/wiki/HTML">HTML</a> se necessário. Mas qualquer futura mudança no código informático, pode tornar os documentos incompreensíveis de serem vistos online. Neste momento, para fazer o cabeçalho desta secção em Markdown, eu usei dois “hashtags”:</p>
+<pre class="markdown"><code>## Era da Internet</code></pre>
+<p>Por sua vez, quando o Markdown é convertido para ser exportado para a internet, é criado o seguinte código em HTML<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>:</p>
+<pre class="html"><code>&lt;div id=&quot;era-da-internet&quot; class=&quot;section level2&quot;&gt;
+&lt;h2&gt;Era da Internet&lt;/h2&gt;</code></pre>
+<p>Mas em algumas variações do Markdown, o mesmo cabeçalho é escrito da seguinte maneira:</p>
+<pre class="markdown"><code>Era da Internet
+===============</code></pre>
+<p>Se imaginarmos que no futuro, seja optado que todo o Markdown use a segunda opção, este post vai ficar desformatado para ser visto na Internet, sendo necessário alterar manualmente todos os “##” para “==”. E este é um dos muitos exemplos que eu poderia dar de como este Website poderia ficar no mínimo desformatado.</p>
+<p>Mesmo com <span class="math inline">\(\LaTeX\)</span>, que está incluído na maioria das páginas deste Website, o problema ainda é maior, pois uma mudança no endereço <a href="https://en.wikipedia.org/wiki/Content_delivery_network">CDN-Content delivery network</a><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> do <a href="https://www.mathjax.org/">MathJax</a>, tornaria a seguinte equação,</p>
+<p><span class="math display">\[
+0\le T\le { T }_{ B }\quad :\quad { S }_{ e }(T)={ a }_{ g }\times S\times \left[ 1+\frac { T }{ { T }_{ B } } \times (\eta \times 2,5-1) \right] 
+\]</span></p>
+<p>em algo que a maioria das pessoas não conseguiria perceber:</p>
+<pre class="latex"><code>\begin{equation}
+0\le T\le { T }_{ B }\quad :\quad { S }_{ e }(T)={ a }_{ g }\times S\times \left[ 1+\frac { T }{ { T }_{ B } } \times (\eta \times 2,5-1) \right] 
+\end{equation}</code></pre>
+<p>Ou seja, todas as fórmulas matemáticas deste Website, estão dependentes de um serviço que faz a conversão de <span class="math inline">\(\LaTeX\)</span> para símbolos matemáticos. A falha desse serviço, leva a que todos a matemática deste Website, se torne “ilegível”.</p>
+</div>
+<div id="markdown-latex-pdf" class="section level2">
+<h2>Markdown, <span class="math inline">\(\LaTeX\)</span>, PDF</h2>
+<p>Neste momento, qualquer documento que seja por mim produzido, é guardado em três formatos:</p>
+<ul>
+<li><span class="math inline">\(\LaTeX\)</span></li>
+<li>Markdown</li>
+<li>PDF</li>
+</ul>
+<p><span class="math inline">\(\LaTeX\)</span> é um código maduro que produz excelentes documentos. Possivelmente não vou ter muita dificuldade em abrir um documento em <span class="math inline">\(\LaTeX\)</span> daqui a uma ou duas décadas.<br />
+Markdown é uma linguagem de muito fácil utilização e tem a vantagem de existirem dezenas editores (tanto online como para desktop) que a tornam também bastante acessível. E por causa da sua versatilidade, é facilemente convertido para outro formato, como <a href="https://products.office.com/en/word">Microsoft Word</a>, <a href="https://en.wikipedia.org/wiki/HTML">HTML</a>, <a href="https://www.latex-project.org/">LaTeX</a> ou <a href="https://en.wikipedia.org/wiki/PDF">PDF</a>.<br />
+E finalmente o PDF, que permite guardar o documento finalizado, mantendo-o seguro de possíveis alterações, para além de ser um formato mundialmente utilizado, de fácil partilha, e com décadas de uso.</p>
+<p>Toda a documentação, é guardada tanto online como no hardrive do computador. Por sua vez, pelo menos uma vez em cada seis meses, guardo uma cópia dos documentos em um USB external hardrive.</p>
+<p>Em todo este processo, pelo menos pretendo minimizar o risco de perder documentos tanto por causa de alguma actualização de software/hardware, como por causa de algum erro da minha parte. Daqui 20 anos, espero poder abrir o texto deste post, mesmo que ele já não esteja acessível online.</p>
+</div>
+<div id="referencias" class="section level2 unnumbered">
+<h2>Referências</h2>
+<div id="refs" class="references">
+<div id="ref-R-rmarkdown">
+<p>Allaire, JJ, Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang, Jeff Allen, Hadley Wickham, Aron Atkins, and Rob Hyndman. 2016. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="http://CRAN.R-project.org/package=rmarkdown" class="uri">http://CRAN.R-project.org/package=rmarkdown</a>.</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a href="https://en.wikipedia.org/wiki/HTML">HTML</a> é a formatação final de todas as páginas deste website.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Recentemente, MathJax alterou o endereço do CDN, o que obrigou à alteração de milhares de websites.<a href="#fnref2">↩</a></p></li>
+</ol>
+</div>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2019/03/30/espetro-resposta/">Espetro de Resposta para prédio localizado em Leiria</a></span>
+  <span class="nav-next"><a href="/post/2019/04/07/sismo-deslocamento/">Análise dos deslocamentos devido a acção sísmica</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">&copy; <a href="/">Luis Moura</a> 20016 - 2019</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+
