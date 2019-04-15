@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>rmarkdown post - l moura</title>
+    <meta property="og:title" content="rmarkdown post - l moura">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com. \(\alpha &#43; &amp;hellip;">
+      <meta property="og:description" content="This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com. \(\alpha &#43; &amp;hellip;">
+      
+    
+
+    
+    
+    <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/MC_Drei-Finger-Faultier.jpg/330px-MC_Drei-Finger-Faultier.jpg">
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+<link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      
+<h1><a href="/"><img src="/author.png" alt="t" /></a></h1>
+
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" />
+  <label id="menu-label" for="menu-check" class="unselectable">
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about_me/">Autor</a></li>
+  
+  <li><a href="/contact/">Contato</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>rmarkdown post</h1>
+
+<h3>Luis Moura
+  /  2018-08-06</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+
+
+<div id="r-markdown" class="section level2">
+<h2>R Markdown</h2>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>. <span class="math inline">\(\alpha + \beta=\sum\phi\)</span></p>
+<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
+<pre><code>     speed           dist       
+ Min.   : 4.0   Min.   :  2.00  
+ 1st Qu.:12.0   1st Qu.: 26.00  
+ Median :15.0   Median : 36.00  
+ Mean   :15.4   Mean   : 42.98  
+ 3rd Qu.:19.0   3rd Qu.: 56.00  
+ Max.   :25.0   Max.   :120.00  </code></pre>
+</div>
+<div id="images" class="section level2">
+<h2>Images</h2>
+<pre class="r"><code>plot(10:1, pch=21, bg=&quot;red&quot;)</code></pre>
+<div class="figure" style="text-align: left"><span id="fig:unnamed-chunk-1"></span>
+<img src="/post/Rmarkdown_post_files/figure-html/unnamed-chunk-1-1.png" alt="This a caption" width="50%" style="background-color: #9ecff7; padding:10px; display: inline-block;" />
+<p class="caption">
+Figure 1: This a caption
+</p>
+</div>
+<div class="figure">
+<img src="/post/Rmarkdown_post_files/taylor_8_1.png" alt="a texto" style="width:80.0%" />
+<p class="caption">a texto</p>
+</div>
+<div class="figure"><span id="fig:Koala"></span>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/MC_Drei-Finger-Faultier.jpg/330px-MC_Drei-Finger-Faultier.jpg" alt="a koala in the woods" width="70%" class="left" />
+<p class="caption">
+Figure 2: a koala in the woods
+</p>
+</div>
+<pre class="r"><code>include_graphics(&quot;/post/Rmarkdown_post_files/taylor_8_1.png&quot;)</code></pre>
+<p><img src="/post/Rmarkdown_post_files/taylor_8_1.png" width="50%" style="background-color: #9ecff7; padding:10px; display: inline-block;" /></p>
+</div>
+<div id="including-plots" class="section level2">
+<h2>Including Plots</h2>
+<p>You can also embed plots, for example:</p>
+<p><img src="/post/Rmarkdown_post_files/figure-html/pressure-1.png" width="672" /></p>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+</div>
+<div id="same-as-table-above-but-for-latex" class="section level2">
+<h2>Same as table above but for latex:</h2>
+<p>When you are using kable(), if you don’t specify format, by default it will generate a markdown table and let pandoc handle the conversion from markdown to HTML/PDF. This is the most favorable approach to render most simple tables as it is format independent. If you switch from HTML to pdf, you basically don’t need to change anything in your code. However, markdown doesn’t support complex table. For example, if you want to have a double-row header table, markdown just cannot provide you the functionality you need. As a result, when you have such a need, you should define format in kable() as either “html” or “latex”. You can also define a global option at the beginning using options(knitr.table.format = “html”) so you don’t repeat the step everytime.</p>
+<table class="table" style="width: auto !important; float: right; margin-left: 10px;">
+<caption>
+<span id="tab:unnamed-chunk-4">Table 1: </span>Demo Table
+</caption>
+<thead>
+<tr>
+<th style="border-bottom:hidden" colspan="1">
+</th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+Group 1
+</div>
+</th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+Group 2<sup>a</sup>
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+mpg
+</th>
+<th style="text-align:right;">
+cyl
+</th>
+<th style="text-align:right;">
+disp
+</th>
+<th style="text-align:right;">
+hp
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Mazda RX4
+</td>
+<td style="text-align:right;">
+21.0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+160
+</td>
+<td style="text-align:right;">
+110
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mazda RX4 Wag
+</td>
+<td style="text-align:right;">
+21.0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+160
+</td>
+<td style="text-align:right;">
+110
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Datsun 710
+</td>
+<td style="text-align:right;">
+22.8
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+108
+</td>
+<td style="text-align:right;">
+93
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hornet 4 Drive
+</td>
+<td style="text-align:right;">
+21.4
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+258
+</td>
+<td style="text-align:right;">
+110
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hornet Sportabout
+</td>
+<td style="text-align:right;">
+18.7
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+360
+</td>
+<td style="text-align:right;">
+175
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border:0;" colspan="100%">
+<sup>a</sup> table footnote
+</td>
+</tr>
+</tfoot>
+</table>
+<p>When you are using kable(), if you don’t specify format, by default it will generate a markdown table and let pandoc handle the conversion from markdown to HTML/PDF. This is the most favorable approach to render most simple tables as it is format independent. If you switch from HTML to pdf, you basically don’t need to change anything in your code. However, markdown doesn’t support complex table. For example, if you want to have a double-row header table, markdown just cannot provide you the functionality you need. As a result, when you have such a need, you should define format in kable() as either “html” or “latex”. You can also define a global option at the beginning using options(knitr.table.format = “html”) so you don’t repeat the step everytime.</p>
+<div id="inline-code" class="section level3">
+<h3>Inline Code</h3>
+<p>O valor de 0.6666667 kabuges</p>
+<div id="round-the-numbers" class="section level4">
+<h4>round the numbers</h4>
+<p>O valor de 0.67 kabuges</p>
+</div>
+</div>
+</div>
+<div id="ggplot2" class="section level2">
+<h2>GGPlot2</h2>
+<pre><code>Warning: package &#39;ggplot2&#39; was built under R version 3.4.4</code></pre>
+<pre><code>Warning: package &#39;ggthemes&#39; was built under R version 3.4.4</code></pre>
+<pre><code>
+Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>The following objects are masked from &#39;package:stats&#39;:
+
+    filter, lag</code></pre>
+<pre><code>The following objects are masked from &#39;package:base&#39;:
+
+    intersect, setdiff, setequal, union</code></pre>
+<p><img src="/post/Rmarkdown_post_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="reference-latex-math" class="section level2">
+<h2>Reference latex math</h2>
+<span class="math display" id="eq:binom">\[\begin{equation} 
+  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
+  \tag{1}
+\end{equation}\]</span>
+<p>You may refer to it using <a href="#eq:binom">(1)</a>,</p>
+<pre><code>        Designação dos Trabalhos Quantidade Custo Unitário (euros) Total
+ 1:         Aquisição de Terreno          1                  75000 75000
+ 2:        Preparação do Terreno          1                  10000 10000
+ 3:        Aquisição Contentores         10                   2500 25000
+ 4:                   Saneamento          1                   3500  3500
+ 5:                         Água          1                   2500  2500
+ 6:                Electricidade          1                   1200  1200
+ 7:            Reparação caminho          1                  12000 12000
+ 8: Escavação e transporte terra          1                   9200  9200
+ 9:       Escav. Edif. Principal          1                   2000  2000
+10:               Escav. Piscina          1                   1500  1500</code></pre>
+</div>
+<div id="library-pander" class="section level2">
+<h2>Library Pander</h2>
+<p><a href="https://rapporter.github.io/pander/">Pander</a></p>
+<pre><code>
+
+| &amp;nbsp;            | mpg  | cyl | disp |  hp |
+|:------------------|:----:|:---:|:----:|----:|
+| **Mazda RX4**     |  21  |  6  | 160  | 110 |
+| **Mazda RX4 Wag** |  21  |  6  | 160  | 110 |
+| **Datsun 710**    | 22.8 |  4  | 108  |  93 |
+
+Table: Hello</code></pre>
+<p><img src="img/A.jpg" width="50%" style="display: block; margin: auto;" /></p>
+<pre class="html"><code>&lt;img src=&quot;/A.jpg&quot; alt=&quot;final image&quot; width=&quot;400&quot;/&gt;</code></pre>
+<p>4</p>
+<p><img src="/post/Rmarkdown_post_files/figure-html/plot-1.png" width="672" /></p>
+<p><img src="/post/Rmarkdown_post_files/figure-html/plot2-1.png" width="672" /></p>
+<p><img src="/post/Rmarkdown_post_files/figure-html/curve,%20options-1.png" width="672" /></p>
+<p><img src="/post/Rmarkdown_post_files/figure-html/mosaic-1.png" width="672" /><img src="/post/Rmarkdown_post_files/figure-html/mosaic-2.png" width="672" /></p>
+<p><img src="/post/Rmarkdown_post_files/figure-html/ggplot-function-1.png" width="672" /></p>
+<p><img src="/post/Rmarkdown_post_files/figure-html/KK-1.png" width="672" /></p>
+<pre><code>[1] 17</code></pre>
+<div class="figure"><span id="fig:calculus1"></span>
+<img src="/post/Rmarkdown_post_files/figure-html/calculus1-1.png" alt="Caption for a função" width="672" /><img src="/post/Rmarkdown_post_files/figure-html/calculus1-2.png" alt="Caption for a função" width="672" />
+<p class="caption">
+Figure 3: Caption for a função
+</p>
+</div>
+<pre><code>[1] 39.2</code></pre>
+<p>blo <span class="math inline">\(17\alpha\)</span> teste</p>
+<ul>
+<li>Para a função <span class="math inline">\(1.00352\times 10^{4} kNm^{2}\)</span></li>
+</ul>
+</div>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2018/06/18/custo-do-risco/">Custo do Risco</a></span>
+  <span class="nav-next"><a href="/post/2018/10/13/estrutura-python/">Análise Estrutural de um Pórtico</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">&copy; <a href="/">Luis Moura</a> 20016 - 2019</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

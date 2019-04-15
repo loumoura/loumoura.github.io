@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Reforço de uma viga de betão armado para um edifício existente - Reabilitação  - l moura</title>
+    <meta property="og:title" content="Reforço de uma viga de betão armado para um edifício existente - l moura">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Avaliação da capacidade resistente e dimensionamento de uma solução de reforço de uma viga de betão armado para um edifício existente. Existe a necessidade de aumentar a resistência da viga à flexão e &amp;hellip;">
+      <meta property="og:description" content="Avaliação da capacidade resistente e dimensionamento de uma solução de reforço de uma viga de betão armado para um edifício existente. Existe a necessidade de aumentar a resistência da viga à flexão e &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+<link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      
+<h1><a href="/"><img src="/author.png" alt="t" /></a></h1>
+
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" />
+  <label id="menu-label" for="menu-check" class="unselectable">
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about_me/">Autor</a></li>
+  
+  <li><a href="/contact/">Contato</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Reforço de uma viga de betão armado para um edifício existente</h1>
+<h1><span class="subtitle">Reabilitação</span></h1>
+<h3>Luis Moura
+  /  2019-04-14</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+
+<p>Avaliação da capacidade resistente e dimensionamento de uma solução de reforço de uma viga de betão armado para um edifício existente. Existe a necessidade de aumentar a resistência da viga à flexão e ao corte em 30%, devido a alterações das condições de uso do piso suportado pela viga.</p>
+<p>O texto desta página, encontra-se em formato <a href="/post/files/beam-reinf.pdf">PDF</a>, e pode ser acedido <a href="/post/files/beam-reinf.pdf">aqui</a>.</p>
+<div id="introducao" class="section level1">
+<h1>Introdução</h1>
+<p>Em análise, estão um conjunto de 3 vigas existentes em um prédio. Todas as 3 vigas apresentam caracteristicas distintas, com vãos e áreas e posicionamento de armadura distintas, sendo portanto necessário fazer a sua análise individualmente. Para a viga localizada no maior vão, será denominada ao longo deste relatório de <strong>Viga #1</strong>. A viga existente no vão de menor comprimento, será denominada de <strong>Viga #2</strong> e a restante viga que é uma consola, de <strong>Viga #3</strong>. De notar que embora com características diferentes, todas as 3 vigas encontram-se alinhadas sobre o mesmo eixo.</p>
+<p>O aço a usar no reinforço é um S500 e a classe de betão é C25/30.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Classe</th>
+<th><span class="math inline">\(f_{cK} (mPa)\)</span></th>
+<th><span class="math inline">\(\gamma_{c}\)</span></th>
+<th><span class="math inline">\(f_{cd} (mPa)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C25/30</td>
+<td>25</td>
+<td>1.5</td>
+<td>16.666667</td>
+</tr>
+</tbody>
+</table>
+<p>Para o aço e para o betão, foi considerado um coeficiente de segurança, <span class="math inline">\(\gamma_{c}\)</span> e <span class="math inline">\(\gamma_{s}\)</span> de 1,5 e 1,15 respectivamente, que é o valor recomendado pelo Eurocódigo.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Classe</th>
+<th><span class="math inline">\(f_{yK} (mPa)\)</span></th>
+<th><span class="math inline">\(\gamma_{c}\)</span></th>
+<th><span class="math inline">\(f_{yd} (mPa)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S500</td>
+<td>500</td>
+<td>1.15</td>
+<td>434.78261</td>
+</tr>
+</tbody>
+</table>
+<p>Não foi dada nenhuma informação inicial sobre os esforços existentes e atuantes sobre as 3 vigas em consideração neste trabalho. É pois considerado que as condições existentes igualam ou superam, os requisitos minímos de segurança para estruturas de betão armado, como definido pelo Eurocódigo.</p>
+</div>
+<div id="analise-da-capacidade-resistente-a-flexao-e-ao-corte" class="section level1">
+<h1>Análise da Capacidade Resistente à Flexão e ao Corte</h1>
+<div id="viga-1" class="section level2">
+<h2>Viga #1</h2>
+<p>As caracteristicas da viga 1 são apresentadas em tabela e na imagem em baixo . O comprimento de vão efectivo entre apoios para esta viga é de 7 metros, sendo a distância livre entre faces dos apoios, <span class="math inline">\(l_{n}\)</span> ligeiramente inferior a esse valor.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+<col width="18%" />
+<col width="20%" />
+<col width="15%" />
+<col width="20%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>b (m)</th>
+<th>h (m)</th>
+<th>Armadura Inferior</th>
+<th><span class="math inline">\(A_{s,inf} (cm^{2})\)</span></th>
+<th>Armadura Superior</th>
+<th><span class="math inline">\(A_{s,sup}( cm^{2})\)</span></th>
+<th>Estribos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.3</td>
+<td>0.5</td>
+<td><span class="math inline">\(3\phi 20+2\phi25\)</span></td>
+<td>19.24</td>
+<td><span class="math inline">\(4\phi 16\)</span></td>
+<td>8.04</td>
+<td><span class="math inline">\(\phi 6//0.2\)</span></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(3\phi 20\)</span></th>
+<th><span class="math inline">\(2\phi25\)</span></th>
+<th><span class="math inline">\(4\phi 16\)</span></th>
+<th><span class="math inline">\(\phi 6//0.2\)</span></th>
+<th>2 ramos <span class="math inline">\(\phi 6//0.2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>9.42</td>
+<td>9.82</td>
+<td>8.04</td>
+<td>1.41</td>
+<td>2.82</td>
+</tr>
+</tbody>
+</table>
+<p>Visto não ser uma viga em “T”, não se teve em consideração a possível contribuição da laje para a largura efectiva do banzo, <span class="math inline">\(b_{eff}\)</span>, como descrito na secção 5.3.2.1 do EC2.</p>
+<div class="figure"><span id="fig:viga-1"></span>
+<img src="/post/Beam_Reinf/viga1.png" alt="Viga 1" width="90%" />
+<p class="caption">
+Figure 1: Viga 1
+</p>
+</div>
+<p><strong>Determinação do Momento Resistente da Viga #1</strong></p>
+<p>O momento resistente é determinado através da seguinte equação:</p>
+<span class="math display">\[\begin{equation}
+M_{rd}=A_{s} \times f_{yd} \times Z
+\end{equation}\]</span>
+<p>em que:</p>
+<ul>
+<li><span class="math inline">\(M_{rd}\)</span> é o valor de cálculo do momento flector resistente</li>
+<li><span class="math inline">\(A_{s}\)</span> é a área de aço à tração da secção</li>
+<li><span class="math inline">\(f_{yd}\)</span> é valor de cálculo da tensão de cedência do aço</li>
+<li>Z é o braço do binário de forças interiores em flexão</li>
+</ul>
+<p>De uma forma simplificada, podemos considerar que <span class="math inline">\(Z=0,81 \times h\)</span>, em que “h” é a altura da secção da viga.</p>
+<p>Somente a área de armadura à tração, ou seja, a armadura inferior, é considerada no cálculo do Momento Resistente. São desprezadas as contribuições do aço à compressão e do betão, à tração.</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(A_{s} (cm^{2})\)</span></th>
+<th><span class="math inline">\(f_{yd} (mPa)\)</span></th>
+<th>h (m)</th>
+<th>Z (m)</th>
+<th><strong><span class="math inline">\(M_{rd} (kN.m)\)</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>19.24</td>
+<td>434.78</td>
+<td>0.5</td>
+<td>0.405</td>
+<td>338.79</td>
+</tr>
+</tbody>
+</table>
+<p>O valor do Momento Resistente para a viga 1 é de <code>338.7892716</code> kN.m.</p>
+<p><strong>Determinação do Esforço Transverso da Viga 1</strong></p>
+<p>O cálculo do Esforço Transverso máximo permitido para o Estado Limite Último da viga #1, tendo em conta as condições estruturais implementadas, é feito de acordo com a seguinte equação:</p>
+<span class="math display">\[\begin{equation}
+V_{rd}=(\frac{A_{sw}}{S}) \times Z \times f_{yd} \times cot\phi
+\end{equation}\]</span>
+<p>em que:</p>
+<ul>
+<li><span class="math inline">\(V_{rd}\)</span> é o valor de cálculo do esforço transverso</li>
+<li><span class="math inline">\(A_{sw}\)</span> é a área de armadura da secção</li>
+<li><span class="math inline">\(S\)</span> é o espaçamento entre armadura</li>
+<li><span class="math inline">\(f_{yd}\)</span> é valor de cálculo da tensão de cedência do aço</li>
+<li>Z é o braço do binário de forças interiores em flexão</li>
+</ul>
+<p>Tal como na análise da resistência à flexão da Viga #1, também aqui, o valor de Z pode ser calculado por <span class="math inline">\(Z=0,81 \times h\)</span>, em que “h” é a altura da secção da viga.</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(A_{sw} (cm^{2})\)</span></th>
+<th>S (m)</th>
+<th>h (m)</th>
+<th>Z (m)</th>
+<th><span class="math inline">\(f_{yd} (mPa)\)</span></th>
+<th><span class="math inline">\(\phi\)</span></th>
+<th><span class="math inline">\(V_{rd} (kN)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2.82</td>
+<td>0.2</td>
+<td>0.5</td>
+<td>0.405</td>
+<td>434.78</td>
+<td>1</td>
+<td>248.28</td>
+</tr>
+</tbody>
+</table>
+<p>Tendo sido analisadas as presentes condições estruturais, e respeitando os níveis de segurança recomendados pelo EC2, o máximo valor de esforço transverso na viga #1, <span class="math inline">\(V_{rd}\)</span>, é de <code>248.281119</code> kN.</p>
+</div>
+<div id="viga-2" class="section level2">
+<h2>Viga #2</h2>
+<p>As caracteristicas da viga 2 são apresentadas em tabela e na imagem em baixo. O comprimento de vão efectivo entre apoios para esta viga é de 4 metros, sendo a distância livre entre faces dos apoios, <span class="math inline">\(l_{n}\)</span> ligeiramente inferior a esse valor.</p>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+<col width="17%" />
+<col width="19%" />
+<col width="20%" />
+<col width="19%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>b (m)</th>
+<th>h (m)</th>
+<th>Armadura Inferior</th>
+<th><span class="math inline">\(A_{s,inf} (cm^{2})\)</span></th>
+<th>Armadura Superior</th>
+<th><span class="math inline">\(A_{s,sup}( cm^{2})\)</span></th>
+<th>Estribos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.45</td>
+<td>0.25</td>
+<td><span class="math inline">\(4\phi 12+2\phi16\)</span></td>
+<td>8.54</td>
+<td><span class="math inline">\(2\phi 16 + 4 \phi 20\)</span></td>
+<td>16.59</td>
+<td><span class="math inline">\(\phi 6//0.2\)</span></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>(4 ramos)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(4\phi 12\)</span></th>
+<th><span class="math inline">\(2\phi16\)</span></th>
+<th><span class="math inline">\(4 \phi 20\)</span></th>
+<th>4 ramos <span class="math inline">\(\phi 6//0.2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>4.52</td>
+<td>4.02</td>
+<td>12.57</td>
+<td>5.64</td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span id="fig:viga-2"></span>
+<img src="/post/Beam_Reinf/viga2.png" alt="Viga 2" width="90%" />
+<p class="caption">
+Figure 2: Viga 2
+</p>
+</div>
+<p><strong>Determinação do Momento Resistente da Viga #2</strong></p>
+<p>O momento resistente é determinado através da seguinte equação:</p>
+<span class="math display">\[\begin{equation}
+M_{rd}=A_{s} \times f_{yd} \times Z
+\end{equation}\]</span>
+<p>em que:</p>
+<ul>
+<li><span class="math inline">\(M_{rd}\)</span> é o valor de cálculo do momento flector resistente</li>
+<li><span class="math inline">\(A_{s}\)</span> é a área de aço à tração da secção</li>
+<li><span class="math inline">\(f_{yd}\)</span> é valor de cálculo da tensão de cedência do aço</li>
+<li>Z é o braço do binário de forças interiores em flexão</li>
+</ul>
+<p>De uma forma simplificada, podemos considerar que <span class="math inline">\(Z=0,81 \times h\)</span>, em que “h” é a altura da secção da viga.</p>
+<p>Somente a área de armadura à tração, ou seja, a armadura inferior, é considerada no cálculo do Momento Resistente. São desprezadas as contribuições do aço à compressão e do betão, à tração.</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(A_{s} (cm^{2})\)</span></th>
+<th><span class="math inline">\(f_{yd} (mPa)\)</span></th>
+<th>h (m)</th>
+<th>Z (m)</th>
+<th><strong><span class="math inline">\(M_{rd} (kN.m)\)</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>8.54</td>
+<td>434.78</td>
+<td>0.25</td>
+<td>0.2025</td>
+<td>75.19</td>
+</tr>
+</tbody>
+</table>
+<p>O valor do Momento Resistente para a viga 1 é de <code>75.19</code> kN.m.</p>
+<p><strong>Determinação do Esforço Transverso da Viga 2</strong></p>
+<p>O cálculo do Esforço Transverso máximo permitido para o Estado Limite Último da viga #1, tendo em conta as condições estruturais implementadas, é feito de acordo com a seguinte equação :</p>
+<span class="math display">\[\begin{equation}
+V_{rd}=(\frac{A_{sw}}{S}) \times Z \times f_{yd} \times cot\phi
+\end{equation}\]</span>
+<p>em que:</p>
+<ul>
+<li><span class="math inline">\(V_{rd}\)</span> é o valor de cálculo do esforço transverso</li>
+<li><span class="math inline">\(A_{sw}\)</span> é a área de armadura da secção</li>
+<li><span class="math inline">\(S\)</span> é o espaçamento entre armadura</li>
+<li><span class="math inline">\(f_{yd}\)</span> é valor de cálculo da tensão de cedência do aço</li>
+<li>Z é o braço do binário de forças interiores em flexão</li>
+</ul>
+<p>Tal como na análise da resistência à flexão da Viga #1, também aqui, o valor de Z pode ser calculado por <span class="math inline">\(Z=0,81 \times h\)</span>, em que “h” é a altura da secção da viga.</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(A_{sw} (cm^{2})\)</span></th>
+<th>S (m)</th>
+<th>h (m)</th>
+<th>Z (m)</th>
+<th><span class="math inline">\(f_{yd} (mPa)\)</span></th>
+<th><span class="math inline">\(\phi\)</span></th>
+<th><span class="math inline">\(V_{rd} (kN)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>5.64</td>
+<td>0.2</td>
+<td>0.25</td>
+<td>0.2025</td>
+<td>434.78</td>
+<td>1</td>
+<td>248.28</td>
+</tr>
+</tbody>
+</table>
+<p>Tendo sido analisadas as presentes condições estruturais, e respeitando os níveis de segurança recomendados pelo EC2, o máximo valor de esforço transverso na viga #2, <span class="math inline">\(V_{rd}\)</span>, é de <code>248.28</code> kN.</p>
+</div>
+<div id="viga-3" class="section level2">
+<h2>Viga #3</h2>
+<p>As caracteristicas da viga 3 são apresentadas em tabela e na imagem em baixo. Sendo esta viga uma consola, tem um comprimento total de 2 metros desde o apoio até ao extremo oposto.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+<col width="15%" />
+<col width="19%" />
+<col width="21%" />
+<col width="19%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>b (m)</th>
+<th>h (m)</th>
+<th>Armadura Inferior</th>
+<th><span class="math inline">\(A_{s,inf} (cm^{2})\)</span></th>
+<th>Armadura Superior</th>
+<th><span class="math inline">\(A_{s,sup}( cm^{2})\)</span></th>
+<th>Estribos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.45</td>
+<td>0.25</td>
+<td>$4φ 12 $</td>
+<td>4.52</td>
+<td><span class="math inline">\(2\phi 16 + 2 \phi 20\)</span></td>
+<td>10.3</td>
+<td><span class="math inline">\(\phi 6//0.2\)</span></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>(4 ramos)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(4\phi 12\)</span></th>
+<th><span class="math inline">\(2\phi16\)</span></th>
+<th><span class="math inline">\(2 \phi 20\)</span></th>
+<th>4 ramos <span class="math inline">\(\phi 6//0.2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>4.52</td>
+<td>4.02</td>
+<td>6.28</td>
+<td>5.64</td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span id="fig:viga-3"></span>
+<img src="/post/Beam_Reinf/viga3.png" alt="Viga 3" width="90%" />
+<p class="caption">
+Figure 3: Viga 3
+</p>
+</div>
+<p><strong>Determinação do Momento Resistente da Viga #3</strong> O momento resistente é determinado através da seguinte equação:</p>
+<span class="math display">\[\begin{equation}
+M_{rd}=A_{s} \times f_{yd} \times Z
+\end{equation}\]</span>
+<p>em que:</p>
+<ul>
+<li><span class="math inline">\(M_{rd}\)</span> é o valor de cálculo do momento flector resistente</li>
+<li><span class="math inline">\(A_{s}\)</span> é a área de aço à tração da secção</li>
+<li><span class="math inline">\(f_{yd}\)</span> é valor de cálculo da tensão de cedência do aço</li>
+<li>Z é o braço do binário de forças interiores em flexão</li>
+</ul>
+<p>De uma forma simplificada, podemos considerar que <span class="math inline">\(Z=0,81 \times h\)</span>, em que “h” é a altura da secção da viga. Somente a área de armadura à tração, ou seja, a armadura inferior, é considerada no cálculo do Momento Resistente. São desprezadas as contribuições do aço à compressão e do betão, à tração.</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(A_{s} (cm^{2})\)</span></th>
+<th><span class="math inline">\(f_{yd} (mPa)\)</span></th>
+<th>h (m)</th>
+<th>Z (m)</th>
+<th><strong><span class="math inline">\(M_{rd} (kN.m)\)</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>4.52</td>
+<td>434.78</td>
+<td>0.25</td>
+<td>0.2025</td>
+<td>39.80</td>
+</tr>
+</tbody>
+</table>
+<p>O valor do Momento Resistente para a viga 3 é de <code>39.80</code> kN.m.</p>
+<p><strong>Determinação do Esforço Transverso da Viga 3</strong></p>
+<p>O cálculo do Esforço Transverso máximo permitido para o Estado Limite Último da viga #1, tendo em conta as condições estruturais implementadas, é feito de acordo com a seguinte equação :</p>
+<span class="math display">\[\begin{equation}
+V_{rd}=(\frac{A_{sw}}{S}) \times Z \times f_{yd} \times cot\phi
+\end{equation}\]</span>
+<p>em que:</p>
+<ul>
+<li><span class="math inline">\(V_{rd}\)</span> é o valor de cálculo do esforço transverso</li>
+<li><span class="math inline">\(A_{sw}\)</span> é a área de armadura da secção</li>
+<li><span class="math inline">\(S\)</span> é o espaçamento entre armadura</li>
+<li><span class="math inline">\(f_{yd}\)</span> é valor de cálculo da tensão de cedência do aço</li>
+<li>Z é o braço do binário de forças interiores em flexão</li>
+</ul>
+<p>Tal como na análise da resistência à flexão, também aqui, o valor de Z pode ser calculado por <span class="math inline">\(Z=0,81 \times h\)</span>, em que “h” é a altura da secção da viga.</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(A_{sw} (cm^{2})\)</span></th>
+<th>S (m)</th>
+<th>h (m)</th>
+<th>Z (m)</th>
+<th><span class="math inline">\(f_{yd} (mPa)\)</span></th>
+<th><span class="math inline">\(\phi\)</span></th>
+<th><span class="math inline">\(V_{rd} (kN)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>5.64</td>
+<td>0.2</td>
+<td>0.25</td>
+<td>0.2025</td>
+<td>434.78</td>
+<td>1</td>
+<td>248.28</td>
+</tr>
+</tbody>
+</table>
+<p>Tendo sido analisadas as presentes condições estruturais, e respeitando os níveis de segurança recomendados pelo EC2, o máximo valor de esforço transverso na viga #3, <span class="math inline">\(V_{rd}\)</span>, é de <code>248.28</code> kN.</p>
+</div>
+</div>
+<div id="reforco" class="section level1">
+<h1>Reforço</h1>
+<div id="m_rd-e-v_rd-de-calculo" class="section level2">
+<h2><span class="math inline">\(M_{Rd}\)</span> e <span class="math inline">\(V_{Rd}\)</span> de Cálculo</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Viga</th>
+<th><span class="math inline">\(M_{Rd,b} (kN.m)\)</span></th>
+<th>Increase (%)</th>
+<th><span class="math inline">\(M_{Rd} (kN.m)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>338.79</td>
+<td>1.3</td>
+<td>440.43</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>75.19</td>
+<td>1.3</td>
+<td>97.75</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>39.80</td>
+<td>1.3</td>
+<td>51.74</td>
+</tr>
+</tbody>
+</table>
+<p>em que,</p>
+<ul>
+<li><span class="math inline">\(M_{Rd,b}\)</span> é o atual momento resistente</li>
+<li><span class="math inline">\(M_{Rd}\)</span> é o momento resistente pretendido</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Viga</th>
+<th><span class="math inline">\(V_{Rd,b} (kN.m)\)</span></th>
+<th>Increase (%)</th>
+<th><span class="math inline">\(V_{Rd} (kN.m)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>248.28</td>
+<td>1.3</td>
+<td>322.76</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>248.28</td>
+<td>1.3</td>
+<td>322.76</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>248.28</td>
+<td>1.3</td>
+<td>322.76</td>
+</tr>
+</tbody>
+</table>
+<p>em que,</p>
+<ul>
+<li><span class="math inline">\(M_{Vd,b}\)</span> é o atual resistência ao corte</li>
+<li><span class="math inline">\(M_{Vd}\)</span> é a resistência ao corte pretendida</li>
+</ul>
+</div>
+<div id="reforco-a-flexao-com-chapas-metalicas-coladas-e-em-u" class="section level2">
+<h2>Reforço à Flexão com chapas metálicas (coladas e em U)</h2>
+<p>O texto que se segue é elaborado tendo como base a informação das aulas de CRE.</p>
+<ol style="list-style-type: decimal">
+<li>As chapas de aço a usar não devem ter uma resistência muito elevada, de modo a não ser necessário uma grande deformação para mobilizar a sua capacidade resistente. Sendo portanto utilizado um <strong>aço S235</strong>.</li>
+<li>Deve ser garantida a preparação da superfície de betão e das chapas de metal, antes da sua instalação. Quaisquer impurezas devem ser removidas antes da instalação. Se necessário, remover secções de betão degradado.</li>
+<li>Para a Viga #2 e #3, a ligação é feita através de resina que deve ter uma espessura entre 1 e 3 mm. A espessura das chapas metálicas deve ser entre 3 e 5 mm e com a largura inferior a 30cm.</li>
+<li>A espessura da resina ou o contributo desta à resistência da viga ao momento flector, é desprezado nos cálculos de reforço.</li>
+</ol>
+<p>As expressões usadas no cálculo do reforço a flexão com chapas, são apresentadas a seguir:</p>
+<p><strong>Cálculo da Altura Útil da Secção Transversal, d</strong></p>
+<p>Com a introdução da chapa metálica na parte inferior da viga, é necessário agora calcular o <span class="math inline">\(d_{eq}\)</span> para a peça. O tipo de aço a usar no reforço é S235 em que o <span class="math inline">\(\gamma_{q}=1,5\)</span>:</p>
+<p><span class="math display">\[f_{syd,chapa}= \frac {235}{1,5}=156,7 mPa\]</span></p>
+<p>A relação entre o tipo de aço existente e o novo tipo de aço da chapa, é estabelecido através da relação</p>
+<p><span class="math display">\[A_{s,rh}= A_{chapa} \times \frac{f_{syd,chapa}}{f_{syd}}\]</span></p>
+<p>em que o <span class="math inline">\(f_{syd}\)</span> da armadura existente, é de 434.78 mPa.</p>
+<p>A determinação da altura útil equivalente da secção, é feita de acordo com a seguinte expressão:</p>
+<span class="math display">\[\begin{equation}
+d_{eq}=\frac {A_{s}\times d +A_{s,rh} \times d_{r}  }{A_{s} + A_{s,rh}   }
+\end{equation}\]</span>
+<p>Os valores da altura útil para cada umas das vigas é</p>
+<ul>
+<li>Viga #1, a altura útil da armadura é d= <code>45.0</code> cm, e para <span class="math inline">\(d_{r}=\)</span> <code>50.15</code> cms.</li>
+<li>Viga #2, a altura útil da armadura é d= <code>22.5</code> cm, e para <span class="math inline">\(d_{r}=\)</span> <code>25.25</code> cms.</li>
+<li>Viga #3, a altura útil da armadura é d= <code>22.5</code> cm, e para <span class="math inline">\(d_{r}=\)</span> <code>25.25</code> cms.</li>
+</ul>
+<table style="width:100%;">
+<colgroup>
+<col width="4%" />
+<col width="10%" />
+<col width="13%" />
+<col width="10%" />
+<col width="17%" />
+<col width="17%" />
+<col width="4%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Viga</th>
+<th><span class="math inline">\(b_{r},cm\)</span></th>
+<th><span class="math inline">\(A_{s},cm^{2}\)</span></th>
+<th><span class="math inline">\(t_{s},cm\)</span></th>
+<th><span class="math inline">\(A_{chapa},cm^{2}\)</span></th>
+<th><span class="math inline">\(A_{s,rh}, cm^{2}\)</span></th>
+<th>d, cm</th>
+<th><span class="math inline">\(d_{r},cm\)</span></th>
+<th><span class="math inline">\(d_{eq},cm\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>30</td>
+<td>19.24</td>
+<td>0.3</td>
+<td>9.</td>
+<td>3.25</td>
+<td>45</td>
+<td>50.15</td>
+<td>45.74</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>30</td>
+<td>8.54</td>
+<td>0.3</td>
+<td>9.</td>
+<td>3.25</td>
+<td>22.5</td>
+<td>25.25</td>
+<td>23.26</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>30</td>
+<td>4.52</td>
+<td>0.3</td>
+<td>9.</td>
+<td>3.25</td>
+<td>22.5</td>
+<td>25.25</td>
+<td>23.65</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Percentagem Mecânica de Armadura</strong></p>
+<span class="math display">\[\begin{equation}
+\omega =\frac { { A }_{ s } }{ bd } \times \frac { { f }_{ syd } }{ { f }_{ cd } } 
+\end{equation}\]</span>
+<p><strong>Valor Reduzido do Momento Fletor</strong></p>
+<span class="math display">\[\begin{equation}
+\mu =\frac {M_{rd}} {b \times d^{2} \times f_{cd}}
+\end{equation}\]</span>
+<span class="math display">\[\begin{equation}
+\mu =\omega (1-0.5\omega )
+\end{equation}\]</span>
+<p><strong>Valor de Cálculo do Momento Fletor Resistente</strong></p>
+<span class="math display">\[\begin{equation}
+M_{Rd}=\mu \times b \times d^{2} \times f_{cd}
+\end{equation}\]</span>
+<table style="width:100%;">
+<colgroup>
+<col width="3%" />
+<col width="14%" />
+<col width="13%" />
+<col width="11%" />
+<col width="3%" />
+<col width="8%" />
+<col width="10%" />
+<col width="10%" />
+<col width="7%" />
+<col width="5%" />
+<col width="10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Viga</th>
+<th><span class="math inline">\(A_{s,armd},cm^{2}\)</span></th>
+<th><span class="math inline">\(A_{s,rh}, cm^{2}\)</span></th>
+<th><span class="math inline">\(A_{s}, cm^{2}\)</span></th>
+<th>b,m</th>
+<th><span class="math inline">\(d_{eq},m\)</span></th>
+<th><span class="math inline">\(f_{cd}, mPa\)</span></th>
+<th><span class="math inline">\(f_{syd},mPa\)</span></th>
+<th><span class="math inline">\(\omega\)</span></th>
+<th><span class="math inline">\(\mu\)</span></th>
+<th><span class="math inline">\(M_{Rd},kN.m\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>19.24</td>
+<td>3.25</td>
+<td>22.49</td>
+<td>0.30</td>
+<td>0.4574</td>
+<td>16.7</td>
+<td>434.78</td>
+<td>0.43</td>
+<td>0.34</td>
+<td>356.38</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>8.54</td>
+<td>3.25</td>
+<td>11.79</td>
+<td>0.45</td>
+<td>0.2326</td>
+<td>16.7</td>
+<td>434.78</td>
+<td>0.29</td>
+<td>0.25</td>
+<td>101.65</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>4.52</td>
+<td>3.25</td>
+<td>7.77</td>
+<td>0.45</td>
+<td>0.2365</td>
+<td>16.7</td>
+<td>434.78</td>
+<td>0.19</td>
+<td>0.17</td>
+<td>71.46</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusão: Reforço à Flexão com chapas metálicas coladas</strong></p>
+<p>A viga #1, devido à sua geometria e para facilidade de instalação, é calculada como tendo o formato em “U”, com 3 mm de espessura na base e 2mm de espessura nos lados. Podemos tirar partido da geometria da peça e garantir a segurança tanto aos momentos fletores como às forças de corte, como desenvolvido na secção 1.3.3 deste trabalho.</p>
+<ol style="list-style-type: decimal">
+<li>As chapas foram dimensionadas tendo em conta as seguintes limitações:
+<ul>
+<li>Espessura minima de 3mm</li>
+<li>Espessura máxima de 5mm</li>
+<li>A largura deve ser igual ou inferior a 30 cms</li>
+</ul></li>
+<li>Essas limitações foram conseguidas para as Vigas #2 e #3. Mantendo a espessura miníma de 3mm e a largura máxima de 30 cms de modo a conseguir a maior aproximação possível entre a largura da placa metálica e da base da viga de betão.</li>
+</ol>
+</div>
+<div id="reforco-ao-corte-com-chapas-metalicas" class="section level2">
+<h2>Reforço ao corte com chapas metálicas</h2>
+<p>Todas as vigas, devido ao aumento do esforço de corte em 30%, têm que ser dimensionadas para uma capacidade de resistência a uma força de corte de 322.76kN, o que significa um aumento de <code>74.48</code> kN em relação ao esforço máximo corrente. No entanto, esse valor tem que ser reduzido por um quoeficiente de 0.9.</p>
+<p><strong>Força de Corte de Cálculo, <span class="math inline">\(V_{Rd,ref}\)</span></strong></p>
+<p><strong>Cálculo da Área de Aço necessária <span class="math inline">\(\frac{A_{sw}}{S}\)</span></strong></p>
+<span class="math display">\[\begin{equation}
+V_{Rd,ref}=(\frac{A_{sw}}{S}) \times Z \times \frac{f_{ywd}}{1,5} \times cot \theta
+\end{equation}\]</span>
+<p>O valor da <span class="math inline">\(cot \theta = 1\)</span></p>
+<pre><code>                     Descricao  Resultados
+0  F. de Corte de Calculo (kN)   63.390000
+1  Z: Comprimento do braco (m)    0.429300
+2                   fywd (mPa)  235.000000
+3        Asw/S Necessario (m2)    0.000723
+
+
+
+                     Descricao  Resultados
+0  F. de Corte de Calculo (kN)   63.390000
+1  Z: Comprimento do braco (m)    0.202500
+2                   fywd (mPa)  235.000000
+3        Asw/S Necessario (m2)    0.001532</code></pre>
+<p><strong>Dimensionamento da chapa e espaçamento, <span class="math inline">\(\frac{A_{sw}}{S}\)</span></strong></p>
+<p>Como calculado anteriormente, a <span class="math inline">\(\frac{A_{sw}}{S}=7.23 cm^{2}\)</span> para a Viga #1, sendo aplicado uma chapa de cada lado da viga de betão (2 ramos):</p>
+<p><span class="math display">\[\frac {2 \times b \times e}{S}=7.23cm^{2}\]</span></p>
+<pre><code>                       Descricao  Resultados
+0                    Asw/S (cm2)    7.230000
+1     Espessura da chapa, e (cm)    0.200000
+2       Largura da Chapa, b (cm)    5.000000
+3  Distancia entre chapas, S (m)    0.276625</code></pre>
+<p>Devido à geometria das vigas #2 e #3, não é viável a utilização de chapas metálicas sem que primeiro a geometria seja alterada. O desenvolvimento desta opção de reforço é feito na secção 1.4.</p>
+</div>
+<div id="reforco-a-flexao-com-encamisamento-em-betao-armado" class="section level2">
+<h2>Reforço à flexão com encamisamento em betão armado</h2>
+<p><strong>Parâmetros de Cálculo</strong></p>
+<p>O reforço à flexão em encamisamento <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> em betão armado, será feito só para as vigas #2 e #3.</p>
+<ul>
+<li><strong>Viga #2</strong> - O acréscimo de 30% do esforço flector, provoca um aumento de <strong>22.56 kN.m</strong>.</li>
+<li><strong>Viga #3</strong> - O acréscimo de 30% do esforço fletor, provoca um aumento de <strong>11.94 kN.m</strong>.</li>
+<li>O recobrimento em betão armado será de 10 cms minímo em x-x e em y-y. Ou seja, as dimensões finais de acréscimo em betão armado para ambas as vigas será de 0,65m de largura, 0,35m de altura e ao longo de toda a viga existente.</li>
+<li>É ignorado a contribuição da armadura existente ao acréscimo de tensão</li>
+<li>O betão a ser usado deve ser de classe superior ao existente, sendo por isso usado um betão C30/37, com <span class="math inline">\(f_{cd}=20 Mpa\)</span>.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></li>
+</ul>
+<p><strong>Encamisamento Viga #2</strong></p>
+<pre><code>           Descricao          Resultados
+0  Momento Resistente (kN/m)               22.56
+1         Altura Total h (m)                0.35
+2                      d (m)               0.315
+3                  fcd (mPa)                  20
+4                      b (m)                0.65
+5          Momento Reduzido            0.0174894
+6                          W  0.0176450630428535
+7                 fsyd (mPa)              434.78
+8        Area armadura (cm2)    1.66191023415256</code></pre>
+<p><strong>Encamisamento Viga #3</strong></p>
+<pre><code>           Descricao           Resultados
+0  Momento Resistente (kN/m)                11.94
+1         Altura Total h (m)                 0.35
+2                      d (m)                0.315
+3                  fcd (mPa)                   20
+4                      b (m)                 0.65
+5          Momento Reduzido            0.00925635
+6                          W  0.00929959333156116
+7                 fsyd (mPa)               434.78
+8        Area armadura (cm2)    0.875887453257808</code></pre>
+</div>
+<div id="momentos-negativos" class="section level2">
+<h2>Momentos Negativos</h2>
+<p>Verificação da resistência à flexão da armadura superior, após a introdução do reforço estrutural na viga. Também aqui, é considerado um aumento de 30% da capacidade resistente à flexão.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Viga</th>
+<th><span class="math inline">\(A_{s},cm^{2}\)</span></th>
+<th><span class="math inline">\(f_{yd},mPa\)</span></th>
+<th>h,m</th>
+<th>Z,m</th>
+<th><span class="math inline">\(M_{rd},kN.m\)</span></th>
+<th>+ 30%</th>
+<th><strong><span class="math inline">\(M_{rd,calc}^{-} ,kN.m\)</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>8.04</td>
+<td>434.78</td>
+<td>0.5</td>
+<td>0.405</td>
+<td>141.57</td>
+<td>1.3</td>
+<td>184.041</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>16.59</td>
+<td>434.78</td>
+<td>0.25</td>
+<td>0.2025</td>
+<td>146.06</td>
+<td>1.3</td>
+<td>189.878</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>10.3</td>
+<td>434.78</td>
+<td>0.25</td>
+<td>0.2025</td>
+<td>90.68</td>
+<td>1.3</td>
+<td>117.884</td>
+</tr>
+</tbody>
+</table>
+<div id="viga-1---verificacao-aos-momentos-negativos" class="section level3">
+<h3>Viga 1 - Verificação aos Momentos Negativos</h3>
+<p>Para a viga #1, é necessário fazer o reforço aos momentos negativos que existem nas duas extremidades da viga. Um método possível seria o reforço através da introdução de varões na armadura superior, mas no entanto, este método significa a necessidade da remoção do betão na parte superior de modo a ter acesso à armadura existente. É portanto um método que envolve bastante mão-de-obra e que pode danificar areas de betão associadas à viga, como os pilares, devido à vibração das máquinas utilizadas no corte e remoção do betão.</p>
+<p>Também não existe nenhuma informação referente à qualidade do betão na parte superior da viga, o que leva a supor que ele se encontra em bom estado de preservação sem sinais de degradação. A introdução de armadura, iria obrigar à remoção de betão em boas condições.</p>
+<p>É assim então aconselhável que em vez de adicionar varões, <strong>seja adicionada uma chapa metálica de 3mm de espessura e 30cm de largura</strong>, nas duas extremidades da viga. O comprimento das duas chapas será um quarto do comprimento da viga, ou seja <code>1.75</code> metros. Fica assim garantido (e em excesso) o reforço às necessidades adicionais à armadura superior, ao mesmo tempo que se garante a facilidade e rapidez da instalação.</p>
+<p>Devido à espessura da chapa metálica (3mm), facilmente é disfarçado a localização aonde esta é instalada. Caso seja necessário (e não existe nenhuma razão para crer que o seja), a chapa pode ser embutida na laje, de forma que a sua superficie fique ao mesmo nível que a da laje.</p>
+</div>
+<div id="viga-2---verificacao-aos-momentos-negativos" class="section level3">
+<h3>Viga 2 - Verificação aos Momentos negativos</h3>
+<pre><code>               Descricao         Resultados
+0      Momento Resistente (kN/m)             184.04
+1             Altura Total h (m)                0.5
+2                          d (m)               0.45
+3                      fcd (mPa)               16.7
+4                          b (m)               0.45
+5              Momento Reduzido            0.120937
+6                              W  0.129295374272433
+7                     fsyd (mPa)             434.78
+8            Area armadura (cm2)   10.0566868748746
+9              Area de Betao, m2              0.225
+10      Area Maxima armadura,cm2                 90
+11                     fctm, mPa                2.2
+12                      fyk, mPa                500
+13     Area minima armadura, cm2             2.3166
+14  Verificacao Area minima, cm2             2.6325
+Verificacao:  As,min =  2.3166  cm2 &gt; 0,0013xbtxd =  2.6325000000000003 cm2
+Verifica Condicoes pelo EC</code></pre>
+</div>
+<div id="conclusao-para-o-momento-maximo-negativo-para-a-viga-2" class="section level3">
+<h3>Conclusão para o Momento Máximo Negativo para a Viga 2</h3>
+<p>Verifica as condições de segurança, não sendo necessário adicionar nenhuma armadura superior de reforço.</p>
+</div>
+<div id="viga-3---verificacao-aos-momentos-negativos" class="section level3">
+<h3>Viga 3 - Verificação aos Momentos Negativos</h3>
+<pre><code>               Descricao          Resultados
+0      Momento Resistente (kN/m)              117.88
+1             Altura Total h (m)                 0.5
+2                          d (m)                0.45
+3                      fcd (mPa)                16.7
+4                          b (m)                0.45
+5              Momento Reduzido            0.0774615
+6                              W  0.0807193440843982
+7                     fsyd (mPa)              434.78
+8            Area armadura (cm2)    6.27840843317111
+9              Area de Betao, m2               0.225
+10      Area Maxima armadura,cm2                  90
+11                     fctm, mPa                 2.2
+12                      fyk, mPa                 500
+13     Area minima armadura, cm2              2.3166
+14  Verificacao Area minima, cm2              2.6325
+Verificacao:  As,min =  2.3166  cm2 &gt; 0,0013xbtxd =  2.6325000000000003 cm2
+Verifica Condicoes pelo EC</code></pre>
+</div>
+<div id="conclusao-para-o-momento-maximo-negativo-para-a-viga-3" class="section level3">
+<h3>Conclusão para o Momento Máximo Negativo para a Viga 3</h3>
+<p>Verifica as condições de segurança, não sendo necessário adicionar nenhuma armadura superior de reforço.</p>
+</div>
+</div>
+</div>
+<div id="conclusao" class="section level1">
+<h1>Conclusão</h1>
+<div id="resultados-das-varias-analises" class="section level2">
+<h2>Resultados das várias análises</h2>
+<p><strong>Reforço à flexão com chapas metálicas coladas</strong></p>
+<p>De acordo com os resultados obtidos na secção 1.3, é apresentado os resultados finais e a melhor forma encontrada para fazer o reforço das vigas.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Viga</th>
+<th><span class="math inline">\(t_{s} (cm)\)</span></th>
+<th><span class="math inline">\(b_{r} (cm)\)</span></th>
+<th>Aço</th>
+<th>Informação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>0.3</td>
+<td>30.6</td>
+<td>S235</td>
+<td>Necessário a colocação de buchas metálicas</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>0.3</td>
+<td>30</td>
+<td>S235</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>0.3</td>
+<td>30</td>
+<td>S235</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Em que <span class="math inline">\(t_{s}\)</span> é a espessura da chapa metálica e <span class="math inline">\(b_{r}\)</span> a sua largura. As chapas da vigas 2 e 3, são ligadas por colagem de resina epoxy. Para a viga #1, é utilizado um perfil metálico em “U” com 30.6 cms de largura (30 cms de base + [2 x 3mm de abas laterais]).</li>
+<li>Para as vigas #1 e #2, o momento máximo é considerado a meio vão, admitindo uma distribuição da carga equivalente e que ambos os apoios das vigas sejam encastramentos. Para a viga #3, o momento máximo é obtido na ligação com pilar inferior.</li>
+</ul>
+<p><strong>Reforço ao Corte com chapas metálicas</strong></p>
+<p>De acordo com os resultados obtidos na secção 1.3.3, para a Viga #1, a resistência ao aumento da força de corte é conseguida através da instalação de 2 ramos de chapas, de 5cm de largura, 2mm de espessura, espaçados 25cm. Para a Viga #2 e #3, a solução de chapas metálicas não é a melhor solução a ser realizada, dentro dos atuais parâmetros geométricos da viga.</p>
+<p>No entanto, com a alteração da geometria proposta em 1.3.4, torna-se possivel o uso de chapas metálicas para ambas as vigas #2 e #3.</p>
+<p><strong>Reforço à Flexão com encamisamento em betão armado</strong></p>
+<p>Os resultados obtidos na secção 1.3 deste trabalho, são apresentados na tabela seguinte:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Viga</th>
+<th>Valor de Armadura Calculado: <span class="math inline">\(A_{s} cm^{2}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>1.66</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.87</td>
+</tr>
+</tbody>
+</table>
+<p>A área de armadura miníma recomendada para encamisamento é de <span class="math inline">\(3 \phi12 = 3,39 cm^{2}\)</span>, que é portanto muito superior às exigências de reforço de ambas as vigas.</p>
+<p><strong>Momentos negativos</strong> Para a viga #1, será necessário introduzir uma chapa metálica em ambos os extremos da viga, na sua parte superior. Para a viga #2 e #3, com o aumento da altura da viga/s provocada pelo encamisamento, cria-se uma situação de reforço indirecto ao momento negativo (armadura superior) pelo aumento do braço (altura Z), não sendo portanto necessário adicional armadura superior.</p>
+</div>
+</div>
+<div id="solucao-final" class="section level1">
+<h1>Solução Final</h1>
+<div id="viga-1-1" class="section level2">
+<h2>Viga #1</h2>
+<div class="figure"><span id="fig:viga-reinf"></span>
+<img src="/post/Beam_Reinf/Viga1_ref.png" alt="Esquema de reforço proposto para a Viga #1" width="100%" />
+<p class="caption">
+Figure 4: Esquema de reforço proposto para a Viga #1
+</p>
+</div>
+<ul>
+<li><strong>Flexão</strong>: Colocação de uma chapa metálica S235, de 3mm de espessura e 30.6 cm de largura na parte inferior da viga e fixada com buchas metálicas. Chapa deve ter o mesmo comprimento que a viga e especial atenção deve ser dada à ligação da chapa com os pilares.</li>
+<li><strong>Corte</strong>: Colocação de chapas metálicas S235, de 2mm de espessura, 5 cms de largura e espaçadas a 25 cms, de cada lado da viga. As chapas devem ser coladas com resina epoxy e buchas metálicas. No topo, as chapas devem ligar a cantoneira de 3 mm de espessura como exemplificado no desenho que acompanha este documento.</li>
+<li>A Figura em cima, apresenta a solução proposta <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup></li>
+<li><strong>Momento Negativo</strong>: Chapa metálica S235 de 3mm de espessura e 30 cm de largura e 1,75m de comprimento, aplicada na superfície da laje, por cima da viga, nos dois extremos da viga (ligação viga-pilar). As duas chapas serão coladas resina epoxy (ver secção 1.3.5.1)</li>
+</ul>
+</div>
+<div id="viga-2-e-viga-3" class="section level2">
+<h2>Viga #2 e Viga #3</h2>
+<p><span class="underline">Reforço à flexão: Encamisamento em Betão Armado</span></p>
+<p>Para estas duas vigas, uma solução fácil para aumentar a resistência à flexão e ao corte, será através do encamisamento, criando assim as condições geométricas necessárias.<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> .</p>
+<p>O encamisamento deverá ter uma espessura miníma de 10cms de forma a a proporcionar a geometria necessária para a aplicação de chapas metálicas, necessárias para resistirem ao acréscimo do esforço transverso.</p>
+<ul>
+<li>Ambas as vigas #2 e #3, terão <span class="math inline">\(3 \phi 12\)</span> para resistirem à flexão.</li>
+<li>O betão a utilizar é um C30/37</li>
+<li>Cintas/estribos em <span class="math inline">\(\phi 8//0.30\)</span>. Devem ser chumbados na laje existente.</li>
+</ul>
+<div class="figure"><span id="fig:viga-2-3"></span>
+<img src="/post/Beam_Reinf/Viga23_ref.png" alt="Reforço à flexão e corte para as vigas #2 e #3" width="100%" />
+<p class="caption">
+Figure 5: Reforço à flexão e corte para as vigas #2 e #3
+</p>
+</div>
+<pre><code>                     Descricao  Resultados
+0  F. de Corte de Calculo (kN)   74.480000
+1  Z: Comprimento do braco (m)    0.283500
+2                   fywd (mPa)  235.000000
+3        Asw/S Necessario (m2)    0.001677
+
+                       Descricao  Resultados
+0                    Asw/S (cm2)   16.770000
+1     Espessura da chapa, e (cm)    0.200000
+2       Largura da Chapa, b (cm)    5.000000
+3  Distancia entre chapas, S (m)    0.119261</code></pre>
+</div>
+</div>
+<div id="footnotes" class="section level1">
+<h1>Footnotes</h1>
+<p><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> Na realidade não existe encamisamento propriamente dito, pois a viga encontra-se embutida na laje</p>
+<p><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> Embora não tenha sido dada nenhuma informação relativa à classe de betão existente na viga, por questão de segurança, resolveu-se aumentar a classe do tipo de betão para o reforço por encamisamento. As restantes opções de reforço, foram calculadas para um betão de classe C25/30.</p>
+<p><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> Figura não se encontra em escala e tem como único objectivo o de auxiliar graficamente o desenvolvimento desta Memória Descritiva. Para o desenho detalhado do reforço, referir às peças desenhadas que acompanham este documento.</p>
+<p><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> As soluções apresentadas tentam minimizar o custo e reduzir o impacto na construção existente. Para as Vigas #2 e #3, existirá no entanto uma significativa mudança dimensional, passando agora as vigas a estarem expostas. Tal é assumido que é possível e que não irá interferir com outros elementos do edifício como portas ou janelas</p>
+</div>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2019/04/07/sismo-deslocamento/">Análise dos deslocamentos devido a acção sísmica</a></span>
+  <span class="nav-next"></span>
+</nav>
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">&copy; <a href="/">Luis Moura</a> 20016 - 2019</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+
