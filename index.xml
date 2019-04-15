@@ -209,7 +209,7 @@ Cálculo estrutural de um pilar em betão armado, que de forma exemplificava, se
       
       <guid>/contact/</guid>
       <description>O meu email: lmoura@pm.me
-(function () { var options = { whatsapp: &amp;ldquo;+351917761740&amp;rdquo;, // WhatsApp number sms: &amp;ldquo;+351917761740&amp;rdquo;, // Sms phone number call_to_action: &amp;ldquo;Enviar mensagem&amp;rdquo;, // Call to action button_color: &amp;ldquo;#FF6550&amp;rdquo;, // Color of button position: &amp;ldquo;right&amp;rdquo;, // Position may be &amp;lsquo;right&amp;rsquo; or &amp;lsquo;left&amp;rsquo; order: &amp;ldquo;whatsapp,sms&amp;rdquo;, // Order of buttons }; var proto = document.location.protocol, host = &amp;ldquo;whatshelp.io&amp;rdquo;, url = proto + &amp;ldquo;//static.&amp;rdquo; + host; var s = document.createElement(&amp;lsquo;script&amp;rsquo;); s.type = &amp;lsquo;text/javascript&amp;rsquo;; s.</description>
+Enviar mensagem pelo WhatsApp</description>
     </item>
     
     <item>
