@@ -6,10 +6,32 @@
     <description>Recent content in Posts on l moura</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
-    <lastBuildDate>Sun, 14 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Aberturas em vigas de madeira</title>
+      <link>/post/2019/07/13/buraco-viga/</link>
+      <pubDate>Sat, 13 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019/07/13/buraco-viga/</guid>
+      <description>Resumo A construção em madeira, permite facilidade no corte para aberturas para a passagem de fios de electricidade, telefone e cabo, canos do gás, água e esgotos, e tudo o mais que necessite de ficar escondido dentro das paredes ou tectos.
+Umas das perguntas que mais frequentemente ouvia na construção em madeira, era aonde é que se podia fazer um buraco com segurança e com qual diâmetro.
+ Boas práticas Segundo o International Residencial Code (International Code Council 2015), os cortes para aberturas em vigas em madeira, devem ser localizados em zonas delimitadas de acordo com o seu posicionamento ao longo da viga.</description>
+    </item>
+    
+    <item>
+      <title>Viga/Laje com 3 apoios simples e dois vãos</title>
+      <link>/post/2019/07/12/f_3apoios/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019/07/12/f_3apoios/</guid>
+      <description>O texto desta página, encontra-se em formato PDF, e pode ser acedido aqui.
+Introdução Um dos casos mais comuns na análise de uma viga ou laje, é quando existe dois vãos e um carregamento uniforme em cada um dos vãos. A análise permite determinar os momentos positivos e negativos máximos, necessários para o cálculo da armadura.
+Para fazer essa análise, eu criei um pequeno Python script,1 em que com o apoio da python package anaStruct,2 possa ser facilmente determinado os valores pretendidos.</description>
+    </item>
     
     <item>
       <title>Reforço de uma viga de betão armado para um edifício existente</title>
@@ -78,7 +100,7 @@ Introdução: Este texto, foi originalmente composto no Jupyter Notebook (Pérez
       <pubDate>Mon, 18 Jun 2018 13:47:32 +0100</pubDate>
       
       <guid>/post/2018/06/18/custo-do-risco/</guid>
-      <description>Quando um orçamentista está a completar a folha de cálculo para o preço de um projeto de construção civil, existe uma parcela para o custo associado com os riscos que o projeo enfrenta. Este número, é o mais abstrato do Orçamento, pois contrariamente aos outros, tem em conta eventos que podem ou não acontecer.
+      <description>Quando um orçamentista está a completar a folha de cálculo para o preço de um projeto de construção civil, existe uma parcela para o custo associado com os riscos que o projeto enfrenta. Este número, é o mais abstrato do Orçamento, pois contrariamente aos outros, tem em conta eventos que podem ou não acontecer.
 O Risco Quando aqui escrevo sobre o risco, não estou exclusivamente a falar do risco de acidente de trabalho, que possa meter em causa a segurança dos trabalhadores.</description>
     </item>
     

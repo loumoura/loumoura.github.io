@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python, laje, viga on l moura</title>
+    <link>/tags/python-laje-viga/</link>
+    <description>Recent content in python, laje, viga on l moura</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Fri, 12 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/python-laje-viga/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Viga/Laje com 3 apoios simples e dois vãos</title>
+      <link>/post/2019/07/12/f_3apoios/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019/07/12/f_3apoios/</guid>
+      <description>O texto desta página, encontra-se em formato PDF, e pode ser acedido aqui.
+Introdução Um dos casos mais comuns na análise de uma viga ou laje, é quando existe dois vãos e um carregamento uniforme em cada um dos vãos. A análise permite determinar os momentos positivos e negativos máximos, necessários para o cálculo da armadura.
+Para fazer essa análise, eu criei um pequeno Python script,1 em que com o apoio da python package anaStruct,2 possa ser facilmente determinado os valores pretendidos.</description>
+    </item>
+    
+  </channel>
+</rss>

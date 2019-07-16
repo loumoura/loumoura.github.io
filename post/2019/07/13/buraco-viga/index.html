@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Aberturas em vigas de madeira - Localização  - l moura</title>
+    <meta property="og:title" content="Aberturas em vigas de madeira - l moura">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="A construção em madeira, permite facilidade no corte para aberturas para a passagem de fios de electricidade, telefone e cabo, canos do gás, água e esgotos, e tudo o mais que necessite de ficar &amp;hellip;">
+      <meta property="og:description" content="A construção em madeira, permite facilidade no corte para aberturas para a passagem de fios de electricidade, telefone e cabo, canos do gás, água e esgotos, e tudo o mais que necessite de ficar &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+<link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      
+<h1><a href="/"><img src="/author.png" alt="t" /></a></h1>
+
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" />
+  <label id="menu-label" for="menu-check" class="unselectable">
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about_me/">Autor</a></li>
+  
+  <li><a href="/contact/">Contato</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Aberturas em vigas de madeira</h1>
+<h1><span class="subtitle">Localização</span></h1>
+<h3>Luis Moura
+  /  2019-07-13</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+
+<div id="resumo" class="section level1">
+<h1>Resumo</h1>
+<p>A construção em madeira, permite facilidade no corte para aberturas para a passagem de fios de electricidade, telefone e cabo, canos do gás, água e esgotos, e tudo o mais que necessite de ficar escondido dentro das paredes ou tectos.</p>
+<p>Umas das perguntas que mais frequentemente ouvia na construção em madeira, era aonde é que se podia fazer um buraco com segurança e com qual diâmetro.</p>
+</div>
+<div id="boas-praticas" class="section level1">
+<h1>Boas práticas</h1>
+<p>Segundo o <a href="https://codes.iccsafe.org/content/IRC2015/chapter-5-floors?site_type=public">International Residencial Code</a> <span class="citation">(International Code Council 2015)</span>, os cortes para aberturas em vigas em madeira, devem ser localizados em zonas delimitadas de acordo com o seu posicionamento ao longo da viga.</p>
+<div class="figure">
+<img src="/post/07-13-2019_VigasMadeira/icc.png" alt="Máxima aberturas permitidas em vigas de madeira" />
+<p class="caption">Máxima aberturas permitidas em vigas de madeira</p>
+</div>
+<p>No centro da viga, não são permitos cortes nos bordos superior e inferior, mas é permitdo a abertura de buracos, desde que estes tenham menos de 1/3 da altura da viga e se encontrem separados pelo menos 2“. Esta lógica para os buracos mantém-se ao longo de todo o comprimento da viga.</p>
+<p>Mas porque razão se pode fazer buracos e não cortes no centro da viga? E porque razão eles são permitidos em algumas zonas e em outras não?</p>
+</div>
+<div id="analise" class="section level1">
+<h1>Análise</h1>
+<p>Para exemplificar a localização correta das aberturas em uma viga de madeira, vou criar um sistema composto por uma viga de 30x50 cm, assente sobre dois apoios que se encontram separados 10 metros, e sujeita a um carregamento uniforme de 10 kN/m.</p>
+<div id="diagramas" class="section level2">
+<h2>Diagramas</h2>
+<p>Análise dos esforços na estrutura de forma a determinar a localização e valor do Momento Máximo.</p>
+<div class="figure">
+<img src="/post/07-13-2019_VigasMadeira/07-13-2019_VigasMadeira_3_0.png" />
+
+</div>
+<div class="figure">
+<img src="/post/07-13-2019_VigasMadeira/07-13-2019_VigasMadeira_3_1.png" />
+
+</div>
+<div class="figure">
+<img src="/post/07-13-2019_VigasMadeira/07-13-2019_VigasMadeira_3_2.png" />
+
+</div>
+<pre><code>O Momento Máximo ocorre a meio vão e é de 125.0 kNm.
+O Esforço transverso máximo ocorre nos apoios e é de 50.0 kN.      </code></pre>
+</div>
+<div id="viga" class="section level2">
+<h2>Viga</h2>
+<p>Sabendo os valores para as forças de corte e momento fletor, pode ser análisado o comportamento das tensões nas partículas da viga de madeira, começando por uma análise à sua geometria.</p>
+<pre><code>Área
+  A = 1500.0
+Centroide
+  cx = 15.0
+  cy = 25.0
+Momento de Inércia
+  Ixx = 312500.0
+  Iyy = 112500.0</code></pre>
+<div class="figure">
+<img src="/post/07-13-2019_VigasMadeira/07-13-2019_VigasMadeira_5_1.png" />
+
+</div>
+<p><strong>Centroide:</strong></p>
+<p>Ou centro geométrico, é o centro da massa do corte: <span class="math display">\[x_c = \frac{\int {x}dA}{\int dA}\]</span> <span class="math display">\[y_c = \frac{\int {y}dA}{\int dA}\]</span></p>
+<p><strong>Momento de Inércia</strong></p>
+<p>Integral do produto de cada ponto da massa do corpo C, a multiplicar pela quadrado da distância até a um eixo de rotação:</p>
+<p><span class="math display">\[I_{c}=\int _{C}r^{2}\,dm\]</span></p>
+<p>Como estamos analisando um corte (secção transversal), <span class="math inline">\(dz=0\)</span> e a fórmula fica:</p>
+<p><span class="math display">\[I_{c}=\int _{C}r^{2}\,dA\]</span></p>
+<p>Para uma viga rectangular, a fórmula do Momento de Inércia é conhecida:</p>
+<p><span class="math display">\[I=\frac{b\times a^{3}}{12}\]</span></p>
+<p><span class="math display">\[
+I_{x}=\frac{30\times 50^{3}}{12}
+\]</span></p>
+<p><span class="math display">\[
+I_{y}=\frac{50\times 30^{3}}{12} 
+\]</span></p>
+<p>A geometria da viga é de extrema importância na distribuição dos esforços. Simplificando, o Momento de Inércia na direcção do eixo x-x (largura da viga), é calculado tendo em conta essa mesma geometria, e quanto maior for o seu valor, também maior será o valor de tensão que a viga pode receber, quando sujeita a um Momento Fletor Simples.</p>
+</div>
+<div id="distribuicao-de-tensoes-em-secao-transversal" class="section level2">
+<h2>Distribuição de tensões em seção transversal</h2>
+<p>Analisando a distribuição de tensões na secção transversal da viga localizada a meio vão, aonde o Momento Fletor é máximo, observa-se que as tensões são máximas no bordo superior e inferior e mínimas a meia altura da viga.</p>
+<div class="figure">
+<img src="/post/07-13-2019_VigasMadeira/07-13-2019_VigasMadeira_10_0.png" />
+
+</div>
+<p>A meio da altura viga, as tensões positivas e negativas anulam-se, resultando em um eixo que se mantém ao longo do comprimento da mesma e aonde as tensões são nulas - <strong>eixo neutro</strong>.</p>
+</div>
+<div id="localizacao-das-aberturas-na-viga" class="section level2">
+<h2>Localização das aberturas na viga</h2>
+<p>O local mais seguro para fazer uma abertura em uma viga é a meio da sua altura. É nesse ponto que as tensões são nulas quando sujeitas a um momento fletor simples.</p>
+<p>A meio vão, aonde o Momento Fletor é máximo, as tensões máximas encontram-se no bordo superior e inferior da viga, e por essa mesma razão, o <a href="https://codes.iccsafe.org/content/IRC2015/chapter-5-floors?site_type=public">International Residencial Code</a> <span class="citation">(International Code Council 2015)</span>, não permite que seja feito nenhum corte nos bordos (mas continuam a ser permitidos a meia altura).</p>
+</div>
+</div>
+<div id="referencias" class="section level1">
+<h1>Referências</h1>
+<p>Foram usadas para este texto, as seguintes livrarias em <a href="https://www.python.org/">Python</a>:</p>
+<ul>
+<li><a href="https://github.com/ritchie46/anaStruct">anaStruct: 2D structural analysis in Python</a></li>
+<li><a href="https://github.com/robbievanleeuwen/section-properties">Section-properties: Analysis of an arbitrary cross-section in python using the finite element method.</a></li>
+<li><a href="https://leancrew.com/all-this/2018/01/python-module-for-section-properties/">Python script - Dr. Drang</a></li>
+</ul>
+<div id="refs" class="references">
+<div id="ref-ICC">
+<p>International Code Council. 2015. “2015 International Residential Code.” <a href="https://codes.iccsafe.org/content/IRC2015/chapter-5-floors?site_type=public" class="uri">https://codes.iccsafe.org/content/IRC2015/chapter-5-floors?site_type=public</a>.</p>
+</div>
+</div>
+</div>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2019/07/12/f_3apoios/">Viga/Laje com 3 apoios simples e dois vãos</a></span>
+  <span class="nav-next"></span>
+</nav>
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">&copy; <a href="/">Luis Moura</a> 20016 - 2019</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

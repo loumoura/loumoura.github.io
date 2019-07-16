@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Viga/Laje com 3 apoios simples e dois vãos - Python Script: f_3apoios.py  - l moura</title>
+    <meta property="og:title" content="Viga/Laje com 3 apoios simples e dois vãos - l moura">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="O texto desta página, encontra-se em formato PDF, e pode ser acedido aqui.
+[&amp;hellip;] Um dos casos mais comuns na análise de uma viga ou laje, é quando existe dois vãos e um carregamento uniforme em &amp;hellip;">
+      <meta property="og:description" content="O texto desta página, encontra-se em formato PDF, e pode ser acedido aqui.
+[&amp;hellip;] Um dos casos mais comuns na análise de uma viga ou laje, é quando existe dois vãos e um carregamento uniforme em &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+<link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      
+<h1><a href="/"><img src="/author.png" alt="t" /></a></h1>
+
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" />
+  <label id="menu-label" for="menu-check" class="unselectable">
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about_me/">Autor</a></li>
+  
+  <li><a href="/contact/">Contato</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Viga/Laje com 3 apoios simples e dois vãos</h1>
+<h1><span class="subtitle">Python Script: f_3apoios.py</span></h1>
+<h3>Luis Moura
+  /  2019-07-12</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+
+<p>O texto desta página, encontra-se em formato <a href="/files/07-f_3apoios.pdf">PDF</a>, e pode ser acedido <a href="/files/07-f_3apoios.pdf">aqui</a>.</p>
+<div id="introducao" class="section level1">
+<h1>Introdução</h1>
+<p>Um dos casos mais comuns na análise de uma viga ou laje, é quando existe dois vãos e um carregamento uniforme em cada um dos vãos. A análise permite determinar os momentos positivos e negativos máximos, necessários para o cálculo da armadura.</p>
+<p>Para fazer essa análise, eu criei um pequeno <code>Python script</code>,<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> em que com o apoio da <em>python package</em> <code>anaStruct</code>,<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> possa ser facilmente determinado os valores pretendidos.</p>
+<p>A invocação do script é feita através de:</p>
+<p><code>f_3apoios(L_span1,L_span2,q1,q2,load_factor)</code>, em que:</p>
+<ul>
+<li>L_span1 = Distância entre apoios do primeiro vão (m)</li>
+<li>L_span2 = Distância entre apoios do segundo vão (m)</li>
+<li>q1 = Carga do primeiro vão</li>
+<li>q2 = Carga do segundo vão</li>
+<li>load_factor = Factor de segurança aplicado ao carregamento</li>
+</ul>
+</div>
+<div id="estrutura" class="section level1">
+<h1>Estrutura</h1>
+<p>Um dos casos mais comuns em engenharia civil, é o da viga/laje apoiada em três apoios simples e com dois vãos - Figura 1.</p>
+<div class="figure"><span id="fig:Figura1"></span>
+<img src="/post/f_3apoios/07-A.png" alt="Estrutura com dois vãos de igual dimensão (4 metros) e com carregamento uniforme ao longo de ambos os vãos"  />
+<p class="caption">
+Figure 1: Estrutura com dois vãos de igual dimensão (4 metros) e com carregamento uniforme ao longo de ambos os vãos
+</p>
+</div>
+<p>No entanto, nem sempre os vãos têm a mesma dimensão, nem as cargas são uniformes a ambos os vãos. Nesse caso, basta modificar o dimensionamento e carregamento na altura de executar o script. Por exemplo, uma laje com um vão de 4 metros e carregamento de 8kN e um segundo vão de 5 metros e um carregamento de 9kN, é executado da seguinte maneira (Figura 2):</p>
+<p><code>f_3apoios(4,5,8,9,1)</code></p>
+<div class="figure"><span id="fig:Figura2"></span>
+<img src="/post/f_3apoios/07-B.png" alt="Laje com vão de 4 metros e carregamento de 8kN, e vão de 5 metros e carregamento de 9kN. O fator de segurança utilizado é 1 (F.S. nulo)"  />
+<p class="caption">
+Figure 2: Laje com vão de 4 metros e carregamento de 8kN, e vão de 5 metros e carregamento de 9kN. O fator de segurança utilizado é 1 (F.S. nulo)
+</p>
+</div>
+</div>
+<div id="diagrama-momento-fletor" class="section level1">
+<h1>Diagrama Momento Fletor</h1>
+<p>Para além do diagrama da estrutura, o <code>scrip</code> também produz o diagrama do momento fletor, de especial interesse para a determinação da armadura a utilizar na construção da viga ou laje.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
+<p>Criando por exemplo uma estrutura com dois vãos, em que o primeiro tem 4 metros e o segundo com 5 metros, com carregamento de 5kN e 6.4kN respectivamente, podemos dar início à análise:</p>
+<p><code>f_3apoios(4,5,5,6.4,1.35)</code></p>
+<p>Neste caso, será utilizado um F.S=1.35.</p>
+<div class="figure"><span id="fig:Figura3"></span>
+<img src="/post/f_3apoios/07-C.png" alt="Laje com vão de 4 e 5 metros, e carregamento de 5kN e 6.4kN respectivamente. Ao carregamento, foi aplicado um fator de segurança de 1.35"  />
+<p class="caption">
+Figure 3: Laje com vão de 4 e 5 metros, e carregamento de 5kN e 6.4kN respectivamente. Ao carregamento, foi aplicado um fator de segurança de 1.35
+</p>
+</div>
+<p>Criada a estrutura, o <code>script</code> produz o diagrama de momento fletor para a mesma.</p>
+<div class="figure"><span id="fig:Figura4"></span>
+<img src="/post/f_3apoios/07-D.png" alt="Diagrama do momento fletor para a laje. Reparar que os momentos positivos em ambos os vãos são apresentados com o sinal (-) e o momento negativo sobre o apoio central é apresentado com o sinal (+). Isto deve-se ao facto de 'anaStruct' não seguir a convenção do Eurocódigo. Resolvi, por enquanto, não alterar o código e deixa-lo como foi concebido originalmente, no entanto, o texto final do 'script', é apresentado de acordo com a convenção do Eurocódigo"  />
+<p class="caption">
+Figure 4: Diagrama do momento fletor para a laje. Reparar que os momentos positivos em ambos os vãos são apresentados com o sinal (-) e o momento negativo sobre o apoio central é apresentado com o sinal (+). Isto deve-se ao facto de ‘anaStruct’ não seguir a convenção do Eurocódigo. Resolvi, por enquanto, não alterar o código e deixa-lo como foi concebido originalmente, no entanto, o texto final do ‘script’, é apresentado de acordo com a convenção do Eurocódigo
+</p>
+</div>
+<p>No final do <code>script</code> é produzido um texto com as seguintes indicações:</p>
+<ul>
+<li>Localização do Momento Máximo Positivo no primeiro vão e seu respectivo valor.</li>
+<li>Localização do Momento Máximo Positivo no segundo vão e seu respectivo valor.</li>
+<li>Valor do Momento Máximo negativo</li>
+</ul>
+<pre><code>    A localização do Momento Máximo positivo no primeiro vão ocorre aos 1.22 metros e é de 5.04 kNm
+    A localização do Momento Máximo positivo no segundo vão ocorre aos 6.99 metros e é de 17.518 kNm
+    O Momento máximo negativo é de 21.0 kNm</code></pre>
+<p>A localização do momento máximo negativo não é indicada em texto. Nas estruturas de dois vãos de dimensões semelhantes e carregamentos iguais ou aproximados, o momento máximo negativo acontece sempre no apoio central.</p>
+</div>
+<div id="conclusao" class="section level1">
+<h1>Conclusão</h1>
+<p>Existem alguns condicionalismo na análise feita pelo <code>script</code>, mas normalmente elas acontecem quando é feita análise pouco prováveis, como por exemplo, um vão com carregamento nulo ou então, vãos com espaçamento entre apoios bastante diferentes. Nestas situações, existe uma grande probabilidade de os resultados serem irrealistas.</p>
+<p>O <code>script</code> também necessita de ter os resultados verificados em mais situações correntes, de modo a poder ser utilizado posteriormente em situações de análise real.</p>
+<p>No entanto, o objectivo principal do <code>script</code> é cumprido. Através dos resultados obtidos, pode-se depois fazer o dimensionamento da armadura de distribuição. Ao <code>script</code> também pode ser adicionado código, que proponha vários tipos de armadura de acordo com os resultados. No entanto, para o fazer e se for seguido o processo do EuroCódigo, é necessário ter em conta várias variáveis, que dificultam a produção de um <code>script</code>que acima de tudo, pretende-se que seja de fácil utilização.</p>
+<p>O mesmo processo de cálculo pode ser também feito em software especializado para o efeito, como por exemplo Robot,<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> mas é meu objectivo, que a análise e a produção de documentação final a ser entregue às outras equipas do projeto de construção civíl, seja realizado pelo mesmo software, como é o caso deste documento em <a href="/files/07-f_3apoios.pdf">PDF</a>. Tanto os cálculos executados pelo <code>script</code>, como o texto e produção do <a href="/files/07-f_3apoios.pdf">PDF</a>, foram realizados em <a href="https://jupyter.org/">Jupyter Notebook</a>. Deste modo e de uma forma simples, tanto cálculo como o texto são realizados e executados pelo mesmo sistema,<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> evitando assim erros, facilidade em correcções ou alterações e rapidez na criação de documentação.</p>
+</div>
+<div id="f_3apoios.py" class="section level1">
+<h1><code>f_3apoios.py</code></h1>
+<p>Python script para análise estrutural:</p>
+<pre class="python"><code>from anastruct.fem.system import SystemElements
+import matplotlib.pyplot as plt
+from sympy import*
+init_printing(use_latex=&quot;mathjax&quot;)
+x,y=var(&quot;x y&quot;,real=True)
+from sympy.utilities.lambdify import lambdify
+import numpy as np
+
+def f_3apoios(L_span1,L_span2,q1,q2,load_factor):
+    &quot;&quot;&quot;
+    Localizar na viga o ponto de Momento Máximo Positivo e negativo.
+    Viga com 3 apoios e carga igualmente distribuída. 
+    M_max acontece quando V(y)=0
+    
+    L_span1  =  Distância entre apoios do primeiro vão (m)
+    L_span2  =  Distância entre apoios do segundo vão (m)
+    q1  = Carga do primeiro vão
+    q2  = Carga do segundo vão
+    load_factor  =  Factor de segurança aplicado ao carregamento
+    EA = Young&#39;s modulus * Area
+    EI = Young&#39;s modulus * moment of Inertia
+    &quot;&quot;&quot;
+    
+    L=L_span1+L_span2 
+    q_span1=load_factor*q1
+    q_span2=load_factor*q2
+    q=q_span1+q_span2
+    EA=15000
+    EI=5000
+    
+    # Estrutura
+    ss = SystemElements(load_factor=1,EA=EA, EI=EI)
+    ss.add_element(location=[[0, 0], [L_span1, 0]])     #Vão 1
+    ss.add_element(location=[[L_span1,0],[L,0]])        #Vão 2
+
+    ss.add_support_hinged(node_id=1)                    #Suporte 1 
+    ss.add_support_roll(node_id=2, direction=2)         #Suporte 2
+    ss.add_support_hinged(node_id=3)                    #Suporte 3
+    ss.q_load(element_id=[1], q=-q_span1, direction=&#39;element&#39;) #Carga Vão 1
+    ss.q_load(element_id=[2], q=-q_span2, direction=&#39;element&#39;) #Carga Vão 2
+
+    ss.solve()
+
+    fig=ss.show_structure(show=False,
+                         figsize=(12,5), 
+                         scale=0.6)
+    plt.title(&quot;Diagrama da Estrutura&quot;)
+    plt.xlabel(&quot;metros&quot;)
+    plt.tight_layout()
+    plt.show()
+ 
+
+    # Apoios Força Vertical, Fy:
+    Fy_1=round(ss.get_node_results_system(node_id=1)[&quot;Fy&quot;],3) 
+    Fy_2=round(ss.get_node_results_system(node_id=2)[&quot;Fy&quot;],3)
+    Fy_3=round(ss.get_node_results_system(node_id=3)[&quot;Fy&quot;],3)
+
+    x=var(&quot;x&quot;,interval=(0, L))
+    def func_Fy(x):
+        if (x == 0):
+            return Fy_1+ q_span1 * x
+        elif (x &gt; 0) &amp; (x &lt; L_span1):
+            return Fy_1+ q_span1 * x 
+        elif (x==L_span1):
+            return Fy_1+ q_span1*L_span1+ Fy_2
+        elif (x&gt;L_span1) &amp; (x&lt;L):
+            return Fy_1+ q_span1*L_span1+Fy_2+q_span2*(x-L_span1)
+        else:
+            return 0
+  
+    # Dimensão vão 1 para Mmax(+)
+    zero=np.max(solve(Eq(func_Fy(x),0),x))
+    
+    # momento máximo negativo:
+    M_negativo=round(integrate(func_Fy(x),(x,0,L_span1)),2)
+    
+    # Dimensão vão 2 para Mmax(+)
+    zero_1=L_span1+np.max(solve(Eq(func_Fy(L_span1)+q_span2*x),x))
+    
+    # Momento Máximo (+) para vão 2  
+    M_positivo_2=round(ss.get_element_results(element_id=2)[&quot;Mmin&quot;],3)
+
+
+    # Gráfico Momentos
+    fig=ss.show_bending_moment(show=False,
+                                   offset=(0,-1), 
+                                   figsize=(12,5), 
+                                   scale=0.6, 
+                                   factor=.01)
+    plt.title(&quot;Diagrama do Momento Flector ($M$)&quot;)
+    plt.xlabel(&quot;metros&quot;)
+    plt.tight_layout()
+    plt.text(zero,0.2,f&quot;| {round(zero,3)} m&quot;, fontsize=14)
+    plt.text(zero_1,0.2, f&quot;| {round(zero_1,3)} m&quot;,fontsize=14)
+    plt.show()
+    print(f&quot;A localização do Momento Máximo positivo no primeiro vão\
+ ocorre aos {zero:.3} metros\
+ e é de {integrate(func_Fy(x),(x,0,zero)):.3} kNm&quot;) 
+    print(f&quot;A localização do Momento Máximo positivo no segundo vão\
+ ocorre aos {zero_1:.3} metros\
+ e é de {-M_positivo_2} kNm&quot;) 
+    print(f&quot;O Momento máximo negativo é de {M_negativo} kNm&quot;) </code></pre>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a href="https://www.python.org/">Welcome to Python.org</a><a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p><a href="https://anastruct.readthedocs.io/en/latest/index.html">Welcome to anaStruct’s documentation! — anaStruct 1.0 documentation</a><a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Este script foi criado para ser executado essencialmente no cálculo das armaduras de uma laje, ignorando o esforço transverso. Para uma viga, é essencial o cálculo do esforço transverso. Em uma laje comum, em que os carregamentos e vãos estejam dentro da normalidade, o esforço transverso não é determinante no cálculo da armadura de distribuição.<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p><a href="https://www.autodesk.com/products/robot-structural-analysis/overview">Robot Structural Analysis Professional | Structural Analysis Software | Autodesk</a><a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>Para sistemas estruturais de maior complexidade, o uso de software especializado é inevitável.<a href="#fnref5">↩</a></p></li>
+</ol>
+</div>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2019/04/14/reabilita%C3%A7%C3%A3o/">Reforço de uma viga de betão armado para um edifício existente</a></span>
+  <span class="nav-next"><a href="/post/2019/07/13/buraco-viga/">Aberturas em vigas de madeira</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">&copy; <a href="/">Luis Moura</a> 20016 - 2019</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+
