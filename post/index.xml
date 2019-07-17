@@ -17,9 +17,8 @@
       <pubDate>Sat, 13 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/2019/07/13/buraco-viga/</guid>
-      <description>Resumo A construção em madeira, permite facilidade no corte para aberturas para a passagem de fios de electricidade, telefone e cabo, canos do gás, água e esgotos, e tudo o mais que necessite de ficar escondido dentro das paredes ou tectos.
-Umas das perguntas que mais frequentemente ouvia na construção em madeira, era aonde é que se podia fazer um buraco com segurança e com qual diâmetro.
- Boas práticas Segundo o International Residencial Code (International Code Council 2015), os cortes para aberturas em vigas em madeira, devem ser localizados em zonas delimitadas de acordo com o seu posicionamento ao longo da viga.</description>
+      <description>Resumo A construção em madeira, permite facilidade no corte de furos e rebaixos para a passagem de fios de electricidade, telefone e cabo, canos do gás, água e esgotos, e tudo o mais que necessite de ficar escondido dentro das paredes ou tectos.
+Umas das perguntas que mais frequentemente ouvia na construção em madeira, era aonde é que se podia fazer um furo com segurança e com qual diâmetro.</description>
     </item>
     
     <item>
@@ -95,6 +94,16 @@ Introdução: Este texto, foi originalmente composto no Jupyter Notebook (Pérez
     </item>
     
     <item>
+      <title>rmarkdown post</title>
+      <link>/post/2018/08/06/a-quick-note/</link>
+      <pubDate>Mon, 06 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018/08/06/a-quick-note/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com. \(\alpha + \beta=\sum\phi\)
+When you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</description>
+    </item>
+    
+    <item>
       <title>Custo do Risco</title>
       <link>/post/2018/06/18/custo-do-risco/</link>
       <pubDate>Mon, 18 Jun 2018 13:47:32 +0100</pubDate>
@@ -111,6 +120,15 @@ O Risco Quando aqui escrevo sobre o risco, não estou exclusivamente a falar do 
       
       <guid>/post/2018/06/18/jupyter-google/</guid>
       <description>Um dos problemas que encontro quando trabalho em equipa, é a incerteza de saber se todos os seus elementos conseguem aceder a uma base de dados comum. O nível de conhecimentos informáticos varia consideravelmente entre os elementos que se encontram a trabalhar em obra e os que estão no escritório. Entre os sub-empreeiteiros, essa variação também se faz sentir. Já tive sub-empreiteiros que tinham uma equipa técnica de suporte, e já tive outros, que tive que os ajudar a criar uma conta de email.</description>
+    </item>
+    
+    <item>
+      <title>Formulário</title>
+      <link>/post/2018/06/12/formul%C3%A1rio/</link>
+      <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018/06/12/formul%C3%A1rio/</guid>
+      <description>Fórmulas, segundo o Euro-Código, para a serem utilizadas na análise e dimensionamento de vigas em betão armado.</description>
     </item>
     
     <item>
@@ -142,6 +160,16 @@ Introdução O Custo representa normalmente o fator mais importante em uma const
       <guid>/post/2017/01/22/contrato-e-plano-de-obra/</guid>
       <description>Qualquer projeto em construção civil, independentemente do tamanho, deve ter alguma forma de contrato. Um Contrato, é a formalização legal de um acordo entre duas ou mais partes, mas o mais importante para mim, é a garantia que existe um acordo sobre como lidar com os problemas com surjam em uma obra.
 O Plano de Obra, é o agregar de vários planos da responsabilidade do Diretor de Obra, que vão ditar os procedimentos a serem utilizados em uma construção.</description>
+    </item>
+    
+    <item>
+      <title>Plano de Obra</title>
+      <link>/post/2017/01/22/plano-de-obra/</link>
+      <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017/01/22/plano-de-obra/</guid>
+      <description>Introdução O Plano de Obra é um conjunto de documentos, com objetivos específicos, e que servem de apoio ao desenrolar das operações no terreno de acordo com objetivos estipulados em Contrato. Cabe ao Diretor de Obra, com a ajuda da restante equipa, a elaboração, implementação e monitorização do Plano de Obra que deve incluir:
+ Custo: Plano de controle e de monitorização de custos Qualidade: Plano com os objetivos do projetos e sistema de monitorização de qualidade Tempo: Plano de Programação de Obra, com representação gráfica e escrita das atividades.</description>
     </item>
     
     <item>
