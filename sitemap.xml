@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/post/2019/07/21/m%C3%A3o-de-obra/</loc>
+    <lastmod>2019-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/2019/07/13/buraco-viga/</loc>
     <lastmod>2019-07-13T00:00:00+00:00</lastmod>
   </url>
@@ -133,7 +138,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-07-13T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -166,7 +171,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-07-13T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -203,6 +208,12 @@
   <url>
     <loc>/tags/</loc>
     <lastmod>2018-06-18T13:47:32+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/m%C3%A3o-de-obra-produ%C3%A7%C3%A3o-residencial/</loc>
+    <lastmod>2019-07-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
