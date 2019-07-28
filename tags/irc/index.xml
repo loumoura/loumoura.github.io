@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Madeira, IRC, viga on l moura</title>
-    <link>/tags/madeira-irc-viga/</link>
-    <description>Recent content in Madeira, IRC, viga on l moura</description>
+    <title>IRC on l moura</title>
+    <link>/tags/irc/</link>
+    <description>Recent content in IRC on l moura</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <lastBuildDate>Sat, 13 Jul 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/madeira-irc-viga/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/irc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

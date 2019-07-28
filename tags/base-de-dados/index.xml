@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>base de dados on l moura</title>
+    <link>/tags/base-de-dados/</link>
+    <description>Recent content in base de dados on l moura</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Sat, 27 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/base-de-dados/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Análise do salário médio mensal dos trabalhadores por conta de outrem da Construção</title>
+      <link>/post/2019/07/27/labor-construction-pt/</link>
+      <pubDate>Sat, 27 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019/07/27/labor-construction-pt/</guid>
+      <description>Resumo Base de dados obtida de PORDATA - Estatísticas, gráficos e indicadores de Municípios, Portugal e Europa para o “Salário médio mensal dos trabalhadores por conta de outrem da Construção: remuneração base e ganho por sexo”. Perceber o comportamento salarial em Portugal, para os trabalhadores da construção civil.
+Qual o ordenado médio, por mês, com ou sem horas extra, subsídios ou prémios, dos homens ou das mulheres empregados em empresas de construção de edifícios ou de engenharia civil?</description>
+    </item>
+    
+  </channel>
+</rss>

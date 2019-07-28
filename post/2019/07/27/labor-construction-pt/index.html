@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Análise do salário médio mensal dos trabalhadores por conta de outrem da Construção - 1985 a 2017  - l moura</title>
+    <meta property="og:title" content="Análise do salário médio mensal dos trabalhadores por conta de outrem da Construção - l moura">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Qual o ordenado médio, por mês, com ou sem horas extra, subsídios ou prémios, dos homens ou das mulheres empregados em empresas de construção de edifícios ou de engenharia civil?">
+      <meta property="og:description" content="Qual o ordenado médio, por mês, com ou sem horas extra, subsídios ou prémios, dos homens ou das mulheres empregados em empresas de construção de edifícios ou de engenharia civil?">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+<link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      
+<h1><a href="/"><img src="/author.png" alt="t" /></a></h1>
+
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" />
+  <label id="menu-label" for="menu-check" class="unselectable">
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about_me/">Autor</a></li>
+  
+  <li><a href="/contact/">Contato</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Análise do salário médio mensal dos trabalhadores por conta de outrem da Construção</h1>
+<h1><span class="subtitle">1985 a 2017</span></h1>
+<h3>Luis Moura
+  /  2019-07-27</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+
+<div id="resumo" class="section level1">
+<h1>Resumo</h1>
+<p>Base de dados obtida de <a href="https://www.pordata.pt/">PORDATA - Estatísticas, gráficos e indicadores de Municípios, Portugal e Europa</a> para o “Salário médio mensal dos trabalhadores por conta de outrem da Construção: remuneração base e ganho por sexo”. Perceber o comportamento salarial em Portugal, para os trabalhadores da construção civil.</p>
+<p>Qual o ordenado médio, por mês, com ou sem horas extra, subsídios ou prémios, dos homens ou das mulheres empregados em empresas de construção de edifícios ou de engenharia civil?</p>
+<p>A base de dados pode ser vista em formato <a href="https://docs.google.com/spreadsheets/d/1kUmVAuv8ZBjqHzzsGz353t-bshJ3vOGHfC_GXp6U7xg/edit?usp=sharing">Google Sheets</a>, ou então directamente na página da <a href="https://www.pordata.pt/DB/Portugal/Ambiente+de+Consulta/Tabela/5794760">Pordata</a>.</p>
+<p>Os gráficos e tabelas foram produzidos usando as seguintes <code>Python packages</code>:</p>
+<ul>
+<li><a href="https://matplotlib.org/">Matplotlib: Python plotting</a> e <a href="https://seaborn.pydata.org/index.html">Seaborn: statistical data visualization</a> (criação dos gráficos)</li>
+<li><a href="https://pandas.pydata.org/">Pandas - Python Data Analysis Library</a> (manipulação da base de dados)</li>
+<li><a href="https://github.com/burnash/gspread">Gspread: Google Sheets Python API</a> (acesso à base de dados em Google Sheets)</li>
+</ul>
+<p><strong>Base de Dados:</strong> <a href="https://www.pordata.pt/DB/Portugal/Ambiente+de+Consulta/Tabela/5794760">Salário médio mensal dos trabalhadores por conta de outrem da Construção: remuneração base e ganho por sexo</a></p>
+<p>O código usado nesta página, encontra-se em formato <a href="/files/07-27-2019_const_labor.py">.py (python)</a>, e pode ser acedido <a href="/files/07-27-2019_const_labor.py">aqui</a>.</p>
+</div>
+<div id="renumeracao-mensal-dos-trabalhadores-da-construcao-civil" class="section level1">
+<h1>Renumeração mensal dos trabalhadores da construção civíl</h1>
+<p>A base de dados está compilada em 7 colunas como exemplificado na tabela seguinte:</p>
+<table style="width:96%;">
+<colgroup>
+<col width="19%" />
+<col width="11%" />
+<col width="12%" />
+<col width="13%" />
+<col width="12%" />
+<col width="12%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Anos</th>
+<th>Total (base média)</th>
+<th>Homens (base média)</th>
+<th>Mulheres (base média)</th>
+<th>Total</th>
+<th>Homens</th>
+<th>Mulheres</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1985 a 2017</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>Base de dados:</p>
+<ul>
+<li>A base de dados vai desde 1985 a 2017</li>
+<li>Os anos de 1990 e 2001 foram excluídos da análise por falta de dados.</li>
+<li>Ver tabela “Quebra de Série” no final desta página para adicional informação</li>
+</ul>
+<p>A base de dados encontra-se dividida em dois grupos:</p>
+<ol style="list-style-type: decimal">
+<li>Remuneração base média</li>
+<li>Ganho médio</li>
+</ol>
+<p>Cada um dos grupos, encontra-se por sua vez divididos em 3 colunas:</p>
+<ol style="list-style-type: decimal">
+<li>Homens</li>
+<li>Mulheres</li>
+<li>Total (média)</li>
+</ol>
+<div id="remuneracao-base-media" class="section level2">
+<h2>Remuneração base média</h2>
+<blockquote>
+<p>“A remuneração de base mensal é o montante que o empregado tem direito a receber todos os meses pelo horário normal de trabalho.”</p>
+<p>– <a href="https://www.pordata.pt/">PORDATA</a></p>
+</blockquote>
+<div class="figure">
+<img src="/post/07-27-2019_const_labor_files/07-27-2019_const_labor_4_0.png" />
+
+</div>
+</div>
+<div id="ganho-medio" class="section level2">
+<h2>Ganho médio</h2>
+<blockquote>
+<p>Ganho mensal corresponde ao somatório da remuneração mensal base, prémios e subsídios regulares e remuneração por trabalho suplementar.</p>
+<p>– <a href="https://www.pordata.pt/">PORDATA</a></p>
+</blockquote>
+<div class="figure">
+<img src="/post/07-27-2019_const_labor_files/07-27-2019_const_labor_6_0.png" />
+
+</div>
+</div>
+<div id="analise-dos-dados" class="section level2">
+<h2>Análise dos Dados</h2>
+<p>De ambos os gráficos (Remuneração base média e Ganho médio), podemos concluir o seguinte:</p>
+<ol style="list-style-type: decimal">
+<li>O ordenado médio das mulheres é superior ao dos homens.</li>
+<li>Até 2010, os ordenados aumentaram de forma constante.</li>
+<li>De 2010 até 2017, não existe nenhuma alteração significativa à remuneração dos trabalhadores.</li>
+<li>A linha média em ambos os gráficos, acompanha de perto a linha dos Homens.</li>
+</ol>
+<p>Em ambos os gráficos, o <strong>ordenado médio das mulheres é superior ao dos homens</strong>. Fazendo uma análise especulativa, esse facto resulta de as mulheres terem na sua maioria, posições administrativas ou executivas no sector da construção civil, aonde os cargos exercidos, proporcionam uma melhor remuneração mensal.</p>
+<p>De 1985 até 2010, a <strong>renumeração mensal para ambos os grupos, aumentou de forma constante</strong>. A média do ganho mensal para ambos os grupos era 141.6 euros em 1985. Em 2010, essa mesma remuneração era de 948.2 euros, o que significou um aumento de 669.6% ou em média, 26.78% ao ano.</p>
+<p><span class="math inline">\(\frac{141.6}{948.2} \times 100 = 669.6\)</span> %</p>
+<p><span class="math inline">\(\frac{669.6}{25}=26.78\)</span> %</p>
+<p>De 2010 até 2017, <strong>não existe nenhuma alteração significativa à renumeração dos trabalhadores</strong> da construção civil. A tabela seguinte, mostra este mesmo período, em que a diferença entre o valor máximo e mínimo é insignificante quando comparado com a evolução desde 1985.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Anos</th>
+<th>Total</th>
+<th>Homens</th>
+<th>Mulheres</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2017</td>
+<td>967.0</td>
+<td>960.8</td>
+<td>1021.7</td>
+</tr>
+<tr class="even">
+<td>2016</td>
+<td>955.5</td>
+<td>949.5</td>
+<td>1008.0</td>
+</tr>
+<tr class="odd">
+<td>2015</td>
+<td>958.6</td>
+<td>951.5</td>
+<td>1021.3</td>
+</tr>
+<tr class="even">
+<td>2014</td>
+<td>962.2</td>
+<td>954.1</td>
+<td>1034.5</td>
+</tr>
+<tr class="odd">
+<td>2013</td>
+<td>968.9</td>
+<td>960.9</td>
+<td>1039.6</td>
+</tr>
+<tr class="even">
+<td>2012</td>
+<td>970.2</td>
+<td>962.2</td>
+<td>1039.4</td>
+</tr>
+<tr class="odd">
+<td>2011</td>
+<td>958.0</td>
+<td>949.4</td>
+<td>1035.8</td>
+</tr>
+<tr class="even">
+<td>2010</td>
+<td>948.2</td>
+<td>940.5</td>
+<td>1017.8</td>
+</tr>
+</tbody>
+</table>
+<p>Em ambos os gráficos, a <strong>linha média acompanha de perto a linha dos Homens</strong>, de tal forma, que ela é praticamente invisível.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> Em análise especulativa, este facto deve-se ao número de homens que trabalham na construção, ser muito superior ao do das mulheres. Quando a média é ponderada tendo em conta o número de participantes em ambos os grupos, e porque a número de homens é bastante superior, a linha média total para ambos os sexos, segue de perto a dos homens, a sua principal influenciadora.</p>
+</div>
+</div>
+<div id="anexo---tabela-de-dados" class="section level1">
+<h1>Anexo - Tabela de dados</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Anos</th>
+<th>base-Total</th>
+<th>base-Homens</th>
+<th>base-Mulheres</th>
+<th>Total</th>
+<th>Homens</th>
+<th>Mulheres</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1985</td>
+<td>127.3</td>
+<td>127.1</td>
+<td>132.7</td>
+<td>141.6</td>
+<td>141.6</td>
+<td>142.7</td>
+</tr>
+<tr class="even">
+<td>1986</td>
+<td>149.8</td>
+<td>149.5</td>
+<td>155.7</td>
+<td>167.7</td>
+<td>167.7</td>
+<td>168.1</td>
+</tr>
+<tr class="odd">
+<td>1987</td>
+<td>168.8</td>
+<td>168.5</td>
+<td>176.6</td>
+<td>189.3</td>
+<td>189.2</td>
+<td>191.4</td>
+</tr>
+<tr class="even">
+<td>1988</td>
+<td>187.5</td>
+<td>187.2</td>
+<td>193.4</td>
+<td>214.2</td>
+<td>214.3</td>
+<td>213.1</td>
+</tr>
+<tr class="odd">
+<td>1989</td>
+<td>217.6</td>
+<td>217.2</td>
+<td>225.7</td>
+<td>250.5</td>
+<td>250.6</td>
+<td>248.3</td>
+</tr>
+<tr class="even">
+<td>1991</td>
+<td>305.8</td>
+<td>305.2</td>
+<td>315.7</td>
+<td>354.7</td>
+<td>354.7</td>
+<td>354.3</td>
+</tr>
+<tr class="odd">
+<td>1992</td>
+<td>346.3</td>
+<td>345.7</td>
+<td>354.4</td>
+<td>404.1</td>
+<td>404.7</td>
+<td>395.3</td>
+</tr>
+<tr class="even">
+<td>1993</td>
+<td>392.3</td>
+<td>391.9</td>
+<td>398.7</td>
+<td>453.0</td>
+<td>453.8</td>
+<td>440.5</td>
+</tr>
+<tr class="odd">
+<td>1994</td>
+<td>413.9</td>
+<td>413.3</td>
+<td>423.7</td>
+<td>479.6</td>
+<td>480.3</td>
+<td>469.7</td>
+</tr>
+<tr class="even">
+<td>1995</td>
+<td>422.2</td>
+<td>421.2</td>
+<td>438.1</td>
+<td>490.0</td>
+<td>490.1</td>
+<td>488.3</td>
+</tr>
+<tr class="odd">
+<td>1996</td>
+<td>451.5</td>
+<td>450.5</td>
+<td>466.4</td>
+<td>528.3</td>
+<td>528.6</td>
+<td>524.5</td>
+</tr>
+<tr class="even">
+<td>1997</td>
+<td>458.7</td>
+<td>457.5</td>
+<td>475.4</td>
+<td>537.7</td>
+<td>537.8</td>
+<td>536.8</td>
+</tr>
+<tr class="odd">
+<td>1998</td>
+<td>483.9</td>
+<td>482.6</td>
+<td>501.1</td>
+<td>561.5</td>
+<td>561.3</td>
+<td>564.5</td>
+</tr>
+<tr class="even">
+<td>1999</td>
+<td>498.0</td>
+<td>495.8</td>
+<td>525.4</td>
+<td>578.5</td>
+<td>577.4</td>
+<td>592.8</td>
+</tr>
+<tr class="odd">
+<td>2000</td>
+<td>518.8</td>
+<td>516.7</td>
+<td>545.4</td>
+<td>605.5</td>
+<td>604.7</td>
+<td>616.1</td>
+</tr>
+<tr class="even">
+<td>2002</td>
+<td>561.5</td>
+<td>557.5</td>
+<td>612.6</td>
+<td>665.7</td>
+<td>662.9</td>
+<td>701.2</td>
+</tr>
+<tr class="odd">
+<td>2003</td>
+<td>591.3</td>
+<td>586.9</td>
+<td>640.8</td>
+<td>701.8</td>
+<td>699.0</td>
+<td>734.0</td>
+</tr>
+<tr class="even">
+<td>2004</td>
+<td>623.1</td>
+<td>618.5</td>
+<td>673.8</td>
+<td>730.6</td>
+<td>727.5</td>
+<td>763.9</td>
+</tr>
+<tr class="odd">
+<td>2005</td>
+<td>649.4</td>
+<td>644.2</td>
+<td>704.4</td>
+<td>765.5</td>
+<td>762.3</td>
+<td>799.5</td>
+</tr>
+<tr class="even">
+<td>2006</td>
+<td>673.6</td>
+<td>667.3</td>
+<td>738.6</td>
+<td>796.7</td>
+<td>792.3</td>
+<td>842.7</td>
+</tr>
+<tr class="odd">
+<td>2007</td>
+<td>697.0</td>
+<td>689.6</td>
+<td>771.6</td>
+<td>829.8</td>
+<td>825.0</td>
+<td>878.4</td>
+</tr>
+<tr class="even">
+<td>2008</td>
+<td>728.6</td>
+<td>720.8</td>
+<td>804.3</td>
+<td>870.3</td>
+<td>865.3</td>
+<td>918.4</td>
+</tr>
+<tr class="odd">
+<td>2009</td>
+<td>756.5</td>
+<td>747.4</td>
+<td>844.2</td>
+<td>901.4</td>
+<td>895.0</td>
+<td>962.9</td>
+</tr>
+<tr class="even">
+<td>2010</td>
+<td>793.6</td>
+<td>783.6</td>
+<td>884.7</td>
+<td>948.2</td>
+<td>940.5</td>
+<td>1017.8</td>
+</tr>
+<tr class="odd">
+<td>2011</td>
+<td>796.5</td>
+<td>786.0</td>
+<td>890.9</td>
+<td>958.0</td>
+<td>949.4</td>
+<td>1035.8</td>
+</tr>
+<tr class="even">
+<td>2012</td>
+<td>808.3</td>
+<td>798.3</td>
+<td>895.4</td>
+<td>970.2</td>
+<td>962.2</td>
+<td>1039.4</td>
+</tr>
+<tr class="odd">
+<td>2013</td>
+<td>806.5</td>
+<td>796.5</td>
+<td>896.1</td>
+<td>968.9</td>
+<td>960.9</td>
+<td>1039.6</td>
+</tr>
+<tr class="even">
+<td>2014</td>
+<td>800.2</td>
+<td>789.5</td>
+<td>895.7</td>
+<td>962.2</td>
+<td>954.1</td>
+<td>1034.5</td>
+</tr>
+<tr class="odd">
+<td>2015</td>
+<td>796.2</td>
+<td>785.8</td>
+<td>888.2</td>
+<td>958.6</td>
+<td>951.5</td>
+<td>1021.3</td>
+</tr>
+<tr class="even">
+<td>2016</td>
+<td>798.9</td>
+<td>789.4</td>
+<td>881.7</td>
+<td>955.5</td>
+<td>949.5</td>
+<td>1008.0</td>
+</tr>
+<tr class="odd">
+<td>2017</td>
+<td>808.6</td>
+<td>799.3</td>
+<td>890.8</td>
+<td>967.0</td>
+<td>960.8</td>
+<td>1021.7</td>
+</tr>
+</tbody>
+</table>
+<div id="quebra-de-serie" class="section level2">
+<h2>Quebra de série</h2>
+<p><a href="https://www.pordata.pt/DB/Portugal/Ambiente+de+Consulta/Tabela">PORDATA - Ambiente de Consulta</a></p>
+<table style="width:14%;">
+<caption>Quebra de Série</caption>
+<colgroup>
+<col width="8%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><strong>Ano</strong></th>
+<th><strong>Notas</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1995</td>
+<td>Alteração da Classificação das Actividades Económicas (CAE): Rev.1 até 1994 e Rev.2 a partir de 1995.</td>
+</tr>
+<tr class="even">
+<td align="center">2003</td>
+<td>Alteração da Classificação das Actividades Económicas (CAE): Rev.2 até 2002 e Rev.2.1 a partir de 2003.</td>
+</tr>
+<tr class="odd">
+<td align="center">2007</td>
+<td>Alteração da Classificação das Actividades Económicas (CAE): Rev.2.1 até 2006 e Rev.3 a partir de 2007.</td>
+</tr>
+<tr class="even">
+<td align="center">2010</td>
+<td>A partir de 2010 (inclusive), os valores apresentados não incluem a Região Autónoma dos Açores.</td>
+</tr>
+<tr class="odd">
+<td align="center">2014</td>
+<td>Alteração do universo de referência: Continente a partir de 2014.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>No gráfico da Remuneração base média, para o período pós 2010, acentua-se a diferença entre o ganho médio das mulheres e dos homens, possibilitando visualizar a linha média total para ambos os sexos.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2019/07/21/m%C3%A3o-de-obra/">Mão-de-Obra :: Fatores que afetam a produtividade</a></span>
+  <span class="nav-next"></span>
+</nav>
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+
+  
+  <hr>
+  <div class="copyright">&copy; <a href="/">Luis Moura</a> 20016 - 2019</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

@@ -57,6 +57,15 @@
     </item>
     
     <item>
+      <title>IRC</title>
+      <link>/tags/irc/</link>
+      <pubDate>Sat, 13 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/irc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Jupyter Notebook</title>
       <link>/tags/jupyter-notebook/</link>
       <pubDate>Mon, 18 Jun 2018 13:47:32 +0100</pubDate>
@@ -75,11 +84,11 @@
     </item>
     
     <item>
-      <title>Madeira, IRC, viga</title>
-      <link>/tags/madeira-irc-viga/</link>
+      <title>Madeira</title>
+      <link>/tags/madeira/</link>
       <pubDate>Sat, 13 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/madeira-irc-viga/</guid>
+      <guid>/tags/madeira/</guid>
       <description></description>
     </item>
     
@@ -138,6 +147,24 @@
     </item>
     
     <item>
+      <title>base de dados</title>
+      <link>/tags/base-de-dados/</link>
+      <pubDate>Sat, 27 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/base-de-dados/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mão de obra</title>
+      <link>/tags/m%C3%A3o-de-obra/</link>
+      <pubDate>Sat, 27 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/m%C3%A3o-de-obra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>mão de obra, produção, residencial</title>
       <link>/tags/m%C3%A3o-de-obra-produ%C3%A7%C3%A3o-residencial/</link>
       <pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate>
@@ -161,6 +188,24 @@
       <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/python-laje-viga/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>salário</title>
+      <link>/tags/sal%C3%A1rio/</link>
+      <pubDate>Sat, 27 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/sal%C3%A1rio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>viga</title>
+      <link>/tags/viga/</link>
+      <pubDate>Sat, 13 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/viga/</guid>
       <description></description>
     </item>
     
