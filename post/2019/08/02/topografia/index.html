@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Análise topográfica em Python - l moura</title>
+    <meta property="og:title" content="Análise topográfica em Python - l moura">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Criação de Perfis Topográficos e Curvas de Nível, através do uso de Python.
+Dois exemplos são apresentados:
+[&amp;hellip;] Ambos os exemplos, apresentam uma forma rápida e simples, de desenhar perfis em &amp;hellip;">
+      <meta property="og:description" content="Criação de Perfis Topográficos e Curvas de Nível, através do uso de Python.
+Dois exemplos são apresentados:
+[&amp;hellip;] Ambos os exemplos, apresentam uma forma rápida e simples, de desenhar perfis em &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+<link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      
+<h1><a href="/"><img src="/author.png" alt="t" /></a></h1>
+
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" />
+  <label id="menu-label" for="menu-check" class="unselectable">
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about_me/">Autor</a></li>
+  
+  <li><a href="/contact/">Contato</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Análise topográfica em Python</h1>
+
+<h3>Luis Moura
+  /  2019-08-02</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+<h1 id="resumo">Resumo</h1>
+
+<p>Criação de <strong>Perfis Topográficos</strong> e <strong>Curvas de Nível</strong>, através do uso de <a href="https://www.python.org/">Python</a>.</p>
+
+<p>Dois exemplos são apresentados:</p>
+
+<ul>
+<li>Exemplo simples</li>
+<li>E um exemplo mais complexo</li>
+</ul>
+
+<p>Ambos os exemplos, apresentam uma forma rápida e simples, de desenhar perfis em 3D e curvas de nível.</p>
+
+<p>O código usado, foi adaptado do trabalhos de <a href="https://jakevdp.github.io/PythonDataScienceHandbook/04.04-density-and-contour-plots.html">Density and Contour Plots | Python Data Science Handbook</a> e de um autor desconhecido.</p>
+
+<h1 id="perfis-topográficos-e-curvas-de-nível">Perfis Topográficos e Curvas de Nível</h1>
+
+<p>Existem vários softwares no mercado especializados em levantamentos topográficos e de modo nenhum, <a href="https://www.python.org/">Python</a> é um substituto para eles, no entanto, existem situações em que o uso de <a href="https://www.python.org/">Python</a> é justificado. No meu caso particular, não tenho nenhum software topográfico instalado nos meus computadores, mas se precisar de fazer um levantamento (simples), é bom saber que tenho uma ferramenta que o pode fazer. E o melhor de tudo, é grátis, sem ter que gastar centenas ou milhares, em licenças anuais.</p>
+
+<h2 id="exemplo-simples">Exemplo simples</h2>
+
+<p>Um exemplo básico que serve de introdução ao código.
+Para a criação de modelo topográfico, são necessárias 3 coordenadas para cada ponto. Neste caso, serão usados 15 pontos, com as coordenadas x, y e z.</p>
+
+<pre><code class="language-python">x = [1000,1000,1000,1000,1000,5000,5000,5000,5000,5000,
+     10000,10000,10000,10000,10000]
+y = [13,21,29,37,45,13,21,29,37,45,13,21,29,37,45]
+z = [75.2,79.21,80.02,81.2,81.62,84.79,87.38,87.9,88.54,
+     88.56,88.34,89.66,90.11,90.79,90.87]
+</code></pre>
+
+<p>E a criação de um modelo 3D, é feito a partir das coordenadas previamente definidas:</p>
+
+<pre><code class="language-python">fig = plt.figure(figsize=(13,6.5))
+ax = fig.gca(projection='3d')
+ax.plot_trisurf(x, y, z, cmap=cm.GnBu_r, linewidth=0.2)
+ax.view_init(10, -110)
+#label axes
+ax.set_xlabel('x', fontsize=14)
+ax.set_ylabel('y',fontsize=14)
+ax.set_zlabel('z',fontsize=14)
+plt.tight_layout()
+plt.show()
+</code></pre>
+
+<p><img src="/post/08-02-2019_Top_files/08-02-2019_Top_4_0.png" alt="png" /></p>
+
+<p>Mas em vez de um perfil 3D, pode optar-se por um 2D. Usando os mesmos 15 pontos utilizadas na criação da imagem anterior:</p>
+
+<pre><code class="language-python">def plot_contour(x,y,z,resolution = 50,contour_method='linear'):
+    resolution = str(resolution)+'j'
+    X,Y = np.mgrid[min(x):max(x):complex(resolution),   min(y):max(y):complex(resolution)]
+    points = [[a,b] for a,b in zip(x,y)]
+    Z = griddata(points, z, (X, Y), method=contour_method)
+    return X,Y,Z
+
+X,Y,Z = plot_contour(x,y,z,resolution = 50,contour_method='linear')
+
+with plt.style.context(&quot;seaborn-white&quot;):
+    fig, ax = plt.subplots(figsize=(13,8))
+    ax.scatter(x,y, color=&quot;black&quot;, linewidth=9, edgecolor=&quot;ivory&quot;, s=50)
+    contours=ax.contourf(X,Y,Z,20, cmap='GnBu_r',origin=&quot;lower&quot;)
+    plt.colorbar(contours, shrink=0.67,label=&quot;Altitude [m]&quot;)
+    plt.clabel(contours, inline=True, fontsize=8, fmt='%.1f')
+</code></pre>
+
+<p><img src="/post/08-02-2019_Top_files/08-02-2019_Top_6_0.png" alt="png" /></p>
+
+<p>Assim, e de uma forma simples, é criado um modelo 2D, que através da utilização de cores, torna possível a identificação do comportamento topográfico.</p>
+
+<p>Este será o tipo de modelo mais simples. No entanto, existe sempre a possibilidade da criação de modelos mais complexos<sup class="footnote-ref" id="fnref:modelo"><a href="#fn:modelo">1</a></sup>.</p>
+
+<h2 id="exemplo-mais-complexo">Exemplo mais complexo</h2>
+
+<p>A base de dados encontra-se guardada em Dropbox, e é composta por 85 pontos.</p>
+
+<p>Os primeiros 5 pontos, são apresentados na tabela seguinte.</p>
+
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>y</th>
+<th>z</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>12100</td>
+<td>8300</td>
+<td>37.1531</td>
+</tr>
+
+<tr>
+<td>5300</td>
+<td>8700</td>
+<td>31.4993</td>
+</tr>
+
+<tr>
+<td>3500</td>
+<td>13900</td>
+<td>36.9185</td>
+</tr>
+
+<tr>
+<td>5100</td>
+<td>1900</td>
+<td>24.0156</td>
+</tr>
+
+<tr>
+<td>9900</td>
+<td>13700</td>
+<td>35.0411</td>
+</tr>
+</tbody>
+</table>
+
+<p>A leitura da base de dados é feita através de <a href="https://pandas.pydata.org/">Pandas: Python Data Analysis Library</a></p>
+
+<pre><code class="language-python">df = pd.read_csv('https://www.dropbox.com/s/6dyfc4fl5slhgry/ZoneA.dat?raw=1',
+                 sep=' ',
+                 header=9,
+                 usecols=[0, 1, 2],
+                 names=['x', 'y', 'thick']
+                )
+df.rename(columns={'thick':'z'}, 
+                 inplace=True)
+</code></pre>
+
+<p><strong>Nota:</strong> Código completo no final deste post.</p>
+
+<p>Uma vez obtida a informação da base de dados, é possível a representação das curvas de nível.</p>
+
+<p><img src="/post/08-02-2019_Top_files/08-02-2019_Top_10_0.png" alt="png" /></p>
+
+<p>E usando a mesma base de dados, pode ser criado um modelo 3D.</p>
+
+<pre><code class="language-python">fig = plt.figure(figsize=(15,7.5))
+ax = fig.gca(projection='3d')
+triang = mtri.Triangulation(df.x, df.y)
+ax.plot_trisurf( triang ,df.z, cmap=&quot;gist_earth&quot;, linewidth=0.2,antialiased=True, shade=False)
+ax.view_init(20, -75)
+plt.title('Elevação 3D', fontsize=16)
+#label axes
+ax.set_xlabel('x', fontsize=14)
+ax.set_ylabel('y',fontsize=14)
+ax.set_zlabel('z',fontsize=14)
+plt.tight_layout()
+plt.show()
+</code></pre>
+
+<p><img src="/post/08-02-2019_Top_files/08-02-2019_Top_11_0.png" alt="png" /></p>
+
+<p>Assim, de uma forma simples e com uma dúzia de linhas de código, é possível a criação de modelos que podem ser facilmente incorporados em relatórios. Qualquer um dos modelos pode ser guardado como PDF, e para isso basta adicionar ao final do código: <code>plt.savefig(&quot;nome.pdf&quot;)</code></p>
+
+<p>Tudo nestas imagens pode ser alterado, desde orientação da imagem, cores, qualidade dos detalhes, texto, etc. Logicamente, uma maior complexidade, requer um maior número de linhas de código, mas se o principal objectivo é a criação de bons modelos da forma o mais simples possível, os dois exemplos em cima são um bom ponto de partida.</p>
+
+<h1 id="código">Código</h1>
+
+<p>Código completo usado neste post</p>
+
+<script src="https://gist.github.com/loumoura/c5a308096a14b8205bc2905b7857bfe2.js"></script>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:modelo">É possível a criação em <code>Python</code> de código que permite a análise e criação de modelos complexos. No entanto, existe um limite (em tempo e custo) para quando deixa de ser vantajoso o desenvolvimento desse mesmo código em detrimento de software já existente.
+ <a class="footnote-return" href="#fnref:modelo">↩</a></li>
+</ol>
+</div>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2019/07/27/labor-construction-pt/">Análise do salário médio mensal dos trabalhadores por conta de outrem da Construção</a></span>
+  <span class="nav-next"></span>
+</nav>
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">&copy; <a href="/">Luis Moura</a> 20016 - 2019</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

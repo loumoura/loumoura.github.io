@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/post/2019/08/02/topografia/</loc>
+    <lastmod>2019-08-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/2019/07/27/labor-construction-pt/</loc>
     <lastmod>2019-07-27T00:00:00+00:00</lastmod>
   </url>
@@ -143,7 +148,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-07-27T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -182,13 +187,19 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-07-27T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/projeto-de-execu%C3%A7%C3%A3o/</loc>
     <lastmod>2017-01-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/python/</loc>
+    <lastmod>2019-08-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -255,6 +266,12 @@
   <url>
     <loc>/tags/sal%C3%A1rio/</loc>
     <lastmod>2019-07-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/topografia/</loc>
+    <lastmod>2019-08-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on l moura</title>
+    <link>/tags/python/</link>
+    <description>Recent content in Python on l moura</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Fri, 02 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Análise topográfica em Python</title>
+      <link>/post/2019/08/02/topografia/</link>
+      <pubDate>Fri, 02 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019/08/02/topografia/</guid>
+      <description>Resumo Criação de Perfis Topográficos e Curvas de Nível, através do uso de Python.
+Dois exemplos são apresentados:
+ Exemplo simples E um exemplo mais complexo  Ambos os exemplos, apresentam uma forma rápida e simples, de desenhar perfis em 3D e curvas de nível.
+O código usado, foi adaptado do trabalhos de Density and Contour Plots | Python Data Science Handbook e de um autor desconhecido.
+Perfis Topográficos e Curvas de Nível Existem vários softwares no mercado especializados em levantamentos topográficos e de modo nenhum, Python é um substituto para eles, no entanto, existem situações em que o uso de Python é justificado.</description>
+    </item>
+    
+  </channel>
+</rss>
