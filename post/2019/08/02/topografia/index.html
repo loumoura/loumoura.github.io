@@ -15,12 +15,12 @@
 
     
       
-      <meta property="description" content="Criação de Perfis Topográficos e Curvas de Nível, através do uso de Python.
-Dois exemplos são apresentados:
-[&amp;hellip;] Ambos os exemplos, apresentam uma forma rápida e simples, de desenhar perfis em &amp;hellip;">
-      <meta property="og:description" content="Criação de Perfis Topográficos e Curvas de Nível, através do uso de Python.
-Dois exemplos são apresentados:
-[&amp;hellip;] Ambos os exemplos, apresentam uma forma rápida e simples, de desenhar perfis em &amp;hellip;">
+      <meta property="description" content="O texto desta página, encontra-se em formato PDF, e pode ser acedido aqui.
+[&amp;hellip;] Criação de Perfis Topográficos e Curvas de Nível, através do uso de Python.
+Dois exemplos são apresentados: &amp;hellip;">
+      <meta property="og:description" content="O texto desta página, encontra-se em formato PDF, e pode ser acedido aqui.
+[&amp;hellip;] Criação de Perfis Topográficos e Curvas de Nível, através do uso de Python.
+Dois exemplos são apresentados: &amp;hellip;">
       
     
 
@@ -89,6 +89,8 @@ Dois exemplos são apresentados:
 
 
 
+<p>O texto desta página, encontra-se em formato <a href="/files/topografia-python.pdf">PDF</a>, e pode ser acedido <a href="/files/topografia-python.pdf">aqui</a>.</p>
+
 <h1 id="resumo">Resumo</h1>
 
 <p>Criação de <strong>Perfis Topográficos</strong> e <strong>Curvas de Nível</strong>, através do uso de <a href="https://www.python.org/">Python</a>.</p>
@@ -100,18 +102,28 @@ Dois exemplos são apresentados:
 <li>E um exemplo mais complexo</li>
 </ul>
 
-<p>Ambos os exemplos, apresentam uma forma rápida e simples, de desenhar perfis em 3D e curvas de nível.</p>
+<p>Ambos os exemplos, apresentam uma forma rápida e simples, de desenhar perfis em
+3D e curvas de nível.</p>
 
-<p>O código utilizado, foi adaptado do website <a href="https://jakevdp.github.io/PythonDataScienceHandbook/04.04-density-and-contour-plots.html">Density and Contour Plots | Python Data Science Handbook</a> e de um autor desconhecido.</p>
+<p>O código utilizado, foi adaptado do website <a href="https://jakevdp.github.io/PythonDataScienceHandbook/
+04.04-density-and-contour-plots.html">Density and Contour Plots | Python
+Data Science Handbook</a> e de um autor desconhecido.</p>
 
 <h1 id="perfis-topográficos-e-curvas-de-nível">Perfis Topográficos e Curvas de Nível</h1>
 
-<p>Existem vários softwares no mercado especializados em levantamentos topográficos e de modo nenhum, <a href="https://www.python.org/">Python</a> é um substituto para eles, no entanto, existem situações em que o uso de <a href="https://www.python.org/">Python</a> é justificado. No meu caso particular, não tenho nenhum software topográfico instalado nos meus computadores, mas se precisar de fazer um levantamento (simples), é bom saber que tenho uma ferramenta que o pode fazer. E o melhor de tudo, é grátis, sem ter que gastar centenas ou milhares, em licenças anuais.</p>
+<p>Existem vários softwares no mercado especializados em levantamentos topográficos
+e de modo nenhum, <a href="https://www.python.org/">Python</a> é um substituto para eles,
+no entanto, existem situações em que o uso de <a href="https://www.python.org/">Python</a>
+é justificado. No meu caso particular, não tenho nenhum software topográfico
+instalado nos meus computadores, mas se precisar de fazer um levantamento
+(simples), é bom saber que tenho uma ferramenta que o pode fazer. E o melhor de
+tudo, é grátis, sem ter que gastar centenas ou milhares, em licenças anuais.</p>
 
 <h2 id="exemplo-simples">Exemplo simples</h2>
 
-<p>Um exemplo básico que serve de introdução ao código.
-Para a criação de modelo topográfico, são necessárias 3 coordenadas para cada ponto. Neste caso, serão usados 15 pontos, com as coordenadas x, y e z.</p>
+<p>Um exemplo básico que serve de introdução ao código. Para a criação de modelo
+topográfico, são necessárias 3 coordenadas para cada ponto. Neste caso, serão
+usados 15 pontos, com as coordenadas x, y e z.</p>
 
 <pre><code class="language-python">x = [1000,1000,1000,1000,1000,5000,5000,5000,5000,5000,
      10000,10000,10000,10000,10000]
@@ -136,7 +148,8 @@ plt.show()
 
 <p><img src="/post/08-02-2019_Top_files/08-02-2019_Top_4_0.png" alt="png" /></p>
 
-<p>Mas em vez de um perfil 3D, pode optar-se por um 2D. Usando os mesmos 15 pontos utilizadas na criação da imagem anterior:</p>
+<p>Mas em vez de um perfil 3D, pode optar-se por um 2D. Usando os mesmos 15 pontos
+utilizadas na criação da imagem anterior:</p>
 
 <pre><code class="language-python">def plot_contour(x,y,z,resolution = 50,contour_method='linear'):
     resolution = str(resolution)+'j'
@@ -157,9 +170,15 @@ with plt.style.context(&quot;seaborn-white&quot;):
 
 <p><img src="/post/08-02-2019_Top_files/08-02-2019_Top_6_0.png" alt="png" /></p>
 
-<p>Assim, e de uma forma simples, é criado um modelo 2D, que através da utilização de cores, torna possível a identificação do comportamento topográfico.</p>
+<p>Assim, e de uma forma simples, é criado um modelo 2D, que através da utilização
+de cores, torna possível a identificação do comportamento topográfico.</p>
 
-<p>Este será o tipo de modelo mais simples. No entanto, existe sempre a possibilidade da criação de modelos mais complexos<sup class="footnote-ref" id="fnref:modelo"><a href="#fn:modelo">1</a></sup>.</p>
+<p>Este será o tipo de modelo mais simples. No entanto, existe sempre a
+possibilidade da criação de modelos mais complexos<sup class="footnote-ref" id="fnref:modelo"><a href="#fn:modelo">1</a></sup>.</p>
+
+<p>criação de modelos complexos. No entanto, existe um limite (em tempo e custo)
+para quando deixa de ser vantajoso o desenvolvimento desse mesmo código em
+detrimento de software já existente.</p>
 
 <h2 id="exemplo-mais-complexo">Exemplo mais complexo</h2>
 
@@ -245,9 +264,16 @@ plt.show()
 
 <p><img src="/post/08-02-2019_Top_files/08-02-2019_Top_11_0.png" alt="png" /></p>
 
-<p>Assim, de uma forma simples e com uma dúzia de linhas de código, é possível a criação de modelos que podem ser facilmente incorporados em relatórios. Qualquer um dos modelos pode ser guardado como PDF, e para isso basta adicionar ao final do código: <code>plt.savefig(&quot;nome.pdf&quot;)</code></p>
+<p>Assim, de uma forma simples e com uma dúzia de linhas de código, é possível a
+criação de modelos que podem ser facilmente incorporados em relatórios. Qualquer
+um dos modelos pode ser guardado como PDF, e para isso basta adicionar ao final
+do código: <code>plt.savefig(&quot;nome.pdf&quot;)</code></p>
 
-<p>Tudo nestas imagens pode ser alterado, desde orientação da imagem, cores, qualidade dos detalhes, texto, etc. Logicamente, uma maior complexidade, requer um maior número de linhas de código, mas se o principal objectivo é a criação de bons modelos da forma o mais simples possível, os dois exemplos em cima são um bom ponto de partida.</p>
+<p>Tudo nestas imagens pode ser alterado, desde orientação da imagem, cores,
+qualidade dos detalhes, texto, etc. Logicamente, uma maior complexidade, requer
+um maior número de linhas de código, mas se o principal objectivo é a criação de
+bons modelos da forma o mais simples possível, os dois exemplos em cima são um
+bom ponto de partida.</p>
 
 <h1 id="código">Código</h1>
 
@@ -259,7 +285,7 @@ plt.show()
 <hr />
 
 <ol>
-<li id="fn:modelo">É possível a criação em <code>Python</code> de código que permite a análise e criação de modelos complexos. No entanto, existe um limite (em tempo e custo) para quando deixa de ser vantajoso o desenvolvimento desse mesmo código em detrimento de software já existente.
+<li id="fn:modelo">É possível a criação em <code>Python</code> de código que permite a análise e
  <a class="footnote-return" href="#fnref:modelo">↩</a></li>
 </ol>
 </div>

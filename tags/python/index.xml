@@ -17,11 +17,11 @@
       <pubDate>Fri, 02 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/2019/08/02/topografia/</guid>
-      <description>Resumo Criação de Perfis Topográficos e Curvas de Nível, através do uso de Python.
+      <description>O texto desta página, encontra-se em formato PDF, e pode ser acedido aqui.
+Resumo Criação de Perfis Topográficos e Curvas de Nível, através do uso de Python.
 Dois exemplos são apresentados:
  Exemplo simples E um exemplo mais complexo  Ambos os exemplos, apresentam uma forma rápida e simples, de desenhar perfis em 3D e curvas de nível.
-O código utilizado, foi adaptado do website Density and Contour Plots | Python Data Science Handbook e de um autor desconhecido.
-Perfis Topográficos e Curvas de Nível Existem vários softwares no mercado especializados em levantamentos topográficos e de modo nenhum, Python é um substituto para eles, no entanto, existem situações em que o uso de Python é justificado.</description>
+O código utilizado, foi adaptado do website Density and Contour Plots | Python Data Science Handbook e de um autor desconhecido.</description>
     </item>
     
   </channel>
