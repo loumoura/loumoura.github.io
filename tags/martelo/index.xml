@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>martelo on l moura</title>
+    <link>/tags/martelo/</link>
+    <description>Recent content in martelo on l moura</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Sat, 25 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/martelo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Martelo</title>
+      <link>/post/2020/07/25/martelo/</link>
+      <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020/07/25/martelo/</guid>
+      <description>Resumo Nos meus primeiros anos na construção, nos USA, a minha profissão era de framer carpenter.1 Trabalhava essencialmente na construção estrutural em madeira, de moradias uni-familiares. Para um framer existem um conjunto de ferramentas essenciais: fita métrica e lápis, serrote elétrico e o martelo. Muitas outras ferramentas são também utilizadas, mas não com a mesma frequência. Cheguei a ter semanas de trabalho, que poderiam ser resumidas a “medir, cortar e pregar”.</description>
+    </item>
+    
+  </channel>
+</rss>
