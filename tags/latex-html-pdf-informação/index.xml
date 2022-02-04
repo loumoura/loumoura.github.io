@@ -21,5 +21,15 @@
 No tempo do Floppy Disk Ainda me lembro de guardar documentos em Floppy disk. Mal finalizava um documento em Microsoft Word, guardava ele na disquete de modo a garantir que a informação ficava guardada para a eternidade. Mas a eternidade não foi mais que um punhado de anos. Entre mudanças de escritório e caixas perdidas, actualizações de software e hardware, passando pelos CDs, USB e Cloud Storage, os floppies simplesmente desapareceram da minha vida e com eles, inúmeros documentos.</description>
     </item>
     
+    <item>
+      <title>Historial de documentação</title>
+      <link>/post/2019/04/03/informa%C3%A7%C3%A3o-perdida/</link>
+      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019/04/03/informa%C3%A7%C3%A3o-perdida/</guid>
+      <description>knitr::opts_chunk$set( warning = FALSE, echo = FALSE, message=FALSE, comment=NA )  Quanta informação ficou perdida ao longo dos anos por causa das actualizações do software e hardware?
+No tempo do Floppy Disk Ainda me lembro de guardar documentos em Floppy disk . Mal finalizava um documento em Microsoft Word, guardava ele na disquete de modo a garantir que a informação ficava guardada para a eternidade. Mas a eternidade não foi mais que um punhado de anos.</description>
+    </item>
+    
   </channel>
 </rss>

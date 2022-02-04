@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/post/2022/02/03/sympy-engcivil/</loc>
+    <lastmod>2022-02-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/2020/07/29/orgmode-excel/</loc>
     <lastmod>2020-07-29T00:00:00+00:00</lastmod>
   </url>
@@ -53,6 +58,11 @@
   </url>
   
   <url>
+    <loc>/post/2019/04/03/informa%C3%A7%C3%A3o-perdida/</loc>
+    <lastmod>2019-04-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/2019/03/30/espetro-resposta/</loc>
     <lastmod>2019-03-30T00:00:00+00:00</lastmod>
   </url>
@@ -89,6 +99,11 @@
   
   <url>
     <loc>/post/2017/01/22/contrato-e-plano-de-obra/</loc>
+    <lastmod>2017-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/01/22/plano-de-obra/</loc>
     <lastmod>2017-01-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -151,6 +166,12 @@
   </url>
   
   <url>
+    <loc>/tags/engenharia/</loc>
+    <lastmod>2022-02-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/google-sheets/</loc>
     <lastmod>2018-06-18T13:47:32+01:00</lastmod>
     <priority>0</priority>
@@ -158,7 +179,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-07-29T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -203,7 +224,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-07-29T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -215,7 +236,7 @@
   
   <url>
     <loc>/tags/python/</loc>
-    <lastmod>2019-08-02T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -300,6 +321,12 @@
   <url>
     <loc>/tags/sal%C3%A1rio/</loc>
     <lastmod>2019-07-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/sympy/</loc>
+    <lastmod>2022-02-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,10 +6,22 @@
     <description>Recent content in Home on l moura</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
-    <lastBuildDate>Wed, 29 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Feb 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Matemática, Python e Engenharia Civil</title>
+      <link>/post/2022/02/03/sympy-engcivil/</link>
+      <pubDate>Thu, 03 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2022/02/03/sympy-engcivil/</guid>
+      <description>Derivação, Integração e incógnita de uma equação,
+O texto desta página, em formato PDF.
+Matemática e Python na vertente da Engenharia Civil Através da utilização de Python como uma calculadora, é possível a obtenção dos resultados, para três categorias de cálculos matemáticos, bastante comuns em Engenharia Civil. Essas três (categorias) de cálculo são, a integração, a derivação, e a descoberta de uma incógnita numa equação.
+O uso de Python, não é um substituto para softwares como o Robot da Autodesk, ou para uma máquina de calcular moderna.</description>
+    </item>
     
     <item>
       <title>Tabelas em Org Mode e Excel</title>
@@ -116,6 +128,16 @@ No tempo do Floppy Disk Ainda me lembro de guardar documentos em Floppy disk. Ma
     </item>
     
     <item>
+      <title>Historial de documentação</title>
+      <link>/post/2019/04/03/informa%C3%A7%C3%A3o-perdida/</link>
+      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019/04/03/informa%C3%A7%C3%A3o-perdida/</guid>
+      <description>knitr::opts_chunk$set( warning = FALSE, echo = FALSE, message=FALSE, comment=NA )  Quanta informação ficou perdida ao longo dos anos por causa das actualizações do software e hardware?
+No tempo do Floppy Disk Ainda me lembro de guardar documentos em Floppy disk . Mal finalizava um documento em Microsoft Word, guardava ele na disquete de modo a garantir que a informação ficava guardada para a eternidade. Mas a eternidade não foi mais que um punhado de anos.</description>
+    </item>
+    
+    <item>
       <title>Espetro de Resposta para prédio localizado em Leiria</title>
       <link>/post/2019/03/30/espetro-resposta/</link>
       <pubDate>Sat, 30 Mar 2019 00:00:00 +0000</pubDate>
@@ -193,6 +215,16 @@ Introdução O Custo representa normalmente o fator mais importante em uma const
       <guid>/post/2017/01/22/contrato-e-plano-de-obra/</guid>
       <description>Qualquer projeto em construção civil, independentemente do tamanho, deve ter alguma forma de contrato. Um Contrato, é a formalização legal de um acordo entre duas ou mais partes, mas o mais importante para mim, é a garantia que existe um acordo sobre como lidar com os problemas com surjam em uma obra.
 O Plano de Obra, é o agregar de vários planos da responsabilidade do Diretor de Obra, que vão ditar os procedimentos a serem utilizados em uma construção.</description>
+    </item>
+    
+    <item>
+      <title>Plano de Obra</title>
+      <link>/post/2017/01/22/plano-de-obra/</link>
+      <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017/01/22/plano-de-obra/</guid>
+      <description>Introdução O Plano de Obra é um conjunto de documentos, com objetivos específicos, e que servem de apoio ao desenrolar das operações no terreno de acordo com objetivos estipulados em Contrato. Cabe ao Diretor de Obra, com a ajuda da restante equipa, a elaboração, implementação e monitorização do Plano de Obra que deve incluir:
+ Custo: Plano de controle e de monitorização de custos Qualidade: Plano com os objetivos do projetos e sistema de monitorização de qualidade Tempo: Plano de Programação de Obra, com representação gráfica e escrita das atividades.</description>
     </item>
     
     <item>

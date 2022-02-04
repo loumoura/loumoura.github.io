@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Matemática, Python e Engenharia Civil - l moura</title>
+    <meta property="og:title" content="Matemática, Python e Engenharia Civil - l moura">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Derivação, Integração e incógnita de uma equação,
+O texto desta página, em formato PDF.
+[&amp;hellip;] Através da utilização de Python como uma calculadora, é possível a obtenção dos resultados, para três &amp;hellip;">
+      <meta property="og:description" content="Derivação, Integração e incógnita de uma equação,
+O texto desta página, em formato PDF.
+[&amp;hellip;] Através da utilização de Python como uma calculadora, é possível a obtenção dos resultados, para três &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+<link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      
+<h1><a href="/"><img src="/author.png" alt="t" /></a></h1>
+
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" />
+  <label id="menu-label" for="menu-check" class="unselectable">
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about_me/">Autor</a></li>
+  
+  <li><a href="/contact/">Contato</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Matemática, Python e Engenharia Civil</h1>
+
+<h3>Luis Moura
+  /  2022-02-03</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+<p>Derivação, Integração e incógnita de uma equação,</p>
+
+<p>O texto desta página, em formato <a href="/post/files/2022-Sympy.pdf">PDF</a>.</p>
+
+<h1 id="matemática-e-python-na-vertente-da-engenharia-civil">Matemática e Python na vertente da Engenharia Civil</h1>
+
+<p>Através da utilização de <a href="https://www.python.org/">Python</a> como uma calculadora,
+é possível a obtenção dos resultados, para três categorias de cálculos
+matemáticos, bastante comuns em Engenharia Civil. Essas três (categorias) de
+cálculo são, a integração, a derivação, e a descoberta de uma incógnita numa
+equação.</p>
+
+<p>O uso de Python, não é um substituto para softwares como o Robot da Autodesk, ou
+para uma máquina de calcular moderna. No entanto, apresenta vantagens em relação
+a estes, especialmente quando se pretende compartilhar os resultados ou ter
+várias pessoas a trabalhar no mesmo projeto. Um exemplo disso, é o PDF
+produzido com este artigo, escrito na sua totalidade em
+<a href="https://jupyter.org/">Jupyter</a> (usando Python). Utilizando sempre o mesmo
+software, foi produzido o documento final, que contém a informação dos cálculos,
+gráficos e a informação textual, estando já pronto a ser apresentado ao cliente
+ou a ser compartilhado com os outros membros da equipa.</p>
+
+<blockquote>
+<p><strong>SymPy</strong> é uma biblioteca Python para matemática simbólica. Ele pretende-se
+tornar um sistema completo de álgebra para computador (computer algebra
+system-CAS) mantendo o código o mais simples possível, de modo a ser
+compreensível e facilmente extensível. SymPy é escrito inteiramente em
+Python.</p>
+
+<p>-– traduzido da página <a href="https://www.sympy.org/pt/index.html">SymPy</a> na
+internet</p>
+</blockquote>
+
+<p>No entanto, e para cálculo matemático avançado, <a href="https://numpy.org/">NumPy</a>,
+também uma livraria para Python, torna-se a melhor opção.</p>
+
+<p>Embora a Numpy também realize os cálculos deste artigo, e tendo em conta a
+simplicidade dos mesmos cálculos, não faz sentido a usar, especialmente porque
+requer mais linhas de código, para fazer a mesma computação.</p>
+
+<blockquote>
+<p><strong>NumPy</strong> é uma biblioteca fundamental para a computação científica em Python. É uma  biblioteca Python que fornece um objeto de matriz multidimensional,  vários objetos derivados (como matrizes mascaradas e matrizes), e uma  variedade de rotinas para operações rápidas em matrizes, incluindo  matemática, lógica, manipulação de forma, classificação, seleção, I/O,  transformações originais de Fourier, álgebra linear básica, operações  estatísticas básicas, simulação aleatória e muito mais.</p>
+
+<p>-– traduzido da página <a href="https://numpy.org/doc/stable/#">NumPy documentation — NumPy v1.22 Manual</a></p>
+</blockquote>
+
+<p>Ao longo deste artigo, será apresentado de uma forma simples, recorrendo ao cálculo dos esforços numa viga, como com Python, consegue-se obter os resultados para a integração, derivação e a descoberta do valor de uma incógnita, numa equação.</p>
+
+<p>Iniciamos então, com a ativação da livraria de Sympy, como apresentado no sript seguinte.</p>
+
+<pre><code class="language-python">from sympy import* 
+x, y, z = symbols(&quot;x, y, z&quot;, real=True)` 
+init_printing(use_latex=&quot;mathjax&quot;)
+</code></pre>
+
+<p>Reparar que o uso de <code>init_printing(use_latex=&quot;mathjax&quot;)</code>, só faz sentido quando se utiliza o Jupyter Notebook, pois vai permitir, que os resultados sejam apresentados já formatados e convertidos de LaTeX.</p>
+
+<h1 id="exemplo-viga-simples">Exemplo - Viga Simples</h1>
+
+<h2 id="condições-iniciais">Condições Iniciais</h2>
+
+<p>Viga com 10 metros de comprimento, assente em dois apoios simples.</p>
+
+<p>Carga de $1 kN\m$, aplicada ao longo de todo o comprimento da viga.</p>
+
+<p><img src="/post/2022-Sympy/2022-01_7_0.png" alt="Viga com 10 m" /></p>
+
+<p>As reações nos apoios ( $R<em>{1}$, $R</em>{2}$ ) , são de $5kN$ em ambos.</p>
+
+<table>
+<thead>
+<tr>
+<th>Apoio $R_{1}$</th>
+<th>Apoio $R_{2}$</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>$5 kN$</td>
+<td>$5 kN$</td>
+</tr>
+</tbody>
+</table>
+
+<p>O cálculo das reações nos apoios, também poderia ser feito com um dos módulos de <strong>Sympy</strong>. No link em baixo, existem vários exemplos de como este módulo pode ser usado no cálculo dos esforços e em situações muito mais complexas, que a do exemplo deste artigo.</p>
+
+<p><a href="https://docs.sympy.org/latest/modules/physics/continuum_mechanics/beam_problems.html">Solving Beam Bending Problems using Singularity Functions — SymPy 1.9 documentation</a></p>
+
+<p>Para encontar as reações nos apoios ($R<em>{1}, R</em>{2}$) da viga do exemplo, bastam as seguintes linhas de código</p>
+
+<pre><code class="language-python">from sympy.physics.continuum_mechanics.beam import Beam
+E, I = symbols('E, I')
+R1, R2 = symbols('R1, R2')
+b = Beam(10, E, I)
+b.apply_load(-1, 0, 0)
+b.apply_load(R1, 0,-1) 
+b.apply_load(R2, 10,-1)
+b.solve_for_reaction_loads(R1, R2)
+b.reaction_loads
+</code></pre>
+
+<p>Sendo o resultado e tal como seria de esperar:</p>
+
+<p>$\left { R<em>{1} : 5, \  R</em>{2} : 5 \right }$</p>
+
+<h1 id="incógnita-numa-equação">Incógnita numa equação</h1>
+
+<p>A linha da reta do <strong>esforço transverso</strong> ($V$), entre o ponto de 0 m e o de 10 m, tem a seguinte função:</p>
+
+<p>$$V_{(x)}~=~5-q \times x$$</p>
+
+<p>Mas como o valor da carga distribuída ($q$) é igual a $1 kN/m$, é possível fazer a simplificação da equação do <strong>Esforço Transverso</strong>:</p>
+
+<p>$$V<em>{(x)}~=~5-q \times x~ \Longleftrightarrow V</em>{(x)}~= 5-x$$</p>
+
+<p>Devido à simplicidade do exemplo, é imediata a conclusão, que o <strong>Momento Máximo</strong>, ocorre a meio vão, ou seja, aos 5 metros.</p>
+
+<p>Recorrendo a <strong>Sympy</strong> e ao comando <code>solve</code>, é possível localizar, para que valor do comprimento, o  <strong>Momento Fletor é máximo</strong>.
+O Momento Máximo ocorre quando o Esforço Transverso é zero, portanto, igualando a equação da reta, $V_{(x)}=0$, é obtida a localização do Momento Máximo.</p>
+
+<pre><code class="language-python">V=5-x   # Equação do Esforço Transverso
+solve(Eq(V,0),x)  
+</code></pre>
+
+<p>$\displaystyle \left[ 5\right]$</p>
+
+<p>E como esperado, o resultado é 5 (metros).</p>
+
+<h2 id="exemplos-do-comando-solve">Exemplos do comando <code>solve</code></h2>
+
+<p><strong>Exemplo 1</strong>
+$$
+x^{2}=25 \Rightarrow x=-5,x=5
+$$</p>
+
+<pre><code class="language-python">solve(Eq(x**2,25),x)
+</code></pre>
+
+<p>$\displaystyle \left[ -5, \  5\right]$</p>
+
+<p><strong>Exemplo 2</strong><br />
+Uso do comando <code>solve</code>, em um sistema com duas incógnitas</p>
+
+<p>$$x+5y=2~, -3x+6y=15 ~ \Rightarrow ~x=-3~, ~y=1$$ :</p>
+
+<pre><code class="language-python">solve([Eq(x + 5*y, 2), Eq(-3*x + 6*y, 15)], [x, y])
+</code></pre>
+
+<p>$\displaystyle \left{ x : -3, \  y : 1\right}$</p>
+
+<p>Ou então, e escrevendo a equação de outro modo (ao não usar <code>Eq</code>, Sympy assume que a expressão matemática é igual a zero):</p>
+
+<pre><code class="language-python">solve([x + 5*y - 2, -3*x + 6*y - 15], [x, y])
+</code></pre>
+
+<p>$\displaystyle \left{ x : -3, \  y : 1\right}$</p>
+
+<p><img src="/post/2022-Sympy/2022-01_21_0.png" alt="Diagrama do Esforço Transverso" /></p>
+
+<h1 id="integração">Integração</h1>
+
+<p>A equação da curva do <strong>Momento Fletor</strong>, não é mais que a soma da área, compreendida entre a reta do <strong>Esforço Transverso</strong> e o eixo do x. Por outras palavras, a Integral da reta do Esforço Transverso, é o mesmo, que a expressão matemática da curva do Momento Fletor.</p>
+
+<p>$${M}_{(x)}=\int \left(5 - x\right)\, dx= - \frac{x^{2}}{2} + 5 x+C$$</p>
+
+<h2 id="comando-integrate">Comando <code>integrate</code></h2>
+
+<p>Em Sympy, o comando <code>integrate</code>, é usado na resolução da integração.
+Estando a equação da reta previamente definida, $V_{(x)}=5-x$, basta escrever o comando <code>integrate(V)</code>, para ser efetuada a operação.</p>
+
+<pre><code class="language-python">integrate(V)
+</code></pre>
+
+<p>$\displaystyle - \frac{x^{2}}{2} + 5 x$</p>
+
+<p>E para escrever a integral, é usado o comando <code>Integral</code>.</p>
+
+<p>Para escrever a Integral da função $V_{(x)}$:</p>
+
+<pre><code class="language-python">Integral(V,x)
+</code></pre>
+
+<p>$\displaystyle \int \left(5 - x\right)\, dx$</p>
+
+<p>Sabendo que o <strong>Momento Máximo</strong> ocorre em $x=5$, podemos substituir o $x$ da integral, por 5. Para tal, usamos o comando <code>subs()</code>, e passamos a informação do que queremos substituir. Neste caso, o $x$ por 5.</p>
+
+<pre><code class="language-python">integrate(V).subs(x,5)
+</code></pre>
+
+<p>$\displaystyle \frac{25}{2}$</p>
+
+<p>O valor do Momento Máximo é de $\frac{25}{2}=12.5~kN/m$.</p>
+
+<p>Embora esta seja uma fração simples, em que seja possível realizar o cálculo mental imediato da mesma, o mesmo pode não ser verdade com outros resultados. Para obter o resultado na forma decimal, o comando <code>n()</code>deve ser adicionado.</p>
+
+<pre><code class="language-python">integrate(V).subs(x,5).n()
+</code></pre>
+
+<p>$\displaystyle 12.5$</p>
+
+<p>Confirmando o resultado obtido, com a fórmula do Momento Máximo para uma viga como a do exemplo:</p>
+
+<p>$$M_{max}=\frac{qL^{2}}{8}=\frac{1 \times 10^{2}}{8}=12.5~kN/m $$</p>
+
+<p><img src="/post/2022-Sympy/2022-01_34_0.png" alt="Diagrama do Momento Fletor" /></p>
+
+<h1 id="derivação">Derivação</h1>
+
+<p>Por vezes queremos trabalhar no sentido inverso, e descobrir o valor do <strong>Esforço Transverso</strong>, a partir da equação do <strong>Momento Fletor</strong>.</p>
+
+<p>$${V}_{(x)}=\frac{d}{d x} \left(- \frac{x^{2}}{2} + 5 x\right)= 5 - x$$</p>
+
+<h2 id="comando-diff">Comando <code>diff</code></h2>
+
+<p>Com o comando <code>diff</code> de Sympy, é realizada a derivação de uma expressão matemática.</p>
+
+<p>Como determinado, a equação da curva do Momento Fletor, é o resultado da integração da reta do Esforço Transverso:</p>
+
+<p>$$M_{(x)}= - \frac{x^2}{2}+5x = \int (5-x) \text{dx} $$</p>
+
+<p>Escrevendo <code>diff(integrate(V,x))</code>, dizemos a Sympy, para derivar o resultado da integração da reta do Esforço Transverso.</p>
+
+<pre><code class="language-python">diff(integrate(V,x))
+</code></pre>
+
+<p>$\displaystyle 5 - x$</p>
+
+<p>Também designar uma qualquer letra(s) para a Integração, e depois usar no comando <code>diff</code> essa(s) mesma(s) letra(s).</p>
+
+<pre><code class="language-python">MV=integrate(V,x)  # atribuição da designação &quot;MV&quot; à integração
+
+diff(MV)   # Derivar a expressão, usando a nova designação
+</code></pre>
+
+<p>$\displaystyle 5 - x$</p>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2020/07/29/orgmode-excel/">Tabelas em Org Mode e Excel</a></span>
+  <span class="nav-next"></span>
+</nav>
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">&copy; <a href="/">Luis Moura</a> 20016 - 2022</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+
